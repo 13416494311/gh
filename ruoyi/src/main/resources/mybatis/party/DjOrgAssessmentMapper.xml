@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.party.mapper.DjOrgAssessmentMapper">
+
+    <resultMap type="DjOrgAssessment" id="DjOrgAssessmentResult">
+        <result property="id"    column="id"    />
+        <result property="assessmentUuid"    column="assessment_uuid"    />
+        <result property="assessmentyearUuid"    column="assessmentYear_uuid"    />
+        <result property="partyOrgId"    column="party_org_id"    />
+        <result property="assessmentResult"    column="assessment_result"    />
+        <result property="assessment_rank"    column="assessment_rank"    />
+
+        <result property="orgAssessmentStatus"    column="org_assessment_status"    />
+        <result property="assessmentSelfScore"    column="assessment_self_score"    />
+        <result property="assessmentScore"    column="assessment_score"    />
+        <result property="assessmentScoreRatio"    column="assessment_score_ratio"    />
+
+        <result property="performanceAppraisalStatus"    column="performance_appraisal_status"    />
+        <result property="addSubtractScore"    column="add_subtract_score"    />
+        <result property="performanceAppraisalScore"    column="performance_appraisal_score"    />
+        <result property="performanceAppraisalScoreRatio"    column="performance_appraisal_score_ratio"    />
+
+        <result property="score"    column="score"    />
+        <result property="rankNum"    column="rank_num"    />
+
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectDjOrgAssessmentVo">
+        select doa.id, doa.assessment_uuid, doa.assessmentYear_uuid, doa.party_org_id, doa.assessment_result, doa.org_assessment_status,
+            doa.assessment_rank,doa.assessment_self_score,doa.assessment_score,doa.assessment_score_ratio,
+            doa.performance_appraisal_status,doa.performance_appraisal_score,doa.performance_appraisal_score_ratio,
+            doa.add_subtract_score,doa.score,doa.del_flag, doa.create_by, doa.create_time, doa.update_by, doa.update_time
+        from dj_org_assessment doa
+    </sql>
+
+    <select id="selectDjOrgAssessmentList" parameterType="DjOrgAssessment" resultMap="DjOrgAssessmentResult">
+        <include refid="selectDjOrgAssessmentVo"/>
+        left join dj_org_assessmentyear doay on doay.assessmentYear_uuid = doa.assessmentYear_uuid
+        left join dj_party_org dpo on dpo.party_org_id = doa.party_org_id
+        <where>
+            <if test="assessmentyear != null  and assessmentyear.orgAssessmentStatus != null  and assessmentyear.orgAssessmentStatus != '' ">
+                 and doay.org_assessment_status = #{assessmentyear.orgAssessmentStatus}
+            </if>
+            <if test="assessmentyear != null  and assessmentyear.year != null  and assessmentyear.year != '' ">
+                and doay.year = #{assessmentyear.year}
+            </if>
+            <if test="assessmentyear != null  and assessmentyear.assessmentName != null  and assessmentyear.assessmentName != '' ">
+                and doay.assessment_name like  concat('%', #{assessmentyear.assessmentName}, '%')
+            </if>
+            <if test="djPartyOrg != null  and djPartyOrg.performanceAppraisal != null  and djPartyOrg.performanceAppraisal != '' ">
+                and dpo.performance_appraisal = #{djPartyOrg.performanceAppraisal}
+            </if>
+            <if test="id != null "> and doa.id = #{id}</if>
+            <if test="assessmentUuid != null  and assessmentUuid != ''"> and doa.assessment_uuid = #{assessmentUuid}</if>
+            <if test="assessmentyearUuid != null  and assessmentyearUuid != ''"> and doa.assessmentYear_uuid = #{assessmentyearUuid}</if>
+            <if test="partyOrgId != null "> and doa.party_org_id = #{partyOrgId}</if>
+            <if test="assessmentResult != null  and assessmentResult != ''"> and doa.assessment_result = #{assessmentResult}</if>
+            <if test="orgAssessmentStatus != null  and orgAssessmentStatus != ''"> and doa.org_assessment_status = #{orgAssessmentStatus}</if>
+            <if test="assessmentScore != null  and assessmentScore != ''"> and doa.assessment_score = #{assessmentScore}</if>
+            <if test="assessmentSelfScore != null  and assessmentSelfScore != ''">
+                and doa.assessment_self_score = #{assessmentSelfScore}</if>
+            <if test="performanceAppraisalStatus != null  and performanceAppraisalStatus != ''">
+               and doa.performance_appraisal_status = #{performanceAppraisalStatus}
+            </if>
+            <if test="addSubtractScore != null  and addSubtractScore != ''">
+                and doa.add_subtract_score = #{addSubtractScore}</if>
+            <if test="performanceAppraisalScore != null  and performanceAppraisalScore != ''">
+               and doa.performance_appraisal_score = #{performanceAppraisalScore}</if>
+            <if test="score != null  and score != ''">
+                and doa.score = #{score}</if>
+            <if test="assessment_rank != null "> and doa.assessment_rank = #{assessment_rank}</if>
+            ${dataScope}
+        </where>
+        order by  doay.year desc
+    </select>
+
+
+    <select id="selectDjOrgAssessmentListRank" parameterType="DjOrgAssessment" resultMap="DjOrgAssessmentResult">
+       SELECT doa.*,temp.rank_num
+       FROM (
+	      SELECT @curRank := IF ( @prevRank = A.score, @curRank, @incRank ) AS rank_num,
+		         @incRank := @incRank + 1 AS temp_rank,
+		         @prevRank := A.score AS total,
+		         A.*
+	      FROM ( SELECT tm.id AS id,
+	                   (case when tm.score is null then 0 else tm.score end ) AS score
+	              FROM dj_org_assessment tm
+	              WHERE tm.assessmentYear_uuid = #{assessmentyearUuid}
+	              ORDER BY tm.score DESC ) A,
+		       ( SELECT @curRank := 0, @prevRank := NULL, @incRank := 1  ) B
+	    ) temp
+	    LEFT JOIN dj_org_assessment doa on doa.id = temp.id
+    </select>
+
+    <select id="selectDjOrgAssessmentById" parameterType="Long" resultMap="DjOrgAssessmentResult">
+        <include refid="selectDjOrgAssessmentVo"/>
+        where id = #{id}
+    </select>
+
+    <select id="selectDjOrgAssessmentByUuid" parameterType="String" resultMap="DjOrgAssessmentResult">
+        <include refid="selectDjOrgAssessmentVo"/>
+        where assessment_uuid = #{assessmentUuid}
+    </select>
+
+    <insert id="insertDjOrgAssessment" parameterType="DjOrgAssessment" useGeneratedKeys="true" keyProperty="id">
+        insert into dj_org_assessment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="assessmentUuid != null  and assessmentUuid != ''">assessment_uuid,</if>
+            <if test="assessmentyearUuid != null  and assessmentyearUuid != ''">assessmentYear_uuid,</if>
+            <if test="partyOrgId != null ">party_org_id,</if>
+            <if test="assessmentResult != null  and assessmentResult != ''">assessment_result,</if>
+            <if test="orgAssessmentStatus != null  and orgAssessmentStatus != ''">org_assessment_status,</if>
+            <if test="assessment_rank != null ">assessment_rank,</if>
+            <if test="assessmentSelfScore != null ">assessment_self_score,</if>
+            <if test="assessmentScore != null ">assessment_score,</if>
+            <if test="assessmentScoreRatio != null ">assessment_score_ratio,</if>
+            <if test="performanceAppraisalStatus != null ">performance_appraisal_status,</if>
+            <if test="addSubtractScore != null ">add_subtract_score,</if>
+            <if test="performanceAppraisalScore != null ">performance_appraisal_score,</if>
+            <if test="performanceAppraisalScoreRatio != null ">performance_appraisal_score_ratio,</if>
+            <if test="score != null ">score,</if>
+            <if test="delFlag != null  and delFlag != ''">del_flag,</if>
+            <if test="createBy != null  and createBy != ''">create_by,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateBy != null  and updateBy != ''">update_by,</if>
+            <if test="updateTime != null ">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="assessmentUuid != null  and assessmentUuid != ''">#{assessmentUuid},</if>
+            <if test="assessmentyearUuid != null  and assessmentyearUuid != ''">#{assessmentyearUuid},</if>
+            <if test="partyOrgId != null ">#{partyOrgId},</if>
+            <if test="assessmentResult != null  and assessmentResult != ''">#{assessmentResult},</if>
+            <if test="orgAssessmentStatus != null  and orgAssessmentStatus != ''">#{orgAssessmentStatus},</if>
+            <if test="assessment_rank != null ">#{assessment_rank},</if>
+            <if test="assessmentSelfScore != null ">#{assessmentSelfScore},</if>
+            <if test="assessmentScore != null ">#{assessmentScore},</if>
+            <if test="assessmentScoreRatio != null ">#{assessmentScoreRatio},</if>
+            <if test="performanceAppraisalStatus != null ">#{performanceAppraisalStatus},</if>
+            <if test="addSubtractScore != null ">#{addSubtractScore},</if>
+            <if test="performanceAppraisalScore != null ">#{performanceAppraisalScore},</if>
+            <if test="performanceAppraisalScoreRatio != null ">#{performanceAppraisalScoreRatio},</if>
+            <if test="score != null ">#{score},</if>
+            <if test="delFlag != null  and delFlag != ''">#{delFlag},</if>
+            <if test="createBy != null  and createBy != ''">#{createBy},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">#{updateBy},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDjOrgAssessment" parameterType="DjOrgAssessment">
+        update dj_org_assessment
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="assessmentUuid != null  and assessmentUuid != ''">assessment_uuid = #{assessmentUuid},</if>
+            <if test="assessmentyearUuid != null  and assessmentyearUuid != ''">assessmentYear_uuid = #{assessmentyearUuid},</if>
+            <if test="partyOrgId != null ">party_org_id = #{partyOrgId},</if>
+            <if test="assessmentResult != null  and assessmentResult != ''">assessment_result = #{assessmentResult},</if>
+            <if test="orgAssessmentStatus != null  and orgAssessmentStatus != ''">org_assessment_status = #{orgAssessmentStatus},</if>
+            <if test="assessment_rank != null ">assessment_rank = #{assessment_rank},</if>
+            <if test="assessmentSelfScore != null ">assessment_self_score = #{assessmentSelfScore},</if>
+            <if test="assessmentScore != null ">assessment_score = #{assessmentScore},</if>
+            <if test="assessmentScoreRatio != null ">assessment_score_ratio = #{assessmentScoreRatio},</if>
+            <if test="performanceAppraisalStatus != null ">performance_appraisal_status = #{performanceAppraisalStatus},</if>
+            <if test="addSubtractScore != null ">add_subtract_score = #{addSubtractScore},</if>
+            <if test="performanceAppraisalScore != null ">performance_appraisal_score = #{performanceAppraisalScore},</if>
+            <if test="performanceAppraisalScoreRatio != null ">performance_appraisal_score_ratio = #{performanceAppraisalScoreRatio},</if>
+            <if test="score != null ">score = #{score},</if>
+            <if test="delFlag != null  and delFlag != ''">del_flag = #{delFlag},</if>
+            <if test="createBy != null  and createBy != ''">create_by = #{createBy},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDjOrgAssessmentById" parameterType="Long">
+        delete from dj_org_assessment where id = #{id}
+    </delete>
+
+    <delete id="deleteDjOrgAssessmentByIds" parameterType="String">
+        delete from dj_org_assessment where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.activity.mapper.DjActivityMemberMapper">
+
+    <resultMap type="DjActivityMember" id="DjActivityMemberResult">
+        <result property="memberId"    column="member_id"    />
+        <result property="planUuid"    column="plan_uuid"    />
+        <result property="detailedUuid"    column="detailed_uuid"    />
+        <result property="partyOrgId"    column="party_org_id"    />
+        <result property="partyMemberId"    column="party_member_id"    />
+        <result property="type"    column="type"    />
+        <result property="status"    column="status"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectDjActivityMemberVo">
+        select member_id, plan_uuid, party_org_id, party_member_id, status,type, del_flag, create_by,
+        create_time, update_by, update_time
+        from dj_activity_member
+    </sql>
+
+    <sql id="selectDjActivityMember">
+        select m.member_id, m.plan_uuid, m.party_org_id, m.party_member_id, m.status,
+        m.type, m.del_flag, m.create_by,m.create_time, m.update_by, m.update_time
+        from dj_activity_member m
+    </sql>
+
+    <select id="selectDjActivityMemberList" parameterType="DjActivityMember"
+            resultMap="DjActivityMemberResult">
+        <include refid="selectDjActivityMember"/>
+        left join dj_party_member pm on  pm.member_id = m.party_member_id
+        <where>
+            <if test="planUuid != null "> and  m.plan_uuid = #{planUuid}</if>
+            <if test="detailedUuid != null "> and  m.detailed_uuid = #{detailedUuid}</if>
+            <if test="partyOrgId != null "> and  m.party_org_id = #{partyOrgId}</if>
+            <if test="partyMemberId != null  and partyMemberId != ''"> and  m.party_member_id = #{partyMemberId}</if>
+            <if test="type != null  and type != ''"> and  m.type = #{type}</if>
+            <if test="status != null  and status != ''"> and  m.status = #{status}</if>
+            <if test="params.arrangeStatus != null  and params.arrangeStatus == 2 ">
+                and m.detailed_uuid is not  null
+            </if>
+        </where>
+        order by pm.party_position_type is null || pm.party_position_type='' asc,
+        pm.party_position_type asc , CONVERT( pm.member_name USING gbk ) COLLATE gbk_chinese_ci ASC
+    </select>
+
+    <select id="selectDjActivityMemberById" parameterType="Long" resultMap="DjActivityMemberResult">
+        <include refid="selectDjActivityMemberVo"/>
+        where member_id = #{memberId}
+    </select>
+
+    <insert id="insertDjActivityMember" parameterType="DjActivityMember">
+        insert into dj_activity_member
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="memberId != null ">member_id,</if>
+            <if test="planUuid != null ">plan_uuid,</if>
+            <if test="detailedUuid != null ">detailed_uuid,</if>
+            <if test="partyOrgId != null ">party_org_id,</if>
+            <if test="partyMemberId != null  and partyMemberId != ''">party_member_id,</if>
+            <if test="type != null  and type != ''">type,</if>
+            <if test="status != null  and status != ''">status,</if>
+            <if test="delFlag != null  and delFlag != ''">del_flag,</if>
+            <if test="createBy != null  and createBy != ''">create_by,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateBy != null  and updateBy != ''">update_by,</if>
+            <if test="updateTime != null ">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="memberId != null ">#{memberId},</if>
+            <if test="planUuid != null ">#{planUuid},</if>
+            <if test="detailedUuid != null ">#{detailedUuid},</if>
+            <if test="partyOrgId != null ">#{partyOrgId},</if>
+            <if test="partyMemberId != null  and partyMemberId != ''">#{partyMemberId},</if>
+            <if test="type != null  and type != ''">#{type},</if>
+            <if test="status != null  and status != ''">#{status},</if>
+            <if test="delFlag != null  and delFlag != ''">#{delFlag},</if>
+            <if test="createBy != null  and createBy != ''">#{createBy},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">#{updateBy},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDjActivityMember" parameterType="DjActivityMember">
+        update dj_activity_member
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="planUuid != null ">plan_uuid = #{planUuid},</if>
+            <if test="detailedUuid != null ">detailed_uuid = #{detailedUuid},</if>
+            <if test="partyOrgId != null ">party_org_id = #{partyOrgId},</if>
+            <if test="partyMemberId != null  and partyMemberId != ''">party_member_id = #{partyMemberId},</if>
+            <if test="type != null  and type != ''">type = #{type},</if>
+            <if test="status != null  and status != ''">status = #{status},</if>
+            <if test="delFlag != null  and delFlag != ''">del_flag = #{delFlag},</if>
+            <if test="createBy != null  and createBy != ''">create_by = #{createBy},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+        </trim>
+        where member_id = #{memberId}
+    </update>
+
+    <delete id="deleteDjActivityMemberById" parameterType="Long">
+        delete from dj_activity_member where member_id = #{memberId}
+    </delete>
+
+    <delete id="deleteDjActivityMemberByIds" parameterType="String">
+        delete from dj_activity_member where member_id in
+        <foreach item="memberId" collection="array" open="(" separator="," close=")">
+            #{memberId}
+        </foreach>
+    </delete>
+
+</mapper>

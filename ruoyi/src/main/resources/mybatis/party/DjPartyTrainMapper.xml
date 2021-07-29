@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.party.mapper.DjPartyTrainMapper">
+
+    <resultMap type="DjPartyTrain" id="DjPartyTrainResult">
+        <result property="trainId"    column="train_id"    />
+        <result property="trainUuid"    column="train_uuid"    />
+        <result property="partyOrgId"    column="party_org_id"    />
+        <result property="trainType"    column="train_type"    />
+        <result property="activityTheme"    column="activity_theme"    />
+        <result property="activityContent"    column="activity_content"    />
+        <result property="activityStartTime"    column="activity_start_time"    />
+        <result property="activityEndTime"    column="activity_end_time"    />
+        <result property="effectiveHours"    column="effective_hours"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectDjPartyTrainVo">
+        select train_id, train_uuid, party_org_id, train_type, activity_theme, activity_content, activity_start_time, activity_end_time, effective_hours, del_flag, create_by, create_time, update_by, update_time from dj_party_train
+    </sql>
+
+    <sql id="selectDjPartyTrain">
+        select t.train_id, t.train_uuid, t.party_org_id, t.train_type, t.activity_theme,
+        t.activity_content, t.activity_start_time, t.activity_end_time, t.effective_hours, t.del_flag,
+        t.create_by, t.create_time, t.update_by, t.update_time
+        from dj_party_train t
+    </sql>
+
+    <select id="selectDjPartyTrainList" parameterType="DjPartyTrain" resultMap="DjPartyTrainResult">
+        <include refid="selectDjPartyTrain"/>
+
+        <where>
+            exists ( select 1  from dj_party_org o
+                 left join dj_party_member m on o.party_org_id = m.party_org_id
+                 left join sys_user u on m.member_id = u.party_member_id where o.party_org_id = t.party_org_id  ${dataScope} )
+            <if test="trainUuid != null  and trainUuid != ''"> and t.train_uuid = #{trainUuid}</if>
+            <if test="partyOrgId != null "> and t.party_org_id = #{partyOrgId}</if>
+            <if test="trainType != null  and trainType != ''"> and t.train_type = #{trainType}</if>
+            <if test="activityTheme != null  and activityTheme != ''"> and t.activity_theme = #{activityTheme}</if>
+            <if test="activityContent != null  and activityContent != ''"> and t.activity_content = #{activityContent}</if>
+            <if test="activityStartTime != null "> and t.activity_start_time = #{activityStartTime}</if>
+            <if test="activityEndTime != null "> and t.activity_end_time = #{activityEndTime}</if>
+            <if test="effectiveHours != null "> and t.effective_hours = #{effectiveHours}</if>
+
+        </where>
+        order by t.create_time desc
+    </select>
+
+    <select id="selectDjPartyTrainById" parameterType="Long" resultMap="DjPartyTrainResult">
+        <include refid="selectDjPartyTrainVo"/>
+        where train_id = #{trainId}
+    </select>
+
+    <select id="selectDjPartyTrainByUuid" parameterType="String" resultMap="DjPartyTrainResult">
+        <include refid="selectDjPartyTrainVo"/>
+        where train_uuid = #{trainUuid}
+    </select>
+
+    <insert id="insertDjPartyTrain" parameterType="DjPartyTrain" useGeneratedKeys="true" keyProperty="trainId">
+        insert into dj_party_train
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="trainUuid != null  and trainUuid != ''">train_uuid,</if>
+            <if test="partyOrgId != null ">party_org_id,</if>
+            <if test="trainType != null  and trainType != ''">train_type,</if>
+            <if test="activityTheme != null  and activityTheme != ''">activity_theme,</if>
+            <if test="activityContent != null  and activityContent != ''">activity_content,</if>
+            <if test="activityStartTime != null ">activity_start_time,</if>
+            <if test="activityEndTime != null ">activity_end_time,</if>
+            <if test="effectiveHours != null ">effective_hours,</if>
+            <if test="delFlag != null  and delFlag != ''">del_flag,</if>
+            <if test="createBy != null  and createBy != ''">create_by,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateBy != null  and updateBy != ''">update_by,</if>
+            <if test="updateTime != null ">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="trainUuid != null  and trainUuid != ''">#{trainUuid},</if>
+            <if test="partyOrgId != null ">#{partyOrgId},</if>
+            <if test="trainType != null  and trainType != ''">#{trainType},</if>
+            <if test="activityTheme != null  and activityTheme != ''">#{activityTheme},</if>
+            <if test="activityContent != null  and activityContent != ''">#{activityContent},</if>
+            <if test="activityStartTime != null ">#{activityStartTime},</if>
+            <if test="activityEndTime != null ">#{activityEndTime},</if>
+            <if test="effectiveHours != null ">#{effectiveHours},</if>
+            <if test="delFlag != null  and delFlag != ''">#{delFlag},</if>
+            <if test="createBy != null  and createBy != ''">#{createBy},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">#{updateBy},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDjPartyTrain" parameterType="DjPartyTrain">
+        update dj_party_train
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="trainUuid != null  and trainUuid != ''">train_uuid = #{trainUuid},</if>
+            <if test="partyOrgId != null ">party_org_id = #{partyOrgId},</if>
+            <if test="trainType != null  and trainType != ''">train_type = #{trainType},</if>
+            <if test="activityTheme != null  and activityTheme != ''">activity_theme = #{activityTheme},</if>
+            <if test="activityContent != null  and activityContent != ''">activity_content = #{activityContent},</if>
+            <if test="activityStartTime != null ">activity_start_time = #{activityStartTime},</if>
+            <if test="activityEndTime != null ">activity_end_time = #{activityEndTime},</if>
+            <if test="effectiveHours != null ">effective_hours = #{effectiveHours},</if>
+            <if test="delFlag != null  and delFlag != ''">del_flag = #{delFlag},</if>
+            <if test="createBy != null  and createBy != ''">create_by = #{createBy},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+        </trim>
+        where train_id = #{trainId}
+    </update>
+
+    <delete id="deleteDjPartyTrainById" parameterType="Long">
+        delete from dj_party_train where train_id = #{trainId}
+    </delete>
+
+    <delete id="deleteDjPartyTrainByIds" parameterType="String">
+        delete from dj_party_train where train_id in
+        <foreach item="trainId" collection="array" open="(" separator="," close=")">
+            #{trainId}
+        </foreach>
+    </delete>
+
+</mapper>

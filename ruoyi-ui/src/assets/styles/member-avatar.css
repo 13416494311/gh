@@ -1,0 +1,36 @@
+
+.member-pic {
+  width: 100px;
+  float: left;
+  margin: 10px;
+  border: 1px solid #999;
+}
+
+.member-avatar {
+  width: 98px;
+  height: 138px;
+  background: url("../image/dj-avatar.png") no-repeat ;
+  background-color: rgb(165, 27, 27);
+  background-size: 100% 100%;
+}
+
+.member-position {
+  padding-top: 4px;
+  width: 98px;
+  height: 25px;
+  text-align: center;
+  background-color: #cf001c;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.member-name {
+  padding-top: 5px;
+  width: 98px;
+  height: 25px;
+  text-align: center;
+  background-color: #C0C4CC;
+  color: black;
+  letter-spacing: 3px;
+}
