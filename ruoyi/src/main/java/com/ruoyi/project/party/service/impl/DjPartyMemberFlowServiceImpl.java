@@ -12,7 +12,7 @@ import com.ruoyi.project.party.service.IDjPartyMemberFlowService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党员流动Service业务层处理
+ * 会员流动Service业务层处理
  *
  * @author ruoyi
  * @date 2020-09-21
@@ -27,10 +27,10 @@ public class DjPartyMemberFlowServiceImpl implements IDjPartyMemberFlowService
     private IDjPartyMemberService djPartyMemberService;
 
     /**
-     * 查询党员流动
+     * 查询会员流动
      *
-     * @param flowId 党员流动ID
-     * @return 党员流动
+     * @param flowId 会员流动ID
+     * @return 会员流动
      */
     @Override
     public DjPartyMemberFlow selectDjPartyMemberFlowById(Long flowId)
@@ -43,10 +43,10 @@ public class DjPartyMemberFlowServiceImpl implements IDjPartyMemberFlowService
     }
 
     /**
-     * 查询党员流动列表
+     * 查询会员流动列表
      *
-     * @param djPartyMemberFlow 党员流动
-     * @return 党员流动
+     * @param djPartyMemberFlow 会员流动
+     * @return 会员流动
      */
     @Override
     public List<DjPartyMemberFlow> selectDjPartyMemberFlowList(DjPartyMemberFlow djPartyMemberFlow)
@@ -61,9 +61,9 @@ public class DjPartyMemberFlowServiceImpl implements IDjPartyMemberFlowService
     }
 
     /**
-     * 新增党员流动
+     * 新增会员流动
      *
-     * @param djPartyMemberFlow 党员流动
+     * @param djPartyMemberFlow 会员流动
      * @return 结果
      */
     @Override
@@ -74,9 +74,9 @@ public class DjPartyMemberFlowServiceImpl implements IDjPartyMemberFlowService
     }
 
     /**
-     * 修改党员流动
+     * 修改会员流动
      *
-     * @param djPartyMemberFlow 党员流动
+     * @param djPartyMemberFlow 会员流动
      * @return 结果
      */
     @Override
@@ -87,9 +87,9 @@ public class DjPartyMemberFlowServiceImpl implements IDjPartyMemberFlowService
     }
 
     /**
-     * 批量删除党员流动
+     * 批量删除会员流动
      *
-     * @param flowIds 需要删除的党员流动ID
+     * @param flowIds 需要删除的会员流动ID
      * @return 结果
      */
     @Override
@@ -99,9 +99,9 @@ public class DjPartyMemberFlowServiceImpl implements IDjPartyMemberFlowService
     }
 
     /**
-     * 删除党员流动信息
+     * 删除会员流动信息
      *
-     * @param flowId 党员流动ID
+     * @param flowId 会员流动ID
      * @return 结果
      */
     @Override

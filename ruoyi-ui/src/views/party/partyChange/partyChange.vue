@@ -1,12 +1,12 @@
 <template>
   <div class="app-container">
     <el-form v-if="!see" :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
-      <el-form-item label="党组织名称" prop="partyOrgId">
+      <el-form-item label="工会名称" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setQueryParamsValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
       <el-form-item>
@@ -64,7 +64,7 @@
               :border="true" @selection-change="handleSelectionChange">
       <!--<el-table-column type="selection" width="55" align="center"/>-->
       <el-table-column label="序号" align="center" type="index" />
-      <el-table-column label="党组织名称" align="left" prop="partyOrg.partyOrgFullName" width="800"/>
+      <el-table-column label="工会名称" align="left" prop="partyOrg.partyOrgFullName" width="800"/>
       <el-table-column label="换届时间" align="center" prop="changeTime" >
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.changeTime, '{y}-{m}-{d}') }}</span>
@@ -111,7 +111,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党组织换届对话框 -->
+    <!-- 添加或修改工会换届对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="150px">
@@ -121,13 +121,13 @@
           </div>
           <el-row>
             <el-col :span="12">
-              <el-form-item label="党组织" prop="partyOrgId">
+              <el-form-item label="工会" prop="partyOrgId">
                 <select-tree :value="form.partyOrgId"
                              :disabled="disabled"
                              :options="partyOrgOptions"
                              vModel="partyOrgId"
                              @selected="setVModelValue"
-                             placeholder="请选择党组织"
+                             placeholder="请选择工会"
                 />
               </el-form-item>
             </el-col>
@@ -208,7 +208,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织换届表格数据
+        // 工会换届表格数据
         partyChangeList: [],
         // 弹出层标题
         title: "",
@@ -227,7 +227,7 @@
         // 表单校验
         rules: {
           partyOrgId: [
-            {required: true, message: "党组织不能为空", trigger: "blur"}
+            {required: true, message: "工会不能为空", trigger: "blur"}
           ],
           changeTime: [
             {required: true, message: "换届时间不能为空", trigger: "blur"}
@@ -239,7 +239,7 @@
           marginLeft: '2%',
           paddingRight: '2%',
         },
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         disabled: false,
         addFlag:false,
@@ -298,7 +298,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织换届列表 */
+      /** 查询工会换届列表 */
       getList() {
         this.loading = true;
 
@@ -359,7 +359,7 @@
         this.reset();
         this.open = true;
         this.disabled = false;
-        this.title = "添加党组织换届";
+        this.title = "添加工会换届";
         this.form.changeUuid = this.uuid();
         this.$nextTick(function () {
           this.$refs.changeDetail.init(this.form.changeUuid, '') ;
@@ -374,7 +374,7 @@
         getPartyChange(changeId).then(response => {
           this.form = response.data;
           this.open = true;
-          this.title = "修改党组织换届";
+          this.title = "修改工会换届";
         }).then(()=>{
           this.$refs.changeDetail.init(this.form.changeUuid, this.form.partyOrgId) ;
           this.$refs.changeDetail.disabled = this.disabled;
@@ -389,7 +389,7 @@
         getPartyChange(changeId).then(response => {
           this.form = response.data;
           this.open = true;
-          this.title = "查看党组织换届";
+          this.title = "查看工会换届";
         }).then(()=>{
           this.$refs.changeDetail.init(this.form.changeUuid, this.form.partyOrgId) ;
           this.$refs.changeDetail.disabled = this.disabled;
@@ -434,7 +434,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const changeIds = row.changeId || this.ids;
-        this.$confirm('是否确认删除党组织换届编号为"' + changeIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会换届编号为"' + changeIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -449,7 +449,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织换届数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会换届数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

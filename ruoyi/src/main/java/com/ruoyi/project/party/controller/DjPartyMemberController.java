@@ -46,7 +46,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * 党员信息Controller
+ * 会员信息Controller
  *
  * @author ruoyi
  * @date 2020-08-06
@@ -79,7 +79,7 @@ public class DjPartyMemberController extends BaseController
     }
 
     /**
-     * 查询党员信息列表
+     * 查询会员信息列表
      */
     @RequestMapping("/list")
     @DataScope( partyOrgAlias = "pm"  ,userAlias = "u")
@@ -120,9 +120,9 @@ public class DjPartyMemberController extends BaseController
 
 
     /**
-     * 导出党员信息列表
+     * 导出会员信息列表
      */
-    @Log(title = "党员信息", businessType = BusinessType.EXPORT)
+    @Log(title = "会员信息", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     @DataScope( partyOrgAlias = "pm"  ,userAlias = "u")
     public void export(HttpServletRequest request, HttpServletResponse response, String memberType , String partyOrgId)
@@ -138,10 +138,10 @@ public class DjPartyMemberController extends BaseController
         String fileName = "";
         String excelTemplate ="";
         if("3".equals(djPartyMember.getMemberType())){
-            fileName ="入党积极分子名单.xlsx";
+            fileName ="入会积极分子名单.xlsx";
             excelTemplate="partyPreMember.xlsx";
         }else{
-            fileName ="广东公司党员名单花名册.xls";
+            fileName ="广东公司会员名单花名册.xls";
             excelTemplate="partyMember.xls";
         }
 
@@ -237,12 +237,12 @@ public class DjPartyMemberController extends BaseController
 
         Long end = System.currentTimeMillis();
 
-        logger.info("============党员信息导出耗时：{}ms",end-start);
+        logger.info("============会员信息导出耗时：{}ms",end-start);
     }
 
 
     /**
-     * 获取党员信息详细信息
+     * 获取会员信息详细信息
      */
     @GetMapping(value = "/{memberId}")
     public AjaxResult getInfo(@PathVariable("memberId") Long memberId)
@@ -251,7 +251,7 @@ public class DjPartyMemberController extends BaseController
     }
 
     /**
-     * 获取党员雷达信息详细信息
+     * 获取会员雷达信息详细信息
      */
     @GetMapping(value = "/getPartyMemberRadarData/{memberId}")
     public AjaxResult getPartyMemberRadarData(@PathVariable("memberId") Long memberId)
@@ -261,13 +261,13 @@ public class DjPartyMemberController extends BaseController
     }
 
     /**
-     * 新增党员信息
+     * 新增会员信息
      */
-    @Log(title = "党员信息", businessType = BusinessType.INSERT)
+    @Log(title = "会员信息", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody Map<String,Object> params)
     {
-        //党员变更表
+        //会员变更表
         DjPartyMemberChange memberChange = JSON.parseObject(JSON.toJSONString(params), DjPartyMemberChange.class);
         memberChange.setMemberUuid(UUID.randomUUID().toString());
         memberChange.setPartyMemberId(memberChange.getMemberId());
@@ -283,16 +283,16 @@ public class DjPartyMemberController extends BaseController
     }
 
     /**
-     * 新增党员信息
+     * 新增会员信息
      */
-    @Log(title = "党员信息", businessType = BusinessType.INSERT)
+    @Log(title = "会员信息", businessType = BusinessType.INSERT)
     @PostMapping(value = "add")
     public AjaxResult add1(@RequestBody DjPartyMember djPartyMember)
     {
         return AjaxResult.success(djPartyMemberService.insertDjPartyMember(djPartyMember));
     }
 
-    @Log(title = "党员信息", businessType = BusinessType.INSERT)
+    @Log(title = "会员信息", businessType = BusinessType.INSERT)
     @PostMapping(value = "/updateAvatar")
     public AjaxResult updateAvatar(@RequestBody DjPartyMember partyMember)
     {
@@ -303,14 +303,14 @@ public class DjPartyMemberController extends BaseController
     }
 
     /**
-     * 修改党员信息
+     * 修改会员信息
      */
-    @Log(title = "党员信息", businessType = BusinessType.UPDATE)
+    @Log(title = "会员信息", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody Map<String,Object> params)
     {
 
-        //党员变更表
+        //会员变更表
         DjPartyMemberChange memberChange = JSON.parseObject(JSON.toJSONString(params), DjPartyMemberChange.class);
         memberChange.setMemberUuid(UUID.randomUUID().toString());
         memberChange.setChangeType("edit");
@@ -327,9 +327,9 @@ public class DjPartyMemberController extends BaseController
     }
 
     /**
-     * 修改党员信息
+     * 修改会员信息
      */
-    @Log(title = "党员信息", businessType = BusinessType.UPDATE)
+    @Log(title = "会员信息", businessType = BusinessType.UPDATE)
     @PutMapping(value = "/update")
     public AjaxResult update(@RequestBody DjPartyMember djPartyMember)
     {
@@ -337,9 +337,9 @@ public class DjPartyMemberController extends BaseController
     }
 
     /**
-     * 排序党员信息
+     * 排序会员信息
      */
-    @Log(title = "排序党员信息", businessType = BusinessType.UPDATE)
+    @Log(title = "排序会员信息", businessType = BusinessType.UPDATE)
     @PutMapping(value = "/order")
     public AjaxResult order(@RequestBody DjPartyMember djPartyMember)
     {
@@ -380,7 +380,7 @@ public class DjPartyMemberController extends BaseController
 
         DjSysTodo sysTodo = new DjSysTodo();
         sysTodo.setUuid(memberChange.getMemberUuid());
-        sysTodo.setType("3"); //党员变更审批
+        sysTodo.setType("3"); //会员变更审批
         switch (memberChange.getChangeType()){
             case "add" : sysTodo.setTitle(memberChange.getMemberName()+" 新增审批");;  break;
             case "edit" : sysTodo.setTitle(memberChange.getMemberName()+" 修改审批");;  break;
@@ -411,9 +411,9 @@ public class DjPartyMemberController extends BaseController
     }
 
     /**
-     * 删除党员信息
+     * 删除会员信息
      */
-    @Log(title = "党员信息", businessType = BusinessType.DELETE)
+    @Log(title = "会员信息", businessType = BusinessType.DELETE)
     @PostMapping("/del")
     public AjaxResult remove(@RequestBody Map<String,Object> params)
     {
@@ -433,7 +433,7 @@ public class DjPartyMemberController extends BaseController
         return toAjax(djPartyMemberChangeService.insertDjPartyMemberChange(memberChange));
     }
 
-    @Log(title = "党员信息", businessType = BusinessType.DELETE)
+    @Log(title = "会员信息", businessType = BusinessType.DELETE)
     @PostMapping("/enable")
     public AjaxResult enable(@RequestBody Map<String,Object> params)
     {
@@ -456,7 +456,7 @@ public class DjPartyMemberController extends BaseController
     /**
      * 头像上传
      */
-    @Log(title = "党员头像", businessType = BusinessType.UPDATE)
+    @Log(title = "会员头像", businessType = BusinessType.UPDATE)
     @PostMapping("/avatar")
     public AjaxResult avatar(@RequestParam("avatarfile") MultipartFile file) throws IOException
     {

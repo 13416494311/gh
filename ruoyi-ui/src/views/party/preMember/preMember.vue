@@ -5,7 +5,7 @@
         <div class="head-container">
           <el-input
             v-model="partyOrgName"
-            placeholder="请输入党组织架构名称"
+            placeholder="请输入工会架构名称"
             clearable
             size="small"
             prefix-icon="el-icon-search"
@@ -26,17 +26,17 @@
       </el-col>
       <el-col :span="18" :xs="24">
         <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="150px">
-          <el-form-item label="入党积极分子姓名" prop="memberName">
+          <el-form-item label="入会积极分子姓名" prop="memberName">
             <el-input
               v-model="queryParams.memberName"
-              placeholder="请输入入党积极分子姓名"
+              placeholder="请输入入会积极分子姓名"
               clearable
               size="small"
               @keyup.enter.native="handleQuery"
             />
           </el-form-item>
-          <!--<el-form-item label="党员类型" prop="memberType">
-            <el-select v-model="queryParams.memberType" placeholder="请选择党员类型" clearable size="small">
+          <!--<el-form-item label="会员类型" prop="memberType">
+            <el-select v-model="queryParams.memberType" placeholder="请选择会员类型" clearable size="small">
               <el-option
                 v-for="dict in memberTypeOptions"
                 :key="dict.dictValue"
@@ -77,13 +77,13 @@
           <el-table-column label="序号" align="center" type="index" :index="indexMethod"/>
           <el-table-column label="姓名" align="center" prop="memberName"/>
           <el-table-column label="部门" align="center" prop="deptId" :formatter="deptIdFormat" />
-          <el-table-column label="党组织" align="center" prop="partyOrgId" :formatter="partyOrgIdFormat" />
-          <el-table-column label="成为入党积极分子日期" align="center" prop="preMemberData" width="180">
+          <el-table-column label="工会" align="center" prop="partyOrgId" :formatter="partyOrgIdFormat" />
+          <el-table-column label="成为入会积极分子日期" align="center" prop="preMemberData" width="180">
             <template slot-scope="scope">
               <span>{{ parseTime(scope.row.preMemberData, '{y}-{m}-{d}') }}</span>
             </template>
           </el-table-column>
-          <!--<el-table-column label="党员类型" align="center" prop="memberType" :formatter="memberTypeFormat"/>-->
+          <!--<el-table-column label="会员类型" align="center" prop="memberType" :formatter="memberTypeFormat"/>-->
           <!--<el-table-column label="在岗状态" align="center" prop="memberStatus" :formatter="memberStatusFormat"/>-->
           <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
             <template slot-scope="scope">
@@ -141,7 +141,7 @@
         />
       </el-col>
     </el-row>
-    <!-- 添加或修改党员信息对话框 -->
+    <!-- 添加或修改会员信息对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="150px">
@@ -154,7 +154,7 @@
               <el-row>
                 <el-col :span="12">
                   <el-form-item label="姓名" prop="memberName">
-                    <el-input :disabled="disabled"v-model="form.memberName" placeholder="请输入党员姓名"/>
+                    <el-input :disabled="disabled"v-model="form.memberName" placeholder="请输入会员姓名"/>
                   </el-form-item>
                 </el-col>
                 <el-col :span="12">
@@ -403,30 +403,30 @@
 
         <el-card shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
-            <span style="font-weight: bold;font-size: 16px">入党积极分子信息</span>
+            <span style="font-weight: bold;font-size: 16px">入会积极分子信息</span>
           </div>
           <el-row>
             <el-col :span="8">
-              <el-form-item label="党组织" prop="partyOrgId">
+              <el-form-item label="工会" prop="partyOrgId">
                 <select-tree :value="form.partyOrgId"
                              :disabled="disabled"
                              :options="orgOptions"
                              vModel="partyOrgId"
                              @selected="setVModelValue"
-                             placeholder="请选择党组织"
+                             placeholder="请选择工会"
                 />
                 <!--<treeselect :disabled="disabled"
                             v-model="form.partyOrgId"
                             :options="partyOrgOptions"
                             :max-height="130"
-                            placeholder="请选择党组织" />-->
+                            placeholder="请选择工会" />-->
               </el-form-item>
             </el-col>
             <el-col :span="8">
               <el-form-item label="类型" prop="memberType">
                 <el-select :disabled="true"
                            @change="changeMemberType"
-                           v-model="form.memberType" style="width: 100%" placeholder="请选择党员类型">
+                           v-model="form.memberType" style="width: 100%" placeholder="请选择会员类型">
                   <el-option
                     v-for="dict in memberTypeOptions"
                     :key="dict.dictValue"
@@ -454,14 +454,14 @@
 
           <el-row>
             <el-col :span="8">
-              <el-form-item label="成为入党积极分子日期" prop="preMemberData">
+              <el-form-item label="成为入会积极分子日期" prop="preMemberData">
                 <el-date-picker :disabled="disabled"
                                 clearable size="small" style="width: 100%"
                                 v-model="form.preMemberData"
                                 type="date"
                                 value-format="yyyy-MM-dd"
                                 :picker-options="afterTimeOption"
-                                placeholder="选择成为入党积极分子日期">
+                                placeholder="选择成为入会积极分子日期">
                 </el-date-picker>
               </el-form-item>
             </el-col>
@@ -469,50 +469,50 @@
 
           <el-row v-if="false">
             <el-col :span="8">
-              <el-form-item label="加入党日期" prop="joinData">
+              <el-form-item label="加入会日期" prop="joinData">
                 <el-date-picker :disabled="disabled"
                                 clearable size="small" style="width: 100%"
                                 v-model="form.joinData"
                                 type="date"
                                 value-format="yyyy-MM-dd"
                                 :picker-options="afterTimeOption"
-                                placeholder="选择加入党日期">
+                                placeholder="选择加入会日期">
                 </el-date-picker>
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="转为正式党员日期" prop="formalData"
-                            :rules="[{required: formalDataRequire,message: `转为正式党员日期不能为空`,trigger: 'blur'}]">
+              <el-form-item label="转为正式会员日期" prop="formalData"
+                            :rules="[{required: formalDataRequire,message: `转为正式会员日期不能为空`,trigger: 'blur'}]">
                 <el-date-picker :disabled="disabled"
                                 clearable size="small" style="width: 100%"
                                 v-model="form.formalData"
                                 type="date"
                                 value-format="yyyy-MM-dd"
                                 :picker-options="afterTimeOption"
-                                placeholder="选择转为正式党员日期">
+                                placeholder="选择转为正式会员日期">
                 </el-date-picker>
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="加入党支部日期" prop="joinBranchData">
+              <el-form-item label="加入会支部日期" prop="joinBranchData">
                 <el-date-picker :disabled="disabled"
                                 clearable size="small" style="width: 100%"
                                 v-model="form.joinBranchData"
                                 type="date"
                                 value-format="yyyy-MM-dd"
                                 :picker-options="afterTimeOption"
-                                placeholder="选择加入党支部日期">
+                                placeholder="选择加入会支部日期">
                 </el-date-picker>
               </el-form-item>
             </el-col>
           </el-row>
           <el-row v-if="false">
             <el-col :span="8">
-              <el-form-item label="党内职务" prop="partyPositionType">
+              <el-form-item label="会内职务" prop="partyPositionType">
                 <el-select :disabled="disabled"
                            clearable
                            v-model="form.partyPositionType"
-                           style="width: 100%" placeholder="请选择党内职务">
+                           style="width: 100%" placeholder="请选择会内职务">
                   <el-option
                     v-for="dict in partyPositionTypeOptions"
                     :key="dict.dictValue"
@@ -523,21 +523,21 @@
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="上一个党组织" prop="prePartyOrgId">
+              <el-form-item label="上一个工会" prop="prePartyOrgId">
                 <select-tree :value="form.prePartyOrgId"
                              :disabled="disabled"
                              :options="orgOptions"
                              vModel="prePartyOrgId"
                              @selected="setVModelValue"
-                             placeholder="请选择上一个党组织"
+                             placeholder="请选择上一个工会"
                 />
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="流动党员">
+              <el-form-item label="流动会员">
                 <el-select :disabled="disabled"
                            v-model="form.floatingType"
-                           style="width: 100%" placeholder="请选择流动党员">
+                           style="width: 100%" placeholder="请选择流动会员">
                   <el-option
                     v-for="dict in floatingTypeOptions"
                     :key="dict.dictValue"
@@ -550,10 +550,10 @@
           </el-row>
           <el-row v-if="false">
             <el-col :span="8">
-              <el-form-item label="党员分组">
+              <el-form-item label="会员分组">
                 <el-select :disabled="disabled"
                            v-model="form.memberGroup"
-                           style="width: 100%" placeholder="请选择党员分组">
+                           style="width: 100%" placeholder="请选择会员分组">
                   <el-option
                     v-for="dict in memberGroupOptions"
                     :key="dict.dictValue"
@@ -568,7 +568,7 @@
 
         <el-card v-show="false" shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
-            <span style="font-weight: bold;font-size: 16px">党员特长</span>
+            <span style="font-weight: bold;font-size: 16px">会员特长</span>
           </div>
 
           <specialty  ref="specialty" :see="true"/>
@@ -692,7 +692,7 @@
 
       </el-form>
       <div slot="footer" class="dialog-footer" :style="{textAlign:'center'}">
-        <el-button v-if="!disabled && form.memberId !=undefined " type="primary" @click="chooseAuditUser">转为预备党员</el-button>
+        <el-button v-if="!disabled && form.memberId !=undefined " type="primary" @click="chooseAuditUser">转为预备会员</el-button>
         <el-button v-show="!disabled" type="primary" @click="submitForm">保 存</el-button>
         <el-button @click="cancel">取 消</el-button>
       </div>
@@ -846,7 +846,7 @@
       };
       let checkMemberName = (rule, value, callback) => {
         if (!value) {
-          return new Error("请输入党员姓名");
+          return new Error("请输入会员姓名");
         } else {
           let param={};
           param.memberId = this.form.memberId;
@@ -871,7 +871,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员信息表格数据
+        // 会员信息表格数据
         partyMemberList: [],
         // 弹出层标题
         title: "",
@@ -881,7 +881,7 @@
         sexOptions: [],
         // 职务字典
         administrativePositionOptions: [],
-        // 党内职务字典
+        // 会内职务字典
         partyPositionTypeOptions: [],
         // 岗位选项
         postOptions: [],
@@ -895,13 +895,13 @@
         educationOptions: [],
         // 学位字典
         academicDegreeOptions: [],
-        // 党员类型字典
+        // 会员类型字典
         memberTypeOptions: [],
         // 在岗状态字典
         memberStatusOptions: [],
-        // 流动党员字典
+        // 流动会员字典
         floatingTypeOptions: [],
-        // 党员分组字典
+        // 会员分组字典
         memberGroupOptions: [],
         // 生活困难字典
         lifeDifficultyOptions: [],
@@ -913,7 +913,7 @@
         physicalHealthOptions: [],
         // 生活困难类型字典
         lifeDifficultyTypeOptions: [],
-        // 党组织架构树选项
+        // 工会架构树选项
         orgOptions: [],
         partyOrgOptions: [],
         partyOrgOptionsByEdait: [],
@@ -938,7 +938,7 @@
         // 表单校验
         rules: {
           memberName: [
-            {required: true, message: "党员姓名不能为空", trigger: "blur"},
+            {required: true, message: "会员姓名不能为空", trigger: "blur"},
             {validator: checkMemberName, trigger: 'blur'}
           ],
           sex: [
@@ -983,10 +983,10 @@
             { required: true, message: "民族不能为空", trigger: "blur" },
           ],
           /*joinData: [
-            { required: true, message: "入党日期不能为空", trigger: "blur" },
+            { required: true, message: "入会日期不能为空", trigger: "blur" },
           ],*/
           preMemberData: [
-            { required: true, message: "成为入党积极分子日期不能为空", trigger: "blur" },
+            { required: true, message: "成为入会积极分子日期不能为空", trigger: "blur" },
           ],
           housePhone: [
             { validator: checkPhone, trigger: "blur" }
@@ -1000,10 +1000,10 @@
             {validator: checkEmail, trigger: 'blur'}
           ],
           partyOrgId: [
-            { required: true, message: "党组织不能为空", trigger: "blur" }
+            { required: true, message: "工会不能为空", trigger: "blur" }
           ],
           memberType: [
-            { required: true, message: "党员类型不能为空", trigger: "blur" }
+            { required: true, message: "会员类型不能为空", trigger: "blur" }
           ],
           memberStatus: [
             { required: true, message: "在岗状态不能为空", trigger: "blur" }
@@ -1016,7 +1016,7 @@
           marginLeft: '2%',
           paddingRight: '2%',
         },
-        // 党组织架构名称
+        // 工会架构名称
         partyOrgName: undefined,
         partyOrg:{
           partyOrgId:undefined,
@@ -1182,19 +1182,19 @@
           this.deptOptions = response.data;
         });
       },
-      /** 查询党组织下拉树结构 */
+      /** 查询工会下拉树结构 */
       getPartyOrgTreeSelect() {
         partyOrgTreeselect().then(response => {
           this.partyOrgOptions = this.treeInitData(response.data);
         });
       },
-      /** 修改时查询党组织下拉树结构 */
+      /** 修改时查询工会下拉树结构 */
       getPartyOrgTreeSelectByEdit() {
         partyOrgTreeselectByEdit().then(response => {
           this.partyOrgOptionsByEdait = this.treeInitData(response.data);
         });
       },
-      /** 查询党员信息列表 */
+      /** 查询会员信息列表 */
       getList() {
         this.loading = true;
         this.queryParams.delFlag = "all";
@@ -1218,7 +1218,7 @@
       administrativePositionFormat(row, column) {
         return this.selectDictLabel(this.administrativePositionOptions, row.administrativePosition);
       },
-      // 党内职务字典翻译
+      // 会内职务字典翻译
       partyPositionTypeFormat(row, column) {
         return this.selectDictLabel(this.partyPositionTypeOptions, row.partyPositionType);
       },
@@ -1250,11 +1250,11 @@
           return "";
         }
       },
-      // 党组织id翻译
+      // 工会id翻译
       partyOrgIdFormat(row, column){
         return row.djPartyOrg.partyOrgName;
       },
-      // 党员类型字典翻译
+      // 会员类型字典翻译
       memberTypeFormat(row, column) {
         return this.selectDictLabel(this.memberTypeOptions, row.memberType);
       },
@@ -1262,11 +1262,11 @@
       memberStatusFormat(row, column) {
         return this.selectDictLabel(this.memberStatusOptions, row.memberStatus);
       },
-      // 流动党员字典翻译
+      // 流动会员字典翻译
       floatingTypeFormat(row, column) {
         return this.selectDictLabel(this.floatingTypeOptions, row.floatingType);
       },
-      // 党员分组字典翻译
+      // 会员分组字典翻译
       memberGroupFormat(row, column) {
         return this.selectDictLabel(this.memberGroupOptions, row.memberGroup);
       },
@@ -1385,7 +1385,7 @@
           this.$refs.memberEducation.init(this.form.partyMemberUuid);
         })
         this.open = true;
-        this.title = "添加入党积极分子信息";
+        this.title = "添加入会积极分子信息";
       },
       /** 查看按钮操作 */
       handleSee(row){
@@ -1400,7 +1400,7 @@
           this.form.economicSituation = this.form.memberHelp!=null?this.form.memberHelp.economicSituation:undefined;
           this.avatarUrl=process.env.VUE_APP_BASE_API + this.form.avatar;
           this.open = true;
-          this.title = "查看入党积极分子信息";
+          this.title = "查看入会积极分子信息";
         }).then(()=>{
           this.changeMemberType();
           this.$refs.specialty.init(this.form.memberId);
@@ -1424,7 +1424,7 @@
           this.form.economicSituation = this.form.memberHelp!=null?this.form.memberHelp.economicSituation:undefined;
           this.avatarUrl=process.env.VUE_APP_BASE_API + this.form.avatar;
           this.open = true;
-          this.title = "修改入党积极分子信息";
+          this.title = "修改入会积极分子信息";
         }).then(()=>{
           this.changeMemberType();
           this.$refs.specialty.init(this.form.memberId);
@@ -1438,7 +1438,7 @@
             if(this.form.memberId){
               listPartyMemberChange({"partyMemberId":this.form.memberId, "auditState":"2"}).then(response => {
                 if(response.rows&&response.rows.length >0){
-                  this.msgSuccess("该党员变更正在审批中！")
+                  this.msgSuccess("该会员变更正在审批中！")
                 }else{
                   this.$refs.chooseAuditUser.init(6,"add",this.form.memberId)
                 }
@@ -1509,7 +1509,7 @@
       chooseAuditUser1(row,type){
         listPartyMemberChange({"partyMemberId":row.memberId, "auditState":"2"}).then(response => {
           if(response.rows&&response.rows.length >0){
-            this.msgSuccess("该党员变更正在审批中！")
+            this.msgSuccess("该会员变更正在审批中！")
           }else{
             this.$refs.chooseAuditUser.init(6,type,row.memberId)
           }
@@ -1539,7 +1539,7 @@
       /** 导出按钮操作 */
       handleExport() {
         let that = this;
-        this.$confirm('是否确认导出所选党组织所有入党积极分子信息数据项?', "警告", {
+        this.$confirm('是否确认导出所选工会所有入会积极分子信息数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

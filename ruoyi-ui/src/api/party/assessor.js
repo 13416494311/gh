@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党组织述职评议列表
+// 查询工会述职评议列表
 export function listAssessor(query) {
   return request({
     url: '/party/assessor/list',
@@ -9,7 +9,7 @@ export function listAssessor(query) {
   })
 }
 
-// 查询党组织述职评议详细
+// 查询工会述职评议详细
 export function getAssessor(id) {
   return request({
     url: '/party/assessor/' + id,
@@ -17,7 +17,7 @@ export function getAssessor(id) {
   })
 }
 
-// 新增党组织述职评议
+// 新增工会述职评议
 export function addAssessor(data) {
   return request({
     url: '/party/assessor',
@@ -26,7 +26,7 @@ export function addAssessor(data) {
   })
 }
 
-// 修改党组织述职评议
+// 修改工会述职评议
 export function updateAssessor(data) {
   return request({
     url: '/party/assessor',
@@ -35,7 +35,7 @@ export function updateAssessor(data) {
   })
 }
 
-// 删除党组织述职评议
+// 删除工会述职评议
 export function delAssessor(id) {
   return request({
     url: '/party/assessor/' + id,
@@ -43,7 +43,7 @@ export function delAssessor(id) {
   })
 }
 
-// 导出党组织述职评议
+// 导出工会述职评议
 export function exportAssessor(query) {
   return request({
     url: '/party/assessor/export',

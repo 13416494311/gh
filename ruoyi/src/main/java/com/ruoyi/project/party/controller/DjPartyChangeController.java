@@ -24,7 +24,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党组织换届Controller
+ * 工会换届Controller
  *
  * @author ruoyi
  * @date 2021-02-18
@@ -37,7 +37,7 @@ public class DjPartyChangeController extends BaseController
     private IDjPartyChangeService djPartyChangeService;
 
     /**
-     * 查询党组织换届列表
+     * 查询工会换届列表
      */
     @PreAuthorize("@ss.hasPermi('party:partyChange:list')")
     @GetMapping("/list")
@@ -50,10 +50,10 @@ public class DjPartyChangeController extends BaseController
     }
 
     /**
-     * 导出党组织换届列表
+     * 导出工会换届列表
      */
     @PreAuthorize("@ss.hasPermi('party:partyChange:export')")
-    @Log(title = "党组织换届", businessType = BusinessType.EXPORT)
+    @Log(title = "工会换届", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyChange djPartyChange)
     {
@@ -63,7 +63,7 @@ public class DjPartyChangeController extends BaseController
     }
 
     /**
-     * 获取党组织换届详细信息
+     * 获取工会换届详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:partyChange:query')")
     @GetMapping(value = "/{changeId}")
@@ -73,10 +73,10 @@ public class DjPartyChangeController extends BaseController
     }
 
     /**
-     * 新增党组织换届
+     * 新增工会换届
      */
     @PreAuthorize("@ss.hasPermi('party:partyChange:add')")
-    @Log(title = "党组织换届", businessType = BusinessType.INSERT)
+    @Log(title = "工会换届", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyChange djPartyChange)
     {
@@ -84,10 +84,10 @@ public class DjPartyChangeController extends BaseController
     }
 
     /**
-     * 修改党组织换届
+     * 修改工会换届
      */
     @PreAuthorize("@ss.hasPermi('party:partyChange:edit')")
-    @Log(title = "党组织换届", businessType = BusinessType.UPDATE)
+    @Log(title = "工会换届", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyChange djPartyChange)
     {
@@ -95,10 +95,10 @@ public class DjPartyChangeController extends BaseController
     }
 
     /**
-     * 删除党组织换届
+     * 删除工会换届
      */
     @PreAuthorize("@ss.hasPermi('party:partyChange:remove')")
-    @Log(title = "党组织换届", businessType = BusinessType.DELETE)
+    @Log(title = "工会换届", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{changeIds}")
     public AjaxResult remove(@PathVariable Long[] changeIds)
     {

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党组织架构列表
+// 查询工会架构列表
 export function listPartyOrg(query) {
   return request({
     url: '/party/org/list',
@@ -24,14 +24,14 @@ export function getOrgMemberChartData() {
   })
 }
 
-// 查询党组织架构列表
+// 查询工会架构列表
 export function childrenListPartyOrg(partyOrgId) {
   return request({
     url: '/party/org/childrenList/' + partyOrgId,
     method: 'get',
   })
 }
-// 查询党组织架构列表tree
+// 查询工会架构列表tree
 export function partyOrgTree(query) {
   return request({
     url: '/party/org/tree',
@@ -40,7 +40,7 @@ export function partyOrgTree(query) {
   })
 }
 
-// 查询党组织架构列表tree
+// 查询工会架构列表tree
 export function partyOrgTreeselect(query) {
   return request({
     url: '/party/org/treeselect',
@@ -49,7 +49,7 @@ export function partyOrgTreeselect(query) {
   })
 }
 
-// 查询党组织架构列表tree
+// 查询工会架构列表tree
 export function partyOrgTreeselectByEdit(query) {
   return request({
     url: '/party/org/treeselectByEdit',
@@ -58,7 +58,7 @@ export function partyOrgTreeselectByEdit(query) {
   })
 }
 
-// 查询党组织架构详细
+// 查询工会架构详细
 export function getPartyOrgInfo(partyOrgId) {
   return request({
     url: '/party/org/getPartyOrgInfo/' + partyOrgId,
@@ -73,14 +73,14 @@ export function getPartyOrgArchives(partyOrgId) {
   })
 }
 
-// 查询党组织架构详细
+// 查询工会架构详细
 export function getPartyOrg(partyOrgId) {
   return request({
     url: '/party/org/' + partyOrgId,
     method: 'get'
   })
 }
-// 查询党组织架构详细
+// 查询工会架构详细
 export function getPartyOrgs(partyOrgIds) {
   return request({
     url: '/party/org/getPartyOrgs/' + partyOrgIds,
@@ -88,7 +88,7 @@ export function getPartyOrgs(partyOrgIds) {
   })
 }
 
-// 新增党组织架构
+// 新增工会架构
 export function addPartyOrg(data) {
   return request({
     url: '/party/org',
@@ -97,7 +97,7 @@ export function addPartyOrg(data) {
   })
 }
 
-// 修改党组织架构
+// 修改工会架构
 export function updatePartyOrg(data) {
   return request({
     url: '/party/org',
@@ -106,7 +106,7 @@ export function updatePartyOrg(data) {
   })
 }
 
-// 删除党组织架构
+// 删除工会架构
 export function delPartyOrg(partyOrgId) {
   return request({
     url: '/party/org/' + partyOrgId,
@@ -114,7 +114,7 @@ export function delPartyOrg(partyOrgId) {
   })
 }
 
-// 导出党组织架构
+// 导出工会架构
 export function exportPartyOrg(query) {
   return request({
     url: '/party/org/export',

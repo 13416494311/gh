@@ -10,10 +10,10 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="督办党员id" prop="partyMemberId">
+      <el-form-item label="督办会员id" prop="partyMemberId">
         <el-input
           v-model="queryParams.partyMemberId"
-          placeholder="请输入督办党员id"
+          placeholder="请输入督办会员id"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -75,7 +75,7 @@
       <el-table-column label="督办ID" align="center" prop="superviseId"/>
       <el-table-column label="活动uuid" align="center" prop="detailedUuid"/>
       <el-table-column label="督办内容" align="center" prop="content"/>
-      <el-table-column label="督办党员id" align="center" prop="partyMemberId"/>
+      <el-table-column label="督办会员id" align="center" prop="partyMemberId"/>
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
@@ -116,8 +116,8 @@
         <el-form-item label="督办内容" prop="content">
           <el-input v-model="form.content" type="textarea" :autosize="{ minRows: 3, maxRows: 6}" placeholder="请输入内容"/>
         </el-form-item>
-        <el-form-item label="督办党员id" prop="partyMemberId">
-          <el-input v-model="form.partyMemberId" placeholder="请输入督办党员id"/>
+        <el-form-item label="督办会员id" prop="partyMemberId">
+          <el-input v-model="form.partyMemberId" placeholder="请输入督办会员id"/>
         </el-form-item>
         <el-form-item label="删除标志" prop="delFlag">
           <el-input v-model="form.delFlag" placeholder="请输入删除标志"/>

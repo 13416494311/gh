@@ -56,7 +56,7 @@
         activeNames: ['1','2'],
         commentFlag:false,
         commentName:'',
-        label:'政治生日党员',
+        label:'政治生日会员',
         commentList:[],
         commentNum:0,
         commentTitle1:'点赞（'+this.commentNum+'）',

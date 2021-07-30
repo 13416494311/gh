@@ -1,22 +1,22 @@
 <template>
   <div class="app-container">
     <el-form v-if="!see" :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
-      <el-form-item label="党员姓名" prop="memberName">
+      <el-form-item label="会员姓名" prop="memberName">
         <el-input
           v-model="queryParams.memberName"
-          placeholder="请输入党员姓名"
+          placeholder="请输入会员姓名"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="党组织名称" prop="partyOrgId">
+      <el-form-item label="工会名称" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      style="width:100%;"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setVModelValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
       <el-form-item label="特长类别" prop="specialtyCategory">
@@ -88,8 +88,8 @@
               :border="true"  :stripe="true">
       <!-- <el-table-column type="selection" width="55" align="center"/>-->
       <el-table-column label="序号" align="center" type="index" />
-      <el-table-column v-if="!see" label="党员姓名" align="center" prop="djPartyMember.memberName"/>
-      <el-table-column v-if="!see" label="党组织名称" align="center" prop="djPartyOrg.partyOrgFullName" />
+      <el-table-column v-if="!see" label="会员姓名" align="center" prop="djPartyMember.memberName"/>
+      <el-table-column v-if="!see" label="工会名称" align="center" prop="djPartyOrg.partyOrgFullName" />
       <el-table-column label="特长类别" align="center" prop="specialtyCategory"
                        :formatter="specialtyTypeFormat">
       </el-table-column>
@@ -133,7 +133,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党员特长对话框 -->
+    <!-- 添加或修改会员特长对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <div style="height: 50px;"></div>
@@ -142,21 +142,21 @@
           <el-input v-model="form.memberId" placeholder="请输入用户ID"/>
         </el-form-item> -->
 
-        <!-- <el-form-item label="党组织id" prop="partyOrgId">
-          <el-input v-model="form.partyOrgId" placeholder="请输入党组织id"/>
+        <!-- <el-form-item label="工会id" prop="partyOrgId">
+          <el-input v-model="form.partyOrgId" placeholder="请输入工会id"/>
         </el-form-item> -->
         <el-row>
           <el-col :span="12">
-            <el-form-item label="党员姓名" prop="memberName">
+            <el-form-item label="会员姓名" prop="memberName">
               <!--<el-input v-model="form.memberName" placeholder="" :disabled="true"/>-->
-              <el-input :disabled="true" v-model="form.memberName" placeholder="请选择党员">
+              <el-input :disabled="true" v-model="form.memberName" placeholder="请选择会员">
                 <el-button :disabled="disabled" slot="append" icon="el-icon-search"
                            @click="openMemberChoose"></el-button>
               </el-input>
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="党组织" prop="partyOrgID">
+            <el-form-item label="工会" prop="partyOrgID">
               <el-input v-model="form.partyOrgName" placeholder="" :disabled="true"/>
             </el-form-item>
           </el-col>
@@ -247,7 +247,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员特长表格数据
+        // 会员特长表格数据
         specialtyList: [],
         // 弹出层标题
         title: "",
@@ -274,7 +274,7 @@
             {required: true, message: "名字不能为空", trigger: "blur"}
           ],
           // partyOrgID: [
-          //   {required: true, message: "党组织不能为空", trigger: "blur"}
+          //   {required: true, message: "工会不能为空", trigger: "blur"}
           // ],
           specialtyCategory: [
             {required: true, message: "特长类别不能为空", trigger: "blur"}
@@ -322,7 +322,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党员特长列表 */
+      /** 查询会员特长列表 */
       getList() {
         this.loading = true;
 
@@ -376,7 +376,7 @@
         this.reset();
         this.open = true;
         this.disabled = false;
-        this.title = "添加党员特长";
+        this.title = "添加会员特长";
       },
       /** 修改按钮操作 */
       handleUpdate(row) {
@@ -388,7 +388,7 @@
           this.form.partyOrgName = this.form.djPartyOrg.partyOrgName;
           this.form.memberName = this.form.djPartyMember.memberName;
           this.open = true;
-          this.title = "修改党员特长";
+          this.title = "修改会员特长";
         });
       },
       /** 查看按钮操作 */
@@ -401,7 +401,7 @@
           this.form.partyOrgName = this.form.djPartyOrg.partyOrgName;
           this.form.memberName = this.form.djPartyMember.memberName;
           this.open = true;
-          this.title = "查看党员特长";
+          this.title = "查看会员特长";
         });
       },
       /** 提交按钮 */
@@ -435,7 +435,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const specialtyIds = row.specialtyId || this.ids;
-        this.$confirm('是否确认删除党员特长编号为"' + specialtyIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除会员特长编号为"' + specialtyIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -450,7 +450,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党员特长数据项?', "警告", {
+        this.$confirm('是否确认导出所有会员特长数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -479,7 +479,7 @@
           this.partyOrgOptions = this.treeInitData(response.data);
         });
       },
-      //选择党员
+      //选择会员
       setMember(member) {
         this.form.memberId = member.memberId;
         this.form.memberName = member.memberName;
@@ -492,7 +492,7 @@
       },
       openMemberChoose() {
         this.$refs.partyMember.open = true;
-        this.$refs.partyMember.title = "选择党员";
+        this.$refs.partyMember.title = "选择会员";
         this.$refs.partyMember.queryParams.memberType ="all";
       },
     }

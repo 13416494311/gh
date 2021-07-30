@@ -21,7 +21,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党组织职务Controller
+ * 工会职务Controller
  *
  * @author ruoyi
  * @date 2020-08-08
@@ -34,7 +34,7 @@ public class DjPartyOrgPostController extends BaseController
     private IDjPartyOrgPostService djPartyOrgPostService;
 
     /**
-     * 查询党组织职务列表
+     * 查询工会职务列表
      */
     @GetMapping("/list")
     public TableDataInfo list(DjPartyOrgPost djPartyOrgPost)
@@ -45,9 +45,9 @@ public class DjPartyOrgPostController extends BaseController
     }
 
     /**
-     * 导出党组织职务列表
+     * 导出工会职务列表
      */
-    @Log(title = "党组织职务", businessType = BusinessType.EXPORT)
+    @Log(title = "工会职务", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyOrgPost djPartyOrgPost)
     {
@@ -57,7 +57,7 @@ public class DjPartyOrgPostController extends BaseController
     }
 
     /**
-     * 获取党组织职务详细信息
+     * 获取工会职务详细信息
      */
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id)
@@ -66,9 +66,9 @@ public class DjPartyOrgPostController extends BaseController
     }
 
     /**
-     * 新增党组织职务
+     * 新增工会职务
      */
-    @Log(title = "党组织职务", businessType = BusinessType.INSERT)
+    @Log(title = "工会职务", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyOrgPost djPartyOrgPost)
     {
@@ -76,9 +76,9 @@ public class DjPartyOrgPostController extends BaseController
     }
 
     /**
-     * 修改党组织职务
+     * 修改工会职务
      */
-    @Log(title = "党组织职务", businessType = BusinessType.UPDATE)
+    @Log(title = "工会职务", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyOrgPost djPartyOrgPost)
     {
@@ -86,9 +86,9 @@ public class DjPartyOrgPostController extends BaseController
     }
 
     /**
-     * 删除党组织职务
+     * 删除工会职务
      */
-    @Log(title = "党组织职务", businessType = BusinessType.DELETE)
+    @Log(title = "工会职务", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids)
     {

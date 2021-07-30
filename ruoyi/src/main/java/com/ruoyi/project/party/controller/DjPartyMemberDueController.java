@@ -28,7 +28,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党员党费Controller
+ * 会员会费Controller
  *
  * @author wandengfeng
  * @date 2021-06-15
@@ -43,7 +43,7 @@ public class DjPartyMemberDueController extends BaseController
 
 
     /**
-     * 查询党员党费列表
+     * 查询会员会费列表
      */
     @PreAuthorize("@ss.hasPermi('party:due:list')")
     @GetMapping("/listDueMember")
@@ -55,7 +55,7 @@ public class DjPartyMemberDueController extends BaseController
     }
 
     /**
-     * 查询党员党费列表
+     * 查询会员会费列表
      */
     @PreAuthorize("@ss.hasPermi('party:due:list')")
     @PostMapping("/list")
@@ -68,10 +68,10 @@ public class DjPartyMemberDueController extends BaseController
     }
 
     /**
-     * 导出党员党费列表
+     * 导出会员会费列表
      */
     @PreAuthorize("@ss.hasPermi('party:due:export')")
-    @Log(title = "党员党费", businessType = BusinessType.EXPORT)
+    @Log(title = "会员会费", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyMemberDue djPartyMemberDue)
     {
@@ -81,7 +81,7 @@ public class DjPartyMemberDueController extends BaseController
     }
 
     /**
-     * 获取党员党费详细信息
+     * 获取会员会费详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:due:query')")
     @GetMapping(value = "/{dueMemberId}")
@@ -91,10 +91,10 @@ public class DjPartyMemberDueController extends BaseController
     }
 
     /**
-     * 新增党员党费
+     * 新增会员会费
      */
     @PreAuthorize("@ss.hasPermi('party:due:add')")
-    @Log(title = "党员党费", businessType = BusinessType.INSERT)
+    @Log(title = "会员会费", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyMemberDue djPartyMemberDue)
     {
@@ -102,10 +102,10 @@ public class DjPartyMemberDueController extends BaseController
     }
 
     /**
-     * 修改党员党费
+     * 修改会员会费
      */
     @PreAuthorize("@ss.hasPermi('party:due:edit')")
-    @Log(title = "党员党费", businessType = BusinessType.UPDATE)
+    @Log(title = "会员会费", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyMemberDue djPartyMemberDue)
     {
@@ -113,10 +113,10 @@ public class DjPartyMemberDueController extends BaseController
     }
 
     /**
-     * 修改党员党费
+     * 修改会员会费
      */
     @PreAuthorize("@ss.hasPermi('party:due:edit')")
-    @Log(title = "党员党费", businessType = BusinessType.UPDATE)
+    @Log(title = "会员会费", businessType = BusinessType.UPDATE)
     @PostMapping("/updateMemberDue")
     public AjaxResult updateMemberDue(@RequestBody List<DjPartyMember> partyMemberList)
     {
@@ -129,10 +129,10 @@ public class DjPartyMemberDueController extends BaseController
     }
 
     /**
-     * 删除党员党费
+     * 删除会员会费
      */
     @PreAuthorize("@ss.hasPermi('party:due:remove')")
-    @Log(title = "党员党费", businessType = BusinessType.DELETE)
+    @Log(title = "会员会费", businessType = BusinessType.DELETE)
     @DeleteMapping("/{dueMemberIds}")
     public AjaxResult remove(@PathVariable Long[] dueMemberIds)
     {

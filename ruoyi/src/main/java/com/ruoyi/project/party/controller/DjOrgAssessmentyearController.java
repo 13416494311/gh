@@ -21,7 +21,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党组织考核年Controller
+ * 工会考核年Controller
  *
  * @author admin
  * @date 2021-03-10
@@ -35,7 +35,7 @@ public class DjOrgAssessmentyearController extends BaseController
 
 
     /**
-     * 查询党组织考核年列表
+     * 查询工会考核年列表
      */
     @PreAuthorize("@ss.hasPermi('party:assessmentyear:list')")
     @PostMapping("/list")
@@ -47,10 +47,10 @@ public class DjOrgAssessmentyearController extends BaseController
     }
 
     /**
-     * 导出党组织考核年列表
+     * 导出工会考核年列表
      */
     @PreAuthorize("@ss.hasPermi('party:assessmentyear:export')")
-    @Log(title = "党组织考核年", businessType = BusinessType.EXPORT)
+    @Log(title = "工会考核年", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjOrgAssessmentyear djOrgAssessmentyear)
     {
@@ -60,7 +60,7 @@ public class DjOrgAssessmentyearController extends BaseController
     }
 
     /**
-     * 获取党组织考核年详细信息
+     * 获取工会考核年详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:assessmentyear:query')")
     @GetMapping(value = "/{id}")
@@ -72,10 +72,10 @@ public class DjOrgAssessmentyearController extends BaseController
 
 
     /**
-     * 新增党组织考核年
+     * 新增工会考核年
      */
     @PreAuthorize("@ss.hasPermi('party:assessmentyear:add')")
-    @Log(title = "党组织考核年", businessType = BusinessType.INSERT)
+    @Log(title = "工会考核年", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjOrgAssessmentyear djOrgAssessmentyear)
     {
@@ -83,10 +83,10 @@ public class DjOrgAssessmentyearController extends BaseController
     }
 
     /**
-     * 修改党组织考核年
+     * 修改工会考核年
      */
     @PreAuthorize("@ss.hasPermi('party:assessmentyear:edit')")
-    @Log(title = "党组织考核年", businessType = BusinessType.UPDATE)
+    @Log(title = "工会考核年", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjOrgAssessmentyear djOrgAssessmentyear)
     {
@@ -94,10 +94,10 @@ public class DjOrgAssessmentyearController extends BaseController
     }
 
     /**
-     * 删除党组织考核年
+     * 删除工会考核年
      */
     @PreAuthorize("@ss.hasPermi('party:assessmentyear:remove')")
-    @Log(title = "党组织考核年", businessType = BusinessType.DELETE)
+    @Log(title = "工会考核年", businessType = BusinessType.DELETE)
     @DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids)
     {

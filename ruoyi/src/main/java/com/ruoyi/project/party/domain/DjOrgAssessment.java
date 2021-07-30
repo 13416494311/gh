@@ -9,7 +9,7 @@ import com.ruoyi.framework.web.domain.BaseEntity;
 import java.util.List;
 
 /**
- * 党组织考核对象 dj_org_assessment
+ * 工会考核对象 dj_org_assessment
  *
  * @author admin
  * @date 2021-03-10
@@ -32,8 +32,8 @@ public class DjOrgAssessment extends BaseEntity
     private String assessmentyearUuid;
 
     private DjOrgAssessmentyear assessmentyear;
-    /** 党组织id */
-    @Excel(name = "党组织id")
+    /** 工会id */
+    @Excel(name = "工会id")
     private Long partyOrgId;
 
     private DjPartyOrg djPartyOrg;

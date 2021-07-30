@@ -23,7 +23,7 @@ import com.ruoyi.project.party.service.IDjOrgAssessmentService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党组织考核Service业务层处理
+ * 工会考核Service业务层处理
  *
  * @author admin
  * @date 2021-03-10
@@ -45,10 +45,10 @@ public class DjOrgAssessmentServiceImpl implements IDjOrgAssessmentService
     @Autowired
     private ISysDictDataService dictDataService;
     /**
-     * 查询党组织考核
+     * 查询工会考核
      *
-     * @param id 党组织考核ID
-     * @return 党组织考核
+     * @param id 工会考核ID
+     * @return 工会考核
      */
     @Override
     public DjOrgAssessment selectDjOrgAssessmentById(Long id)
@@ -66,10 +66,10 @@ public class DjOrgAssessmentServiceImpl implements IDjOrgAssessmentService
         return assessment;
     }
     /**
-     * 查询党组织考核
+     * 查询工会考核
      *
-     * @param uuid 党组织考核ID
-     * @return 党组织考核
+     * @param uuid 工会考核ID
+     * @return 工会考核
      */
     @Override
     public DjOrgAssessment selectDjOrgAssessmentByUuid(String uuid)
@@ -89,10 +89,10 @@ public class DjOrgAssessmentServiceImpl implements IDjOrgAssessmentService
     }
 
     /**
-     * 查询党组织考核列表
+     * 查询工会考核列表
      *
-     * @param djOrgAssessment 党组织考核
-     * @return 党组织考核
+     * @param djOrgAssessment 工会考核
+     * @return 工会考核
      */
     @Override
     public List<DjOrgAssessment> selectDjOrgAssessmentList(DjOrgAssessment djOrgAssessment)
@@ -133,9 +133,9 @@ public class DjOrgAssessmentServiceImpl implements IDjOrgAssessmentService
     }
 
     /**
-     * 新增党组织考核
+     * 新增工会考核
      *
-     * @param djOrgAssessment 党组织考核
+     * @param djOrgAssessment 工会考核
      * @return 结果
      */
     @Override
@@ -148,9 +148,9 @@ public class DjOrgAssessmentServiceImpl implements IDjOrgAssessmentService
     }
 
     /**
-     * 修改党组织考核
+     * 修改工会考核
      *
-     * @param djOrgAssessment 党组织考核
+     * @param djOrgAssessment 工会考核
      * @return 结果
      */
     @Override
@@ -175,9 +175,9 @@ public class DjOrgAssessmentServiceImpl implements IDjOrgAssessmentService
     }
 
     /**
-     * 批量删除党组织考核
+     * 批量删除工会考核
      *
-     * @param ids 需要删除的党组织考核ID
+     * @param ids 需要删除的工会考核ID
      * @return 结果
      */
     @Override
@@ -187,9 +187,9 @@ public class DjOrgAssessmentServiceImpl implements IDjOrgAssessmentService
     }
 
     /**
-     * 删除党组织考核信息
+     * 删除工会考核信息
      *
-     * @param id 党组织考核ID
+     * @param id 工会考核ID
      * @return 结果
      */
     @Override
@@ -214,14 +214,14 @@ public class DjOrgAssessmentServiceImpl implements IDjOrgAssessmentService
         Double performanceAppraisalScoreRatio= Double.parseDouble(dictDataService.selectDictLabel("assessment_ratio","2"));
         for(String partyOrgId:partyOrgIds.split(",")){
             String uuid = UUID.randomUUID().toString();
-            //创建党组织考核主表
+            //创建工会考核主表
             DjOrgAssessment djOrgAssessment =new DjOrgAssessment();
             djOrgAssessment.setAssessmentUuid(uuid);
             djOrgAssessment.setAssessmentyearUuid(assessmentyearUuid);
             djOrgAssessment.setPartyOrgId(Long.parseLong(partyOrgId));
             djOrgAssessment.setOrgAssessmentStatus("0");
             djOrgAssessment.setPerformanceAppraisalStatus("0");
-            //创建党组织考核项打分表
+            //创建工会考核项打分表
             DjOrgAssessmentListScore djOrgAssessmentListScore = new DjOrgAssessmentListScore();
             djOrgAssessmentListScore.setAssessmentUuid(uuid);
             //双项考评打分表

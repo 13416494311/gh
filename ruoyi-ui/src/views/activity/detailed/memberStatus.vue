@@ -64,10 +64,10 @@
             { required: true, message: "活动计划ID不能为空", trigger: "blur" }
           ],
           partyOrgId: [
-            { required: true, message: "党组织ID不能为空", trigger: "blur" }
+            { required: true, message: "工会ID不能为空", trigger: "blur" }
           ],
           partyMemberId: [
-            { required: true, message: "党组织成员id不能为空", trigger: "blur" }
+            { required: true, message: "工会成员id不能为空", trigger: "blur" }
           ],
           status: [
             { required: true, message: "活动参与人参与状态不能为空", trigger: "blur" }

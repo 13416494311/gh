@@ -34,7 +34,7 @@
         <i class="aui-iconfont aui-icon-comment"></i>
         <div class="aui-bar-tab-label">消息</div>
     </div>
-    <div id="mytabbar" class="aui-bar-tab-item" tapmode onclick="randomSwitchBtn(this,'我是党员',3)">
+    <div id="mytabbar" class="aui-bar-tab-item" tapmode onclick="randomSwitchBtn(this,'我是会员',3)">
         <i class="aui-iconfont aui-icon-my"></i>
         <div class="aui-bar-tab-label">个人中心</div>
     </div>

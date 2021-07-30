@@ -1,22 +1,22 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
-      <el-form-item label="党员姓名" prop="memberName">
+      <el-form-item label="会员姓名" prop="memberName">
         <el-input
           v-model="queryParams.memberName"
-          placeholder="请输入党员姓名"
+          placeholder="请输入会员姓名"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="党组织名称" prop="partyOrgId">
+      <el-form-item label="工会名称" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      style="width:100%;"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setVModelValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
 
@@ -52,8 +52,8 @@
               :border="true" v-loading="loading" :data="suggestionsList" @selection-change="handleSelectionChange">
       <el-table-column label="序号" align="center" type="index" />
 
-      <el-table-column label="党员姓名" align="center" prop="partyMember.memberName" />
-      <el-table-column label="党组织名称" align="center" prop="partyOrg.partyOrgFullName" />
+      <el-table-column label="会员姓名" align="center" prop="partyMember.memberName" />
+      <el-table-column label="工会名称" align="center" prop="partyOrg.partyOrgFullName" />
       <el-table-column label="创建日期" align="center" prop="recordTime" width="180">
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.recordTime, '{y}-{m}-{d}') }}</span>
@@ -97,7 +97,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党员建议对话框 -->
+    <!-- 添加或修改会员建议对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight"  :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle"  label-width="150px">
@@ -107,15 +107,15 @@
           </div>
           <el-row>
             <el-col :span="12">
-              <el-form-item label="党员姓名" prop="memberId">
+              <el-form-item label="会员姓名" prop="memberId">
                 <el-input v-model="form.partyMemberName"
-                          placeholder="请输入党员姓名" :disabled="true"  />
+                          placeholder="请输入会员姓名" :disabled="true"  />
               </el-form-item>
             </el-col>
             <el-col :span="12">
-              <el-form-item label="党组织名称" prop="partyOrgId">
+              <el-form-item label="工会名称" prop="partyOrgId">
                 <el-input  v-model="form.partyOrgName"
-                           placeholder="请输入党组织名称" :disabled="true" />
+                           placeholder="请输入工会名称" :disabled="true" />
               </el-form-item>
             </el-col>
           </el-row>
@@ -208,7 +208,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员建议/心愿表格数据
+        // 会员建议/心愿表格数据
         suggestionsList: [],
         // 弹出层标题
         title: "",
@@ -307,7 +307,7 @@
         }
         this.handleQuery();
       },
-      /** 查询党员建议/心愿列表 */
+      /** 查询会员建议/心愿列表 */
       getList() {
         this.loading = true;
 

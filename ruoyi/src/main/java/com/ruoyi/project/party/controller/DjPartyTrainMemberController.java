@@ -23,7 +23,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 参与培训党员Controller
+ * 参与培训会员Controller
  *
  * @author ruoyi
  * @date 2021-03-09
@@ -37,7 +37,7 @@ public class DjPartyTrainMemberController extends BaseController
 
 
     /**
-     * 查询参与培训党员列表
+     * 查询参与培训会员列表
      */
     @GetMapping("/getTrainRankInfo/{rankType}")
     public AjaxResult getTrainRankInfo(@PathVariable("rankType") String rankType)
@@ -47,7 +47,7 @@ public class DjPartyTrainMemberController extends BaseController
     }
 
     /**
-     * 查询参与培训党员列表
+     * 查询参与培训会员列表
      */
     @GetMapping("/list")
     public TableDataInfo list(DjPartyTrainMember djPartyTrainMember)
@@ -58,10 +58,10 @@ public class DjPartyTrainMemberController extends BaseController
     }
 
     /**
-     * 导出参与培训党员列表
+     * 导出参与培训会员列表
      */
     @PreAuthorize("@ss.hasPermi('party:trainMember:export')")
-    @Log(title = "参与培训党员", businessType = BusinessType.EXPORT)
+    @Log(title = "参与培训会员", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyTrainMember djPartyTrainMember)
     {
@@ -71,7 +71,7 @@ public class DjPartyTrainMemberController extends BaseController
     }
 
     /**
-     * 获取参与培训党员详细信息
+     * 获取参与培训会员详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:trainMember:query')")
     @GetMapping(value = "/{trainMemberId}")
@@ -81,10 +81,10 @@ public class DjPartyTrainMemberController extends BaseController
     }
 
     /**
-     * 新增参与培训党员
+     * 新增参与培训会员
      */
     @PreAuthorize("@ss.hasPermi('party:trainMember:add')")
-    @Log(title = "参与培训党员", businessType = BusinessType.INSERT)
+    @Log(title = "参与培训会员", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyTrainMember djPartyTrainMember)
     {
@@ -92,7 +92,7 @@ public class DjPartyTrainMemberController extends BaseController
     }
 
     @PreAuthorize("@ss.hasPermi('party:trainMember:add')")
-    @Log(title = "参与培训党员", businessType = BusinessType.UPDATE)
+    @Log(title = "参与培训会员", businessType = BusinessType.UPDATE)
     @PostMapping("/addTrainMembers")
     public AjaxResult addMembers(String trainMemberIds,String trainUuid,String partyOrgId)
     {
@@ -108,10 +108,10 @@ public class DjPartyTrainMemberController extends BaseController
     }
 
     /**
-     * 修改参与培训党员
+     * 修改参与培训会员
      */
     @PreAuthorize("@ss.hasPermi('party:trainMember:edit')")
-    @Log(title = "参与培训党员", businessType = BusinessType.UPDATE)
+    @Log(title = "参与培训会员", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyTrainMember djPartyTrainMember)
     {
@@ -119,7 +119,7 @@ public class DjPartyTrainMemberController extends BaseController
     }
 
     @PreAuthorize("@ss.hasPermi('party:trainMember:edit')")
-    @Log(title = "参与培训党员", businessType = BusinessType.UPDATE)
+    @Log(title = "参与培训会员", businessType = BusinessType.UPDATE)
     @PostMapping("/updateMembers")
     public AjaxResult updateMembers(String trainMemberIds,String status)
     {
@@ -133,10 +133,10 @@ public class DjPartyTrainMemberController extends BaseController
     }
 
     /**
-     * 删除参与培训党员
+     * 删除参与培训会员
      */
     @PreAuthorize("@ss.hasPermi('party:trainMember:remove')")
-    @Log(title = "参与培训党员", businessType = BusinessType.DELETE)
+    @Log(title = "参与培训会员", businessType = BusinessType.DELETE)
     @DeleteMapping("/{trainMemberIds}")
     public AjaxResult remove(@PathVariable Long[] trainMemberIds)
     {

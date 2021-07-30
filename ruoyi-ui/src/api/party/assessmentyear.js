@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党组织考核年列表
+// 查询工会考核年列表
 export function listAssessmentyear(data) {
   return request({
     url: '/party/assessmentyear/list',
@@ -9,7 +9,7 @@ export function listAssessmentyear(data) {
   })
 }
 
-// 查询党组织考核年详细
+// 查询工会考核年详细
 export function getAssessmentyear(id) {
   return request({
     url: '/party/assessmentyear/' + id,
@@ -17,7 +17,7 @@ export function getAssessmentyear(id) {
   })
 }
 
-// 新增党组织考核年
+// 新增工会考核年
 export function addAssessmentyear(data) {
   return request({
     url: '/party/assessmentyear',
@@ -26,7 +26,7 @@ export function addAssessmentyear(data) {
   })
 }
 
-// 修改党组织考核年
+// 修改工会考核年
 export function updateAssessmentyear(data) {
   return request({
     url: '/party/assessmentyear',
@@ -35,7 +35,7 @@ export function updateAssessmentyear(data) {
   })
 }
 
-// 删除党组织考核年
+// 删除工会考核年
 export function delAssessmentyear(id) {
   return request({
     url: '/party/assessmentyear/' + id,
@@ -43,7 +43,7 @@ export function delAssessmentyear(id) {
   })
 }
 
-// 导出党组织考核年
+// 导出工会考核年
 export function exportAssessmentyear(query) {
   return request({
     url: '/party/assessmentyear/export',

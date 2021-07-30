@@ -8,7 +8,7 @@
                 :border="true"
                 v-loading="loading" :data="assessmentList" >
         <el-table-column label="序号" align="center" type="index"/>
-        <el-table-column label="党组织名称" width="180" align="center"  :formatter="partyOrgFormat"
+        <el-table-column label="工会名称" width="180" align="center"  :formatter="partyOrgFormat"
                          prop="djPartyOrg.partyOrgFullName"/>
         <el-table-column v-for="(item,index) in scoreItemList"
                          :key="index"

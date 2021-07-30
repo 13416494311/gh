@@ -2,7 +2,7 @@
   <div>
     <el-card shadow="always" style="margin-bottom: 30px;">
       <div slot="header" style="height: 25px">
-        <span style="font-weight: bold;font-size: 16px">党组织职务</span>
+        <span style="font-weight: bold;font-size: 16px">工会职务</span>
         <el-button
           type="primary"
           icon="el-icon-plus"
@@ -68,10 +68,10 @@
           </el-select>
         </el-form-item>
         <el-form-item label="换届前" prop="preMemberId">
-          <el-input :disabled="true" v-model="form.preMemberName" placeholder="换届前党员" />
+          <el-input :disabled="true" v-model="form.preMemberName" placeholder="换届前会员" />
         </el-form-item>
         <el-form-item label="换届后" prop="curMemberId">
-          <el-input :disabled="true" v-model="form.curMemberName" placeholder="请选择换届后党员">
+          <el-input :disabled="true" v-model="form.curMemberName" placeholder="请选择换届后会员">
             <el-button :disabled="disabled" slot="append" icon="el-icon-search"
                        @click="openMemberChoose"></el-button>
           </el-input>
@@ -209,7 +209,7 @@
       },
       openMemberChoose(){
         this.$refs.partyMember.open = true ;
-        this.$refs.partyMember.title = "选择党员";
+        this.$refs.partyMember.title = "选择会员";
       },
       /** 对话框自适应高度 */
       getHeight(){
@@ -273,7 +273,7 @@
       /** 新增按钮操作 */
       handleAdd() {
         if(!this.partyOrgId){
-          this.msgInfo("请先选择换届党组织!");
+          this.msgInfo("请先选择换届工会!");
           return ;
         }
         this.reset();

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党组织换届列表
+// 查询工会换届列表
 export function listPartyChange(query) {
   return request({
     url: '/party/partyChange/list',
@@ -9,7 +9,7 @@ export function listPartyChange(query) {
   })
 }
 
-// 查询党组织换届详细
+// 查询工会换届详细
 export function getPartyChange(changeId) {
   return request({
     url: '/party/partyChange/' + changeId,
@@ -17,7 +17,7 @@ export function getPartyChange(changeId) {
   })
 }
 
-// 新增党组织换届
+// 新增工会换届
 export function addPartyChange(data) {
   return request({
     url: '/party/partyChange',
@@ -26,7 +26,7 @@ export function addPartyChange(data) {
   })
 }
 
-// 修改党组织换届
+// 修改工会换届
 export function updatePartyChange(data) {
   return request({
     url: '/party/partyChange',
@@ -36,7 +36,7 @@ export function updatePartyChange(data) {
 }
 
 
-// 提醒党组织换届
+// 提醒工会换届
 export function remindPartyChange(data) {
   return request({
     url: '/party/partyChange/remind',
@@ -45,7 +45,7 @@ export function remindPartyChange(data) {
   })
 }
 
-// 删除党组织换届
+// 删除工会换届
 export function delPartyChange(changeId) {
   return request({
     url: '/party/partyChange/' + changeId,
@@ -53,7 +53,7 @@ export function delPartyChange(changeId) {
   })
 }
 
-// 导出党组织换届
+// 导出工会换届
 export function exportPartyChange(query) {
   return request({
     url: '/party/partyChange/export',

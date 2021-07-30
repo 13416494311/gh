@@ -15,7 +15,7 @@ import com.ruoyi.project.party.service.IDjPartyOrgService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党组织述职评议Service业务层处理
+ * 工会述职评议Service业务层处理
  *
  * @author admin
  * @date 2021-03-23
@@ -32,10 +32,10 @@ public class DjOrgAssessmentAssessorServiceImpl implements IDjOrgAssessmentAsses
     private IDjPartyOrgService djPartyOrgService;
 
     /**
-     * 查询党组织述职评议
+     * 查询工会述职评议
      *
-     * @param id 党组织述职评议ID
-     * @return 党组织述职评议
+     * @param id 工会述职评议ID
+     * @return 工会述职评议
      */
     @Override
     public DjOrgAssessmentAssessor selectDjOrgAssessmentAssessorById(Long id)
@@ -44,10 +44,10 @@ public class DjOrgAssessmentAssessorServiceImpl implements IDjOrgAssessmentAsses
     }
 
     /**
-     * 查询党组织述职评议列表
+     * 查询工会述职评议列表
      *
-     * @param djOrgAssessmentAssessor 党组织述职评议
-     * @return 党组织述职评议
+     * @param djOrgAssessmentAssessor 工会述职评议
+     * @return 工会述职评议
      */
     @Override
     public List<DjOrgAssessmentAssessor> selectDjOrgAssessmentAssessorList(DjOrgAssessmentAssessor djOrgAssessmentAssessor)
@@ -69,9 +69,9 @@ public class DjOrgAssessmentAssessorServiceImpl implements IDjOrgAssessmentAsses
     }
 
     /**
-     * 新增党组织述职评议
+     * 新增工会述职评议
      *
-     * @param djOrgAssessmentAssessor 党组织述职评议
+     * @param djOrgAssessmentAssessor 工会述职评议
      * @return 结果
      */
     @Override
@@ -82,9 +82,9 @@ public class DjOrgAssessmentAssessorServiceImpl implements IDjOrgAssessmentAsses
     }
 
     /**
-     * 修改党组织述职评议
+     * 修改工会述职评议
      *
-     * @param djOrgAssessmentAssessor 党组织述职评议
+     * @param djOrgAssessmentAssessor 工会述职评议
      * @return 结果
      */
     @Override
@@ -95,9 +95,9 @@ public class DjOrgAssessmentAssessorServiceImpl implements IDjOrgAssessmentAsses
     }
 
     /**
-     * 批量删除党组织述职评议
+     * 批量删除工会述职评议
      *
-     * @param ids 需要删除的党组织述职评议ID
+     * @param ids 需要删除的工会述职评议ID
      * @return 结果
      */
     @Override
@@ -107,9 +107,9 @@ public class DjOrgAssessmentAssessorServiceImpl implements IDjOrgAssessmentAsses
     }
 
     /**
-     * 删除党组织述职评议信息
+     * 删除工会述职评议信息
      *
-     * @param id 党组织述职评议ID
+     * @param id 工会述职评议ID
      * @return 结果
      */
     @Override

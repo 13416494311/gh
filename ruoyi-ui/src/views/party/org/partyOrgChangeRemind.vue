@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
-      <el-form-item label="党组织名称" prop="partyOrgName">
+      <el-form-item label="工会名称" prop="partyOrgName">
         <el-input
           v-model="queryParams.partyOrgName"
-          placeholder="请输入党组织名称"
+          placeholder="请输入工会名称"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -39,9 +39,9 @@
       :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
     >
       <el-table-column label="序号" align="center" type="index"/>
-      <el-table-column label="党组织名称" align="left" prop="partyOrgName" width="300"/>
+      <el-table-column label="工会名称" align="left" prop="partyOrgName" width="300"/>
       <el-table-column label="组织类型" align="center" prop="orgType" :formatter="orgTypeFormat"/>
-      <el-table-column label="党组织负责人" align="center" prop="partyOrgPost" :formatter="partyPositionFormat"/>
+      <el-table-column label="工会负责人" align="center" prop="partyOrgPost" :formatter="partyPositionFormat"/>
       <el-table-column label="建立时间" align="center" prop="buildTime" width="180">
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.buildTime, '{y}-{m}-{d}') }}</span>
@@ -89,13 +89,13 @@
       return {
         // 遮罩层
         loading: true,
-        // 党组织架构表格数据
+        // 工会架构表格数据
         partyOrgList: [],
         // 组织类型字典
         orgTypeOptions: [],
-        // 党组织类别字典
+        // 工会类别字典
         partyOrgTypeOptions: [],
-        // 党组织状态字典
+        // 工会状态字典
         statusOptions: [],
         // 查询参数
         queryParams: {
@@ -154,7 +154,7 @@
         this.resetForm("queryForm");
         this.handleQuery();
       },
-      /** 查询党组织架构列表 */
+      /** 查询工会架构列表 */
       getList() {
         this.loading = true;
         listPartyOrg(this.queryParams).then(response => {
@@ -183,11 +183,11 @@
         }
         return result;
       },
-      // 党组织类别字典翻译
+      // 工会类别字典翻译
       partyOrgTypeFormat(row, column) {
         return this.selectDictLabel(this.partyOrgTypeOptions, row.partyOrgType);
       },
-      // 党组织状态字典翻译
+      // 工会状态字典翻译
       statusFormat(row, column) {
         return this.selectDictLabel(this.statusOptions, row.status);
       },
@@ -201,7 +201,7 @@
         }else{
           msg = '还有'+days+'天';
         }
-        this.$confirm('距下次换届'+msg+',是否确认发送党组织换届提醒?', "提示", {
+        this.$confirm('距下次换届'+msg+',是否确认发送工会换届提醒?', "提示", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "info"

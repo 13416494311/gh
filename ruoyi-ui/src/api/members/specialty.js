@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党员特长列表
+// 查询会员特长列表
 export function listSpecialty(query) {
   return request({
     url: '/members/specialty/list',
@@ -9,7 +9,7 @@ export function listSpecialty(query) {
   })
 }
 
-// 查询党员特长详细
+// 查询会员特长详细
 export function getSpecialty(specialtyId) {
   return request({
     url: '/members/specialty/' + specialtyId,
@@ -17,7 +17,7 @@ export function getSpecialty(specialtyId) {
   })
 }
 
-// 新增党员特长
+// 新增会员特长
 export function addSpecialty(data) {
   return request({
     url: '/members/specialty',
@@ -26,7 +26,7 @@ export function addSpecialty(data) {
   })
 }
 
-// 修改党员特长
+// 修改会员特长
 export function updateSpecialty(data) {
   return request({
     url: '/members/specialty',
@@ -35,7 +35,7 @@ export function updateSpecialty(data) {
   })
 }
 
-// 删除党员特长
+// 删除会员特长
 export function delSpecialty(specialtyId) {
   return request({
     url: '/members/specialty/' + specialtyId,
@@ -43,7 +43,7 @@ export function delSpecialty(specialtyId) {
   })
 }
 
-// 导出党员特长
+// 导出会员特长
 export function exportSpecialty(query) {
   return request({
     url: '/members/specialty/export',

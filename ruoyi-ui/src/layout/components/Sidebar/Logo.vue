@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      title: '智慧党建系统',
+      title: '智慧工会系统',
       logo: logoImg
     }
   }
@@ -48,9 +48,10 @@ export default {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #A51010;
-  text-align: center;
+  background: #1890ff;
+  //text-align: center;
   overflow: hidden;
+  padding-left: 10px;
 
   & .sidebar-logo-link {
     height: 100%;
@@ -69,7 +70,8 @@ export default {
       color: #fff;
       font-weight: 600;
       line-height: 50px;
-      font-size: 14px;
+      font-size: 16px;
+      letter-spacing: 3px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;
     }

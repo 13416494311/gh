@@ -31,7 +31,7 @@
       <el-form-item label="党委评分" prop="assessorScore">
         <el-input
           v-model="queryParams.assessorScore"
-          placeholder="请输入党委评分"
+          placeholder="请输入会委评分"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -167,7 +167,7 @@
           <el-input v-model="form.selfScore" placeholder="请输入自评分数"/>
         </el-form-item>
         <el-form-item label="党委评分" prop="assessorScore">
-          <el-input v-model="form.assessorScore" placeholder="请输入党委评分"/>
+          <el-input v-model="form.assessorScore" placeholder="请输入会委评分"/>
         </el-form-item>
         <el-form-item label="排序" prop="orderNum">
           <el-input v-model="form.orderNum" placeholder="请输入排序"/>

@@ -39,7 +39,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党员信息Service业务层处理
+ * 会员信息Service业务层处理
  *
  * @author ruoyi
  * @date 2020-08-06
@@ -106,10 +106,10 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 查询党员信息
+     * 查询会员信息
      *
-     * @param memberId 党员信息ID
-     * @return 党员信息
+     * @param memberId 会员信息ID
+     * @return 会员信息
      */
     @Override
     public DjPartyMember selectDjPartyMemberById(Long memberId)
@@ -208,9 +208,9 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
         List<DjPartyExemplary> exemplaryList = djPartyExemplaryMapper.selectDjPartyExemplaryList(partyExemplary);
         value[2] = Long.valueOf(CollectionUtils.isEmpty(exemplaryList)?0:(exemplaryList.size()>10?10:exemplaryList.size()));
 
-        // 党员特长
+        // 会员特长
         Map<String,Object> specialty = new HashMap<>();
-        specialty.put("name","党员特长");
+        specialty.put("name","会员特长");
         specialty.put("max",10);
         indicator.add(specialty);
 
@@ -265,10 +265,10 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 查询党员信息列表
+     * 查询会员信息列表
      *
-     * @param djPartyMember 党员信息
-     * @return 党员信息
+     * @param djPartyMember 会员信息
+     * @return 会员信息
      */
     @Override
     public List<DjPartyMember> selectDjPartyMemberList(DjPartyMember djPartyMember)
@@ -342,9 +342,9 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 新增党员信息
+     * 新增会员信息
      *
-     * @param djPartyMember 党员信息
+     * @param djPartyMember 会员信息
      * @return 结果
      */
     @Override
@@ -383,9 +383,9 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 新增党员信息
+     * 新增会员信息
      *
-     * @param djPartyMember 党员信息
+     * @param djPartyMember 会员信息
      * @return 结果
      */
     @Override
@@ -412,9 +412,9 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 修改党员信息
+     * 修改会员信息
      *
-     * @param djPartyMember 党员信息
+     * @param djPartyMember 会员信息
      * @return 结果
      */
     @Override
@@ -481,9 +481,9 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
         return djPartyMemberMapper.updateDjPartyMember(djPartyMember);
     }
     /**
-     * 批量删除党员信息
+     * 批量删除会员信息
      *
-     * @param memberIds 需要删除的党员信息ID
+     * @param memberIds 需要删除的会员信息ID
      * @return 结果
      */
     @Override
@@ -493,9 +493,9 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 删除党员信息信息
+     * 删除会员信息信息
      *
-     * @param memberId 党员信息ID
+     * @param memberId 会员信息ID
      * @return 结果
      */
     @Override
@@ -505,7 +505,7 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 检查党员姓名唯一性
+     * 检查会员姓名唯一性
      *
      * @param djPartyMember
      * @return
@@ -522,7 +522,7 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 检查党员手机号唯一性
+     * 检查会员手机号唯一性
      *
      * @param djPartyMember
      * @return
@@ -539,7 +539,7 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 检查党员邮箱唯一性
+     * 检查会员邮箱唯一性
      *
      * @param djPartyMember
      * @return
@@ -556,7 +556,7 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     }
 
     /**
-     * 检查党员身份证号唯一性
+     * 检查会员身份证号唯一性
      *
      * @param djPartyMember
      * @return

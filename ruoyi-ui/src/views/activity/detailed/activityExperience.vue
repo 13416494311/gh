@@ -3,7 +3,7 @@
     <el-table v-loading="loading" :data="experienceList">
       <el-table-column label="标题" align="center" prop="title" min-width="25%"/>
       <el-table-column label="内容" align="left" prop="content"min-width="40%"/>
-      <el-table-column label="党员姓名" align="center" prop="djPartyMember.memberName"min-width="10%"/>
+      <el-table-column label="会员姓名" align="center" prop="djPartyMember.memberName"min-width="10%"/>
       <el-table-column label="附件" align="center" min-width="25%">
         <template slot-scope="scope">
           <div v-for="(item, index) in scope.row.sysFiles" :key="index">

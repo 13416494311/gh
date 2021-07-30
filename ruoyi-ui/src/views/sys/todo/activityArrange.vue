@@ -98,7 +98,7 @@
             </div>
             <el-table v-loading="loading" :data="memberList" @selection-change="handleSelectionChange">
               <el-table-column label="姓名" align="center" prop="djPartyMember.memberName"/>
-              <el-table-column label="所属党组织" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName"/>
+              <el-table-column label="所属工会" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName"/>
               <el-table-column label="联系方式" align="center" prop="djPartyMember.mobile"/>
               <el-table-column v-if="!disabled" label="操作" align="center" class-name="small-padding fixed-width">
                 <template slot-scope="scope">
@@ -243,7 +243,7 @@
         },
         //活动安排状态
         arrangeStatusOptions: [],
-        // 党员活动类型字典
+        // 会员活动类型字典
         activityTypeOptions: [],
         // 活动来源字典
         activitySourcesOptions: [],
@@ -347,7 +347,7 @@
       arrangeStatusFormat(row, column) {
         return this.selectDictLabel(this.arrangeStatusOptions, row.status);
       },
-      // 党员活动类型字典翻译
+      // 会员活动类型字典翻译
       activityTypeFormat(row, column) {
         return this.selectDictLabel(this.activityTypeOptions, row.djActivityPlan.activityType);
       },

@@ -7,8 +7,8 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党组织加减分审核对象 dj_org_assessment_addsubtract
- * 
+ * 工会加减分审核对象 dj_org_assessment_addsubtract
+ *
  * @author admin
  * @date 2021-03-15
  */
@@ -29,8 +29,8 @@ public class DjOrgAssessmentAddsubtract extends BaseEntity
     private String assessmentUuid;
     private DjOrgAssessment djOrgAssessment;
 
-    /** 党组织id */
-    @Excel(name = "党组织id")
+    /** 工会id */
+    @Excel(name = "工会id")
     private Long partyOrgId;
     private DjPartyOrg djPartyOrg;
     /** 类型 */

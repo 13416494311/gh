@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党员党费列表
+// 查询会员会费列表
 export function listDue(data) {
   return request({
     url: '/party/due/list',
@@ -9,7 +9,7 @@ export function listDue(data) {
   })
 }
 
-// 查询党员党费列表
+// 查询会员会费列表
 export function listDueMember(query) {
   return request({
     url: '/party/due/listDueMember',
@@ -18,7 +18,7 @@ export function listDueMember(query) {
   })
 }
 
-// 查询党员党费详细
+// 查询会员会费详细
 export function getDue(dueMemberId) {
   return request({
     url: '/party/due/' + dueMemberId,
@@ -26,7 +26,7 @@ export function getDue(dueMemberId) {
   })
 }
 
-// 新增党员党费
+// 新增会员会费
 export function addDue(data) {
   return request({
     url: '/party/due',
@@ -35,7 +35,7 @@ export function addDue(data) {
   })
 }
 
-// 修改党员党费
+// 修改会员会费
 export function updateDue(data) {
   return request({
     url: '/party/due',
@@ -44,7 +44,7 @@ export function updateDue(data) {
   })
 }
 
-// 修改党员党费
+// 修改会员会费
 export function updateMemberDue(data) {
   return request({
     url: '/party/due/updateMemberDue',
@@ -54,7 +54,7 @@ export function updateMemberDue(data) {
 }
 
 
-// 删除党员党费
+// 删除会员会费
 export function delDue(dueMemberId) {
   return request({
     url: '/party/due/' + dueMemberId,
@@ -62,7 +62,7 @@ export function delDue(dueMemberId) {
   })
 }
 
-// 导出党员党费
+// 导出会员会费
 export function exportDue(query) {
   return request({
     url: '/party/due/export',

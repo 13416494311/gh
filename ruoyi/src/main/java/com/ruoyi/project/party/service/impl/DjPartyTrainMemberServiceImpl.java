@@ -26,7 +26,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 参与培训党员Service业务层处理
+ * 参与培训会员Service业务层处理
  *
  * @author ruoyi
  * @date 2021-03-09
@@ -166,10 +166,10 @@ public class DjPartyTrainMemberServiceImpl implements IDjPartyTrainMemberService
         }
     }
     /**
-     * 查询参与培训党员
+     * 查询参与培训会员
      *
-     * @param trainMemberId 参与培训党员ID
-     * @return 参与培训党员
+     * @param trainMemberId 参与培训会员ID
+     * @return 参与培训会员
      */
     @Override
     public DjPartyTrainMember selectDjPartyTrainMemberById(Long trainMemberId)
@@ -185,10 +185,10 @@ public class DjPartyTrainMemberServiceImpl implements IDjPartyTrainMemberService
     }
 
     /**
-     * 查询参与培训党员列表
+     * 查询参与培训会员列表
      *
-     * @param djPartyTrainMember 参与培训党员
-     * @return 参与培训党员
+     * @param djPartyTrainMember 参与培训会员
+     * @return 参与培训会员
      */
     @Override
     public List<DjPartyTrainMember> selectDjPartyTrainMemberList(DjPartyTrainMember djPartyTrainMember)
@@ -206,9 +206,9 @@ public class DjPartyTrainMemberServiceImpl implements IDjPartyTrainMemberService
     }
 
     /**
-     * 新增参与培训党员
+     * 新增参与培训会员
      *
-     * @param djPartyTrainMember 参与培训党员
+     * @param djPartyTrainMember 参与培训会员
      * @return 结果
      */
     @Override
@@ -220,9 +220,9 @@ public class DjPartyTrainMemberServiceImpl implements IDjPartyTrainMemberService
     }
 
     /**
-     * 修改参与培训党员
+     * 修改参与培训会员
      *
-     * @param djPartyTrainMember 参与培训党员
+     * @param djPartyTrainMember 参与培训会员
      * @return 结果
      */
     @Override
@@ -242,9 +242,9 @@ public class DjPartyTrainMemberServiceImpl implements IDjPartyTrainMemberService
     }
 
     /**
-     * 批量删除参与培训党员
+     * 批量删除参与培训会员
      *
-     * @param trainMemberIds 需要删除的参与培训党员ID
+     * @param trainMemberIds 需要删除的参与培训会员ID
      * @return 结果
      */
     @Override
@@ -254,9 +254,9 @@ public class DjPartyTrainMemberServiceImpl implements IDjPartyTrainMemberService
     }
 
     /**
-     * 删除参与培训党员信息
+     * 删除参与培训会员信息
      *
-     * @param trainMemberId 参与培训党员ID
+     * @param trainMemberId 参与培训会员ID
      * @return 结果
      */
     @Override

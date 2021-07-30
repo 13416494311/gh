@@ -4,7 +4,7 @@
       {{duePlanTitle}}
     </div>
     <div style="padding: 0px 0px 8px 0px;">
-      党组织名称：{{dueOrgName}}
+      工会名称：{{dueOrgName}}
     </div>
     <el-form ref="form" :model="form" :rules="rules" >
 
@@ -14,7 +14,7 @@
                 :show-summary="showSum"
                 v-loading="loading" :data="dueList" @selection-change="handleSelectionChange">
         <el-table-column label="序号" align="center" type="index"/>
-        <el-table-column label="党员" align="center" prop="memberName"/>
+        <el-table-column label="会员" align="center" prop="memberName"/>
         <el-table-column v-for="(item,index) in monthHead" :key="index" :label="item.label" align="center">
           <el-table-column label="工资(元)" align="center" width="180">
             <template slot-scope="scope">
@@ -40,7 +40,7 @@
             <template slot-scope="scope">{{scope.row.memberDueList[index]['ratio']}}</template>
           </el-table-column>
 
-          <el-table-column label="党费(元)" align="center">
+          <el-table-column label="会费(元)" align="center">
             <template slot-scope="scope">{{scope.row.memberDueList[index]['due']}}</template>
           </el-table-column>
 
@@ -101,7 +101,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员党费表格数据
+        // 会员会费表格数据
         dueList: [],
         // 弹出层标题
         title: "",
@@ -227,7 +227,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党员党费列表 */
+      /** 查询会员会费列表 */
       getList() {
         this.loading = true;
         this.queryParams.dueOrgId = this.dueOrgId;
@@ -314,7 +314,7 @@
       handleAdd() {
         this.reset();
         this.open = true;
-        this.title = "添加党员党费";
+        this.title = "添加会员会费";
       },
       /** 修改按钮操作 */
       handleUpdate(row) {
@@ -396,7 +396,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const dueMemberIds = row.dueMemberId || this.ids;
-        this.$confirm('是否确认删除党员党费编号为"' + dueMemberIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除会员会费编号为"' + dueMemberIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -411,7 +411,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党员党费数据项?', "警告", {
+        this.$confirm('是否确认导出所有会员会费数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

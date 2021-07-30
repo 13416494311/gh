@@ -30,7 +30,7 @@ import com.ruoyi.project.members.service.IDjPartyMemberSuggestionsService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党员建议Service业务层处理
+ * 会员建议Service业务层处理
  *
  * @author ruoyi
  * @date 2021-02-27
@@ -58,10 +58,10 @@ public class DjPartyMemberSuggestionsServiceImpl implements IDjPartyMemberSugges
 
 
     /**
-     * 查询党员建议
+     * 查询会员建议
      *
-     * @param suggestionsId 党员建议ID
-     * @return 党员建议
+     * @param suggestionsId 会员建议ID
+     * @return 会员建议
      */
     @Override
     public DjPartyMemberSuggestions selectDjPartyMemberSuggestionsById(Long suggestionsId)
@@ -80,10 +80,10 @@ public class DjPartyMemberSuggestionsServiceImpl implements IDjPartyMemberSugges
     }
 
     /**
-     * 查询党员建议列表
+     * 查询会员建议列表
      *
-     * @param djPartyMemberSuggestions 党员建议
-     * @return 党员建议
+     * @param djPartyMemberSuggestions 会员建议
+     * @return 会员建议
      */
     @Override
     public List<DjPartyMemberSuggestions> selectDjPartyMemberSuggestionsList(DjPartyMemberSuggestions djPartyMemberSuggestions)
@@ -106,9 +106,9 @@ public class DjPartyMemberSuggestionsServiceImpl implements IDjPartyMemberSugges
     }
 
     /**
-     * 新增党员建议
+     * 新增会员建议
      *
-     * @param djPartyMemberSuggestions 党员建议
+     * @param djPartyMemberSuggestions 会员建议
      * @return 结果
      */
     @Override
@@ -128,9 +128,9 @@ public class DjPartyMemberSuggestionsServiceImpl implements IDjPartyMemberSugges
     }
 
     /**
-     * 修改党员建议
+     * 修改会员建议
      *
-     * @param djPartyMemberSuggestions 党员建议
+     * @param djPartyMemberSuggestions 会员建议
      * @return 结果
      */
     @Override
@@ -281,9 +281,9 @@ public class DjPartyMemberSuggestionsServiceImpl implements IDjPartyMemberSugges
     }
 
     /**
-     * 批量删除党员建议
+     * 批量删除会员建议
      *
-     * @param suggestionsIds 需要删除的党员建议ID
+     * @param suggestionsIds 需要删除的会员建议ID
      * @return 结果
      */
     @Override
@@ -293,9 +293,9 @@ public class DjPartyMemberSuggestionsServiceImpl implements IDjPartyMemberSugges
     }
 
     /**
-     * 删除党员建议信息
+     * 删除会员建议信息
      *
-     * @param suggestionsId 党员建议ID
+     * @param suggestionsId 会员建议ID
      * @return 结果
      */
     @Override

@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党组织职务列表
+// 查询工会职务列表
 export function listPartyOrgPost(query) {
   return request({
     url: '/party/orgPost/list',
@@ -9,7 +9,7 @@ export function listPartyOrgPost(query) {
   })
 }
 
-// 查询党组织职务详细
+// 查询工会职务详细
 export function getPartyOrgPost(id) {
   return request({
     url: '/party/orgPost/' + id,
@@ -17,7 +17,7 @@ export function getPartyOrgPost(id) {
   })
 }
 
-// 新增党组织职务
+// 新增工会职务
 export function addPartyOrgPost(data) {
   return request({
     url: '/party/orgPost',
@@ -26,7 +26,7 @@ export function addPartyOrgPost(data) {
   })
 }
 
-// 修改党组织职务
+// 修改工会职务
 export function updatePartyOrgPost(data) {
   return request({
     url: '/party/orgPost',
@@ -35,7 +35,7 @@ export function updatePartyOrgPost(data) {
   })
 }
 
-// 删除党组织职务
+// 删除工会职务
 export function delPartyOrgPost(id) {
   return request({
     url: '/party/orgPost/' + id,
@@ -43,7 +43,7 @@ export function delPartyOrgPost(id) {
   })
 }
 
-// 导出党组织职务
+// 导出工会职务
 export function exportPartyOrgPost(query) {
   return request({
     url: '/party/orgPost/export',

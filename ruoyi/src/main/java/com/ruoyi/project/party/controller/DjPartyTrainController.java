@@ -23,7 +23,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党组织培训Controller
+ * 工会培训Controller
  *
  * @author ruoyi
  * @date 2021-03-09
@@ -36,7 +36,7 @@ public class DjPartyTrainController extends BaseController
     private IDjPartyTrainService djPartyTrainService;
 
     /**
-     * 查询党组织培训列表
+     * 查询工会培训列表
      */
     @PreAuthorize("@ss.hasPermi('party:train:list')")
     @GetMapping("/list")
@@ -49,10 +49,10 @@ public class DjPartyTrainController extends BaseController
     }
 
     /**
-     * 导出党组织培训列表
+     * 导出工会培训列表
      */
     @PreAuthorize("@ss.hasPermi('party:train:export')")
-    @Log(title = "党组织培训", businessType = BusinessType.EXPORT)
+    @Log(title = "工会培训", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyTrain djPartyTrain)
     {
@@ -62,7 +62,7 @@ public class DjPartyTrainController extends BaseController
     }
 
     /**
-     * 获取党组织培训详细信息
+     * 获取工会培训详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:train:query')")
     @GetMapping(value = "/{trainId}")
@@ -72,10 +72,10 @@ public class DjPartyTrainController extends BaseController
     }
 
     /**
-     * 新增党组织培训
+     * 新增工会培训
      */
     @PreAuthorize("@ss.hasPermi('party:train:add')")
-    @Log(title = "党组织培训", businessType = BusinessType.INSERT)
+    @Log(title = "工会培训", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyTrain djPartyTrain)
     {
@@ -83,10 +83,10 @@ public class DjPartyTrainController extends BaseController
     }
 
     /**
-     * 修改党组织培训
+     * 修改工会培训
      */
     @PreAuthorize("@ss.hasPermi('party:train:edit')")
-    @Log(title = "党组织培训", businessType = BusinessType.UPDATE)
+    @Log(title = "工会培训", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyTrain djPartyTrain)
     {
@@ -94,10 +94,10 @@ public class DjPartyTrainController extends BaseController
     }
 
     /**
-     * 删除党组织培训
+     * 删除工会培训
      */
     @PreAuthorize("@ss.hasPermi('party:train:remove')")
-    @Log(title = "党组织培训", businessType = BusinessType.DELETE)
+    @Log(title = "工会培训", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{trainIds}")
     public AjaxResult remove(@PathVariable Long[] trainIds)
     {

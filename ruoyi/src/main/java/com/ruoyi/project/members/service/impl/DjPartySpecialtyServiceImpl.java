@@ -16,7 +16,7 @@ import com.ruoyi.project.party.mapper.DjPartyMemberMapper;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党员特长Service业务层处理
+ * 会员特长Service业务层处理
  *
  * @author admin
  * @date 2021-02-19
@@ -33,10 +33,10 @@ public class DjPartySpecialtyServiceImpl implements IDjPartySpecialtyService
     private IDjPartyOrgService djPartyOrgService;
 
     /**
-     * 查询党员特长
+     * 查询会员特长
      *
-     * @param specialtyId 党员特长ID
-     * @return 党员特长
+     * @param specialtyId 会员特长ID
+     * @return 会员特长
      */
     @Override
     public DjPartySpecialty selectDjPartySpecialtyById(Long specialtyId)
@@ -54,10 +54,10 @@ public class DjPartySpecialtyServiceImpl implements IDjPartySpecialtyService
     }
 
     /**
-     * 查询党员特长列表
+     * 查询会员特长列表
      *
-     * @param djPartySpecialty 党员特长
-     * @return 党员特长
+     * @param djPartySpecialty 会员特长
+     * @return 会员特长
      */
     @Override
     public List<DjPartySpecialty> selectDjPartySpecialtyList(DjPartySpecialty djPartySpecialty)
@@ -78,9 +78,9 @@ public class DjPartySpecialtyServiceImpl implements IDjPartySpecialtyService
     }
 
     /**
-     * 新增党员特长
+     * 新增会员特长
      *
-     * @param djPartySpecialty 党员特长
+     * @param djPartySpecialty 会员特长
      * @return 结果
      */
     @Override
@@ -93,9 +93,9 @@ public class DjPartySpecialtyServiceImpl implements IDjPartySpecialtyService
     }
 
     /**
-     * 修改党员特长
+     * 修改会员特长
      *
-     * @param djPartySpecialty 党员特长
+     * @param djPartySpecialty 会员特长
      * @return 结果
      */
     @Override
@@ -107,9 +107,9 @@ public class DjPartySpecialtyServiceImpl implements IDjPartySpecialtyService
     }
 
     /**
-     * 批量删除党员特长
+     * 批量删除会员特长
      *
-     * @param specialtyIds 需要删除的党员特长ID
+     * @param specialtyIds 需要删除的会员特长ID
      * @return 结果
      */
     @Override
@@ -119,9 +119,9 @@ public class DjPartySpecialtyServiceImpl implements IDjPartySpecialtyService
     }
 
     /**
-     * 删除党员特长信息
+     * 删除会员特长信息
      *
-     * @param specialtyId 党员特长ID
+     * @param specialtyId 会员特长ID
      * @return 结果
      */
     @Override

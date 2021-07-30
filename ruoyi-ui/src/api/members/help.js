@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党员帮扶列表
+// 查询会员帮扶列表
 export function listHelp(query) {
   return request({
     url: '/members/help/list',
@@ -9,7 +9,7 @@ export function listHelp(query) {
   })
 }
 
-// 查询党员帮扶详细
+// 查询会员帮扶详细
 export function getHelp(helpId) {
   return request({
     url: '/members/help/' + helpId,
@@ -17,7 +17,7 @@ export function getHelp(helpId) {
   })
 }
 
-// 新增党员帮扶
+// 新增会员帮扶
 export function addHelp(data) {
   return request({
     url: '/members/help',
@@ -26,7 +26,7 @@ export function addHelp(data) {
   })
 }
 
-// 修改党员帮扶
+// 修改会员帮扶
 export function updateHelp(data) {
   return request({
     url: '/members/help',
@@ -35,7 +35,7 @@ export function updateHelp(data) {
   })
 }
 
-// 删除党员帮扶
+// 删除会员帮扶
 export function delHelp(helpId) {
   return request({
     url: '/members/help/' + helpId,
@@ -43,7 +43,7 @@ export function delHelp(helpId) {
   })
 }
 
-// 导出党员帮扶
+// 导出会员帮扶
 export function exportHelp(query) {
   return request({
     url: '/members/help/export',

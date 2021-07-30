@@ -4,56 +4,56 @@ import java.util.List;
 import com.ruoyi.project.party.domain.DjPartyMemberDueOrg;
 
 /**
- * 党组织党费Mapper接口
- * 
+ * 工会会费Mapper接口
+ *
  * @author ruoyi
  * @date 2021-06-15
  */
-public interface DjPartyMemberDueOrgMapper 
+public interface DjPartyMemberDueOrgMapper
 {
     /**
-     * 查询党组织党费
-     * 
-     * @param dueOrgId 党组织党费ID
-     * @return 党组织党费
+     * 查询工会会费
+     *
+     * @param dueOrgId 工会会费ID
+     * @return 工会会费
      */
     public DjPartyMemberDueOrg selectDjPartyMemberDueOrgById(Long dueOrgId);
 
     /**
-     * 查询党组织党费列表
-     * 
-     * @param djPartyMemberDueOrg 党组织党费
-     * @return 党组织党费集合
+     * 查询工会会费列表
+     *
+     * @param djPartyMemberDueOrg 工会会费
+     * @return 工会会费集合
      */
     public List<DjPartyMemberDueOrg> selectDjPartyMemberDueOrgList(DjPartyMemberDueOrg djPartyMemberDueOrg);
 
     /**
-     * 新增党组织党费
-     * 
-     * @param djPartyMemberDueOrg 党组织党费
+     * 新增工会会费
+     *
+     * @param djPartyMemberDueOrg 工会会费
      * @return 结果
      */
     public int insertDjPartyMemberDueOrg(DjPartyMemberDueOrg djPartyMemberDueOrg);
 
     /**
-     * 修改党组织党费
-     * 
-     * @param djPartyMemberDueOrg 党组织党费
+     * 修改工会会费
+     *
+     * @param djPartyMemberDueOrg 工会会费
      * @return 结果
      */
     public int updateDjPartyMemberDueOrg(DjPartyMemberDueOrg djPartyMemberDueOrg);
 
     /**
-     * 删除党组织党费
-     * 
-     * @param dueOrgId 党组织党费ID
+     * 删除工会会费
+     *
+     * @param dueOrgId 工会会费ID
      * @return 结果
      */
     public int deleteDjPartyMemberDueOrgById(Long dueOrgId);
 
     /**
-     * 批量删除党组织党费
-     * 
+     * 批量删除工会会费
+     *
      * @param dueOrgIds 需要删除的数据ID
      * @return 结果
      */

@@ -125,7 +125,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党组织考核评价清单对话框 -->
+    <!-- 添加或修改工会考核评价清单对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="80%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="100px">
@@ -209,7 +209,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织考核评价清单表格数据
+        // 工会考核评价清单表格数据
         assessmentListList: [],
         // 弹出层标题
         title: "",
@@ -272,7 +272,7 @@
       });
     },
     methods: {
-      // 党员活动类型字典翻译
+      // 会员活动类型字典翻译
       typeFormat(row, column) {
         return this.selectDictLabel(this.assessmentTypeOptions, row.type);
       },
@@ -295,7 +295,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织考核评价清单列表 */
+      /** 查询工会考核评价清单列表 */
       getList() {
         this.loading = true;
         listAssessmentList(this.queryParams).then(response => {
@@ -348,7 +348,7 @@
       handleAdd() {
         this.reset();
         this.open = true;
-        this.title = "添加党组织考核评价清单";
+        this.title = "添加工会考核评价清单";
       },
       /** 修改按钮操作 */
       handleUpdate(row) {
@@ -357,7 +357,7 @@
         getAssessmentList(listId).then(response => {
           this.form = response.data;
           this.open = true;
-          this.title = "修改党组织考核评价清单";
+          this.title = "修改工会考核评价清单";
         });
       },
       /** 提交按钮 */
@@ -391,7 +391,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const listIds = row.listId || this.ids;
-        this.$confirm('是否确认删除党组织考核评价清单编号为"' + listIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会考核评价清单编号为"' + listIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -406,7 +406,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织考核评价清单数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会考核评价清单数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

@@ -4,56 +4,56 @@ import java.util.List;
 import com.ruoyi.project.party.domain.DjPartyMemberDue;
 
 /**
- * 党员党费Mapper接口
- * 
+ * 会员会费Mapper接口
+ *
  * @author wandengfeng
  * @date 2021-06-15
  */
-public interface DjPartyMemberDueMapper 
+public interface DjPartyMemberDueMapper
 {
     /**
-     * 查询党员党费
-     * 
-     * @param dueMemberId 党员党费ID
-     * @return 党员党费
+     * 查询会员会费
+     *
+     * @param dueMemberId 会员会费ID
+     * @return 会员会费
      */
     public DjPartyMemberDue selectDjPartyMemberDueById(Long dueMemberId);
 
     /**
-     * 查询党员党费列表
-     * 
-     * @param djPartyMemberDue 党员党费
-     * @return 党员党费集合
+     * 查询会员会费列表
+     *
+     * @param djPartyMemberDue 会员会费
+     * @return 会员会费集合
      */
     public List<DjPartyMemberDue> selectDjPartyMemberDueList(DjPartyMemberDue djPartyMemberDue);
 
     /**
-     * 新增党员党费
-     * 
-     * @param djPartyMemberDue 党员党费
+     * 新增会员会费
+     *
+     * @param djPartyMemberDue 会员会费
      * @return 结果
      */
     public int insertDjPartyMemberDue(DjPartyMemberDue djPartyMemberDue);
 
     /**
-     * 修改党员党费
-     * 
-     * @param djPartyMemberDue 党员党费
+     * 修改会员会费
+     *
+     * @param djPartyMemberDue 会员会费
      * @return 结果
      */
     public int updateDjPartyMemberDue(DjPartyMemberDue djPartyMemberDue);
 
     /**
-     * 删除党员党费
-     * 
-     * @param dueMemberId 党员党费ID
+     * 删除会员会费
+     *
+     * @param dueMemberId 会员会费ID
      * @return 结果
      */
     public int deleteDjPartyMemberDueById(Long dueMemberId);
 
     /**
-     * 批量删除党员党费
-     * 
+     * 批量删除会员会费
+     *
      * @param dueMemberIds 需要删除的数据ID
      * @return 结果
      */

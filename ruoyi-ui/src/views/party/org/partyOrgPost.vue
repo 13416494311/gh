@@ -2,7 +2,7 @@
   <div>
     <el-card shadow="always" style="margin-bottom: 30px;">
       <div slot="header" style="height: 25px">
-        <span style="font-weight: bold;font-size: 16px">党组织职务</span>
+        <span style="font-weight: bold;font-size: 16px">工会职务</span>
         <!--<el-button
           type="primary"
           icon="el-icon-plus"
@@ -15,8 +15,8 @@
       </div>
       <el-table v-loading="loading" :data="partyMemberList"
                 @selection-change="handleSelectionChange">
-        <el-table-column label="党员姓名" align="center" prop="memberName"/>
-        <el-table-column label="党内职务" align="center" prop="partyPositionType"
+        <el-table-column label="会员姓名" align="center" prop="memberName"/>
+        <el-table-column label="会内职务" align="center" prop="partyPositionType"
                          :formatter="partyPositionTypeFormat"/>
         <el-table-column label="工作岗位" align="center" prop="deptAdminiPosFullName"/>
         <!--<el-table-column label="任职时间" align="center" prop="tenureTime" width="180">
@@ -45,12 +45,12 @@
       </el-table>
     </el-card>
 
-    <!-- 添加或修改党组织职务对话框 -->
+    <!-- 添加或修改工会职务对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="80%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="100px">
-        <el-form-item label="党员" prop="partyMemberId">
-          <el-input :disabled="true" v-model="form.partyMemberName" placeholder="请选择党员">
+        <el-form-item label="会员" prop="partyMemberId">
+          <el-input :disabled="true" v-model="form.partyMemberName" placeholder="请选择会员">
             <el-button :disabled="disabled" slot="append" icon="el-icon-search"
                        @click="openMemberChoose"></el-button>
           </el-input>
@@ -129,7 +129,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织职务表格数据
+        // 工会职务表格数据
         partyMemberList: [],
         // 弹出层标题
         title: "",
@@ -150,7 +150,7 @@
         // 表单校验
         rules: {
           partyMemberId: [
-            {required: true, message: "党员不能为空", trigger: "blur"}
+            {required: true, message: "会员不能为空", trigger: "blur"}
           ],
           partyPositionType: [
             {required: true, message: "职务不能为空", trigger: "blur"}
@@ -203,13 +203,13 @@
       },
       openMemberChoose(){
         this.$refs.partyMember.open = true ;
-        this.$refs.partyMember.title = "选择党员";
+        this.$refs.partyMember.title = "选择会员";
       },
       /** 对话框自适应高度 */
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织职务列表 */
+      /** 查询工会职务列表 */
       getList() {
         this.loading = true;
         listPartyOrgPositionType(this.partyOrgUuid).then(response => {
@@ -268,7 +268,7 @@
         this.reset();
         this.form.partyOrgUuid = this.partyOrgUuid;
         this.open = true;
-        this.title = "添加党组织职务";
+        this.title = "添加工会职务";
       },
       /** 修改按钮操作 */
       handleUpdate(row) {
@@ -279,7 +279,7 @@
           this.form = response.data;
           this.form.partyMemberName= this.form.djPartyMember.memberName
           this.open = true;
-          this.title = "修改党组织职务";
+          this.title = "修改工会职务";
         });
       },
       /** 提交按钮 */
@@ -319,7 +319,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const ids = row.id || this.ids;
-        this.$confirm('是否确认删除党组织职务编号为"' + ids + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会职务编号为"' + ids + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -334,7 +334,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织职务数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会职务数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

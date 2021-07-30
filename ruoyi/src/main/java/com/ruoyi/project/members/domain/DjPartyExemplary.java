@@ -35,9 +35,9 @@ public class DjPartyExemplary extends BaseEntity
     private Long memberId;
 
     private DjPartyMember djPartyMember ;
-    /** 党组织id
+    /** 工会id
  */
-    @Excel(name = "党组织id")
+    @Excel(name = "工会id")
     private Long partyOrgId;
 
     private DjPartyOrg djPartyOrg;

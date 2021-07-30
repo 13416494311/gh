@@ -73,7 +73,7 @@ export default {
           },
           series: [
             {
-              name: '各党组织党员人数',
+              name: '各工会会员人数',
               type: 'pie',
               radius: '90%',
               center: ['40%', '50%'],

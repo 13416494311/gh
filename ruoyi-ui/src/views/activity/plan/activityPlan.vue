@@ -114,7 +114,7 @@
                 <el-select :disabled="disabled"
                            v-model="form.activityType"
                            style="width: 100%"
-                           placeholder="请选择党员活动类型">
+                           placeholder="请选择会员活动类型">
                   <el-option
                     v-for="dict in activityTypeOptions"
                     :key="dict.dictValue"
@@ -290,7 +290,7 @@
 
         <el-card shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
-            <span style="font-weight: bold;font-size: 16px">计划参与党组织</span>
+            <span style="font-weight: bold;font-size: 16px">计划参与工会</span>
             <el-button
               v-if="!disabled && this.activitySources =='3'&&!cancelDisabled"
               type="primary"
@@ -303,15 +303,15 @@
           </div>
 
           <el-table v-loading="orgLoading" :data="arrangeList">
-            <el-table-column label="党组织名称" align="center" prop="djPartyOrg.partyOrgFullName"/>
-            <el-table-column label="党组织类型" align="center" prop="djPartyOrg.orgType"
+            <el-table-column label="工会名称" align="center" prop="djPartyOrg.partyOrgFullName"/>
+            <el-table-column label="工会类型" align="center" prop="djPartyOrg.orgType"
                              :formatter="orgTypeFormat"/>
             <el-table-column label="建立时间" align="center" prop="djPartyOrg.buildTime" width="180">
               <template slot-scope="scope">
                 <span>{{ parseTime(scope.row.djPartyOrg.buildTime, '{y}-{m}-{d}') }}</span>
               </template>
             </el-table-column>
-            <el-table-column label="党组织简介" align="center" prop="djPartyOrg.description"/>
+            <el-table-column label="工会简介" align="center" prop="djPartyOrg.description"/>
             <el-table-column label="计划状态" align="center" prop="delFlag"
                              :formatter="delFlagFormat"/>
             <el-table-column  v-if="!disabled && this.form.activitySources =='3'" label="操作" align="center" class-name="small-padding fixed-width">
@@ -453,7 +453,7 @@
         open: false,
         // 活动来源字典
         activitySourcesOptions: [],
-        // 党员活动类型字典
+        // 会员活动类型字典
         activityTypeOptions: [],
         // 召开周期字典
         conveneCycleOptions: [],
@@ -498,7 +498,7 @@
             {required: true, message: "活动主题不能为空", trigger: "blur"}
           ],
           activityType: [
-            {required: true, message: "党员活动类型不能为空", trigger: "blur"}
+            {required: true, message: "会员活动类型不能为空", trigger: "blur"}
           ],
           conveneCycle: [
             {required: true, message: "召开周期不能为空", trigger: "blur"}
@@ -583,7 +583,7 @@
       },
       openOrgTransfer() {
         this.$refs.orgTransfer.open = true;
-        this.$refs.orgTransfer.title = "选择计划参与党组织";
+        this.$refs.orgTransfer.title = "选择计划参与工会";
         this.$refs.orgTransfer.planUuid = this.form.planUuid;
         /*if(this.user.djPartyMember){
           this.$refs.orgTransfer.getPartyOrgSelect(this.user.djPartyMember.djPartyOrg.partyOrgId);
@@ -811,7 +811,7 @@
       },
       handleArrangeCancel(row){
         const ids = row.id ;
-        this.$confirm('是否确认取消该党组织计划活动?', "警告", {
+        this.$confirm('是否确认取消该工会计划活动?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -827,7 +827,7 @@
       activitySourcesFormat(row, column) {
         return this.selectDictLabel(this.activitySourcesOptions, row.activitySources);
       },
-      // 党员活动类型字典翻译
+      // 会员活动类型字典翻译
       activityTypeFormat(row, column) {
         return this.selectDictLabel(this.activityTypeOptions, row.activityType);
       },
@@ -991,7 +991,7 @@
       /** 提交按钮 */
       submitForm: function (status) {
         if (this.arrangeList.length == 0) {
-          this.msgInfo("请选择计划参与党组织!");
+          this.msgInfo("请选择计划参与工会!");
           return;
         }
         this.form.status = status;

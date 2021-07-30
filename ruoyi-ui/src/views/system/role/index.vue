@@ -283,11 +283,11 @@ export default {
         },
         {
           value: "6",
-          label: "本党组织数据权限"
+          label: "本工会数据权限"
         },
         {
           value: "7",
-          label: "本党组织及以下数据权限"
+          label: "本工会及以下数据权限"
         },
         {
           value: "5",

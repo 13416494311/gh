@@ -39,8 +39,8 @@ public class DjActivitySuggestions extends BaseEntity
     @Excel(name = "内容")
     private String content;
 
-    /** 党员id */
-    @Excel(name = "党员id")
+    /** 会员id */
+    @Excel(name = "会员id")
     private Long partyMemberId;
 
     private DjPartyMember djPartyMember;

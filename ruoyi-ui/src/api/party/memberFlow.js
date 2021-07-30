@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党员流动列表
+// 查询会员流动列表
 export function listMemberFlow(data) {
   return request({
     url: '/party/memberFlow/list',
@@ -9,7 +9,7 @@ export function listMemberFlow(data) {
   })
 }
 
-// 查询党员流动详细
+// 查询会员流动详细
 export function getMemberFlow(flowId) {
   return request({
     url: '/party/memberFlow/' + flowId,
@@ -17,7 +17,7 @@ export function getMemberFlow(flowId) {
   })
 }
 
-// 新增党员流动
+// 新增会员流动
 export function addMemberFlow(data) {
   return request({
     url: '/party/memberFlow',
@@ -26,7 +26,7 @@ export function addMemberFlow(data) {
   })
 }
 
-// 修改党员流动
+// 修改会员流动
 export function updateMemberFlow(data) {
   return request({
     url: '/party/memberFlow',
@@ -35,7 +35,7 @@ export function updateMemberFlow(data) {
   })
 }
 
-// 删除党员流动
+// 删除会员流动
 export function delMemberFlow(flowId) {
   return request({
     url: '/party/memberFlow/' + flowId,
@@ -43,7 +43,7 @@ export function delMemberFlow(flowId) {
   })
 }
 
-// 导出党员流动
+// 导出会员流动
 export function exportMemberFlow(query) {
   return request({
     url: '/party/memberFlow/export',

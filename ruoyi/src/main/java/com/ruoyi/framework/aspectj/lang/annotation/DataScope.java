@@ -27,7 +27,7 @@ public @interface DataScope
     public String userAlias() default "";
 
     /**
-     * 党组织表的别名
+     * 工会表的别名
      */
     public String partyOrgAlias() default "";
 }

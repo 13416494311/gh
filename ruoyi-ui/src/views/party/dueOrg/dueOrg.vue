@@ -42,7 +42,7 @@
       <el-table-column label="标题" align="center" prop="duePlan.title"/>
       <el-table-column label="年度" align="center" prop="duePlan.year" :formatter="yearFormat"/>
       <el-table-column label="季度" align="center" prop="duePlan.quarter" :formatter="quarterFormat"/>
-      <el-table-column label="党组织" align="center" prop="partyOrg" :formatter="partyOrgFormat"/>
+      <el-table-column label="工会" align="center" prop="partyOrg" :formatter="partyOrgFormat"/>
       <el-table-column label="备注" align="center" prop="duePlan.remark"/>
       <el-table-column label="状态" align="center" prop="status" :formatter="statusFormat"/>
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
@@ -74,7 +74,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党组织党费对话框 -->
+    <!-- 添加或修改工会会费对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight"  :close-on-click-modal="false">
 
@@ -112,7 +112,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织党费表格数据
+        // 工会会费表格数据
         dueOrgList: [],
         // 弹出层标题
         title: "",
@@ -134,10 +134,10 @@
         // 表单校验
         rules: {
           duePlanUuid: [
-            { required: true, message: "党费计划UUID不能为空", trigger: "blur" }
+            { required: true, message: "会费计划UUID不能为空", trigger: "blur" }
           ],
           partyOrgId: [
-            { required: true, message: "党组织id不能为空", trigger: "blur" }
+            { required: true, message: "工会id不能为空", trigger: "blur" }
           ],
           status: [
             { required: true, message: "状态不能为空", trigger: "blur" }
@@ -192,7 +192,7 @@
       getHeight(){
         this.bodyStyle.height=window.innerHeight-281+'px';
       },
-      /** 查询党组织党费列表 */
+      /** 查询工会会费列表 */
       getList() {
         this.loading = true;
         pageDueOrg(this.queryParams).then(response => {
@@ -251,7 +251,7 @@
       handleAdd() {
         this.reset();
         this.open = true;
-        this.title = "添加党组织党费";
+        this.title = "添加工会会费";
       },
       /** 修改按钮操作 */
       handleUpdate(row) {
@@ -259,14 +259,14 @@
         this.disabled = false;
         this.dueOrgId = row.dueOrgId
         this.open = true;
-        this.title = "党组织党费填报";
+        this.title = "工会会费填报";
       },
       handleSee(row) {
         this.reset();
         this.disabled = true;
         this.dueOrgId = row.dueOrgId
         this.open = true;
-        this.title = "党组织党费查看";
+        this.title = "工会会费查看";
       },
       /** 提交按钮 */
       submitForm: function() {
@@ -299,7 +299,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const dueOrgIds = row.dueOrgId || this.ids;
-        this.$confirm('是否确认删除党组织党费编号为"' + dueOrgIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会会费编号为"' + dueOrgIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -313,7 +313,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织党费数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会会费数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

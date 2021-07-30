@@ -341,7 +341,7 @@ public class DjActivityDetailedServiceImpl implements IDjActivityDetailedService
                         sysMessage.setTitle(dictDataService.selectDictLabel("sys_todo_type",sysTodo.getType()));
                         sysMessage.setContent("请您"+DateUtils.parseDateToStr(DateUtils.YYYY_MM_DD_HH_MM_SS,detailed.getActivityPlanStartTime())+"至"
                                 +DateUtils.parseDateToStr(DateUtils.YYYY_MM_DD_HH_MM_SS,detailed.getActivityPlanEndTime())
-                                +"准时前往"+detailed.getVenue()+"参加“"+activityPlan.getActivityTheme()+"”党员活动！");
+                                +"准时前往"+detailed.getVenue()+"参加“"+activityPlan.getActivityTheme()+"”会员活动！");
                         sysMessage.setType(2);
                         sysMessage.setPlatform(0);
                         sysMessage.setGroupName("");

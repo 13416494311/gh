@@ -21,8 +21,8 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党费计划Controller
- * 
+ * 会费计划Controller
+ *
  * @author wandengfeng
  * @date 2021-06-15
  */
@@ -34,7 +34,7 @@ public class DjPartyMemberDuePlanController extends BaseController
     private IDjPartyMemberDuePlanService djPartyMemberDuePlanService;
 
     /**
-     * 查询党费计划列表
+     * 查询会费计划列表
      */
     @PreAuthorize("@ss.hasPermi('party:duePlan:list')")
     @GetMapping("/list")
@@ -46,10 +46,10 @@ public class DjPartyMemberDuePlanController extends BaseController
     }
 
     /**
-     * 导出党费计划列表
+     * 导出会费计划列表
      */
     @PreAuthorize("@ss.hasPermi('party:duePlan:export')")
-    @Log(title = "党费计划", businessType = BusinessType.EXPORT)
+    @Log(title = "会费计划", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyMemberDuePlan djPartyMemberDuePlan)
     {
@@ -59,7 +59,7 @@ public class DjPartyMemberDuePlanController extends BaseController
     }
 
     /**
-     * 获取党费计划详细信息
+     * 获取会费计划详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:duePlan:query')")
     @GetMapping(value = "/{duePlanId}")
@@ -69,10 +69,10 @@ public class DjPartyMemberDuePlanController extends BaseController
     }
 
     /**
-     * 新增党费计划
+     * 新增会费计划
      */
     @PreAuthorize("@ss.hasPermi('party:duePlan:add')")
-    @Log(title = "党费计划", businessType = BusinessType.INSERT)
+    @Log(title = "会费计划", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyMemberDuePlan djPartyMemberDuePlan)
     {
@@ -80,10 +80,10 @@ public class DjPartyMemberDuePlanController extends BaseController
     }
 
     /**
-     * 修改党费计划
+     * 修改会费计划
      */
     @PreAuthorize("@ss.hasPermi('party:duePlan:edit')")
-    @Log(title = "党费计划", businessType = BusinessType.UPDATE)
+    @Log(title = "会费计划", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyMemberDuePlan djPartyMemberDuePlan)
     {
@@ -91,10 +91,10 @@ public class DjPartyMemberDuePlanController extends BaseController
     }
 
     /**
-     * 删除党费计划
+     * 删除会费计划
      */
     @PreAuthorize("@ss.hasPermi('party:duePlan:remove')")
-    @Log(title = "党费计划", businessType = BusinessType.DELETE)
+    @Log(title = "会费计划", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{duePlanIds}")
     public AjaxResult remove(@PathVariable Long[] duePlanIds)
     {

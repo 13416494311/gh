@@ -24,7 +24,7 @@
 
     <el-row style="background:#fff;padding:16px 16px 0;margin-bottom:32px;">
       <div class="chart-wrapper">
-        <span class="chart-title">各党组织党员比例</span>
+        <span class="chart-title">各工会会员比例</span>
         <el-divider></el-divider>
         <org-member-chart />
       </div>

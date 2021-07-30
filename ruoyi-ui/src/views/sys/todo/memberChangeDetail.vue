@@ -9,8 +9,8 @@
           <el-col :span="16">
             <el-row>
               <el-col :span="12">
-                <el-form-item label="党员姓名" prop="memberName">
-                  <el-input :disabled="disabled" v-model="form.memberName" placeholder="请输入党员姓名"/>
+                <el-form-item label="会员姓名" prop="memberName">
+                  <el-input :disabled="disabled" v-model="form.memberName" placeholder="请输入会员姓名"/>
                 </el-form-item>
               </el-col>
               <!--<el-col :span="12">
@@ -257,29 +257,29 @@
 
       <el-card shadow="always" style="margin-bottom: 30px;">
         <div slot="header" style="height: 25px">
-          <span style="font-weight: bold;font-size: 16px">党员信息</span>
+          <span style="font-weight: bold;font-size: 16px">会员信息</span>
         </div>
         <el-row>
           <el-col :span="8">
-            <el-form-item label="党组织" prop="partyOrgId">
+            <el-form-item label="工会" prop="partyOrgId">
               <select-tree :value="form.partyOrgId"
                            :disabled="disabled"
                            :options="partyOrgOptions"
                            vModel="partyOrgId"
                            @selected="setVModelValue"
-                           placeholder="请选择党组织"
+                           placeholder="请选择工会"
               />
               <!--<treeselect :disabled="disabled"
                           v-model="form.partyOrgId"
                           :options="partyOrgOptions"
                           :max-height="130"
-                          placeholder="请选择党组织" />-->
+                          placeholder="请选择工会" />-->
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="党员类型" prop="memberType">
+            <el-form-item label="会员类型" prop="memberType">
               <el-select :disabled="disabled"
-                         v-model="form.memberType" style="width: 100%" placeholder="请选择党员类型">
+                         v-model="form.memberType" style="width: 100%" placeholder="请选择会员类型">
                 <el-option
                   v-for="dict in memberTypeOptions"
                   :key="dict.dictValue"
@@ -307,14 +307,14 @@
 
         <el-row v-show="form.memberType == 3">
           <el-col :span="8">
-            <el-form-item label="成为入党积极分子日期" prop="preMemberData">
+            <el-form-item label="成为入会积极分子日期" prop="preMemberData">
               <el-date-picker :disabled="disabled"
                               clearable size="small" style="width: 100%"
                               v-model="form.preMemberData"
                               type="date"
                               value-format="yyyy-MM-dd"
                               :picker-options="afterTimeOption"
-                              placeholder="选择成为入党积极分子日期">
+                              placeholder="选择成为入会积极分子日期">
               </el-date-picker>
             </el-form-item>
           </el-col>
@@ -322,48 +322,48 @@
 
         <el-row v-show="form.memberType != 3">
           <el-col :span="8">
-            <el-form-item label="加入党日期" prop="joinData">
+            <el-form-item label="加入会日期" prop="joinData">
               <el-date-picker :disabled="disabled"
                               clearable size="small" style="width: 100%"
                               v-model="form.joinData"
                               type="date"
                               value-format="yyyy-MM-dd"
                               :picker-options="afterTimeOption"
-                              placeholder="选择加入党日期">
+                              placeholder="选择加入会日期">
               </el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="转为正式党员日期" prop="formalData">
+            <el-form-item label="转为正式会员日期" prop="formalData">
               <el-date-picker :disabled="disabled"
                               clearable size="small" style="width: 100%"
                               v-model="form.formalData"
                               type="date"
                               value-format="yyyy-MM-dd"
                               :picker-options="afterTimeOption"
-                              placeholder="选择转为正式党员日期">
+                              placeholder="选择转为正式会员日期">
               </el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="加入党支部日期" prop="joinBranchData">
+            <el-form-item label="加入会支部日期" prop="joinBranchData">
               <el-date-picker :disabled="disabled"
                               clearable size="small" style="width: 100%"
                               v-model="form.joinBranchData"
                               type="date"
                               value-format="yyyy-MM-dd"
                               :picker-options="afterTimeOption"
-                              placeholder="选择加入党支部日期">
+                              placeholder="选择加入会支部日期">
               </el-date-picker>
             </el-form-item>
           </el-col>
         </el-row>
         <el-row v-show="form.memberType != 3">
           <el-col :span="8">
-            <el-form-item label="党内职务" prop="partyPositionType">
+            <el-form-item label="会内职务" prop="partyPositionType">
               <el-select :disabled="disabled"
                          v-model="form.partyPositionType"
-                         style="width: 100%" placeholder="请选择党内职务">
+                         style="width: 100%" placeholder="请选择会内职务">
                 <el-option
                   v-for="dict in partyPositionTypeOptions"
                   :key="dict.dictValue"
@@ -374,21 +374,21 @@
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="上一个党组织" prop="prePartyOrgId">
+            <el-form-item label="上一个工会" prop="prePartyOrgId">
               <select-tree :value="form.prePartyOrgId"
                            :disabled="disabled"
                            :options="partyOrgOptions"
                            vModel="prePartyOrgId"
                            @selected="setVModelValue"
-                           placeholder="请选择上一个党组织"
+                           placeholder="请选择上一个工会"
               />
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="流动党员" prop="floatingType">
+            <el-form-item label="流动会员" prop="floatingType">
               <el-select :disabled="disabled"
                          v-model="form.floatingType"
-                         style="width: 100%" placeholder="请选择流动党员">
+                         style="width: 100%" placeholder="请选择流动会员">
                 <el-option
                   v-for="dict in floatingTypeOptions"
                   :key="dict.dictValue"
@@ -401,10 +401,10 @@
         </el-row>
         <el-row v-show="form.memberType != 3">
           <el-col :span="8">
-            <el-form-item label="党员分组" prop="memberGroup">
+            <el-form-item label="会员分组" prop="memberGroup">
               <el-select :disabled="disabled"
                          v-model="form.memberGroup"
-                         style="width: 100%" placeholder="请选择党员分组">
+                         style="width: 100%" placeholder="请选择会员分组">
                 <el-option
                   v-for="dict in memberGroupOptions"
                   :key="dict.dictValue"
@@ -924,7 +924,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员变更表表格数据
+        // 会员变更表表格数据
         partyMemberChangeList: [],
         // 变更类型字典
         changeTypeOptions: [],
@@ -934,7 +934,7 @@
         sexOptions: [],
         // 职务字典
         administrativePositionOptions: [],
-        // 党内职务字典
+        // 会内职务字典
         partyPositionTypeOptions: [],
         // 民族字典
         nationOptions: [],
@@ -946,13 +946,13 @@
         educationOptions: [],
         // 学位字典
         academicDegreeOptions: [],
-        // 党员类型字典
+        // 会员类型字典
         memberTypeOptions: [],
         // 在岗状态字典
         memberStatusOptions: [],
-        // 流动党员字典
+        // 流动会员字典
         floatingTypeOptions: [],
-        // 党员分组字典
+        // 会员分组字典
         memberGroupOptions: [],
         // 生活困难字典
         lifeDifficultyOptions: [],
@@ -1024,7 +1024,7 @@
         // 表单校验
         rules: {
           memberName: [
-            {required: true, message: "党员姓名不能为空", trigger: "blur"},
+            {required: true, message: "会员姓名不能为空", trigger: "blur"},
             {validator: checkPartyMember, trigger: "blur"}
           ],
           mobile: [
@@ -1036,11 +1036,11 @@
             {validator: checkPartyMember, trigger: "blur"}
           ],
           partyOrgId: [
-            {required: true, message: "党组织不能为空", trigger: "blur"},
+            {required: true, message: "工会不能为空", trigger: "blur"},
             {validator: checkPartyMember, trigger: "blur"}
           ],
           memberType: [
-            {required: true, message: "党员类型不能为空", trigger: "blur"},
+            {required: true, message: "会员类型不能为空", trigger: "blur"},
             {validator: checkPartyMember, trigger: "blur"}
           ],
           memberStatus: [
@@ -1130,15 +1130,15 @@
             {validator: checkPartyMember, trigger: "blur"}
           ],
           joinData: [
-            { required: true, message: "入党日期不能为空", trigger: "blur" },
+            { required: true, message: "入会日期不能为空", trigger: "blur" },
             {validator: checkPartyMember, trigger: "blur"}
           ],
           preMemberData: [
-            { required: true, message: "成为入党积极分子日期不能为空", trigger: "blur" },
+            { required: true, message: "成为入会积极分子日期不能为空", trigger: "blur" },
             {validator: checkPartyMember, trigger: "blur"}
           ],
           formalData: [
-            { required: true, message: "转为正式党员日期不能为空", trigger: "blur" },
+            { required: true, message: "转为正式会员日期不能为空", trigger: "blur" },
             {validator: checkPartyMember, trigger: "blur"}
           ],
           floatingType: [
@@ -1189,7 +1189,7 @@
             return date.getTime() > Date.now();
           }
         },
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         // 岗位选项
         postOptions: [],
@@ -1322,7 +1322,7 @@
           this.postOptions = response.data;
         });
       },
-      /** 查询党组织下拉树结构 */
+      /** 查询工会下拉树结构 */
       getPartyOrgTreeSelect() {
         partyOrgTreeselect().then(response => {
           this.partyOrgOptions = this.treeInitData(response.data);

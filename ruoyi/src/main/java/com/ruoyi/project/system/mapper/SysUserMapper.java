@@ -40,7 +40,7 @@ public interface SysUserMapper
     /**
      * 通过用户partyMemberId查询用户
      *
-     * @param partyMemberId 关联党员id
+     * @param partyMemberId 关联会员id
      * @return 用户对象信息
      */
     public SysUser selectUserByPartyMemberId(Long partyMemberId);

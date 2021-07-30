@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党组织加减分审核列表
+// 查询工会加减分审核列表
 export function listAddsubtract(query) {
   return request({
     url: '/party/addsubtract/list',
@@ -9,7 +9,7 @@ export function listAddsubtract(query) {
   })
 }
 
-// 查询党组织加减分审核详细
+// 查询工会加减分审核详细
 export function getAddsubtract(addsubtractId) {
   return request({
     url: '/party/addsubtract/' + addsubtractId,
@@ -17,7 +17,7 @@ export function getAddsubtract(addsubtractId) {
   })
 }
 
-// 新增党组织加减分审核
+// 新增工会加减分审核
 export function addAddsubtract(data) {
   return request({
     url: '/party/addsubtract',
@@ -26,7 +26,7 @@ export function addAddsubtract(data) {
   })
 }
 
-// 修改党组织加减分审核
+// 修改工会加减分审核
 export function updateAddsubtract(data) {
   return request({
     url: '/party/addsubtract',
@@ -35,7 +35,7 @@ export function updateAddsubtract(data) {
   })
 }
 
-// 删除党组织加减分审核
+// 删除工会加减分审核
 export function delAddsubtract(addsubtractId) {
   return request({
     url: '/party/addsubtract/' + addsubtractId,
@@ -43,7 +43,7 @@ export function delAddsubtract(addsubtractId) {
   })
 }
 
-// 导出党组织加减分审核
+// 导出工会加减分审核
 export function exportAddsubtract(query) {
   return request({
     url: '/party/addsubtract/export',

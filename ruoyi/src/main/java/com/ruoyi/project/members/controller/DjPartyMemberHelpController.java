@@ -25,7 +25,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党员帮扶Controller
+ * 会员帮扶Controller
  *
  * @author ruoyi
  * @date 2021-02-27
@@ -38,7 +38,7 @@ public class DjPartyMemberHelpController extends BaseController
     private IDjPartyMemberHelpService djPartyMemberHelpService;
 
     /**
-     * 查询党员帮扶列表
+     * 查询会员帮扶列表
      */
     @PreAuthorize("@ss.hasPermi('members:help:list')")
     @GetMapping("/list")
@@ -54,10 +54,10 @@ public class DjPartyMemberHelpController extends BaseController
     }
 
     /**
-     * 导出党员帮扶列表
+     * 导出会员帮扶列表
      */
     @PreAuthorize("@ss.hasPermi('members:help:export')")
-    @Log(title = "党员帮扶", businessType = BusinessType.EXPORT)
+    @Log(title = "会员帮扶", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyMemberHelp djPartyMemberHelp)
     {
@@ -67,7 +67,7 @@ public class DjPartyMemberHelpController extends BaseController
     }
 
     /**
-     * 获取党员帮扶详细信息
+     * 获取会员帮扶详细信息
      */
     @PreAuthorize("@ss.hasPermi('members:help:query')")
     @GetMapping(value = "/{helpId}")
@@ -77,10 +77,10 @@ public class DjPartyMemberHelpController extends BaseController
     }
 
     /**
-     * 新增党员帮扶
+     * 新增会员帮扶
      */
     @PreAuthorize("@ss.hasPermi('members:help:add')")
-    @Log(title = "党员帮扶", businessType = BusinessType.INSERT)
+    @Log(title = "会员帮扶", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyMemberHelp djPartyMemberHelp)
     {
@@ -88,10 +88,10 @@ public class DjPartyMemberHelpController extends BaseController
     }
 
     /**
-     * 修改党员帮扶
+     * 修改会员帮扶
      */
     @PreAuthorize("@ss.hasPermi('members:help:edit')")
-    @Log(title = "党员帮扶", businessType = BusinessType.UPDATE)
+    @Log(title = "会员帮扶", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyMemberHelp djPartyMemberHelp)
     {
@@ -99,10 +99,10 @@ public class DjPartyMemberHelpController extends BaseController
     }
 
     /**
-     * 删除党员帮扶
+     * 删除会员帮扶
      */
     @PreAuthorize("@ss.hasPermi('members:help:remove')")
-    @Log(title = "党员帮扶", businessType = BusinessType.DELETE)
+    @Log(title = "会员帮扶", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{helpIds}")
     public AjaxResult remove(@PathVariable Long[] helpIds)
     {

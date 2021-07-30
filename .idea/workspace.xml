@@ -1,7 +1,241 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65a59fee-203a-406f-a5b2-63484019e124" name="Default Changelist" comment="" />
+    <list default="true" id="65a59fee-203a-406f-a5b2-63484019e124" name="Default Changelist" comment="Initialize">
+      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/assets/logo/logo2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/public/big/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/public/big/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/public/big/index.html.bak" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/public/big/index.html.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/public/big/js/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/public/big/js/js.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/public/big/js/js.js.bak" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/public/big/js/js.js.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/public/big/js/js.js.bak20210124" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/public/big/js/js.js.bak20210124" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/public/big/videojs-playlist-master/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/public/big/videojs-playlist-master/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/public/big/videojs-playlist-master/index.html.bak" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/public/big/videojs-playlist-master/index.html.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/members/help.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/members/help.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/members/specialty.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/members/specialty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/members/suggestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/members/suggestions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/addsubtract.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/addsubtract.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/assessment.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/assessment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/assessmentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/assessmentList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/assessmentyear.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/assessmentyear.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/assessor.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/assessor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/due.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/due.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/dueOrg.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/dueOrg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/duePlan.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/duePlan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/member.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/member.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/memberChange.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/memberChange.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/memberFlow.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/memberFlow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/org.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/org.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/orgPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/orgPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/partyChange.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/partyChange.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/train.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/train.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/party/trainMember.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/party/trainMember.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/assets/logo/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/assets/logo/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/archives/archives.css" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/archives/archives.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/element-variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/element-variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/components/Comment/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/components/Comment/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/components/OrgTransfer/OrgTransfer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/components/OrgTransfer/OrgTransfer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/layout/components/Sidebar/Logo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/layout/components/Sidebar/Logo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/layout/components/TagsView/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/layout/components/TagsView/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/layout/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/arrange/activityArrange.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/arrange/activityArrange.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/arrange/memberTransfer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/arrange/memberTransfer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/activityDetailed.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/activityDetailed.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/activityExperience.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/activityExperience.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/activityScreen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/activityScreen.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/activitySuggestions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/activitySuggestions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/memberStatus.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/detailed/memberStatus.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/experience/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/experience/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/plan/activityPlan.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/plan/activityPlan.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/plan/orgTransfer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/plan/orgTransfer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/plan/orgTreeTransfer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/plan/orgTreeTransfer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/plan/partyOrgCheckBox.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/plan/partyOrgCheckBox.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/suggestions/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/suggestions/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/supervise/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activity/supervise/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/components/selectTree.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/components/selectTree.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/dashboard/OrgMemberChart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/dashboard/OrgMemberChart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/dashboard/PanelGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/dashboard/PanelGroup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/index2.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/index2.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/members/exemplary/exemplary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/members/exemplary/exemplary.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/members/help/help.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/members/help/help.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/members/specialty/specialty.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/members/specialty/specialty.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/members/suggestions/suggestions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/members/suggestions/suggestions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/addsubtract/addsubtract.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/addsubtract/addsubtract.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessment/assessment.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessment/assessment.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessment/assessmentAssessor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessment/assessmentAssessor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessment/assessmentCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessment/assessmentCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessment/assessmentReport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessment/assessmentReport.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentAssessor/assessmentAssessor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentAssessor/assessmentAssessor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentList/assessmentList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentList/assessmentList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentScore/assessmentScore.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentScore/assessmentScore.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentyear/assessmentyear.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentyear/assessmentyear.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentyear/orgTransfer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/assessmentyear/orgTransfer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/due/due.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/due/due.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/due/dueCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/due/dueCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/dueOrg/dueOrg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/dueOrg/dueOrg.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/dueOrg/dueOrgCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/dueOrg/dueOrgCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/duePlan/duePlan.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/duePlan/duePlan.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/member/memberPortrait.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/member/memberPortrait.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/member/partyMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/member/partyMember.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/memberChange/memberChangeDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/memberChange/memberChangeDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/memberChange/partyMemberChange.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/memberChange/partyMemberChange.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/memberFlow/memberFlow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/memberFlow/memberFlow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/PanelGroupArchive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/PanelGroupArchive.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyMemberChoose.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyMemberChoose.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrg.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgArchives.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgArchives.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgChangeRemind.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgChangeRemind.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgPost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgPost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/partyChange/changeDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/partyChange/changeDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/partyChange/partyChange.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/partyChange/partyChange.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/performanceScore/performanceScore.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/performanceScore/performanceScore.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/performanceScore/performanceScoreCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/performanceScore/performanceScoreCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/politicalBirthday/politicalBirthday.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/politicalBirthday/politicalBirthday.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/preMember/preMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/preMember/preMember.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/train/memberChoose.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/train/memberChoose.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/train/partyTrain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/train/partyTrain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/train/trainMember.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/train/trainMember.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/party/train/trainRank.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/party/train/trainRank.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activityArrange.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activityArrange.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activityDetailed.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activityDetailed.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activityExperience.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activityExperience.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activityMessage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activityMessage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activitySuggestions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/activitySuggestions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/memberChangeDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/memberChangeDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/memberSuggestions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/memberSuggestions.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/partyChange.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/partyChange.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/partyChangeRemind.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/partyChangeRemind.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/partyExemplary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/sys/todo/partyExemplary.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/system/role/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/system/role/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/tool/build/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/tool/build/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/aspectj/lang/annotation/DataScope.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/aspectj/lang/annotation/DataScope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/task/PartyChangeTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/task/PartyChangeTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/task/PoliticalBirthdayTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/task/PoliticalBirthdayTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityArrange.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityArrange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityDetailed.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityDetailed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityExperience.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityExperience.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityPlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivityPlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivitySuggestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivitySuggestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivitySupervise.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/domain/DjActivitySupervise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/service/impl/DjActivityDetailedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/service/impl/DjActivityDetailedServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/service/impl/DjActivityMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/activity/service/impl/DjActivityMemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/bigData/controller/BigDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/bigData/controller/BigDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/controller/DjPartyMemberHelpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/controller/DjPartyMemberHelpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/controller/DjPartyMemberSuggestionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/controller/DjPartyMemberSuggestionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/controller/DjPartySpecialtyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/controller/DjPartySpecialtyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/domain/DjPartyExemplary.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/domain/DjPartyExemplary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/domain/DjPartyMemberHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/domain/DjPartyMemberHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/domain/DjPartyMemberSuggestions.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/domain/DjPartyMemberSuggestions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/domain/DjPartySpecialty.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/domain/DjPartySpecialty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/mapper/DjPartyMemberHelpMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/mapper/DjPartyMemberHelpMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/mapper/DjPartyMemberSuggestionsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/mapper/DjPartyMemberSuggestionsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/mapper/DjPartySpecialtyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/mapper/DjPartySpecialtyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/IDjPartyMemberHelpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/IDjPartyMemberHelpService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/IDjPartyMemberSuggestionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/IDjPartyMemberSuggestionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/IDjPartySpecialtyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/IDjPartySpecialtyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/impl/DjPartyMemberHelpServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/impl/DjPartyMemberHelpServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/impl/DjPartyMemberSuggestionsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/impl/DjPartyMemberSuggestionsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/impl/DjPartySpecialtyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/members/service/impl/DjPartySpecialtyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentAddsubtractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentAddsubtractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentAssessorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentAssessorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentyearController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjOrgAssessmentyearController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyChangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyChangeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberChangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberChangeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberDueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberDueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberDueOrgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberDueOrgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberDuePlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberDuePlanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberFlowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyMemberFlowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyOrgController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyOrgController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyOrgPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyOrgPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyTrainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyTrainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyTrainMemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/controller/DjPartyTrainMemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessment.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessmentAddsubtract.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessmentAddsubtract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessmentAssessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessmentAssessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessmentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessmentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessmentyear.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjOrgAssessmentyear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberChange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberDue.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberDue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberDueOrg.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberDueOrg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberDuePlan.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberDuePlan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberPoliticalBirthday.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyMemberPoliticalBirthday.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyOrg.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyOrg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyOrgPost.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyOrgPost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyTrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyTrainMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/domain/DjPartyTrainMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentAddsubtractMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentAddsubtractMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentAssessorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentAssessorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentyearMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjOrgAssessmentyearMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyChangeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyChangeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberChangeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberChangeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberDueMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberDueMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberDueOrgMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberDueOrgMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberDuePlanMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberDuePlanMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberFlowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberFlowMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyMemberMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyOrgMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyOrgMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyOrgPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyOrgPostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyTrainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyTrainMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyTrainMemberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/mapper/DjPartyTrainMemberMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentAddsubtractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentAddsubtractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentAssessorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentAssessorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentyearService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjOrgAssessmentyearService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyChangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyChangeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberChangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberChangeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberDueOrgService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberDueOrgService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberDuePlanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberDuePlanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberDueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberDueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberFlowService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberFlowService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyMemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyOrgPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyOrgPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyOrgService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyOrgService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyTrainMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyTrainMemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyTrainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/IDjPartyTrainService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentAddsubtractServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentAddsubtractServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentAssessorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentAssessorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentListServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentyearServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjOrgAssessmentyearServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyChangeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyChangeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberChangeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberChangeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberDueOrgServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberDueOrgServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberDuePlanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberDuePlanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberDueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberDueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberFlowServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberFlowServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyMemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyOrgPostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyOrgPostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyOrgServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyOrgServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyTrainMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyTrainMemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyTrainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/party/service/impl/DjPartyTrainServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/controller/SysRegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/controller/SysRegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/mapper/SysUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/service/ISysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/service/ISysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/service/impl/SysUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/main/resources/application-test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/main/resources/application-test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi/src/test/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi/src/test/test.jsp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/ruoyi/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,12 +244,102 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ruoyi/pom.xml">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/variables.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1197">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="84">
+              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/controller/SysLoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/security/service/SysLoginService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="73" column="41" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ruoyi/src/main/resources/i18n/messages.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/security/service/UserDetailsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.3.RELEASE/spring-core-5.1.3.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.3.RELEASE/spring-aop-5.1.3.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="472" selection-start-line="472" selection-end-line="472" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.3.RELEASE/spring-aop-5.1.3.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.1.3.RELEASE/spring-tx-5.1.3.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="181" selection-start-line="181" selection-end-line="181" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/security/LoginBody.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
+              <folding>
+                <element signature="e#366#367#0" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+                <element signature="e#528#529#0" expanded="true" />
+                <element signature="e#559#560#0" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#851#852#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -25,7 +349,42 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>xss</find>
+      <find>中铁三局广东公司智慧党建系统</find>
+      <find>智慧党建系统</find>
+      <find>正在加载</find>
+      <find>gold</find>
+      <find>#A51010</find>
+      <find>history</find>
+      <find>#f5222d</find>
+      <find>f5222d</find>
+      <find>el-tree-node__label</find>
+      <find>sidebar-logo-container</find>
+      <find>支部党员墙</find>
+      <find>sidebar-title</find>
+      <find>党建系统</find>
+      <find>中铁三局广东公司智慧</find>
+      <find>.el-submenu__title</find>
+      <find>党组织</find>
+      <find>党员</find>
+      <find>党费</find>
+      <find>selectUserByUserName</find>
+      <find>login&quot;</find>
+      <find>loadUserByUsername</find>
+      <find>user.not.exists</find>
+      <find>用户不存在/密码错误</find>
+      <find>user.password.not.match</find>
+      <find>入党</find>
+      <find>党内</find>
     </findStrings>
+    <replaceStrings>
+      <replace>中铁三局广东公司智慧工会系统</replace>
+      <replace>智慧工会系统</replace>
+      <replace>工会</replace>
+      <replace>会员</replace>
+      <replace>会费</replace>
+      <replace>入会</replace>
+      <replace>会内</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,8 +394,18 @@
       <list>
         <option value="$PROJECT_DIR$/ruoyi/pom.xml" />
         <option value="$PROJECT_DIR$/ruoyi/src/main/resources/application-dev.yml" />
-        <option value="$PROJECT_DIR$/ruoyi/src/main/resources/application-prod.yml" />
         <option value="$PROJECT_DIR$/ruoyi/src/main/resources/application-test.yml" />
+        <option value="$PROJECT_DIR$/ruoyi/src/main/resources/application-prod.yml" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/layout/index.vue" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/public/index.html" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/layout/components/TagsView/index.vue" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/element-variables.scss" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/views/components/selectTree.vue" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/views/dashboard/PanelGroup.vue" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/archives/archives.css" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgArchives.vue" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/layout/components/Sidebar/Logo.vue" />
+        <option value="$PROJECT_DIR$/ruoyi-ui/src/assets/styles/variables.scss" />
       </list>
     </option>
   </component>
@@ -55,7 +424,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="20" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -67,6 +436,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -74,12 +445,15 @@
               <item name="gh" type="b2602c69:ProjectViewProjectNode" />
               <item name="ruoyi" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="gh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ruoyi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -89,7 +463,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1627574732218" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1627656624811" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ruoyi/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -97,10 +471,16 @@
     <property name="node.js.selected.package.eslint" value="D:\IDEAproject\gh\ruoyi-ui\node_modules\eslint" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28045976" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAproject\gh\ruoyi-ui\src\assets\logo" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -137,7 +517,8 @@
       <option name="presentableId" value="Default" />
       <updated>1627570347974</updated>
       <workItem from="1627570350226" duration="993000" />
-      <workItem from="1627571621105" duration="3613000" />
+      <workItem from="1627571621105" duration="3810000" />
+      <workItem from="1627647052020" duration="7554000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize">
       <created>1627570993848</created>
@@ -164,12 +545,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4606000" />
+    <option name="totallyTimeSpent" value="12357000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="886" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="886" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25358167" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25716332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -177,11 +559,10 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32934928" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32934928" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.5922975" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5922975" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -192,6 +573,8 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32934928" />
+      <window_info anchor="right" id="Preview" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -210,6 +593,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialize" />
     <option name="LAST_COMMIT_MESSAGE" value="Initialize" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/security/service/SysLoginService.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ruoyi-ui/README.md">
@@ -238,34 +633,242 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ruoyi/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/resources/application-dev.yml">
+    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/resources/application-test.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="121" column="4" selection-start-line="121" selection-start-column="4" selection-end-line="121" selection-end-column="15" />
+        <state relative-caret-position="284">
+          <caret line="69" column="45" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ruoyi/src/main/resources/application-prod.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="121" column="15" selection-start-line="121" selection-start-column="15" selection-end-line="121" selection-end-column="15" />
+        <state relative-caret-position="475">
+          <caret line="76" column="22" lean-forward="true" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/resources/application-test.yml">
+    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/resources/application-dev.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
-          <caret line="121" column="15" selection-start-line="121" selection-start-column="15" selection-end-line="121" selection-end-column="15" />
+          <caret line="70" column="45" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ruoyi/pom.xml">
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/logo/logo1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/logo/logo2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/ruoyi.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/logo/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/views/index.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/views/sys/history/history.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1197">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state relative-caret-position="83">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#el-link#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/layout/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="e#572#620#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/sidebar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/element-variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/layout/components/TagsView/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="226" column="29" selection-start-line="226" selection-start-column="29" selection-end-line="226" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/views/components/selectTree.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="168" column="18" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/views/party/member/memberPortrait.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/views/party/org/partyOrgArchives.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#el-tabs#0;n#div#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#el-image#0;n#div#0;n#div#0;n#el-tab-pane#0;n#el-tabs#0;n#div#0;n#el-dialog#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/views/dashboard/PanelGroup.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-875">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/archives/archives.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="83" column="27" selection-start-line="83" selection-start-column="21" selection-end-line="83" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/views/party/org/PanelGroupArchive.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="136" column="28" lean-forward="true" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/views/party/member/partyMember.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4650" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/member-avatar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="34" column="21" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/layout/components/Sidebar/Logo.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="79" column="14" lean-forward="true" selection-start-line="79" selection-start-column="14" selection-end-line="79" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/security/LoginBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.3.RELEASE/spring-core-5.1.3.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.3.RELEASE/spring-aop-5.1.3.RELEASE.jar!/org/springframework/aop/framework/CglibAopProxy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="472" selection-start-line="472" selection-end-line="472" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.1.3.RELEASE/spring-aop-5.1.3.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.1.3.RELEASE/spring-tx-5.1.3.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="181" selection-start-line="181" selection-end-line="181" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/resources/i18n/messages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/project/system/controller/SysLoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/security/service/SysLoginService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="73" column="41" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ruoyi/src/main/java/com/ruoyi/framework/security/service/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>

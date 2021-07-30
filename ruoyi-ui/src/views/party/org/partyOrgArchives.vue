@@ -8,7 +8,7 @@
        <panel-group-archive ref="panelGroupArchive" :partyOrgId="partyOrgId"/>
 
         <el-tabs type="border-card" style="margin-bottom: 20px">
-          <el-tab-pane label="支部党员墙">
+          <el-tab-pane label="支部会员墙">
             <div class="member-pic" v-for="member in memberList" :key="member.memberId">
               <div class="member-avatar">
                 <el-image
@@ -59,7 +59,7 @@
     components: {PanelGroupArchive, PoliticalBirthday, PartyChange,ActivityDetailed},
     data() {
       return {
-        title:'党组织档案',
+        title:'工会档案',
         // 是否显示弹出层
         open: false,
         bodyStyle:{
@@ -72,7 +72,7 @@
         memberList:[],
         // 职务字典
         partyPositionTypeOptions: [],
-        // 党员类型字典
+        // 会员类型字典
         memberTypeOptions: [],
         partyOrgId:undefined,
       };
@@ -145,7 +145,7 @@
   }
 
   .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{
-   background-color: #cf001c !important;
+   background-color: #1890ff !important;
    color: white  !important;
   }
 </style>

@@ -1,21 +1,21 @@
 <template>
   <div class="app-container">
     <el-form v-if="!see":model="queryParams" ref="queryForm" :inline="true" label-width="68px">
-      <el-form-item label="党员姓名" prop="memberName">
+      <el-form-item label="会员姓名" prop="memberName">
         <el-input
           v-model="queryParams.memberName"
-          placeholder="请输入党员姓名"
+          placeholder="请输入会员姓名"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="党组织" prop="partyOrgId">
+      <el-form-item label="工会" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setVModelValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
       <el-form-item label="模范事项" prop="exemplaryTheme">
@@ -81,8 +81,8 @@
     <el-table v-loading="loading" :data="exemplaryList"
               :stripe="true" :border="true"  @selection-change="handleSelectionChange">
       <el-table-column label="序号" align="center" type="index"/>
-      <el-table-column v-if="!see"label="党员姓名" align="center" prop="djPartyMember.memberName" />
-      <el-table-column v-if="!see"label="党组织名称" align="center" prop="djPartyOrg.partyOrgFullName"  />
+      <el-table-column v-if="!see"label="会员姓名" align="center" prop="djPartyMember.memberName" />
+      <el-table-column v-if="!see"label="工会名称" align="center" prop="djPartyOrg.partyOrgFullName"  />
       <el-table-column label="记录日期" align="center" prop="recordTime" width="180">
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.recordTime, '{y}-{m}-{d}') }}</span>
@@ -143,7 +143,7 @@
 
           <el-row>
             <el-col :span="12">
-              <el-form-item  label="党员姓名" prop="memberName">
+              <el-form-item  label="会员姓名" prop="memberName">
                 <el-input :disabled="true" v-model="form.memberName" placeholder="请选择负责人">
                   <el-button  :disabled="disabled" slot="append" icon="el-icon-search"
                               @click="openMemberChoose" ></el-button>
@@ -151,7 +151,7 @@
               </el-form-item>
             </el-col>
             <el-col :span="12">
-              <el-form-item label="党组织" prop="partyOrgId">
+              <el-form-item label="工会" prop="partyOrgId">
                 <el-input  v-model="form.partyOrgName" placeholder="" :disabled="true" />
               </el-form-item>
             </el-col>
@@ -531,7 +531,7 @@
           this.partyOrgOptions = this.treeInitData(response.data);
         });
       },
-      //选择党员
+      //选择会员
       setMember(member) {
         this.form.memberId = member.memberId;
         this.form.memberName = member.memberName;
@@ -544,7 +544,7 @@
       },
       openMemberChoose() {
         this.$refs.partyMember.open = true;
-        this.$refs.partyMember.title = "选择党员";
+        this.$refs.partyMember.title = "选择会员";
         this.$refs.partyMember.queryParams.memberType ="all";
       },
       //审批状态

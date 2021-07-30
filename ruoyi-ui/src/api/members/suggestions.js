@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党员建议列表
+// 查询会员建议列表
 export function listSuggestions(query) {
   return request({
     url: '/members/suggestions/list',
@@ -9,7 +9,7 @@ export function listSuggestions(query) {
   })
 }
 
-// 查询党员建议详细
+// 查询会员建议详细
 export function getSuggestions(suggestionsId) {
   return request({
     url: '/members/suggestions/' + suggestionsId,
@@ -17,7 +17,7 @@ export function getSuggestions(suggestionsId) {
   })
 }
 
-// 新增党员建议
+// 新增会员建议
 export function addSuggestions(data) {
   return request({
     url: '/members/suggestions',
@@ -26,7 +26,7 @@ export function addSuggestions(data) {
   })
 }
 
-// 修改党员建议
+// 修改会员建议
 export function updateSuggestions(data) {
   return request({
     url: '/members/suggestions',
@@ -35,7 +35,7 @@ export function updateSuggestions(data) {
   })
 }
 
-// 删除党员建议
+// 删除会员建议
 export function delSuggestions(suggestionsId) {
   return request({
     url: '/members/suggestions/' + suggestionsId,
@@ -43,7 +43,7 @@ export function delSuggestions(suggestionsId) {
   })
 }
 
-// 导出党员建议
+// 导出会员建议
 export function exportSuggestions(query) {
   return request({
     url: '/members/suggestions/export',

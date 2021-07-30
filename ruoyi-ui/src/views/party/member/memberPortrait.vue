@@ -117,7 +117,7 @@
             <div class="portrait-promise">
               <el-row>
                 <el-col :span="24" class="promise-title portrait-title">
-                  入党宣誓词
+                  入会宣誓词
                 </el-col>
               </el-row>
 
@@ -149,13 +149,13 @@
             <div class="portrait-member">
               <el-row>
                 <el-col :span="24" class="member-title portrait-title">
-                  党员信息
+                  会员信息
                 </el-col>
               </el-row>
 
               <el-row>
                 <el-col :span="8" class="member-label portrait-label">
-                  所属党组织:
+                  所属工会:
                 </el-col>
                 <el-tooltip class="item" effect="dark"
                             placement="bottom"
@@ -167,7 +167,7 @@
               </el-row>
               <el-row>
                 <el-col :span="8" class="member-label portrait-label">
-                  党员类型:
+                  会员类型:
                 </el-col>
                 <el-col :span="16" class="member-content portrait-content">
                   {{ memberTypeFormat(member.memberType)}}
@@ -183,7 +183,7 @@
               </el-row>
               <el-row>
                 <el-col :span="8" class="member-label portrait-label">
-                  加入党支部日期:
+                  加入会支部日期:
                 </el-col>
                 <el-col :span="16" class="member-content portrait-content">
                   {{ parseTime(member.joinBranchData, '{y}-{m}-{d}') }}
@@ -191,7 +191,7 @@
               </el-row>
               <el-row>
                 <el-col :span="8" class="member-label portrait-label">
-                  入党日期:
+                  入会日期:
                 </el-col>
                 <el-col :span="16" class="member-content portrait-content">
                   {{ parseTime(member.joinData, '{y}-{m}-{d}') }}
@@ -199,7 +199,7 @@
               </el-row>
               <el-row>
                 <el-col :span="8" class="member-label portrait-label">
-                  转为正式党员日期:
+                  转为正式会员日期:
                 </el-col>
                 <el-col :span="16" class="member-content portrait-content">
                   {{ parseTime(member.formalData, '{y}-{m}-{d}') }}
@@ -207,7 +207,7 @@
               </el-row>
               <el-row>
                 <el-col :span="8" class="member-label portrait-label">
-                  党内职务:
+                  会内职务:
                 </el-col>
                 <el-col :span="16" class="member-content portrait-content">
                   {{ partyPositionTypeFormat(member.partyPositionType)}}
@@ -228,7 +228,7 @@
             <div class="portrait-radar">
               <el-row>
                 <el-col :span="24" class="radar-title portrait-title">
-                  党员统计
+                  会员统计
                 </el-col>
               </el-row>
 
@@ -434,11 +434,11 @@
         academicDegreeOptions: [],
         // 职务字典
         administrativePositionOptions: [],
-        // 党员类型字典
+        // 会员类型字典
         memberTypeOptions: [],
         // 在岗状态字典
         memberStatusOptions: [],
-        // 党内职务字典
+        // 会内职务字典
         partyPositionTypeOptions: [],
         portraitContent: undefined,
       }
@@ -479,7 +479,7 @@
         getPartyMember(memberId).then(response => {
           this.member = response.data;
           this.open = true;
-          this.title =  "党员画像";
+          this.title =  "会员画像";
         }).then(()=>{
           this.$nextTick(() => {
             this.initChart(memberId)
@@ -492,7 +492,7 @@
           { name: '组织生活', max: 85}, //max 活动次数
           { name: '学习教育', max: 100}, //max
           { name: '先锋模范', max: 10}, //max 10
-          { name: '党员特长', max: 10}, // max 10
+          { name: '会员特长', max: 10}, // max 10
           { name: '民主评议', max: 1}, // 点评占比
         ];
         let data =  [
@@ -519,7 +519,7 @@
               indicator: indicator
             },
             series: [{
-              name: '党员统计',
+              name: '会员统计',
               type: 'radar',
               // areaStyle: {normal: {}},
               data: data,
@@ -550,7 +550,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      // 党员类型字典翻译
+      // 会员类型字典翻译
       memberTypeFormat(val) {
         return this.selectDictLabel(this.memberTypeOptions, val);
       },
@@ -558,7 +558,7 @@
       memberStatusFormat(val) {
         return this.selectDictLabel(this.memberStatusOptions, val);
       },
-      // 党内职务字典翻译
+      // 会内职务字典翻译
       partyPositionTypeFormat(val) {
         return this.selectDictLabel(this.partyPositionTypeOptions,val);
       },

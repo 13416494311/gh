@@ -9,13 +9,13 @@
 
         <el-row>
           <el-col :span="12">
-            <el-form-item  label="党员姓名" prop="memberName">
+            <el-form-item  label="会员姓名" prop="memberName">
               <el-input :disabled="disabled" v-model="form.memberName" placeholder="请选择负责人">
               </el-input>
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="党组织" prop="partyOrgId">
+            <el-form-item label="工会" prop="partyOrgId">
               <el-input  v-model="form.partyOrgName" placeholder="" :disabled="true" />
             </el-form-item>
           </el-col>

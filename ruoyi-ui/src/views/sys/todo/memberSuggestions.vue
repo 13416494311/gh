@@ -8,15 +8,15 @@
         </div>
         <el-row>
           <el-col :span="12">
-            <el-form-item label="党员姓名" prop="memberId">
+            <el-form-item label="会员姓名" prop="memberId">
               <el-input v-model="form.partyMemberName"
-                        placeholder="请输入党员姓名" :disabled="true"  />
+                        placeholder="请输入会员姓名" :disabled="true"  />
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="党组织名称" prop="partyOrgId">
+            <el-form-item label="工会名称" prop="partyOrgId">
               <el-input  v-model="form.partyOrgName"
-                         placeholder="请输入党组织名称" :disabled="true" />
+                         placeholder="请输入工会名称" :disabled="true" />
             </el-form-item>
           </el-col>
         </el-row>
@@ -113,7 +113,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员建议/心愿表格数据
+        // 会员建议/心愿表格数据
         suggestionsList: [],
         // 弹出层标题
         title: "",

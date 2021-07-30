@@ -7,15 +7,15 @@ $(function () {
   count();
   //党支部地域分布
   echarts_1();
-  //各支部党员人数
+  //各支部会员人数
   echarts_2();
   //各支部活动组织完成率排名
   echarts_4();
-  //党员年龄比例
+  //会员年龄比例
   echarts_31();
   //男女比例
   echarts_32();
-  //党员学历情况
+  //会员学历情况
   echarts_33();
   //年度党建工作计划
   yearWorkPlan();
@@ -156,7 +156,7 @@ function echarts_1() {
     myChart.resize();
   });
 }
-//各支部党员人数
+//各支部会员人数
 function echarts_2() {
   let xData = [] //['机关一支部', '机关二支部', '第一工程段党支部', '第二工程段党支部', '第三工程段党支部','第四工程段党支部','第五工程段党支部','第六工程段党支部','机械段党支部','市政工程段党支部','东莞地铁1号线项目党支部','综合管廊项目党支部','赣深2标项目党支部','惠州分公司党支部','深圳市政项目党支部','城轨工程第一分公司党支部','水务分公司党支部','广湛项目党支部'];
   let yData = [] //[28,24,13,8,9,9,6,7,6,8,7,8,11,20,4,16,5,7];
@@ -420,7 +420,7 @@ function echarts_4() {
     myChart.resize();
   });
 }
-//党员年龄比例
+//会员年龄比例
 function echarts_31() {
   let legendData =  []//['30岁以下','30-39岁','40-49岁','50岁以上'];
   let seriesData = []// [ {value:37, name:'30岁以下'}, {value:48, name:'30-39岁'}, {value:79, name:'40-49岁'},{value:32, name:'50岁以上'},];
@@ -443,7 +443,7 @@ function echarts_31() {
   var myChart = echarts.init(document.getElementById('fb1'));
   option = {
     title: [{
-      text: '党员年龄比例',
+      text: '会员年龄比例',
       left: 'center',
       textStyle: {
         color: '#fff',
@@ -560,7 +560,7 @@ function echarts_32() {
     myChart.resize();
   });
 }
-//党员学历情况
+//会员学历情况
 function echarts_33() {
   let legendData =  [] ;//['本科以上','本科','大专中专','高中以下'];
   let seriesData =  [];  //[  {value:14, name:'本科以上'}, {value:105, name:'本科'}, {value:62, name:'大专中专'}, {value:15, name:'高中以下'}];
@@ -584,7 +584,7 @@ function echarts_33() {
   var myChart = echarts.init(document.getElementById('fb3'));
   option = {
     title: [{
-      text: '党员学历情况',
+      text: '会员学历情况',
       left: 'center',
       textStyle: {
         color: '#fff',

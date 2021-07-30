@@ -12,7 +12,7 @@
         <settings />
       </right-panel>
     </div>
-    <history ref="history"></history>
+    <!--<history ref="history"></history>-->
   </div>
 </template>
 

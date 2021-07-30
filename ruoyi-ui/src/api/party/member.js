@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党员信息列表
+// 查询会员信息列表
 export function listPartyMember(query) {
   return request({
     url: '/party/member/list',
@@ -9,7 +9,7 @@ export function listPartyMember(query) {
   })
 }
 
-// 查询党员信息列表
+// 查询会员信息列表
 export function listPartyMemberNoPage(query) {
   return request({
     url: '/party/member/listNoPage',
@@ -26,14 +26,14 @@ export function getMemberCount() {
   })
 }
 
-// 查询党员信息详细
+// 查询会员信息详细
 export function getPartyMember(memberId) {
   return request({
     url: '/party/member/' + memberId,
     method: 'get'
   })
 }
-// 查询党员信息详细
+// 查询会员信息详细
 export function getPartyMemberRadarData(memberId) {
   return request({
     url: '/party/member/getPartyMemberRadarData/' + memberId,
@@ -41,7 +41,7 @@ export function getPartyMemberRadarData(memberId) {
   })
 }
 
-// 新增党员信息
+// 新增会员信息
 export function addPartyMember(data) {
   return request({
     url: '/party/member',
@@ -49,7 +49,7 @@ export function addPartyMember(data) {
     data: data
   })
 }
-// 新增党员信息
+// 新增会员信息
 export function addPartyMember1(data) {
   return request({
     url: '/party/member/add',
@@ -58,7 +58,7 @@ export function addPartyMember1(data) {
   })
 }
 
-// 修改党员信息
+// 修改会员信息
 export function updatePartyMember(data) {
   return request({
     url: '/party/member',
@@ -66,7 +66,7 @@ export function updatePartyMember(data) {
     data: data
   })
 }
-// 修改党员信息
+// 修改会员信息
 export function updatePartyMember1(data) {
   return request({
     url: '/party/member/update',
@@ -75,7 +75,7 @@ export function updatePartyMember1(data) {
   })
 }
 
-// 排序党员信息
+// 排序会员信息
 export function orderPartyMember(data) {
   return request({
     url: '/party/member/order',
@@ -91,7 +91,7 @@ export function updatePartyMemberAvatar(data) {
     data: data
   })
 }
-// 删除党员信息
+// 删除会员信息
 export function delPartyMember(data) {
   return request({
     url: '/party/member/del',
@@ -108,7 +108,7 @@ export function enablePartyMember(data) {
   })
 }
 
-// 导出党员信息
+// 导出会员信息
 export function exportPartyMember(query) {
   return request({
     url: '/party/member/export',

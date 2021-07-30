@@ -1,12 +1,12 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
-      <el-form-item label="党组织名称" prop="partyOrgId">
+      <el-form-item label="工会名称" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setQueryParamsValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
       <el-form-item label="培训类别" prop="trainType">
@@ -61,7 +61,7 @@
     <el-table v-loading="loading" :stripe="true"
               :border="true" :data="trainList" @selection-change="handleSelectionChange">
       <el-table-column label="序号" align="center" type="index" />
-      <el-table-column label="党组织名称" align="center" prop="partyOrg.partyOrgFullName" />
+      <el-table-column label="工会名称" align="center" prop="partyOrg.partyOrgFullName" />
       <el-table-column label="培训类别" align="center" prop="trainType"  width="120" :formatter="trainTypeFormat" />
       <el-table-column label="活动名称" align="center" prop="activityTheme" />
       <el-table-column label="活动内容" align="center"  width="400"  prop="activityContent" />
@@ -110,7 +110,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党组织培训对话框 -->
+    <!-- 添加或修改工会培训对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight"  :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle"  label-width="150px">
@@ -121,13 +121,13 @@
           </div>
           <el-row>
             <el-col :span="12">
-              <el-form-item label="党组织名称" prop="partyOrgId">
+              <el-form-item label="工会名称" prop="partyOrgId">
                 <select-tree :value="form.partyOrgId"
                              :disabled="disabled"
                              :options="partyOrgOptions"
                              vModel="partyOrgId"
                              @selected="setVModelValue"
-                             placeholder="请选择党组织"
+                             placeholder="请选择工会"
                 />
               </el-form-item>
             </el-col>
@@ -246,7 +246,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织培训表格数据
+        // 工会培训表格数据
         trainList: [],
         // 弹出层标题
         title: "",
@@ -299,7 +299,7 @@
           marginLeft:'2%' ,
           paddingRight:'2%',
         },
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         disabled:false,
         trainTypeShow:false,
@@ -363,7 +363,7 @@
       getHeight(){
         this.bodyStyle.height=window.innerHeight-281+'px';
       },
-      /** 查询党组织培训列表 */
+      /** 查询工会培训列表 */
       getList() {
         this.loading = true;
         listTrain(this.queryParams).then(response => {
@@ -426,7 +426,7 @@
         this.reset();
         this.open = true;
         this.disabled = false;
-        this.title = "添加党组织培训";
+        this.title = "添加工会培训";
         this.form.trainUuid = this.uuid();
         this.$nextTick(function () {
           this.$refs.trainMember.init(this.form.trainUuid, '') ;
@@ -441,7 +441,7 @@
         getTrain(trainId).then(response => {
           this.form = response.data;
           this.open = true;
-          this.title = "修改党组织培训";
+          this.title = "修改工会培训";
         }).then(()=>{
           this.$refs.trainMember.init(this.form.trainUuid, this.form.partyOrgId) ;
           this.$refs.uploadAllFile.init(this.form.trainUuid, 'partyTrain') ;
@@ -454,7 +454,7 @@
         getTrain(trainId).then(response => {
           this.form = response.data;
           this.open = true;
-          this.title = "查看党组织培训";
+          this.title = "查看工会培训";
         }).then(()=>{
           this.$refs.trainMember.init(this.form.trainUuid, this.form.partyOrgId) ;
           this.$refs.uploadAllFile.init(this.form.trainUuid, 'partyTrain') ;
@@ -491,7 +491,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const trainIds = row.trainId || this.ids;
-        this.$confirm('是否确认删除党组织培训编号为"' + trainIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会培训编号为"' + trainIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -505,7 +505,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织培训数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会培训数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

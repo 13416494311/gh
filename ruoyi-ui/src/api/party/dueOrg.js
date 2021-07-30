@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党组织党费列表
+// 查询工会会费列表
 export function listDueOrg(query) {
   return request({
     url: '/party/dueOrg/list',
@@ -8,7 +8,7 @@ export function listDueOrg(query) {
     params: query
   })
 }
-// 查询党组织党费列表
+// 查询工会会费列表
 export function pageDueOrg(data) {
   return request({
     url: '/party/dueOrg/page',
@@ -16,7 +16,7 @@ export function pageDueOrg(data) {
     data: data
   })
 }
-// 查询党组织党费详细
+// 查询工会会费详细
 export function getDueOrg(dueOrgId) {
   return request({
     url: '/party/dueOrg/' + dueOrgId,
@@ -24,7 +24,7 @@ export function getDueOrg(dueOrgId) {
   })
 }
 
-// 新增党组织党费
+// 新增工会会费
 export function addDueOrg(data) {
   return request({
     url: '/party/dueOrg',
@@ -34,7 +34,7 @@ export function addDueOrg(data) {
 }
 
 
-// 新增党组织党费
+// 新增工会会费
 export function addDueOrgList(data) {
   return request({
     url: '/party/dueOrg/addList',
@@ -44,7 +44,7 @@ export function addDueOrgList(data) {
 }
 
 
-// 修改党组织党费
+// 修改工会会费
 export function updateDueOrg(data) {
   return request({
     url: '/party/dueOrg',
@@ -53,7 +53,7 @@ export function updateDueOrg(data) {
   })
 }
 
-// 删除党组织党费
+// 删除工会会费
 export function delDueOrg(dueOrgId) {
   return request({
     url: '/party/dueOrg/' + dueOrgId,
@@ -61,7 +61,7 @@ export function delDueOrg(dueOrgId) {
   })
 }
 
-// 导出党组织党费
+// 导出工会会费
 export function exportDueOrg(query) {
   return request({
     url: '/party/dueOrg/export',

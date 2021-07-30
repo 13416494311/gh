@@ -11,7 +11,7 @@ import com.ruoyi.project.party.service.IDjOrgAssessmentListService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党组织考核评价清单Service业务层处理
+ * 工会考核评价清单Service业务层处理
  *
  * @author admin
  * @date 2021-03-08
@@ -24,10 +24,10 @@ public class DjOrgAssessmentListServiceImpl implements IDjOrgAssessmentListServi
     private DjOrgAssessmentListMapper djOrgAssessmentListMapper;
 
     /**
-     * 查询党组织考核评价清单
+     * 查询工会考核评价清单
      *
-     * @param listId 党组织考核评价清单ID
-     * @return 党组织考核评价清单
+     * @param listId 工会考核评价清单ID
+     * @return 工会考核评价清单
      */
     @Override
     public DjOrgAssessmentList selectDjOrgAssessmentListById(Long listId)
@@ -36,10 +36,10 @@ public class DjOrgAssessmentListServiceImpl implements IDjOrgAssessmentListServi
     }
 
     /**
-     * 查询党组织考核评价清单列表
+     * 查询工会考核评价清单列表
      *
-     * @param djOrgAssessmentList 党组织考核评价清单
-     * @return 党组织考核评价清单
+     * @param djOrgAssessmentList 工会考核评价清单
+     * @return 工会考核评价清单
      */
     @Override
     public List<DjOrgAssessmentList> selectDjOrgAssessmentListList(DjOrgAssessmentList djOrgAssessmentList)
@@ -48,9 +48,9 @@ public class DjOrgAssessmentListServiceImpl implements IDjOrgAssessmentListServi
     }
 
     /**
-     * 新增党组织考核评价清单
+     * 新增工会考核评价清单
      *
-     * @param djOrgAssessmentList 党组织考核评价清单
+     * @param djOrgAssessmentList 工会考核评价清单
      * @return 结果
      */
     @Override
@@ -63,9 +63,9 @@ public class DjOrgAssessmentListServiceImpl implements IDjOrgAssessmentListServi
     }
 
     /**
-     * 修改党组织考核评价清单
+     * 修改工会考核评价清单
      *
-     * @param djOrgAssessmentList 党组织考核评价清单
+     * @param djOrgAssessmentList 工会考核评价清单
      * @return 结果
      */
     @Override
@@ -77,9 +77,9 @@ public class DjOrgAssessmentListServiceImpl implements IDjOrgAssessmentListServi
     }
 
     /**
-     * 批量删除党组织考核评价清单
+     * 批量删除工会考核评价清单
      *
-     * @param listIds 需要删除的党组织考核评价清单ID
+     * @param listIds 需要删除的工会考核评价清单ID
      * @return 结果
      */
     @Override
@@ -89,9 +89,9 @@ public class DjOrgAssessmentListServiceImpl implements IDjOrgAssessmentListServi
     }
 
     /**
-     * 删除党组织考核评价清单信息
+     * 删除工会考核评价清单信息
      *
-     * @param listId 党组织考核评价清单ID
+     * @param listId 工会考核评价清单ID
      * @return 结果
      */
     @Override

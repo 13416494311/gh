@@ -2,10 +2,10 @@
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="68px">
 
-      <el-form-item label="党员姓名" prop="memberName">
+      <el-form-item label="会员姓名" prop="memberName">
         <el-input
           v-model="queryParams.memberName"
-          placeholder="请输入党员姓名"
+          placeholder="请输入会员姓名"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -20,11 +20,11 @@
     <el-table :stripe="true"
               :border="true"v-loading="loading" :data="partyMemberChangeList" @selection-change="handleSelectionChange">
       <el-table-column label="序号" align="center" type="index" />
-      <el-table-column label="党员姓名" align="center" prop="memberName"/>
-      <el-table-column label="党内职务" align="center" prop="partyPositionType" :formatter="partyPositionTypeFormat" />
+      <el-table-column label="会员姓名" align="center" prop="memberName"/>
+      <el-table-column label="会内职务" align="center" prop="partyPositionType" :formatter="partyPositionTypeFormat" />
       <el-table-column label="部门" align="center" prop="deptId" :formatter="deptIdFormat" />
-      <el-table-column label="党组织" align="center" prop="partyOrgId" :formatter="partyOrgIdFormat" />
-      <el-table-column label="党员类型" align="center" prop="memberType" :formatter="memberTypeFormat"/>
+      <el-table-column label="工会" align="center" prop="partyOrgId" :formatter="partyOrgIdFormat" />
+      <el-table-column label="会员类型" align="center" prop="memberType" :formatter="memberTypeFormat"/>
       <el-table-column label="变更类型" align="center" prop="changeType":formatter="changeTypeFormat"/>
       <el-table-column label="审批状态" align="center" prop="auditState" :formatter="auditStateFormat" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
@@ -79,7 +79,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员变更表表格数据
+        // 会员变更表表格数据
         partyMemberChangeList: [],
         // 弹出层标题
         title: "",
@@ -93,7 +93,7 @@
         sexOptions: [],
         // 职务字典
         administrativePositionOptions: [],
-        // 党内职务字典
+        // 会内职务字典
         partyPositionTypeOptions: [],
         // 民族字典
         nationOptions: [],
@@ -105,13 +105,13 @@
         educationOptions: [],
         // 学位字典
         academicDegreeOptions: [],
-        // 党员类型字典
+        // 会员类型字典
         memberTypeOptions: [],
         // 在岗状态字典
         memberStatusOptions: [],
-        // 流动党员字典
+        // 流动会员字典
         floatingTypeOptions: [],
-        // 党员分组字典
+        // 会员分组字典
         memberGroupOptions: [],
         // 生活困难字典
         lifeDifficultyOptions: [],
@@ -182,25 +182,25 @@
             {required: true, message: "用户唯一uuid不能为空", trigger: "blur"}
           ],
           changeType: [
-            {required: true, message: "党员变更类型（add：新增 ；edit：修改；del：删除）不能为空", trigger: "blur"}
+            {required: true, message: "会员变更类型（add：新增 ；edit：修改；del：删除）不能为空", trigger: "blur"}
           ],
           partyMemberId: [
-            {required: true, message: "关联党组织成员id不能为空", trigger: "blur"}
+            {required: true, message: "关联工会成员id不能为空", trigger: "blur"}
           ],
           auditState: [
             {required: true, message: "审批状态不能为空", trigger: "blur"}
           ],
           partyOrgId: [
-            {required: true, message: "党组织ID不能为空", trigger: "blur"}
+            {required: true, message: "工会ID不能为空", trigger: "blur"}
           ],
           workNo: [
             {required: true, message: "工号不能为空", trigger: "blur"}
           ],
           avatar: [
-            {required: true, message: "党员照片不能为空", trigger: "blur"}
+            {required: true, message: "会员照片不能为空", trigger: "blur"}
           ],
           memberName: [
-            {required: true, message: "党员姓名不能为空", trigger: "blur"}
+            {required: true, message: "会员姓名不能为空", trigger: "blur"}
           ],
           sex: [
             {required: true, message: "用户性别（0男 1女 2未知）不能为空", trigger: "blur"}
@@ -269,25 +269,25 @@
             {required: true, message: "备注不能为空", trigger: "blur"}
           ],
           memberType: [
-            {required: true, message: "党员类型不能为空", trigger: "blur"}
+            {required: true, message: "会员类型不能为空", trigger: "blur"}
           ],
           memberStatus: [
             {required: true, message: "在岗状态不能为空", trigger: "blur"}
           ],
           joinBranchData: [
-            {required: true, message: "加入党支部日期不能为空", trigger: "blur"}
+            {required: true, message: "加入会支部日期不能为空", trigger: "blur"}
           ],
           joinData: [
-            {required: true, message: "加入党日期不能为空", trigger: "blur"}
+            {required: true, message: "加入会日期不能为空", trigger: "blur"}
           ],
           formalData: [
-            {required: true, message: "转为正式党员日期不能为空", trigger: "blur"}
+            {required: true, message: "转为正式会员日期不能为空", trigger: "blur"}
           ],
           floatingType: [
-            {required: true, message: "流动党员（1：是  0：否）不能为空", trigger: "blur"}
+            {required: true, message: "流动会员（1：是  0：否）不能为空", trigger: "blur"}
           ],
           memberGroup: [
-            {required: true, message: "党员分组不能为空", trigger: "blur"}
+            {required: true, message: "会员分组不能为空", trigger: "blur"}
           ],
           lifeDifficulty: [
             {required: true, message: "生活困难（1：是  0：否）不能为空", trigger: "blur"}
@@ -393,7 +393,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党员变更表列表 */
+      /** 查询会员变更表列表 */
       getList() {
         this.loading = true;
         listPartyMemberChange(this.queryParams).then(response => {
@@ -417,7 +417,7 @@
           return "";
         }
       },
-      // 党组织id翻译
+      // 工会id翻译
       partyOrgIdFormat(row, column){
         return row.djPartyOrg.partyOrgFullName;
       },
@@ -429,7 +429,7 @@
       administrativePositionFormat(row, column) {
         return this.selectDictLabel(this.administrativePositionOptions, row.administrativePosition);
       },
-      // 党内职务字典翻译
+      // 会内职务字典翻译
       partyPositionTypeFormat(row, column) {
         return this.selectDictLabel(this.partyPositionTypeOptions, row.partyPositionType);
       },
@@ -453,7 +453,7 @@
       academicDegreeFormat(row, column) {
         return this.selectDictLabel(this.academicDegreeOptions, row.academicDegree);
       },
-      // 党员类型字典翻译
+      // 会员类型字典翻译
       memberTypeFormat(row, column) {
         return this.selectDictLabel(this.memberTypeOptions, row.memberType);
       },
@@ -461,11 +461,11 @@
       memberStatusFormat(row, column) {
         return this.selectDictLabel(this.memberStatusOptions, row.memberStatus);
       },
-      // 流动党员字典翻译
+      // 流动会员字典翻译
       floatingTypeFormat(row, column) {
         return this.selectDictLabel(this.floatingTypeOptions, row.floatingType);
       },
-      // 党员分组字典翻译
+      // 会员分组字典翻译
       memberGroupFormat(row, column) {
         return this.selectDictLabel(this.memberGroupOptions, row.memberGroup);
       },
@@ -575,7 +575,7 @@
       handleAdd() {
         this.reset();
         this.open = true;
-        this.title = "添加党员变更表";
+        this.title = "添加会员变更表";
       },
       /** 查看按钮操作 */
       handleSee(row){
@@ -588,7 +588,7 @@
         getPartyMemberChange(memberId).then(response => {
           this.form = response.data;
           this.open = true;
-          this.title = "修改党员变更表";
+          this.title = "修改会员变更表";
         });
       },
       /** 提交按钮 */
@@ -622,7 +622,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const memberIds = row.memberId || this.ids;
-        this.$confirm('是否确认删除党员变更表编号为"' + memberIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除会员变更表编号为"' + memberIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -637,7 +637,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党员变更表数据项?', "警告", {
+        this.$confirm('是否确认导出所有会员变更表数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

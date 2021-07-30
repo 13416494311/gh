@@ -53,12 +53,12 @@ public class DataScopeAspect
     public static final String DATA_SCOPE_SELF = "5";
 
     /**
-     * 党组织数据权限
+     * 工会数据权限
      */
     public static final String DATA_SCOPE_PARTY_ORG = "6";
 
     /**
-     * 党组织及以下数据权限
+     * 工会及以下数据权限
      */
     public static final String DATA_SCOPE_PARTY_ORG_AND_CHILD = "7";
 

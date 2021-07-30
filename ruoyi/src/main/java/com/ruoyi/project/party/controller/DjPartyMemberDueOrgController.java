@@ -23,7 +23,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党组织党费Controller
+ * 工会会费Controller
  *
  * @author ruoyi
  * @date 2021-06-15
@@ -36,7 +36,7 @@ public class DjPartyMemberDueOrgController extends BaseController
     private IDjPartyMemberDueOrgService djPartyMemberDueOrgService;
 
     /**
-     * 查询党组织党费列表
+     * 查询工会会费列表
      */
     @PreAuthorize("@ss.hasPermi('party:dueOrg:list')")
     @GetMapping("/list")
@@ -47,7 +47,7 @@ public class DjPartyMemberDueOrgController extends BaseController
     }
 
     /**
-     * 查询党组织党费列表
+     * 查询工会会费列表
      */
     @PreAuthorize("@ss.hasPermi('party:dueOrg:list')")
     @PostMapping("/page")
@@ -60,10 +60,10 @@ public class DjPartyMemberDueOrgController extends BaseController
     }
 
     /**
-     * 导出党组织党费列表
+     * 导出工会会费列表
      */
     @PreAuthorize("@ss.hasPermi('party:dueOrg:export')")
-    @Log(title = "党组织党费", businessType = BusinessType.EXPORT)
+    @Log(title = "工会会费", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyMemberDueOrg djPartyMemberDueOrg)
     {
@@ -73,7 +73,7 @@ public class DjPartyMemberDueOrgController extends BaseController
     }
 
     /**
-     * 获取党组织党费详细信息
+     * 获取工会会费详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:dueOrg:query')")
     @GetMapping(value = "/{dueOrgId}")
@@ -83,10 +83,10 @@ public class DjPartyMemberDueOrgController extends BaseController
     }
 
     /**
-     * 新增党组织党费
+     * 新增工会会费
      */
     @PreAuthorize("@ss.hasPermi('party:dueOrg:add')")
-    @Log(title = "党组织党费", businessType = BusinessType.INSERT)
+    @Log(title = "工会会费", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyMemberDueOrg djPartyMemberDueOrg)
     {
@@ -95,10 +95,10 @@ public class DjPartyMemberDueOrgController extends BaseController
     }
 
     /**
-     * 新增党组织党费
+     * 新增工会会费
      */
     @PreAuthorize("@ss.hasPermi('party:dueOrg:add')")
-    @Log(title = "党组织党费", businessType = BusinessType.INSERT)
+    @Log(title = "工会会费", businessType = BusinessType.INSERT)
     @PostMapping("/addList")
     public AjaxResult addList(String duePlanUuid,String partyOrgIds)
     {
@@ -113,10 +113,10 @@ public class DjPartyMemberDueOrgController extends BaseController
     }
 
     /**
-     * 修改党组织党费
+     * 修改工会会费
      */
     @PreAuthorize("@ss.hasPermi('party:dueOrg:edit')")
-    @Log(title = "党组织党费", businessType = BusinessType.UPDATE)
+    @Log(title = "工会会费", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyMemberDueOrg djPartyMemberDueOrg)
     {
@@ -124,10 +124,10 @@ public class DjPartyMemberDueOrgController extends BaseController
     }
 
     /**
-     * 删除党组织党费
+     * 删除工会会费
      */
     @PreAuthorize("@ss.hasPermi('party:dueOrg:remove')")
-    @Log(title = "党组织党费", businessType = BusinessType.DELETE)
+    @Log(title = "工会会费", businessType = BusinessType.DELETE)
     @DeleteMapping("/{dueOrgIds}")
     public AjaxResult remove(@PathVariable Long[] dueOrgIds)
     {

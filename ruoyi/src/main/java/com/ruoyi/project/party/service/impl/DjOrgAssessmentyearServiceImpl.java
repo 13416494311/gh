@@ -33,7 +33,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 /**
- * 党组织考核年Service业务层处理
+ * 工会考核年Service业务层处理
  *
  * @author admin
  * @date 2021-03-10
@@ -63,10 +63,10 @@ public class DjOrgAssessmentyearServiceImpl implements IDjOrgAssessmentyearServi
     private ISysUserService userService;
 
     /**
-     * 查询党组织考核年
+     * 查询工会考核年
      *
-     * @param id 党组织考核年ID
-     * @return 党组织考核年
+     * @param id 工会考核年ID
+     * @return 工会考核年
      */
     @Override
     public DjOrgAssessmentyear selectDjOrgAssessmentyearById(Long id)
@@ -75,10 +75,10 @@ public class DjOrgAssessmentyearServiceImpl implements IDjOrgAssessmentyearServi
     }
 
     /**
-     * 查询党组织考核年
+     * 查询工会考核年
      *
-     * @param assessmentyearUuid 党组织考核年UUID
-     * @return 党组织考核年
+     * @param assessmentyearUuid 工会考核年UUID
+     * @return 工会考核年
      */
     @Override
     public DjOrgAssessmentyear selectDjOrgAssessmentyearByUuid(String assessmentyearUuid){
@@ -86,10 +86,10 @@ public class DjOrgAssessmentyearServiceImpl implements IDjOrgAssessmentyearServi
     }
 
     /**
-     * 查询党组织考核年列表
+     * 查询工会考核年列表
      *
-     * @param djOrgAssessmentyear 党组织考核年
-     * @return 党组织考核年
+     * @param djOrgAssessmentyear 工会考核年
+     * @return 工会考核年
      */
     @Override
     public List<DjOrgAssessmentyear> selectDjOrgAssessmentyearList(DjOrgAssessmentyear djOrgAssessmentyear)
@@ -98,9 +98,9 @@ public class DjOrgAssessmentyearServiceImpl implements IDjOrgAssessmentyearServi
     }
 
     /**
-     * 新增党组织考核年
+     * 新增工会考核年
      *
-     * @param djOrgAssessmentyear 党组织考核年
+     * @param djOrgAssessmentyear 工会考核年
      * @return 结果
      */
     @Override
@@ -230,9 +230,9 @@ public class DjOrgAssessmentyearServiceImpl implements IDjOrgAssessmentyearServi
     }
 
     /**
-     * 修改党组织考核年
+     * 修改工会考核年
      *
-     * @param djOrgAssessmentyear 党组织考核年
+     * @param djOrgAssessmentyear 工会考核年
      * @return 结果
      */
     @Override
@@ -246,9 +246,9 @@ public class DjOrgAssessmentyearServiceImpl implements IDjOrgAssessmentyearServi
     }
 
     /**
-     * 批量删除党组织考核年
+     * 批量删除工会考核年
      *
-     * @param ids 需要删除的党组织考核年ID
+     * @param ids 需要删除的工会考核年ID
      * @return 结果
      */
     @Override
@@ -258,9 +258,9 @@ public class DjOrgAssessmentyearServiceImpl implements IDjOrgAssessmentyearServi
     }
 
     /**
-     * 删除党组织考核年信息
+     * 删除工会考核年信息
      *
-     * @param id 党组织考核年ID
+     * @param id 工会考核年ID
      * @return 结果
      */
     @Override

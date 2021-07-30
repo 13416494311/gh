@@ -40,7 +40,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党组织考核Controller
+ * 工会考核Controller
  *
  * @author admin
  * @date 2021-03-10
@@ -69,7 +69,7 @@ public class DjOrgAssessmentController extends BaseController
     private ISysUserService userService;
 
     /**
-     * 查询党组织考核列表
+     * 查询工会考核列表
      */
     @PreAuthorize("@ss.hasPermi('party:assessment:list')")
     @PostMapping("/list")
@@ -109,10 +109,10 @@ public class DjOrgAssessmentController extends BaseController
     }
 
     /**
-     * 导出党组织考核列表
+     * 导出工会考核列表
      */
     @PreAuthorize("@ss.hasPermi('party:assessment:export')")
-    @Log(title = "党组织考核", businessType = BusinessType.EXPORT)
+    @Log(title = "工会考核", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjOrgAssessment djOrgAssessment)
     {
@@ -122,7 +122,7 @@ public class DjOrgAssessmentController extends BaseController
     }
 
     /**
-     * 获取党组织考核详细信息
+     * 获取工会考核详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:assessment:query')")
     @GetMapping(value = "/{id}")
@@ -132,10 +132,10 @@ public class DjOrgAssessmentController extends BaseController
     }
 
     /**
-     * 新增党组织考核
+     * 新增工会考核
      */
     @PreAuthorize("@ss.hasPermi('party:assessment:add')")
-    @Log(title = "党组织考核", businessType = BusinessType.INSERT)
+    @Log(title = "工会考核", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjOrgAssessment djOrgAssessment)
     {
@@ -143,9 +143,9 @@ public class DjOrgAssessmentController extends BaseController
     }
 
     /**
-     * 新增活党组织考核
+     * 新增活工会考核
      */
-    @Log(title = "党组织考核", businessType = BusinessType.INSERT)
+    @Log(title = "工会考核", businessType = BusinessType.INSERT)
     @PostMapping("/addByOrg")
     public AjaxResult addByOrg(String assessmentyearUuid,String partyOrgIds)
     {
@@ -154,10 +154,10 @@ public class DjOrgAssessmentController extends BaseController
     }
 
     /**
-     * 修改党组织考核
+     * 修改工会考核
      */
     @PreAuthorize("@ss.hasPermi('party:assessment:edit')")
-    @Log(title = "党组织考核", businessType = BusinessType.UPDATE)
+    @Log(title = "工会考核", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjOrgAssessment djOrgAssessment)
     {
@@ -166,7 +166,7 @@ public class DjOrgAssessmentController extends BaseController
     }
 
     @PreAuthorize("@ss.hasPermi('party:assessment:edit')")
-    @Log(title = "党组织考核", businessType = BusinessType.UPDATE)
+    @Log(title = "工会考核", businessType = BusinessType.UPDATE)
     @PostMapping("/createAssessmentTodo")
     public AjaxResult createAssessmentTodo(@RequestBody DjOrgAssessment djOrgAssessment){
 
@@ -213,10 +213,10 @@ public class DjOrgAssessmentController extends BaseController
 
 
     /**
-     * 删除党组织考核
+     * 删除工会考核
      */
     @PreAuthorize("@ss.hasPermi('party:assessment:remove')")
-    @Log(title = "党组织考核", businessType = BusinessType.DELETE)
+    @Log(title = "工会考核", businessType = BusinessType.DELETE)
     @DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids)
     {

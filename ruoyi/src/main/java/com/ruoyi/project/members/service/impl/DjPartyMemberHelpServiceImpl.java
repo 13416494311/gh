@@ -13,7 +13,7 @@ import com.ruoyi.project.members.service.IDjPartyMemberHelpService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党员帮扶Service业务层处理
+ * 会员帮扶Service业务层处理
  *
  * @author ruoyi
  * @date 2021-02-27
@@ -29,10 +29,10 @@ public class DjPartyMemberHelpServiceImpl implements IDjPartyMemberHelpService
     @Autowired
     private IDjPartyOrgService djPartyOrgService;
     /**
-     * 查询党员帮扶
+     * 查询会员帮扶
      *
-     * @param helpId 党员帮扶ID
-     * @return 党员帮扶
+     * @param helpId 会员帮扶ID
+     * @return 会员帮扶
      */
     @Override
     public DjPartyMemberHelp selectDjPartyMemberHelpById(Long helpId)
@@ -50,10 +50,10 @@ public class DjPartyMemberHelpServiceImpl implements IDjPartyMemberHelpService
     }
 
     /**
-     * 查询党员帮扶列表
+     * 查询会员帮扶列表
      *
-     * @param djPartyMemberHelp 党员帮扶
-     * @return 党员帮扶
+     * @param djPartyMemberHelp 会员帮扶
+     * @return 会员帮扶
      */
     @Override
     public List<DjPartyMemberHelp> selectDjPartyMemberHelpList(DjPartyMemberHelp djPartyMemberHelp)
@@ -73,9 +73,9 @@ public class DjPartyMemberHelpServiceImpl implements IDjPartyMemberHelpService
     }
 
     /**
-     * 新增党员帮扶
+     * 新增会员帮扶
      *
-     * @param djPartyMemberHelp 党员帮扶
+     * @param djPartyMemberHelp 会员帮扶
      * @return 结果
      */
     @Override
@@ -86,9 +86,9 @@ public class DjPartyMemberHelpServiceImpl implements IDjPartyMemberHelpService
     }
 
     /**
-     * 修改党员帮扶
+     * 修改会员帮扶
      *
-     * @param djPartyMemberHelp 党员帮扶
+     * @param djPartyMemberHelp 会员帮扶
      * @return 结果
      */
     @Override
@@ -99,9 +99,9 @@ public class DjPartyMemberHelpServiceImpl implements IDjPartyMemberHelpService
     }
 
     /**
-     * 批量删除党员帮扶
+     * 批量删除会员帮扶
      *
-     * @param helpIds 需要删除的党员帮扶ID
+     * @param helpIds 需要删除的会员帮扶ID
      * @return 结果
      */
     @Override
@@ -111,9 +111,9 @@ public class DjPartyMemberHelpServiceImpl implements IDjPartyMemberHelpService
     }
 
     /**
-     * 删除党员帮扶信息
+     * 删除会员帮扶信息
      *
-     * @param helpId 党员帮扶ID
+     * @param helpId 会员帮扶ID
      * @return 结果
      */
     @Override

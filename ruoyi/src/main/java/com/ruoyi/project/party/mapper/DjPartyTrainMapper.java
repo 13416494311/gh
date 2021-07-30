@@ -4,7 +4,7 @@ import java.util.List;
 import com.ruoyi.project.party.domain.DjPartyTrain;
 
 /**
- * 党组织培训Mapper接口
+ * 工会培训Mapper接口
  *
  * @author ruoyi
  * @date 2021-03-09
@@ -12,55 +12,55 @@ import com.ruoyi.project.party.domain.DjPartyTrain;
 public interface DjPartyTrainMapper
 {
     /**
-     * 查询党组织培训
+     * 查询工会培训
      *
-     * @param trainId 党组织培训ID
-     * @return 党组织培训
+     * @param trainId 工会培训ID
+     * @return 工会培训
      */
     public DjPartyTrain selectDjPartyTrainById(Long trainId);
 
     /**
-     * 查询党组织培训
+     * 查询工会培训
      *
-     * @param trainUuid 党组织培训UUID
-     * @return 党组织培训
+     * @param trainUuid 工会培训UUID
+     * @return 工会培训
      */
     public DjPartyTrain selectDjPartyTrainByUuid(String trainUuid);
 
     /**
-     * 查询党组织培训列表
+     * 查询工会培训列表
      *
-     * @param djPartyTrain 党组织培训
-     * @return 党组织培训集合
+     * @param djPartyTrain 工会培训
+     * @return 工会培训集合
      */
     public List<DjPartyTrain> selectDjPartyTrainList(DjPartyTrain djPartyTrain);
 
     /**
-     * 新增党组织培训
+     * 新增工会培训
      *
-     * @param djPartyTrain 党组织培训
+     * @param djPartyTrain 工会培训
      * @return 结果
      */
     public int insertDjPartyTrain(DjPartyTrain djPartyTrain);
 
     /**
-     * 修改党组织培训
+     * 修改工会培训
      *
-     * @param djPartyTrain 党组织培训
+     * @param djPartyTrain 工会培训
      * @return 结果
      */
     public int updateDjPartyTrain(DjPartyTrain djPartyTrain);
 
     /**
-     * 删除党组织培训
+     * 删除工会培训
      *
-     * @param trainId 党组织培训ID
+     * @param trainId 工会培训ID
      * @return 结果
      */
     public int deleteDjPartyTrainById(Long trainId);
 
     /**
-     * 批量删除党组织培训
+     * 批量删除工会培训
      *
      * @param trainIds 需要删除的数据ID
      * @return 结果

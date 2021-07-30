@@ -4,7 +4,7 @@
       {{assessmentName}}
     </div>
     <div style="padding: 0px 0px 8px 0px;">
-      党组织名称：{{partyOrgFullName.substring(partyOrgFullName.indexOf("/") + 1)}}
+      工会名称：{{partyOrgFullName.substring(partyOrgFullName.indexOf("/") + 1)}}
     </div>
     <el-form ref="form" :model="form" :rules="rules">
       <el-table :stripe="true"
@@ -198,7 +198,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织考核表格数据
+        // 工会考核表格数据
         assessmentList: [],
         //党支部考核状态
         orgAssessmentStatusOptions: [],
@@ -261,7 +261,7 @@
       this.show();
       //组织架构树
       this.getPartyOrgTreeSelect();
-      //党组织考核状态
+      //工会考核状态
       this.getDicts("org_assessment_status").then(response => {
         this.orgAssessmentStatusOptions = response.data;
       });
@@ -392,7 +392,7 @@
         let partyOrgFullName = row.djPartyOrg.partyOrgFullName;
         return partyOrgFullName.substring(partyOrgFullName.indexOf("/") + 1);
       },
-      //获取党组织考核状态字典值
+      //获取工会考核状态字典值
       orgAssessmentStatusFormat(row, column) {
         return this.selectDictLabel(this.orgAssessmentStatusOptions, row.orgAssessmentStatus);
       },
@@ -400,7 +400,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织考核列表 */
+      /** 查询工会考核列表 */
       getList() {
         this.loading = true;
         listAssessment(this.queryParams).then(response => {
@@ -582,7 +582,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const ids = row.id || this.ids;
-        this.$confirm('是否确认删除党组织考核编号为"' + ids + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会考核编号为"' + ids + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -597,7 +597,7 @@
       /** 删除按钮操作 */
       handleDeleteScore(row) {
         const ids = row.id || this.ids;
-        this.$confirm('是否确认删除党组织考核编号为"' + ids + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会考核编号为"' + ids + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -613,7 +613,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织考核数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会考核数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

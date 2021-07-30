@@ -30,7 +30,7 @@ import com.ruoyi.framework.web.domain.AjaxResult;
 import com.ruoyi.common.utils.poi.ExcelUtil;
 
 /**
- * 党组织架构Controller
+ * 工会架构Controller
  *
  * @author ruoyi
  * @date 2020-08-03
@@ -66,7 +66,7 @@ public class DjPartyOrgController extends BaseController
         return AjaxResult.success(djPartyOrgService.getOrgCount());
     }
     /**
-     * 查询党组织架构列表
+     * 查询工会架构列表
      */
     @GetMapping("/list")
     public AjaxResult list(DjPartyOrg djPartyOrg)
@@ -76,7 +76,7 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 查询党组织架构列表
+     * 查询工会架构列表
      */
     @GetMapping("/childrenList/{partyOrgId}")
     public AjaxResult childrenList(@PathVariable("partyOrgId") Long partyOrgId)
@@ -86,7 +86,7 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 查询党组织架构列表tree
+     * 查询工会架构列表tree
      */
     @GetMapping("/tree")
     public AjaxResult tree()
@@ -119,9 +119,9 @@ public class DjPartyOrgController extends BaseController
         return AjaxResult.success(list);
     }
     /**
-     * 导出党组织架构列表
+     * 导出工会架构列表
      */
-    @Log(title = "党组织架构", businessType = BusinessType.EXPORT)
+    @Log(title = "工会架构", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyOrg djPartyOrg)
     {
@@ -131,7 +131,7 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 获取党组织架构详细信息
+     * 获取工会架构详细信息
      */
     @GetMapping(value = "/getPartyOrgs/{partyOrgIds}")
     public AjaxResult getInfo(@PathVariable("partyOrgIds") Long[] partyOrgIds)
@@ -145,7 +145,7 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 获取党组织架构详细信息
+     * 获取工会架构详细信息
      */
     @GetMapping(value = "/{partyOrgId}")
     public AjaxResult getInfo(@PathVariable("partyOrgId") Long partyOrgId)
@@ -154,7 +154,7 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 获取党组织架构详细信息
+     * 获取工会架构详细信息
      */
     @GetMapping(value = "/getPartyOrgArchives/{partyOrgId}")
     public AjaxResult getPartyOrgArchives(@PathVariable("partyOrgId") Long partyOrgId)
@@ -163,7 +163,7 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 获取党组织架构详细信息
+     * 获取工会架构详细信息
      */
     @GetMapping(value = "/getPartyOrgInfo/{partyOrgId}")
     public AjaxResult getPartyOrgInfo(@PathVariable("partyOrgId") Long partyOrgId)
@@ -172,15 +172,15 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 新增党组织架构
+     * 新增工会架构
      */
-    @Log(title = "党组织架构", businessType = BusinessType.INSERT)
+    @Log(title = "工会架构", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@Validated @RequestBody DjPartyOrg djPartyOrg)
     {
         if (UserConstants.NOT_UNIQUE.equals(djPartyOrgService.checkPartyOrgNameUnique(djPartyOrg)))
         {
-            return AjaxResult.error("新增党组织架构'" + djPartyOrg.getPartyOrgName() + "'失败，党组织架构名称已存在");
+            return AjaxResult.error("新增工会架构'" + djPartyOrg.getPartyOrgName() + "'失败，工会架构名称已存在");
         }
         djPartyOrg.setCreateBy(SecurityUtils.getLoginUser().getUser().getUserId().toString());;
         djPartyOrg.setCreateTime(DateUtils.getNowDate());
@@ -188,24 +188,24 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 修改党组织架构
+     * 修改工会架构
      */
-    @Log(title = "党组织架构", businessType = BusinessType.UPDATE)
+    @Log(title = "工会架构", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyOrg djPartyOrg)
     {
         if (UserConstants.NOT_UNIQUE.equals(djPartyOrgService.checkPartyOrgNameUnique(djPartyOrg)))
         {
-            return AjaxResult.error("修改党组织架构'" + djPartyOrg.getPartyOrgName() + "'失败，党组织架构名称已存在");
+            return AjaxResult.error("修改工会架构'" + djPartyOrg.getPartyOrgName() + "'失败，工会架构名称已存在");
         }
         else if (djPartyOrg.getParentId().equals(djPartyOrg.getPartyOrgId()))
         {
-            return AjaxResult.error("修改党组织架构'" + djPartyOrg.getPartyOrgName() + "'失败，上级党组织架构不能是自己");
+            return AjaxResult.error("修改工会架构'" + djPartyOrg.getPartyOrgName() + "'失败，上级工会架构不能是自己");
         }
         else if (StringUtils.equals(UserConstants.DEPT_DISABLE, djPartyOrg.getStatus())
                 && djPartyOrgService.selectNormalChildrenPartyOrgById(djPartyOrg.getPartyOrgId()) > 0)
         {
-            return AjaxResult.error("该党组织架构包含未停用的子党组织架构！");
+            return AjaxResult.error("该工会架构包含未停用的子工会架构！");
         }
         djPartyOrg.setUpdateBy(SecurityUtils.getLoginUser().getUser().getUserId().toString());
         djPartyOrg.setUpdateTime(DateUtils.getNowDate());
@@ -213,19 +213,19 @@ public class DjPartyOrgController extends BaseController
     }
 
     /**
-     * 删除党组织架构
+     * 删除工会架构
      */
-    @Log(title = "党组织架构", businessType = BusinessType.DELETE)
+    @Log(title = "工会架构", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{partyOrgId}")
     public AjaxResult remove(@PathVariable Long partyOrgId)
     {
         if (djPartyOrgService.hasChildByPartyOrgId(partyOrgId))
         {
-            return AjaxResult.error("存在下级党组织架构,不允许删除");
+            return AjaxResult.error("存在下级工会架构,不允许删除");
         }
         if (djPartyOrgService.checkOrgExistMember(partyOrgId))
         {
-            return AjaxResult.error("党组织架构存在党员,不允许删除");
+            return AjaxResult.error("工会架构存在会员,不允许删除");
         }
 
         DjPartyOrg djPartyOrg = new DjPartyOrg();

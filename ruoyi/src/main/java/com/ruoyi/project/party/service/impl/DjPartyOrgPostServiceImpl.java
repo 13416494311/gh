@@ -13,7 +13,7 @@ import com.ruoyi.project.party.service.IDjPartyOrgPostService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党组织职务Service业务层处理
+ * 工会职务Service业务层处理
  *
  * @author ruoyi
  * @date 2020-08-08
@@ -28,10 +28,10 @@ public class DjPartyOrgPostServiceImpl implements IDjPartyOrgPostService
     private IDjPartyMemberService djPartyMemberService;
 
     /**
-     * 查询党组织职务
+     * 查询工会职务
      *
-     * @param id 党组织职务ID
-     * @return 党组织职务
+     * @param id 工会职务ID
+     * @return 工会职务
      */
     @Override
     public DjPartyOrgPost selectDjPartyOrgPostById(Long id)
@@ -43,10 +43,10 @@ public class DjPartyOrgPostServiceImpl implements IDjPartyOrgPostService
     }
 
     /**
-     * 查询党组织职务列表
+     * 查询工会职务列表
      *
-     * @param djPartyOrgPost 党组织职务
-     * @return 党组织职务
+     * @param djPartyOrgPost 工会职务
+     * @return 工会职务
      */
     @Override
     public List<DjPartyOrgPost> selectDjPartyOrgPostList(DjPartyOrgPost djPartyOrgPost)
@@ -61,9 +61,9 @@ public class DjPartyOrgPostServiceImpl implements IDjPartyOrgPostService
     }
 
     /**
-     * 新增党组织职务
+     * 新增工会职务
      *
-     * @param djPartyOrgPost 党组织职务
+     * @param djPartyOrgPost 工会职务
      * @return 结果
      */
     @Override
@@ -75,9 +75,9 @@ public class DjPartyOrgPostServiceImpl implements IDjPartyOrgPostService
     }
 
     /**
-     * 修改党组织职务
+     * 修改工会职务
      *
-     * @param djPartyOrgPost 党组织职务
+     * @param djPartyOrgPost 工会职务
      * @return 结果
      */
     @Override
@@ -89,9 +89,9 @@ public class DjPartyOrgPostServiceImpl implements IDjPartyOrgPostService
     }
 
     /**
-     * 批量删除党组织职务
+     * 批量删除工会职务
      *
-     * @param ids 需要删除的党组织职务ID
+     * @param ids 需要删除的工会职务ID
      * @return 结果
      */
     @Override
@@ -101,9 +101,9 @@ public class DjPartyOrgPostServiceImpl implements IDjPartyOrgPostService
     }
 
     /**
-     * 删除党组织职务信息
+     * 删除工会职务信息
      *
-     * @param id 党组织职务ID
+     * @param id 工会职务ID
      * @return 结果
      */
     @Override

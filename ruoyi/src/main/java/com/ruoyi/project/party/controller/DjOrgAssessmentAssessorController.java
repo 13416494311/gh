@@ -21,8 +21,8 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党组织述职评议Controller
- * 
+ * 工会述职评议Controller
+ *
  * @author admin
  * @date 2021-03-23
  */
@@ -34,7 +34,7 @@ public class DjOrgAssessmentAssessorController extends BaseController
     private IDjOrgAssessmentAssessorService djOrgAssessmentAssessorService;
 
     /**
-     * 查询党组织述职评议列表
+     * 查询工会述职评议列表
      */
     @PreAuthorize("@ss.hasPermi('party:assessor:list')")
     @GetMapping("/list")
@@ -46,10 +46,10 @@ public class DjOrgAssessmentAssessorController extends BaseController
     }
 
     /**
-     * 导出党组织述职评议列表
+     * 导出工会述职评议列表
      */
     @PreAuthorize("@ss.hasPermi('party:assessor:export')")
-    @Log(title = "党组织述职评议", businessType = BusinessType.EXPORT)
+    @Log(title = "工会述职评议", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjOrgAssessmentAssessor djOrgAssessmentAssessor)
     {
@@ -59,7 +59,7 @@ public class DjOrgAssessmentAssessorController extends BaseController
     }
 
     /**
-     * 获取党组织述职评议详细信息
+     * 获取工会述职评议详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:assessor:query')")
     @GetMapping(value = "/{id}")
@@ -69,10 +69,10 @@ public class DjOrgAssessmentAssessorController extends BaseController
     }
 
     /**
-     * 新增党组织述职评议
+     * 新增工会述职评议
      */
     @PreAuthorize("@ss.hasPermi('party:assessor:add')")
-    @Log(title = "党组织述职评议", businessType = BusinessType.INSERT)
+    @Log(title = "工会述职评议", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjOrgAssessmentAssessor djOrgAssessmentAssessor)
     {
@@ -80,10 +80,10 @@ public class DjOrgAssessmentAssessorController extends BaseController
     }
 
     /**
-     * 修改党组织述职评议
+     * 修改工会述职评议
      */
     @PreAuthorize("@ss.hasPermi('party:assessor:edit')")
-    @Log(title = "党组织述职评议", businessType = BusinessType.UPDATE)
+    @Log(title = "工会述职评议", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjOrgAssessmentAssessor djOrgAssessmentAssessor)
     {
@@ -91,10 +91,10 @@ public class DjOrgAssessmentAssessorController extends BaseController
     }
 
     /**
-     * 删除党组织述职评议
+     * 删除工会述职评议
      */
     @PreAuthorize("@ss.hasPermi('party:assessor:remove')")
-    @Log(title = "党组织述职评议", businessType = BusinessType.DELETE)
+    @Log(title = "工会述职评议", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{ids}")
     public AjaxResult remove(@PathVariable Long[] ids)
     {

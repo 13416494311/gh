@@ -17,13 +17,13 @@
         </div>
         <el-row>
           <el-col :span="12">
-            <el-form-item label="党组织" prop="partyOrgId">
+            <el-form-item label="工会" prop="partyOrgId">
               <select-tree :value="form.partyOrgId"
                            :disabled="disabled"
                            :options="partyOrgOptions"
                            vModel="partyOrgId"
                            @selected="setVModelValue"
-                           placeholder="请选择党组织"
+                           placeholder="请选择工会"
               />
             </el-form-item>
           </el-col>
@@ -95,7 +95,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织换届表格数据
+        // 工会换届表格数据
         partyChangeList: [],
         // 弹出层标题
         title: "",
@@ -114,7 +114,7 @@
         // 表单校验
         rules: {
           partyOrgId: [
-            {required: true, message: "党组织不能为空", trigger: "blur"}
+            {required: true, message: "工会不能为空", trigger: "blur"}
           ],
           changeTime: [
             {required: true, message: "换届时间不能为空", trigger: "blur"}
@@ -126,7 +126,7 @@
           marginLeft: '2%',
           paddingRight: '2%',
         },
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         disabled: false,
         addFlag:false,

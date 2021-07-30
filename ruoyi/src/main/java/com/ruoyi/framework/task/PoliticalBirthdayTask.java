@@ -40,7 +40,7 @@ public class PoliticalBirthdayTask {
             politicalBirthday.setPoliticalBirthday(today);
             politicalBirthday.setSendTime(today);
             politicalBirthday.setPoliticalAge((long) DateUtils.getYearReduce(partyMember.getFormalData(),today));
-            politicalBirthday.setTheme("党员"+partyMember.getMemberName()+"政治生日");
+            politicalBirthday.setTheme("会员"+partyMember.getMemberName()+"政治生日");
             String content = configService.selectConfigByKey("politicalBirthday.content");
             DjPartyOrg partyOrg = partyOrgService.selectDjPartyOrgById(partyMember.getPartyOrgId());
             content = content.replace("{{memberName}}",partyMember.getMemberName())

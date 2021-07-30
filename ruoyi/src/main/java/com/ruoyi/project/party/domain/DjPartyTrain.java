@@ -9,7 +9,7 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党组织培训对象 dj_party_train
+ * 工会培训对象 dj_party_train
  *
  * @author ruoyi
  * @date 2021-03-09

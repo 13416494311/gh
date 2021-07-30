@@ -19,69 +19,69 @@
 .icon_org_name{
   background: url("../../image/archives/org-name.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_hall{
   background: url("../../image/archives/hall.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_member{
   background: url("../../image/archives/member.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_phone{
   background: url("../../image/archives/phone.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_flag{
   background: url("../../image/archives/flag.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_party-change{
   background: url("../../image/archives/party-change.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_revoke{
   background: url("../../image/archives/revoke.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_tree{
   background: url("../../image/archives/tree.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_medal{
   background: url("../../image/archives/medal.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_calendar{
   background: url("../../image/archives/calendar.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_category{
   background: url("../../image/archives/category.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 .icon_location{
   background: url("../../image/archives/location.png") no-repeat center !important;
   background-size: 100% 100%;
-  background-color: #a5090c !important;
+  background-color: #1890ff !important;
 }
 
 
 .archives_label{
   width: 80px;
   height: 60px;
-  background-color: #a5090c;
+  background-color: #1890ff;
   display: table;
 }
 .archives_label> span{

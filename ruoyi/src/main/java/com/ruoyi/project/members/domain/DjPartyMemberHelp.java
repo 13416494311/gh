@@ -9,7 +9,7 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党员帮扶对象 dj_party_member_help
+ * 会员帮扶对象 dj_party_member_help
  *
  * @author ruoyi
  * @date 2021-02-27
@@ -26,14 +26,14 @@ public class DjPartyMemberHelp extends BaseEntity
     @Excel(name = "帮助UUID")
     private String helpUuid;
 
-    /** 党员ID */
-    @Excel(name = "党员ID")
+    /** 会员ID */
+    @Excel(name = "会员ID")
     private Long partyMemberId;
 
     private DjPartyMember djPartyMember ;
 
-    /** 党组织id */
-    @Excel(name = "党组织id")
+    /** 工会id */
+    @Excel(name = "工会id")
     private Long partyOrgId;
 
     private DjPartyOrg djPartyOrg;

@@ -7,7 +7,7 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党员流动对象 dj_party_member_flow
+ * 会员流动对象 dj_party_member_flow
  *
  * @author ruoyi
  * @date 2020-09-21
@@ -20,8 +20,8 @@ public class DjPartyMemberFlow extends BaseEntity
     /** 流动表ID */
     private Long flowId;
 
-    /** 流动党员ID */
-    @Excel(name = "流动党员ID")
+    /** 流动会员ID */
+    @Excel(name = "流动会员ID")
     private Long flowMemberId;
 
     private DjPartyMember flowMember;

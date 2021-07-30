@@ -135,7 +135,7 @@ public class PartyChangeTask {
         DjSysTodo sysTodo = new DjSysTodo();
         sysTodo.setUuid(djPartyOrg.getPartyOrgUuid());
         sysTodo.setType("9"); //换届提醒
-        sysTodo.setTitle(djPartyOrg.getPartyOrgFullName()+" 党组织换届,还有 "+day+" 天,请知悉!");
+        sysTodo.setTitle(djPartyOrg.getPartyOrgFullName()+" 工会换届,还有 "+day+" 天,请知悉!");
         sysTodo.setUrlName("PartyChangeRemind");
         sysTodo.setUrlPath("todo/partyChangeRemind");
         sysTodo.setUserId(user.getUserId());

@@ -29,8 +29,8 @@ public class DjActivitySupervise extends BaseEntity
     @Excel(name = "督办内容")
     private String content;
 
-    /** 督办党员id */
-    @Excel(name = "督办党员id")
+    /** 督办会员id */
+    @Excel(name = "督办会员id")
     private Long partyMemberId;
 
     private DjPartyMember djPartyMember;

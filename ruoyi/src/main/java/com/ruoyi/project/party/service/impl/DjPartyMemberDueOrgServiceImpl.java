@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * 党组织党费Service业务层处理
+ * 工会会费Service业务层处理
  *
  * @author ruoyi
  * @date 2021-06-15
@@ -31,10 +31,10 @@ public class DjPartyMemberDueOrgServiceImpl implements IDjPartyMemberDueOrgServi
     private DjPartyMemberDuePlanMapper djPartyMemberDuePlanMapper;
 
     /**
-     * 查询党组织党费
+     * 查询工会会费
      *
-     * @param dueOrgId 党组织党费ID
-     * @return 党组织党费
+     * @param dueOrgId 工会会费ID
+     * @return 工会会费
      */
     @Override
     public DjPartyMemberDueOrg selectDjPartyMemberDueOrgById(Long dueOrgId) {
@@ -46,10 +46,10 @@ public class DjPartyMemberDueOrgServiceImpl implements IDjPartyMemberDueOrgServi
     }
 
     /**
-     * 查询党组织党费列表
+     * 查询工会会费列表
      *
-     * @param djPartyMemberDueOrg 党组织党费
-     * @return 党组织党费
+     * @param djPartyMemberDueOrg 工会会费
+     * @return 工会会费
      */
     @Override
     public List<DjPartyMemberDueOrg> selectDjPartyMemberDueOrgList(DjPartyMemberDueOrg djPartyMemberDueOrg) {
@@ -64,9 +64,9 @@ public class DjPartyMemberDueOrgServiceImpl implements IDjPartyMemberDueOrgServi
     }
 
     /**
-     * 新增党组织党费
+     * 新增工会会费
      *
-     * @param djPartyMemberDueOrg 党组织党费
+     * @param djPartyMemberDueOrg 工会会费
      * @return 结果
      */
     @Override
@@ -78,9 +78,9 @@ public class DjPartyMemberDueOrgServiceImpl implements IDjPartyMemberDueOrgServi
     }
 
     /**
-     * 修改党组织党费
+     * 修改工会会费
      *
-     * @param djPartyMemberDueOrg 党组织党费
+     * @param djPartyMemberDueOrg 工会会费
      * @return 结果
      */
     @Override
@@ -91,9 +91,9 @@ public class DjPartyMemberDueOrgServiceImpl implements IDjPartyMemberDueOrgServi
     }
 
     /**
-     * 批量删除党组织党费
+     * 批量删除工会会费
      *
-     * @param dueOrgIds 需要删除的党组织党费ID
+     * @param dueOrgIds 需要删除的工会会费ID
      * @return 结果
      */
     @Override
@@ -102,9 +102,9 @@ public class DjPartyMemberDueOrgServiceImpl implements IDjPartyMemberDueOrgServi
     }
 
     /**
-     * 删除党组织党费信息
+     * 删除工会会费信息
      *
-     * @param dueOrgId 党组织党费ID
+     * @param dueOrgId 工会会费ID
      * @return 结果
      */
     @Override

@@ -28,8 +28,8 @@ public class DjActivityArrange extends BaseEntity
 
     private DjActivityPlan djActivityPlan;
 
-    /** 活动党组织ID */
-    @Excel(name = "活动党组织ID")
+    /** 活动工会ID */
+    @Excel(name = "活动工会ID")
     private Long partyOrgId;
 
     private DjPartyOrg djPartyOrg;

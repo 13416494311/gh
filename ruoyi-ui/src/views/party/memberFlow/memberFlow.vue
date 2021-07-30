@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="68px">
-      <el-form-item label="党员姓名" prop="flowMemberName">
+      <el-form-item label="会员姓名" prop="flowMemberName">
         <el-input
           v-model="queryParams.flowMemberName"
-          placeholder="请输入党员姓名"
+          placeholder="请输入会员姓名"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -42,7 +42,7 @@
     <el-table :stripe="true"
               :border="true" v-loading="loading" :data="memberFlowList" @selection-change="handleSelectionChange">
       <el-table-column label="序号" align="center" type="index" />
-      <el-table-column label="姓名党员" align="center" prop="flowMember.memberName"/>
+      <el-table-column label="姓名会员" align="center" prop="flowMember.memberName"/>
       <el-table-column label="所属组织机构" align="center" prop="flowMember.djPartyOrg.partyOrgFullName"/>
       <el-table-column label="流动类型" align="center" prop="flowType" :formatter="flowTypeFormat"/>
       <el-table-column label="流动原因" align="center" prop="flowReasons"/>
@@ -81,15 +81,15 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党员流动对话框 -->
+    <!-- 添加或修改会员流动对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="80%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="200px">
 
         <el-row>
           <el-col :span="12">
-            <el-form-item label="流动党员" prop="flowMemberId">
-              <el-input :disabled="true" v-model="form.flowMemberName" placeholder="请选择流动党员">
+            <el-form-item label="流动会员" prop="flowMemberId">
+              <el-input :disabled="true" v-model="form.flowMemberName" placeholder="请选择流动会员">
                 <el-button slot="append" :disabled="disabled " icon="el-icon-search"
                            @click="openMemberChoose"></el-button>
               </el-input>
@@ -200,7 +200,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员流动表格数据
+        // 会员流动表格数据
         memberFlowList: [],
         // 弹出层标题
         title: "",
@@ -228,7 +228,7 @@
         // 表单校验
         rules: {
           flowMemberName: [
-            {required: true, message: "流动党员不能为空", trigger: "blur"}
+            {required: true, message: "流动会员不能为空", trigger: "blur"}
           ],
           flowType: [
             {required: true, message: "流动类型不能为空", trigger: "blur"}
@@ -274,7 +274,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党员流动列表 */
+      /** 查询会员流动列表 */
       getList() {
         this.loading = true;
         if(this.queryParams.flowMemberName!=undefined){
@@ -351,7 +351,7 @@
       handleAdd() {
         this.reset();
         this.open = true;
-        this.title = "添加党员流动";
+        this.title = "添加会员流动";
       },
       /** 查看按钮操作 */
       handleSee(row) {
@@ -362,7 +362,7 @@
           this.form = response.data;
           this.form.flowMemberName = this.form.flowMember.memberName
           this.open = true;
-          this.title = "查看党员流动";
+          this.title = "查看会员流动";
         });
       },
       /** 修改按钮操作 */
@@ -374,7 +374,7 @@
           this.form = response.data;
           this.form.flowMemberName = this.form.flowMember.memberName
           this.open = true;
-          this.title = "修改党员流动";
+          this.title = "修改会员流动";
         });
       },
       /** 提交按钮 */
@@ -408,7 +408,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const flowIds = row.flowId || this.ids;
-        this.$confirm('是否确认删除党员流动编号为"' + flowIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除会员流动编号为"' + flowIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -423,7 +423,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党员流动数据项?', "警告", {
+        this.$confirm('是否确认导出所有会员流动数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

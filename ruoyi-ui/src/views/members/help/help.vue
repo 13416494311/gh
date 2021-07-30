@@ -1,23 +1,23 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
-      <el-form-item label="党员姓名" prop="memberName">
+      <el-form-item label="会员姓名" prop="memberName">
         <el-input
           v-model="queryParams.memberName"
-          placeholder="请输入党员姓名"
+          placeholder="请输入会员姓名"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
 
-      <el-form-item label="党组织名称" prop="partyOrgId">
+      <el-form-item label="工会名称" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      style="width:100%;"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setVModelValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
 
@@ -50,8 +50,8 @@
 
     <el-table :stripe="true" :border="true"   v-loading="loading" :data="helpList" @selection-change="handleSelectionChange">
       <el-table-column label="序号" align="center" type="index"/>
-      <el-table-column label="党员姓名" align="center" prop="djPartyMember.memberName" />
-      <el-table-column label="党组织名称" align="center" prop="djPartyOrg.partyOrgFullName" />
+      <el-table-column label="会员姓名" align="center" prop="djPartyMember.memberName" />
+      <el-table-column label="工会名称" align="center" prop="djPartyOrg.partyOrgFullName" />
       <el-table-column label="组织认定" align="center" prop="cognizance" :formatter="cognizanceFormat" />
       <el-table-column label="困难程度" align="center" prop="economicSituation" :formatter="economicSituationFormat" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
@@ -81,7 +81,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党员帮扶对话框 -->
+    <!-- 添加或修改会员帮扶对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight"  :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle"  label-width="150px">
@@ -92,13 +92,13 @@
 
           <el-row>
             <el-col :span="12">
-              <el-form-item label="党员姓名" prop="partyMemberId">
-                <el-input v-model="form.partyMemberName" placeholder="请输入党员姓名" :disabled="true"  />
+              <el-form-item label="会员姓名" prop="partyMemberId">
+                <el-input v-model="form.partyMemberName" placeholder="请输入会员姓名" :disabled="true"  />
               </el-form-item>
             </el-col>
             <el-col :span="12">
-              <el-form-item label="党组织名称" prop="partyOrgId">
-                <el-input  v-model="form.partyOrgName" placeholder="请输入党组织名称" :disabled="true" />
+              <el-form-item label="工会名称" prop="partyOrgId">
+                <el-input  v-model="form.partyOrgName" placeholder="请输入工会名称" :disabled="true" />
               </el-form-item>
             </el-col>
           </el-row>
@@ -171,7 +171,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党员帮扶表格数据
+        // 会员帮扶表格数据
         helpList: [],
         // 弹出层标题
         title: "",
@@ -197,10 +197,10 @@
         // 表单校验
         rules: {
           partyMemberId: [
-            { required: true, message: "党员ID不能为空", trigger: "blur" }
+            { required: true, message: "会员ID不能为空", trigger: "blur" }
           ],
           partyOrgId: [
-            { required: true, message: "党组织id不能为空", trigger: "blur" }
+            { required: true, message: "工会id不能为空", trigger: "blur" }
           ],
           cognizance: [
             { required: true, message: "组织认定不能为空", trigger: "blur" }
@@ -261,7 +261,7 @@
       getHeight(){
         this.bodyStyle.height=window.innerHeight-281+'px';
       },
-      /** 查询党员帮扶列表 */
+      /** 查询会员帮扶列表 */
       getList() {
         this.loading = true;
 
@@ -325,7 +325,7 @@
         this.reset();
         this.open = true;
         this.form.helpUuid = this.uuid();
-        this.title = "添加党员帮扶";
+        this.title = "添加会员帮扶";
       },
       /** 修改按钮操作 */
       handleUpdate(row) {
@@ -337,7 +337,7 @@
           this.form.partyOrgName = this.form.djPartyOrg.partyOrgName;
           this.form.partyMemberName = this.form.djPartyMember.memberName;
           this.open = true;
-          this.title = "修改党员帮扶";
+          this.title = "修改会员帮扶";
         }).then(()=>{
           this.$refs.helpRecord.init(this.form.helpUuid) ;
         });
@@ -351,7 +351,7 @@
           this.form.partyOrgName = this.form.djPartyOrg.partyOrgName;
           this.form.partyMemberName = this.form.djPartyMember.memberName;
           this.open = true;
-          this.title = "查看党员帮扶";
+          this.title = "查看会员帮扶";
         }).then(()=>{
           this.$refs.helpRecord.init(this.form.helpUuid) ;
         });
@@ -387,7 +387,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const helpIds = row.helpId || this.ids;
-        this.$confirm('是否确认删除党员帮扶编号为"' + helpIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除会员帮扶编号为"' + helpIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -401,7 +401,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党员帮扶数据项?', "警告", {
+        this.$confirm('是否确认导出所有会员帮扶数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

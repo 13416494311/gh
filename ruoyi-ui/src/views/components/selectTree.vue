@@ -166,7 +166,7 @@
     font-weight: normal;
   }
   .el-tree >>>.is-current .el-tree-node__label{
-    color: #f5222d;
+    color: #1890ff;
     font-weight: normal;
   }
   .el-tree >>>.is-current .el-tree-node__children .el-tree-node__label{

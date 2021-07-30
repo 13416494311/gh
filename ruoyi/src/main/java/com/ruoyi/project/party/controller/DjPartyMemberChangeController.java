@@ -32,7 +32,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党员变更表Controller
+ * 会员变更表Controller
  *
  * @author ruoyi
  * @date 2020-09-16
@@ -51,7 +51,7 @@ public class DjPartyMemberChangeController extends BaseController
     private IDjPartyMemberFlowService djPartyMemberFlowService;
 
     /**
-     * 查询党员变更表列表
+     * 查询会员变更表列表
      */
     @GetMapping("/list")
     public TableDataInfo list(DjPartyMemberChange djPartyMemberChange)
@@ -62,9 +62,9 @@ public class DjPartyMemberChangeController extends BaseController
     }
 
     /**
-     * 导出党员变更表列表
+     * 导出会员变更表列表
      */
-    @Log(title = "党员变更表", businessType = BusinessType.EXPORT)
+    @Log(title = "会员变更表", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyMemberChange djPartyMemberChange)
     {
@@ -74,7 +74,7 @@ public class DjPartyMemberChangeController extends BaseController
     }
 
     /**
-     * 获取党员变更表详细信息
+     * 获取会员变更表详细信息
      */
     @GetMapping(value = "/{memberId}")
     public AjaxResult getInfo(@PathVariable("memberId") Long memberId)
@@ -95,9 +95,9 @@ public class DjPartyMemberChangeController extends BaseController
     }
 
     /**
-     * 新增党员变更表
+     * 新增会员变更表
      */
-    @Log(title = "党员变更表", businessType = BusinessType.INSERT)
+    @Log(title = "会员变更表", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyMemberChange djPartyMemberChange)
     {
@@ -105,9 +105,9 @@ public class DjPartyMemberChangeController extends BaseController
     }
 
     /**
-     * 修改党员变更表
+     * 修改会员变更表
      */
-    @Log(title = "党员变更表", businessType = BusinessType.UPDATE)
+    @Log(title = "会员变更表", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody Map<String,Object> params)
     {
@@ -209,9 +209,9 @@ public class DjPartyMemberChangeController extends BaseController
         }
     }
     /**
-     * 删除党员变更表
+     * 删除会员变更表
      */
-    @Log(title = "党员变更表", businessType = BusinessType.DELETE)
+    @Log(title = "会员变更表", businessType = BusinessType.DELETE)
     @DeleteMapping("/{memberIds}")
     public AjaxResult remove(@PathVariable Long[] memberIds)
     {

@@ -4,7 +4,7 @@ import java.util.List;
 import com.ruoyi.project.party.domain.DjPartyChange;
 
 /**
- * 党组织换届Mapper接口
+ * 工会换届Mapper接口
  *
  * @author ruoyi
  * @date 2021-02-18
@@ -12,47 +12,47 @@ import com.ruoyi.project.party.domain.DjPartyChange;
 public interface DjPartyChangeMapper
 {
     /**
-     * 查询党组织换届
+     * 查询工会换届
      *
-     * @param changeId 党组织换届ID
-     * @return 党组织换届
+     * @param changeId 工会换届ID
+     * @return 工会换届
      */
     public DjPartyChange selectDjPartyChangeById(Long changeId);
 
     /**
-     * 查询党组织换届列表
+     * 查询工会换届列表
      *
-     * @param djPartyChange 党组织换届
-     * @return 党组织换届集合
+     * @param djPartyChange 工会换届
+     * @return 工会换届集合
      */
     public List<DjPartyChange> selectDjPartyChangeList(DjPartyChange djPartyChange);
 
     /**
-     * 新增党组织换届
+     * 新增工会换届
      *
-     * @param djPartyChange 党组织换届
+     * @param djPartyChange 工会换届
      * @return 结果
      */
     public int insertDjPartyChange(DjPartyChange djPartyChange);
 
     /**
-     * 修改党组织换届
+     * 修改工会换届
      *
-     * @param djPartyChange 党组织换届
+     * @param djPartyChange 工会换届
      * @return 结果
      */
     public int updateDjPartyChange(DjPartyChange djPartyChange);
 
     /**
-     * 删除党组织换届
+     * 删除工会换届
      *
-     * @param changeId 党组织换届ID
+     * @param changeId 工会换届ID
      * @return 结果
      */
     public int deleteDjPartyChangeById(Long changeId);
 
     /**
-     * 批量删除党组织换届
+     * 批量删除工会换届
      *
      * @param changeIds 需要删除的数据ID
      * @return 结果

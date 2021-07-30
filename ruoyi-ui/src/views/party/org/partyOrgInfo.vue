@@ -7,7 +7,7 @@
     </el-row>-->
     <el-row style="margin-top: 4.5em">
       <el-col :span="8" class="org-info-lable">
-        党组织名称：
+        工会名称：
       </el-col>
       <el-col :span="16" class="org-info-content">
         {{partyOrg.partyOrgFullName}}
@@ -31,10 +31,10 @@
     </el-row>
     <el-row >
       <el-col :span="8"  class="org-info-lable">
-        党员简介：
+        会员简介：
       </el-col>
       <el-col :span="16" class="org-info-content">
-        正式党员{{partyOrg.params.formalCount}}人，预备党员{{partyOrg.params.prepareCount}}人。
+        正式会员{{partyOrg.params.formalCount}}人，预备会员{{partyOrg.params.prepareCount}}人。
       </el-col>
     </el-row>
     <el-row style="margin-top: 20px">

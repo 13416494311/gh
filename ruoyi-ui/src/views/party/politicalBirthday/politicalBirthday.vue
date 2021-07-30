@@ -2,21 +2,21 @@
   <div class="app-container">
     <el-form v-if="!see":model="queryParams" ref="queryForm" :inline="true" label-width="100px">
 
-      <el-form-item label="党员名称" prop="memberName">
+      <el-form-item label="会员名称" prop="memberName">
         <el-input
           v-model="queryParams.memberName"
-          placeholder="请输入党员名称"
+          placeholder="请输入会员名称"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="党组织名称" prop="partyOrgId">
+      <el-form-item label="工会名称" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setVModelValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
       <el-form-item>
@@ -76,9 +76,9 @@
       <!--<el-table-column v-if="!see" type="selection" width="55" align="center"/>-->
       <el-table-column label="序号" align="center" type="index" />
       <el-table-column label="主题" align="center" prop="theme"/>
-      <el-table-column label="党员名称" align="center" prop="partyMember.memberName"/>
-      <el-table-column label="党组织名称" align="center" prop="partyOrg.partyOrgFullName"/>
-      <el-table-column label="正式入党日期" align="center" prop="partyMember.formalData" width="150">
+      <el-table-column label="会员名称" align="center" prop="partyMember.memberName"/>
+      <el-table-column label="工会名称" align="center" prop="partyOrg.partyOrgFullName"/>
+      <el-table-column label="正式入会日期" align="center" prop="partyMember.formalData" width="150">
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.partyMember.formalData, '{y}-{m}-{d}') }}</span>
         </template>
@@ -140,8 +140,8 @@
 
         <el-row>
           <el-col :span="12">
-            <el-form-item label="党员名称" prop="memberId">
-              <el-input :disabled="true" v-model="form.memberName" placeholder="请选择换党员名称">
+            <el-form-item label="会员名称" prop="memberId">
+              <el-input :disabled="true" v-model="form.memberName" placeholder="请选择换会员名称">
                 <el-button :disabled="disabled" slot="append" icon="el-icon-search"
                            @click="openMemberChoose"></el-button>
               </el-input>
@@ -149,13 +149,13 @@
 
           </el-col>
           <el-col :span="12">
-            <el-form-item label="党组织名称" prop="partyOrgId">
+            <el-form-item label="工会名称" prop="partyOrgId">
               <select-tree :disabled="true"
                            :value="form.partyOrgId"
                            :options="partyOrgOptions"
                            vModel="partyOrgId"
                            @selected="setVModelValue"
-                           placeholder="请选择党组织"
+                           placeholder="请选择工会"
               />
             </el-form-item>
           </el-col>
@@ -164,13 +164,13 @@
 
         <el-row>
           <el-col :span="12">
-            <el-form-item label="正式入党日期" prop="politicalBirthday">
+            <el-form-item label="正式入会日期" prop="politicalBirthday">
               <el-date-picker clearable size="small" style="width: 100%"
                               :disabled="true"
                               v-model="form.formalData"
                               type="date"
                               value-format="yyyy-MM-dd"
-                              placeholder="选择正式入党日期">
+                              placeholder="选择正式入会日期">
               </el-date-picker>
             </el-form-item>
           </el-col>
@@ -191,7 +191,7 @@
         <el-row>
           <el-col :span="12">
             <el-form-item label="党龄" prop="politicalAge">
-              <el-input v-model="form.politicalAge":disabled="true" placeholder="请输入党龄"/>
+              <el-input v-model="form.politicalAge":disabled="true" placeholder="请输入会龄"/>
             </el-form-item>
           </el-col>
         </el-row>
@@ -302,7 +302,7 @@
         // 表单校验
         rules: {
           memberId: [
-            {required: true, message: "党员ID不能为空", trigger: "blur"}
+            {required: true, message: "会员ID不能为空", trigger: "blur"}
           ],
           partyOrgId: [
             {required: true, message: "组织机构id不能为空", trigger: "blur"}
@@ -329,7 +329,7 @@
           marginLeft: '2%',
           paddingRight: '2%',
         },
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         disabled: false,
         politicalBirthdayContentTemplate: undefined,
@@ -358,7 +358,7 @@
           this.partyMember = response.data;
           this.form.partyOrgId  = this.partyMember.partyOrgId;
           this.form.formalData = this.partyMember.formalData;
-          this.form.theme = '党员'+this.partyMember.memberName+'的政治生日'
+          this.form.theme = '会员'+this.partyMember.memberName+'的政治生日'
         }).then(() => {
           this.calculateAge();
         });
@@ -385,7 +385,7 @@
       },
       openMemberChoose(){
         this.$refs.partyMember.open = true ;
-        this.$refs.partyMember.title = "选择党员";
+        this.$refs.partyMember.title = "选择会员";
       },
       /** 查询部门下拉树结构 */
       getTreeselect() {

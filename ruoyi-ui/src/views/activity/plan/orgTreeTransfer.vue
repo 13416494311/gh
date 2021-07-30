@@ -70,8 +70,8 @@
         ],
         toData: [],
         // 弹出层标题
-        title: "选择党组织",
-        transferTitle:["未选党组织","已选党组织"],
+        title: "选择工会",
+        transferTitle:["未选工会","已选工会"],
         // 是否显示弹出层
         open: false,
         bodyStyle: {
@@ -89,7 +89,7 @@
       this.getPartyOrgTreeSelect();
     },
     methods: {
-      /** 查询党组织下拉树结构 */
+      /** 查询工会下拉树结构 */
       getPartyOrgTreeSelect() {
         partyOrgTreeselect().then(response => {
           this.fromData = this.treeInitData(response.data);

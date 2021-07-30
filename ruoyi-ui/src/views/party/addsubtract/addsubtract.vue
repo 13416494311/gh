@@ -19,12 +19,12 @@
 <!--          @keyup.enter.native="handleQuery"-->
 <!--        />-->
 <!--      </el-form-item>-->
-      <el-form-item label="党组织" prop="partyOrgId">
+      <el-form-item label="工会" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setVModelValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
       <el-form-item label="类型" prop="addsubtractType">
@@ -139,7 +139,7 @@
 <!--      <el-table-column label="id" align="center" prop="addsubtractId"/>-->
 <!--      <el-table-column label="加减分uuid" align="center" prop="addsubtractUuid"/>-->
       <el-table-column label="考核项目" align="center" prop="djOrgAssessment.assessmentName"/>
-      <el-table-column label="党组织" align="center" prop="djPartyOrg.partyOrgName"/>
+      <el-table-column label="工会" align="center" prop="djPartyOrg.partyOrgName"/>
       <el-table-column label="类型" width="70" align="center" prop="addsubtractType" :formatter="addsubtractTypeFormat"/>
       <el-table-column label="考核年份" width="80" align="center" prop="djOrgAssessment.assessment_year"/>
       <el-table-column label="事项" align="center" prop="addsubtractTheme"/>
@@ -184,7 +184,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党组织加减分审核对话框 -->
+    <!-- 添加或修改工会加减分审核对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="80%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="100px">
@@ -194,12 +194,12 @@
             <span style="font-weight: bold;font-size: 16px">党支部考核基本资料</span>
           </div>
 
-        <el-form-item label="党组织" prop="partyOrgId">
+        <el-form-item label="工会" prop="partyOrgId">
           <select-tree :value="form.partyOrgId"
                        :options="partyOrgOptions"
                        vModel="partyOrgId"
                        @selected="setVModelValueEdit"
-                       placeholder="请选择党组织"
+                       placeholder="请选择工会"
           />
         </el-form-item>
 
@@ -307,9 +307,9 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织加减分审核表格数据
+        // 工会加减分审核表格数据
         addsubtractList: [],
-        // 党组织加减分审核表格数据
+        // 工会加减分审核表格数据
         assementList: [],
         // 弹出层标题
         title: "",
@@ -340,7 +340,7 @@
         // 表单校验
         rules: {
           partyOrgId: [
-            { required: true, message: "党组织不能为空", trigger: "blur" },
+            { required: true, message: "工会不能为空", trigger: "blur" },
           ],
           assessmentUuid: [
             { required: true, message: "考核项目名称不能为空", trigger: "blur" },
@@ -389,7 +389,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织加减分审核列表 */
+      /** 查询工会加减分审核列表 */
       getList() {
         this.loading = true;
         listAddsubtract(this.queryParams).then(response => {
@@ -399,7 +399,7 @@
         });
       },
 
-      /** 查询党组织加减分审核列表 */
+      /** 查询工会加减分审核列表 */
       getAssessmentList() {
         this.loading = true;
         listAssessment(this.queryAssementParams).then(response => {
@@ -469,7 +469,7 @@
         this.reset();
         this.disabled = false;
         this.open = true;
-        this.title = "添加党组织加减分审核";
+        this.title = "添加工会加减分审核";
         this.form.addsubtractUuid = this.uuid();
         this.$nextTick(function () {
           this.$refs.uploadAllFile.init(this.form.addsubtractUuid, 'addsubtract') ;
@@ -482,7 +482,7 @@
         getAddsubtract(addsubtractId).then(response => {
           this.form = response.data;
           this.open = true;
-          this.title = "修改党组织加减分审核";
+          this.title = "修改工会加减分审核";
         }).then(()=>{
           this.$refs.uploadAllFile.init(this.form.addsubtractUuid, 'addsubtract') ;
         });
@@ -518,7 +518,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const addsubtractIds = row.addsubtractId || this.ids;
-        this.$confirm('是否确认删除党组织加减分审核编号为"' + addsubtractIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会加减分审核编号为"' + addsubtractIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -533,7 +533,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织加减分审核数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会加减分审核数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

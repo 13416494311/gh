@@ -6,8 +6,8 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党费计划对象 dj_party_member_due_plan
- * 
+ * 会费计划对象 dj_party_member_due_plan
+ *
  * @author wandengfeng
  * @date 2021-06-15
  */
@@ -30,8 +30,8 @@ public class DjPartyMemberDuePlan extends BaseEntity
     @Excel(name = "季度")
     private Long quarter;
 
-    /** 党费标题 */
-    @Excel(name = "党费标题")
+    /** 会费标题 */
+    @Excel(name = "会费标题")
     private String title;
 
     /** 状态 */
@@ -41,66 +41,66 @@ public class DjPartyMemberDuePlan extends BaseEntity
     /** 删除标志（0代表存在 2代表删除） */
     private String delFlag;
 
-    public void setDuePlanId(Long duePlanId) 
+    public void setDuePlanId(Long duePlanId)
     {
         this.duePlanId = duePlanId;
     }
 
-    public Long getDuePlanId() 
+    public Long getDuePlanId()
     {
         return duePlanId;
     }
-    public void setDuePlanUuid(String duePlanUuid) 
+    public void setDuePlanUuid(String duePlanUuid)
     {
         this.duePlanUuid = duePlanUuid;
     }
 
-    public String getDuePlanUuid() 
+    public String getDuePlanUuid()
     {
         return duePlanUuid;
     }
-    public void setYear(String year) 
+    public void setYear(String year)
     {
         this.year = year;
     }
 
-    public String getYear() 
+    public String getYear()
     {
         return year;
     }
-    public void setQuarter(Long quarter) 
+    public void setQuarter(Long quarter)
     {
         this.quarter = quarter;
     }
 
-    public Long getQuarter() 
+    public Long getQuarter()
     {
         return quarter;
     }
-    public void setTitle(String title) 
+    public void setTitle(String title)
     {
         this.title = title;
     }
 
-    public String getTitle() 
+    public String getTitle()
     {
         return title;
     }
-    public void setStatus(String status) 
+    public void setStatus(String status)
     {
         this.status = status;
     }
 
-    public String getStatus() 
+    public String getStatus()
     {
         return status;
     }
-    public void setDelFlag(String delFlag) 
+    public void setDelFlag(String delFlag)
     {
         this.delFlag = delFlag;
     }
 
-    public String getDelFlag() 
+    public String getDelFlag()
     {
         return delFlag;
     }

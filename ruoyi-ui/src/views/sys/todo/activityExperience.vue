@@ -23,7 +23,7 @@
               <el-select :disabled="true"
                          v-model="djActivityPlan.activityType"
                          style="width: 100%"
-                         placeholder="请选择党员活动类型">
+                         placeholder="请选择会员活动类型">
                 <el-option
                   v-for="dict in activityTypeOptions"
                   :key="dict.dictValue"
@@ -72,8 +72,8 @@
 
         <el-row>
           <el-col :span="12">
-            <el-form-item label="活动党组织">
-              <el-input :disabled="true" v-model="djPartyOrg.partyOrgFullName" placeholder="请输入活动党组织"/>
+            <el-form-item label="活动工会">
+              <el-input :disabled="true" v-model="djPartyOrg.partyOrgFullName" placeholder="请输入活动工会"/>
             </el-form-item>
           </el-col>
           <el-col :span="12">

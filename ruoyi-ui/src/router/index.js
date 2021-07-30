@@ -98,8 +98,8 @@ export const constantRoutes = [
       {
         path: '/party/suggestions/2',
         component: (resolve) => require(['@/views/members/suggestions/suggestions'], resolve),
-        name: '党员心愿',
-        meta: { title: '党员心愿', icon: 'rate' }
+        name: '会员心愿',
+        meta: { title: '会员心愿', icon: 'rate' }
       }
     ]
   },
@@ -112,8 +112,8 @@ export const constantRoutes = [
       {
         path: '/party/suggestions/1',
         component: (resolve) => require(['@/views/members/suggestions/suggestions'], resolve),
-        name: '党员建议',
-        meta: { title: '党员建议', icon: 'log' }
+        name: '会员建议',
+        meta: { title: '会员建议', icon: 'log' }
       }
     ]
   },

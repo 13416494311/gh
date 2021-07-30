@@ -9,7 +9,7 @@ import com.ruoyi.framework.web.domain.BaseEntity;
 import com.ruoyi.project.party.domain.DjPartyOrg;
 
 /**
- * 党员特长对象 dj_party_specialty
+ * 会员特长对象 dj_party_specialty
  *
  * @author admin
  * @date 2021-02-19
@@ -31,9 +31,9 @@ public class DjPartySpecialty extends BaseEntity {
 
     private DjPartyMember djPartyMember ;
     /**
-     * 党组织id
+     * 工会id
      */
-    @Excel(name = "党组织id")
+    @Excel(name = "工会id")
     private Long partyOrgId;
 
     private DjPartyOrg djPartyOrg;

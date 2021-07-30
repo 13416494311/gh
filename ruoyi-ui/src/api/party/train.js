@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党组织培训列表
+// 查询工会培训列表
 export function listTrain(query) {
   return request({
     url: '/party/train/list',
@@ -9,7 +9,7 @@ export function listTrain(query) {
   })
 }
 
-// 查询党组织培训详细
+// 查询工会培训详细
 export function getTrain(trainId) {
   return request({
     url: '/party/train/' + trainId,
@@ -17,7 +17,7 @@ export function getTrain(trainId) {
   })
 }
 
-// 新增党组织培训
+// 新增工会培训
 export function addTrain(data) {
   return request({
     url: '/party/train',
@@ -26,7 +26,7 @@ export function addTrain(data) {
   })
 }
 
-// 修改党组织培训
+// 修改工会培训
 export function updateTrain(data) {
   return request({
     url: '/party/train',
@@ -35,7 +35,7 @@ export function updateTrain(data) {
   })
 }
 
-// 删除党组织培训
+// 删除工会培训
 export function delTrain(trainId) {
   return request({
     url: '/party/train/' + trainId,
@@ -43,7 +43,7 @@ export function delTrain(trainId) {
   })
 }
 
-// 导出党组织培训
+// 导出工会培训
 export function exportTrain(query) {
   return request({
     url: '/party/train/export',

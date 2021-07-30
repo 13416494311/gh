@@ -7,7 +7,7 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党员党费对象 dj_party_member_due
+ * 会员会费对象 dj_party_member_due
  *
  * @author wandengfeng
  * @date 2021-06-15
@@ -20,8 +20,8 @@ public class DjPartyMemberDue extends BaseEntity
     /** $column.columnComment */
     private Long dueMemberId;
 
-    /** 党费计划党组织关联id */
-    @Excel(name = "党费计划党组织关联id")
+    /** 会费计划工会关联id */
+    @Excel(name = "会费计划工会关联id")
     private Long dueOrgId;
 
     private DjPartyMemberDueOrg dueOrg;
@@ -30,8 +30,8 @@ public class DjPartyMemberDue extends BaseEntity
 
     private DjPartyOrg partyOrg;
 
-    /** 党员ID */
-    @Excel(name = "党员ID")
+    /** 会员ID */
+    @Excel(name = "会员ID")
     private Long partyMemberId;
 
     private DjPartyMember partyMember;
@@ -48,8 +48,8 @@ public class DjPartyMemberDue extends BaseEntity
     @Excel(name = "比列")
     private String ratio;
 
-    /** 党费 */
-    @Excel(name = "党费")
+    /** 会费 */
+    @Excel(name = "会费")
     private Double due;
 
     /** 删除标志（0代表存在 2代表删除） */

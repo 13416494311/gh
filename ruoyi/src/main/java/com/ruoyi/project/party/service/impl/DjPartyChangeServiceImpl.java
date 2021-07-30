@@ -34,7 +34,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 /**
- * 党组织换届Service业务层处理
+ * 工会换届Service业务层处理
  *
  * @author ruoyi
  * @date 2021-02-18
@@ -65,10 +65,10 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
     @Autowired
     private SysUserMapper userMapper;
     /**
-     * 查询党组织换届
+     * 查询工会换届
      *
-     * @param changeId 党组织换届ID
-     * @return 党组织换届
+     * @param changeId 工会换届ID
+     * @return 工会换届
      */
     @Override
     public DjPartyChange selectDjPartyChangeById(Long changeId)
@@ -82,10 +82,10 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
     }
 
     /**
-     * 查询党组织换届列表
+     * 查询工会换届列表
      *
-     * @param djPartyChange 党组织换届
-     * @return 党组织换届
+     * @param djPartyChange 工会换届
+     * @return 工会换届
      */
     @Override
     public List<DjPartyChange> selectDjPartyChangeList(DjPartyChange djPartyChange)
@@ -100,9 +100,9 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
     }
 
     /**
-     * 新增党组织换届
+     * 新增工会换届
      *
-     * @param djPartyChange 党组织换届
+     * @param djPartyChange 工会换届
      * @return 结果
      */
     @Override
@@ -119,9 +119,9 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
     }
 
     /**
-     * 修改党组织换届
+     * 修改工会换届
      *
-     * @param djPartyChange 党组织换届
+     * @param djPartyChange 工会换届
      * @return 结果
      */
     @Override
@@ -163,7 +163,7 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
         djSysLogService.updateDjSysLog(sysLog);
     }
 
-    //更换党内职务
+    //更换会内职务
     private void djPartyChangePass(DjPartyChange partyChange){
         DjPartyChangeDetail djPartyChangeDetail = new DjPartyChangeDetail();
         djPartyChangeDetail.setChangeUuid(partyChange.getChangeUuid());
@@ -191,7 +191,7 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
         sysLog.setStepType("his");
         sysLog.setStepName("提交审批");
         sysLog.setOperUserId(SecurityUtils.getLoginUser().getUser().getUserId());
-        sysLog.setOperResult("提交党组织换届审核");
+        sysLog.setOperResult("提交工会换届审核");
         sysLog.setOperTime(new Date());
         sysLog.setOperReason(operReason);
         djSysLogService.insertDjSysLog(sysLog);
@@ -199,7 +199,7 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
         DjSysLog nextSysLog = new DjSysLog();
         nextSysLog.setUuid(partyChange.getChangeUuid());
         nextSysLog.setStepType("cur");
-        nextSysLog.setStepName("党组织换届审批");
+        nextSysLog.setStepName("工会换届审批");
         nextSysLog.setOperUserId(auditUserId);
         djSysLogService.insertDjSysLog(nextSysLog);
 
@@ -231,9 +231,9 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
     }
 
     /**
-     * 批量删除党组织换届
+     * 批量删除工会换届
      *
-     * @param changeIds 需要删除的党组织换届ID
+     * @param changeIds 需要删除的工会换届ID
      * @return 结果
      */
     @Override
@@ -243,9 +243,9 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
     }
 
     /**
-     * 删除党组织换届信息
+     * 删除工会换届信息
      *
-     * @param changeId 党组织换届ID
+     * @param changeId 工会换届ID
      * @return 结果
      */
     @Override
@@ -289,7 +289,7 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
                 djPartyMember.setPartyPositionType("2");
                 partyMemberList = djPartyMemberMapper.selectPartyMemberList(djPartyMember);
                 if(partyMemberList ==null || partyMemberList.size() ==0){
-                    return "该党组织未设置书记或副书记，无换届提醒接收人。";
+                    return "该工会未设置书记或副书记，无换届提醒接收人。";
                 }else{
                     djPartyMember =   partyMemberList.get(0);
                 }
@@ -300,15 +300,15 @@ public class DjPartyChangeServiceImpl implements IDjPartyChangeService
             user = userMapper.selectUserByPartyMemberId(djPartyMember.getMemberId());
         }
         if(user == null ){
-            return "该党组织设置书记或副书记，无对应用户信息。";
+            return "该工会设置书记或副书记，无对应用户信息。";
         }
         DjSysTodo sysTodo = new DjSysTodo();
         sysTodo.setUuid(djPartyOrg.getPartyOrgUuid());
         sysTodo.setType("9"); //换届提醒
         if(days>=0){
-            sysTodo.setTitle(djPartyOrg.getPartyOrgName()+" 党组织换届,还有 "+days+" 天,请知悉!");
+            sysTodo.setTitle(djPartyOrg.getPartyOrgName()+" 工会换届,还有 "+days+" 天,请知悉!");
         }else{
-            sysTodo.setTitle(djPartyOrg.getPartyOrgName()+" 党组织换届,已到期,请知悉!");
+            sysTodo.setTitle(djPartyOrg.getPartyOrgName()+" 工会换届,已到期,请知悉!");
         }
 
         sysTodo.setUrlName("PartyChangeRemind");

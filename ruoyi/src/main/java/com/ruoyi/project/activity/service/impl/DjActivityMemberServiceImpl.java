@@ -153,7 +153,7 @@ public class DjActivityMemberServiceImpl implements IDjActivityMemberService
             }
 
         }else{
-            result = "您无对应党员信息！";
+            result = "您无对应会员信息！";
         }
         return result;
     }

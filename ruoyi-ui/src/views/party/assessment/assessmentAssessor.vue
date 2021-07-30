@@ -1,13 +1,13 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
-      <el-form-item label="党组织名称" prop="partyOrgId">
+      <el-form-item label="工会名称" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      style="width:100%;"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setVModelValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
       <el-form-item label="考核年份" prop="year">
@@ -39,7 +39,7 @@
     <el-table :stripe="true" :border="true" v-loading="loading" :data="assessmentList"
               :header-cell-style="{'text-align':'center'}">
       <el-table-column label="序号" align="center" type="index"/>
-      <el-table-column label="党组织" width="300" align="left"
+      <el-table-column label="工会" width="300" align="left"
                        prop="djPartyOrg.partyOrgFullName" :formatter="partyOrgFormat"/>
       <el-table-column label="考核年份" width="120" align="center" prop="assessmentyear.year"
                        :formatter="yearFormat"/>
@@ -80,7 +80,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党组织考核对话框 -->
+    <!-- 添加或修改工会考核对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <div :style="bodyStyle">
@@ -88,7 +88,7 @@
           {{assessmentName}}
         </div>
         <div style="padding: 0px 0px 8px 0px;">
-          党组织名称：{{partyOrgFullName.substring(partyOrgFullName.indexOf("/") + 1)}}
+          工会名称：{{partyOrgFullName.substring(partyOrgFullName.indexOf("/") + 1)}}
         </div>
         <el-form ref="form" :model="form" :rules="rules">
           <el-table :stripe="true"
@@ -251,7 +251,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党组织考核表格数据
+        // 工会考核表格数据
         assessmentList: [],
         //党支部考核状态
         orgAssessmentStatusOptions: [],
@@ -314,7 +314,7 @@
       this.getList();
       //组织架构树
       this.getPartyOrgTreeSelect();
-      //党组织考核状态
+      //工会考核状态
       this.getDicts("org_assessment_status").then(response => {
         this.orgAssessmentStatusOptions = response.data;
       });
@@ -420,7 +420,7 @@
       scoreFormat(row, column,cellValue, index) {
         return cellValue==undefined?'':cellValue.toFixed(1) + " 分";
       },
-      //获取党组织考核状态字典值
+      //获取工会考核状态字典值
       orgAssessmentStatusFormat(row, column) {
         return this.selectDictLabel(this.orgAssessmentStatusOptions, row.orgAssessmentStatus);
       },
@@ -428,7 +428,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织考核列表 */
+      /** 查询工会考核列表 */
       getList() {
         this.loading = true;
         listAssessment(this.queryParams).then(response => {
@@ -517,7 +517,7 @@
       handleAdd() {
         this.reset();
         this.open = true;
-        this.title = "添加党组织考核";
+        this.title = "添加工会考核";
       },
       /** 党委评分按钮操作 */
       handleUpdate(row) {
@@ -618,7 +618,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const ids = row.id || this.ids;
-        this.$confirm('是否确认删除党组织考核编号为"' + ids + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会考核编号为"' + ids + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -633,7 +633,7 @@
       /** 删除按钮操作 */
       handleDeleteScore(row) {
         const ids = row.id || this.ids;
-        this.$confirm('是否确认删除党组织考核编号为"' + ids + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会考核编号为"' + ids + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -649,7 +649,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织考核数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会考核数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

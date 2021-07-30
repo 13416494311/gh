@@ -89,7 +89,7 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党组织考核年对话框 -->
+    <!-- 添加或修改工会考核年对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="150px">
@@ -132,10 +132,10 @@
                     :border="true"
                     v-loading="orgLoading" :data="assessmentOrgList">
             <el-table-column label="序号" align="center" type="index"/>
-            <el-table-column label="党组织名称" align="center"
+            <el-table-column label="工会名称" align="center"
                              width="200"
                              prop="djPartyOrg.partyOrgFullName" :formatter="partyOrgFormat"/>
-            <!--<el-table-column label="党组织类型" align="center" prop="djPartyOrg.orgType"
+            <!--<el-table-column label="工会类型" align="center" prop="djPartyOrg.orgType"
                              :formatter="orgTypeFormat"/>-->
             <el-table-column label="考评状态" align="center" prop="orgAssessmentStatus"
                              :formatter="orgAssessmentStatusFormat"/>
@@ -251,9 +251,9 @@
         orgAssessmentStatusOptions: [],
         //年度考核状态
         assessmentYearStatusOptions: [],
-        // 党组织考核年表格数据
+        // 工会考核年表格数据
         assessmentyearList: [],
-        //选择 参加的党组织数据
+        //选择 参加的工会数据
         assessmentOrgList: [],
         // 弹出层标题
         title: "",
@@ -307,11 +307,11 @@
       this.getDicts("org_type").then(response => {
         this.orgTypeOptions = response.data;
       });
-      //党组织考核状态
+      //工会考核状态
       this.getDicts("activity_plan_status").then(response => {
         this.assessmentYearStatusOptions = response.data;
       });
-      //党组织考核状态
+      //工会考核状态
       this.getDicts("org_assessment_status").then(response => {
         this.orgAssessmentStatusOptions = response.data;
       });
@@ -405,10 +405,10 @@
         }).catch(function () {
         });
       },
-      //增加 选择计划参与党组织
+      //增加 选择计划参与工会
       openOrgTransfer() {
         this.$refs.orgTransfer.open = true;
-        this.$refs.orgTransfer.title = "选择考核党组织";
+        this.$refs.orgTransfer.title = "选择考核工会";
         this.$refs.orgTransfer.assessmentyearUuid = this.form.assessmentyearUuid;
         this.$refs.orgTransfer.year = this.form.year;
         this.$refs.orgTransfer.assessmentName = this.form.assessmentName;
@@ -418,7 +418,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织考核年列表 */
+      /** 查询工会考核年列表 */
       getList() {
         this.loading = true;
         listAssessmentyear(this.queryParams).then(response => {
@@ -502,7 +502,7 @@
       submitForm: function (orgAssessmentStatus) {
 
         if (orgAssessmentStatus== 2 && this.assessmentOrgList.length == 0) {
-          this.msgError("请选择考核党组织!");
+          this.msgError("请选择考核工会!");
           return;
         }
         this.$refs["form"].validate(valid => {
@@ -545,7 +545,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const ids = row.id || this.ids;
-        this.$confirm('是否确认删除该党组织考核数据?', "警告", {
+        this.$confirm('是否确认删除该工会考核数据?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -560,7 +560,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党组织考核年数据项?', "警告", {
+        this.$confirm('是否确认导出所有工会考核年数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

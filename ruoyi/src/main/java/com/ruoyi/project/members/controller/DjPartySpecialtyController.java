@@ -25,7 +25,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党员特长Controller
+ * 会员特长Controller
  *
  * @author admin
  * @date 2021-02-19
@@ -38,7 +38,7 @@ public class DjPartySpecialtyController extends BaseController
     private IDjPartySpecialtyService djPartySpecialtyService;
 
     /**
-     * 查询党员特长列表
+     * 查询会员特长列表
      */
     @PreAuthorize("@ss.hasPermi('members:specialty:list')")
     @GetMapping("/list")
@@ -54,10 +54,10 @@ public class DjPartySpecialtyController extends BaseController
     }
 
     /**
-     * 导出党员特长列表
+     * 导出会员特长列表
      */
     @PreAuthorize("@ss.hasPermi('members:specialty:export')")
-    @Log(title = "党员特长", businessType = BusinessType.EXPORT)
+    @Log(title = "会员特长", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartySpecialty djPartySpecialty)
     {
@@ -67,7 +67,7 @@ public class DjPartySpecialtyController extends BaseController
     }
 
     /**
-     * 获取党员特长详细信息
+     * 获取会员特长详细信息
      */
     @PreAuthorize("@ss.hasPermi('members:specialty:query')")
     @GetMapping(value = "/{specialtyId}")
@@ -77,10 +77,10 @@ public class DjPartySpecialtyController extends BaseController
     }
 
     /**
-     * 新增党员特长
+     * 新增会员特长
      */
     @PreAuthorize("@ss.hasPermi('members:specialty:add')")
-    @Log(title = "党员特长", businessType = BusinessType.INSERT)
+    @Log(title = "会员特长", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartySpecialty djPartySpecialty)
     {
@@ -88,10 +88,10 @@ public class DjPartySpecialtyController extends BaseController
     }
 
     /**
-     * 修改党员特长
+     * 修改会员特长
      */
     @PreAuthorize("@ss.hasPermi('members:specialty:edit')")
-    @Log(title = "党员特长", businessType = BusinessType.UPDATE)
+    @Log(title = "会员特长", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartySpecialty djPartySpecialty)
     {
@@ -99,10 +99,10 @@ public class DjPartySpecialtyController extends BaseController
     }
 
     /**
-     * 删除党员特长
+     * 删除会员特长
      */
     @PreAuthorize("@ss.hasPermi('members:specialty:remove')")
-    @Log(title = "党员特长", businessType = BusinessType.DELETE)
+    @Log(title = "会员特长", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{specialtyIds}")
     public AjaxResult remove(@PathVariable Long[] specialtyIds)
     {

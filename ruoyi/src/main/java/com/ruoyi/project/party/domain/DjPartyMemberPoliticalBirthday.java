@@ -26,8 +26,8 @@ public class DjPartyMemberPoliticalBirthday extends BaseEntity
     @Excel(name = "唯一id")
     private String birthdayUuid;
 
-    /** 党员ID */
-    @Excel(name = "党员ID")
+    /** 会员ID */
+    @Excel(name = "会员ID")
     private Long memberId;
 
     private DjPartyMember partyMember;

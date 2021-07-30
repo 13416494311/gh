@@ -2,6 +2,10 @@
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$/ruoyi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/archives/archives.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/element-variables.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi-ui/src/assets/styles/variables.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ruoyi-ui/src/layout/index.vue" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

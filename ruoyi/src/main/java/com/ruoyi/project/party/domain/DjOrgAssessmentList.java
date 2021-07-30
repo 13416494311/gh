@@ -7,7 +7,7 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党组织考核评价清单对象 dj_org_assessment_list
+ * 工会考核评价清单对象 dj_org_assessment_list
  *
  * @author admin
  * @date 2021-03-08

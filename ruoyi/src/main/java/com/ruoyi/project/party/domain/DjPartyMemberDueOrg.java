@@ -9,7 +9,7 @@ import com.ruoyi.framework.web.domain.BaseEntity;
 import java.util.List;
 
 /**
- * 党组织党费对象 dj_party_member_due_org
+ * 工会会费对象 dj_party_member_due_org
  *
  * @author ruoyi
  * @date 2021-06-15
@@ -22,14 +22,14 @@ public class DjPartyMemberDueOrg extends BaseEntity
     /** $column.columnComment */
     private Long dueOrgId;
 
-    /** 党费计划UUID */
-    @Excel(name = "党费计划UUID")
+    /** 会费计划UUID */
+    @Excel(name = "会费计划UUID")
     private String duePlanUuid;
 
     private DjPartyMemberDuePlan duePlan;
 
-    /** 党组织id */
-    @Excel(name = "党组织id")
+    /** 工会id */
+    @Excel(name = "工会id")
     private Long partyOrgId;
 
     private DjPartyOrg partyOrg;

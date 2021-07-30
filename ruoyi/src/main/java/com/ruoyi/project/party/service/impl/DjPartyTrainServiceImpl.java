@@ -14,7 +14,7 @@ import com.ruoyi.project.party.service.IDjPartyTrainService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党组织培训Service业务层处理
+ * 工会培训Service业务层处理
  *
  * @author ruoyi
  * @date 2021-03-09
@@ -29,10 +29,10 @@ public class DjPartyTrainServiceImpl implements IDjPartyTrainService
     private IDjPartyOrgService  partyOrgService;
 
     /**
-     * 查询党组织培训
+     * 查询工会培训
      *
-     * @param trainId 党组织培训ID
-     * @return 党组织培训
+     * @param trainId 工会培训ID
+     * @return 工会培训
      */
     @Override
     public DjPartyTrain selectDjPartyTrainById(Long trainId)
@@ -45,10 +45,10 @@ public class DjPartyTrainServiceImpl implements IDjPartyTrainService
     }
 
     /**
-     * 查询党组织培训列表
+     * 查询工会培训列表
      *
-     * @param djPartyTrain 党组织培训
-     * @return 党组织培训
+     * @param djPartyTrain 工会培训
+     * @return 工会培训
      */
     @Override
     public List<DjPartyTrain> selectDjPartyTrainList(DjPartyTrain djPartyTrain)
@@ -65,9 +65,9 @@ public class DjPartyTrainServiceImpl implements IDjPartyTrainService
     }
 
     /**
-     * 新增党组织培训
+     * 新增工会培训
      *
-     * @param djPartyTrain 党组织培训
+     * @param djPartyTrain 工会培训
      * @return 结果
      */
     @Override
@@ -79,9 +79,9 @@ public class DjPartyTrainServiceImpl implements IDjPartyTrainService
     }
 
     /**
-     * 修改党组织培训
+     * 修改工会培训
      *
-     * @param djPartyTrain 党组织培训
+     * @param djPartyTrain 工会培训
      * @return 结果
      */
     @Override
@@ -93,9 +93,9 @@ public class DjPartyTrainServiceImpl implements IDjPartyTrainService
     }
 
     /**
-     * 批量删除党组织培训
+     * 批量删除工会培训
      *
-     * @param trainIds 需要删除的党组织培训ID
+     * @param trainIds 需要删除的工会培训ID
      * @return 结果
      */
     @Override
@@ -105,9 +105,9 @@ public class DjPartyTrainServiceImpl implements IDjPartyTrainService
     }
 
     /**
-     * 删除党组织培训信息
+     * 删除工会培训信息
      *
-     * @param trainId 党组织培训ID
+     * @param trainId 工会培训ID
      * @return 结果
      */
     @Override

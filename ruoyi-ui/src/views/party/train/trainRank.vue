@@ -108,7 +108,7 @@
                 <span v-else class="rank-index" >{{scope.row.rankNum}}th </span>
               </template>
             </el-table-column>
-            <el-table-column label="党员姓名" align="center"  prop="partyMember.memberName"/>
+            <el-table-column label="会员姓名" align="center"  prop="partyMember.memberName"/>
             <el-table-column label="积分" align="center"  prop="score"  width="80" :formatter="scoreFormat"/>
           </el-table>
         </el-card>
@@ -261,7 +261,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询参与培训党员列表 */
+      /** 查询参与培训会员列表 */
       getTrainRankInfo() {
         this.loading = true ;
         getTrainRankInfo(this.rankType).then(response => {

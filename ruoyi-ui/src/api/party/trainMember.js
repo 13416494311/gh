@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询参与培训党员列表
+// 查询参与培训会员列表
 export function getTrainRankInfo(rankType) {
   return request({
     url: '/party/trainMember/getTrainRankInfo/'+rankType,
@@ -8,7 +8,7 @@ export function getTrainRankInfo(rankType) {
   })
 }
 
-// 查询参与培训党员列表
+// 查询参与培训会员列表
 export function listTrainMember(query) {
   return request({
     url: '/party/trainMember/list',
@@ -17,7 +17,7 @@ export function listTrainMember(query) {
   })
 }
 
-// 查询参与培训党员详细
+// 查询参与培训会员详细
 export function getTrainMember(trainMemberId) {
   return request({
     url: '/party/trainMember/' + trainMemberId,
@@ -25,7 +25,7 @@ export function getTrainMember(trainMemberId) {
   })
 }
 
-// 新增参与培训党员
+// 新增参与培训会员
 export function addTrainMember(data) {
   return request({
     url: '/party/trainMember',
@@ -33,7 +33,7 @@ export function addTrainMember(data) {
     data: data
   })
 }
-// 新增参与培训党员
+// 新增参与培训会员
 export function addTrainMembers(data) {
   return request({
     url: '/party/trainMember/addTrainMembers',
@@ -42,7 +42,7 @@ export function addTrainMembers(data) {
   })
 }
 
-// 修改参与培训党员
+// 修改参与培训会员
 export function updateTrainMember(data) {
   return request({
     url: '/party/trainMember',
@@ -50,7 +50,7 @@ export function updateTrainMember(data) {
     data: data
   })
 }
-// 修改参与培训党员
+// 修改参与培训会员
 export function updateTrainMembers(data) {
   return request({
     url: '/party/trainMember/updateMembers',
@@ -59,7 +59,7 @@ export function updateTrainMembers(data) {
   })
 }
 
-// 删除参与培训党员
+// 删除参与培训会员
 export function delTrainMember(trainMemberId) {
   return request({
     url: '/party/trainMember/' + trainMemberId,
@@ -67,7 +67,7 @@ export function delTrainMember(trainMemberId) {
   })
 }
 
-// 导出参与培训党员
+// 导出参与培训会员
 export function exportTrainMember(query) {
   return request({
     url: '/party/trainMember/export',

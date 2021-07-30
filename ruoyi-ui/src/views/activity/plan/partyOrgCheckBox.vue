@@ -7,7 +7,7 @@
           <div class="head-container">
             <el-input
               v-model="partyOrg.partyOrgName"
-              placeholder="请输入党组织架构名称"
+              placeholder="请输入工会架构名称"
               clearable
               size="small"
               prefix-icon="el-icon-search"
@@ -30,7 +30,7 @@
           <div class="head-container">
             <el-input
               v-model="queryParams.partyOrgName"
-              placeholder="请输入党组织架构名称"
+              placeholder="请输入工会架构名称"
               clearable
               size="small"
               prefix-icon="el-icon-search"
@@ -80,13 +80,13 @@
     components: {selectTree},
     data() {
       return {
-        // 党组织表格数据
+        // 工会表格数据
         partyOrgList: [],
         // 弹出层标题
         title: "",
         // 是否显示弹出层
         open: false,
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         // 查询参数
         queryParams: {
@@ -147,13 +147,13 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织下拉树结构 */
+      /** 查询工会下拉树结构 */
       getPartyOrgTreeSelect() {
         partyOrgTreeselect().then(response => {
           this.partyOrgOptions = this.treeInitData(response.data);
         });
       },
-      /** 查询党组织下拉树结构 */
+      /** 查询工会下拉树结构 */
       getPartyOrgSelect(partyOrgId) {
         this.data = []
         childrenListPartyOrg(partyOrgId).then(response => {

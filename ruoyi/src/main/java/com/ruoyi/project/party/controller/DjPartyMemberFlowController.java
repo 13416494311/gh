@@ -21,7 +21,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党员流动Controller
+ * 会员流动Controller
  *
  * @author ruoyi
  * @date 2020-09-21
@@ -34,7 +34,7 @@ public class DjPartyMemberFlowController extends BaseController
     private IDjPartyMemberFlowService djPartyMemberFlowService;
 
     /**
-     * 查询党员流动列表
+     * 查询会员流动列表
      */
     @PostMapping("/list")
     public TableDataInfo list(@RequestBody DjPartyMemberFlow djPartyMemberFlow)
@@ -45,9 +45,9 @@ public class DjPartyMemberFlowController extends BaseController
     }
 
     /**
-     * 导出党员流动列表
+     * 导出会员流动列表
      */
-    @Log(title = "党员流动", businessType = BusinessType.EXPORT)
+    @Log(title = "会员流动", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyMemberFlow djPartyMemberFlow)
     {
@@ -57,7 +57,7 @@ public class DjPartyMemberFlowController extends BaseController
     }
 
     /**
-     * 获取党员流动详细信息
+     * 获取会员流动详细信息
      */
     @GetMapping(value = "/{flowId}")
     public AjaxResult getInfo(@PathVariable("flowId") Long flowId)
@@ -66,9 +66,9 @@ public class DjPartyMemberFlowController extends BaseController
     }
 
     /**
-     * 新增党员流动
+     * 新增会员流动
      */
-    @Log(title = "党员流动", businessType = BusinessType.INSERT)
+    @Log(title = "会员流动", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyMemberFlow djPartyMemberFlow)
     {
@@ -76,9 +76,9 @@ public class DjPartyMemberFlowController extends BaseController
     }
 
     /**
-     * 修改党员流动
+     * 修改会员流动
      */
-    @Log(title = "党员流动", businessType = BusinessType.UPDATE)
+    @Log(title = "会员流动", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyMemberFlow djPartyMemberFlow)
     {
@@ -86,9 +86,9 @@ public class DjPartyMemberFlowController extends BaseController
     }
 
     /**
-     * 删除党员流动
+     * 删除会员流动
      */
-    @Log(title = "党员流动", businessType = BusinessType.DELETE)
+    @Log(title = "会员流动", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{flowIds}")
     public AjaxResult remove(@PathVariable Long[] flowIds)
     {

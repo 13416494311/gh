@@ -14,7 +14,7 @@ import com.ruoyi.project.party.service.IDjPartyMemberChangeService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党员变更表Service业务层处理
+ * 会员变更表Service业务层处理
  *
  * @author ruoyi
  * @date 2020-09-16
@@ -31,10 +31,10 @@ public class DjPartyMemberChangeServiceImpl implements IDjPartyMemberChangeServi
     private ISysDeptService deptService;
 
     /**
-     * 查询党员变更表
+     * 查询会员变更表
      *
-     * @param memberId 党员变更表ID
-     * @return 党员变更表
+     * @param memberId 会员变更表ID
+     * @return 会员变更表
      */
     @Override
     public DjPartyMemberChange selectDjPartyMemberChangeById(Long memberId)
@@ -83,10 +83,10 @@ public class DjPartyMemberChangeServiceImpl implements IDjPartyMemberChangeServi
         return partyMemberChange;
     }
     /**
-     * 查询党员变更表列表
+     * 查询会员变更表列表
      *
-     * @param djPartyMemberChange 党员变更表
-     * @return 党员变更表
+     * @param djPartyMemberChange 会员变更表
+     * @return 会员变更表
      */
     @Override
     public List<DjPartyMemberChange> selectDjPartyMemberChangeList(DjPartyMemberChange djPartyMemberChange)
@@ -105,9 +105,9 @@ public class DjPartyMemberChangeServiceImpl implements IDjPartyMemberChangeServi
     }
 
     /**
-     * 新增党员变更表
+     * 新增会员变更表
      *
-     * @param djPartyMemberChange 党员变更表
+     * @param djPartyMemberChange 会员变更表
      * @return 结果
      */
     @Override
@@ -119,9 +119,9 @@ public class DjPartyMemberChangeServiceImpl implements IDjPartyMemberChangeServi
     }
 
     /**
-     * 修改党员变更表
+     * 修改会员变更表
      *
-     * @param djPartyMemberChange 党员变更表
+     * @param djPartyMemberChange 会员变更表
      * @return 结果
      */
     @Override
@@ -133,9 +133,9 @@ public class DjPartyMemberChangeServiceImpl implements IDjPartyMemberChangeServi
     }
 
     /**
-     * 批量删除党员变更表
+     * 批量删除会员变更表
      *
-     * @param memberIds 需要删除的党员变更表ID
+     * @param memberIds 需要删除的会员变更表ID
      * @return 结果
      */
     @Override
@@ -145,9 +145,9 @@ public class DjPartyMemberChangeServiceImpl implements IDjPartyMemberChangeServi
     }
 
     /**
-     * 删除党员变更表信息
+     * 删除会员变更表信息
      *
-     * @param memberId 党员变更表ID
+     * @param memberId 会员变更表ID
      * @return 结果
      */
     @Override

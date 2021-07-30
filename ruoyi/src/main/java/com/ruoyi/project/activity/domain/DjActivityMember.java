@@ -27,12 +27,12 @@ public class DjActivityMember extends BaseEntity
 
     private String detailedUuid;
 
-    /** 党组织ID */
-    @Excel(name = "党组织ID")
+    /** 工会ID */
+    @Excel(name = "工会ID")
     private Long partyOrgId;
 
-    /** 党组织成员id */
-    @Excel(name = "党组织成员id")
+    /** 工会成员id */
+    @Excel(name = "工会成员id")
     private Long partyMemberId;
 
     private DjPartyMember djPartyMember;

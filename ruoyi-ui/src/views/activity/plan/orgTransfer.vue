@@ -20,7 +20,7 @@
             :titles="titles"
             filterable
             :filter-method="filterMethod"
-            filter-placeholder="请输入党组织名称"
+            filter-placeholder="请输入工会名称"
             height='95%'
             width="100%"
             v-model="value"
@@ -57,8 +57,8 @@
       return {
         planUuid:undefined,
         // 弹出层标题
-        title: "选择党组织",
-        titles: ["未选党组织", "已选党组织"],
+        title: "选择工会",
+        titles: ["未选工会", "已选工会"],
         // 是否显示弹出层
         open: false,
         bodyStyle: {
@@ -69,7 +69,7 @@
         },
         data: [],
         value: [],
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         defaultProps: {
           value: 'id',          // 唯一标识
@@ -123,7 +123,7 @@
       handleNodeClick(data) {
         this.getPartyOrgSelect(data.id);
       },
-      /** 查询党组织下拉树结构 */
+      /** 查询工会下拉树结构 */
       getPartyOrgTreeSelect() {
         partyOrgTreeselect().then(response => {
           this.partyOrgOptions = this.treeInitData(response.data);
@@ -132,7 +132,7 @@
       filterMethod(query, item) {
         return item.label.indexOf(query) > -1;
       },
-      /** 查询党组织下拉树结构 */
+      /** 查询工会下拉树结构 */
       getPartyOrgSelect(partyOrgId) {
         if(this.clickWaitFlag == true){
           return;
@@ -156,7 +156,7 @@
       },
       submit(){
         if(this.value.length==0){
-          this.msgInfo("请选择参与活动党组织！")
+          this.msgInfo("请选择参与活动工会！")
           return;
         }
         let formData = new FormData();

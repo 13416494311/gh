@@ -27,9 +27,9 @@ public class SysRegisterController {
     private RedisCache redisCache;
 
     /**
-     * 手机app 党员注册
+     * 手机app 会员注册
      */
-    @Log(title = "党员注册", businessType = BusinessType.INSERT)
+    @Log(title = "会员注册", businessType = BusinessType.INSERT)
     @PostMapping("/addForApp")
     public AjaxResult register(@RequestBody Map<String,Object> params)
     {
@@ -40,7 +40,7 @@ public class SysRegisterController {
             return AjaxResult.success("验证码错误");
         }
         String password =  params.get("password").toString();
-        //党员变更表
+        //会员变更表
         DjPartyMember djPartyMember = JSON.parseObject(JSON.toJSONString(params), DjPartyMember.class);
         return AjaxResult.success(djPartyMemberService.insertDjPartyMemberForApp(djPartyMember,password));
     }

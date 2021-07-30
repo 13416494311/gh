@@ -15,7 +15,7 @@
     	.vjs-paused .vjs-big-play-button,.vjs-paused.vjs-has-started .vjs-big-play-button {
 		    display: block;
 		}
-		
+
 		/*****START 播放按钮变○圆形 START*****/
 		.video-js .vjs-big-play-button{
 		    font-size: 2.5em;
@@ -44,8 +44,8 @@
 		    margin-top: -1em;
 		    margin-left: -1.5em;
 		}
-		
-		
+
+
   </style>
   <style>
   	.player-container{
@@ -55,7 +55,7 @@
   		float:left;
   		width: 90% !important;
   		height: 240px;
-		
+
   	}
   	.vjs-playlist{
   		float:right;
@@ -86,9 +86,9 @@
 -->
 <body>
 	<div class="player-container" >
-		
-		
-		<video style="width= 100%; height=100%; object-fit: fill" id="example" class="video-js vjs-default-skin vjs-big-play-centered vjs-v7 vjs-user-active" playsinline webkit-playsinline autoplay controls preload="auto" width="100%" height="100%" 
+
+
+		<video style="width= 100%; height=100%; object-fit: fill" id="example" class="video-js vjs-default-skin vjs-big-play-centered vjs-v7 vjs-user-active" playsinline webkit-playsinline autoplay controls preload="auto" width="100%" height="100%"
 	  		data-setup='{"techOrder": ["html5","flash"]}'>
 		</video>
 	 <div class="vjs-playlist playlist-container">
@@ -101,7 +101,7 @@
 </body>
 <script type="text/javascript">
 	var player = videojs('example');
- 
+
 	player.playlist([{
 	  name:'广东公司第二次党代会胜利召开',//视频标题
 	  description:'Explore the depths of our planet\'s oceans.',//视频描述
@@ -124,24 +124,24 @@
 	  	}
   	  ]
 	}, {
-	  name:'喜迎中铁三局广东公司第二次党员代表大会 祝福寄语',//视频标题
+	  name:'喜迎中铁三局广东公司第二次会员代表大会 祝福寄语',//视频标题
 	  description:'Explore the depths of our planet\'s oceans.',//视频描述
 	  //duration:52,//视频总时长，单位秒(s)
 	  sources: [{//视频资源地址以及视频的MIME类型
-	    src: '喜迎中铁三局广东公司第二次党员代表大会 祝福寄语.mp4',
+	    src: '喜迎中铁三局广东公司第二次会员代表大会 祝福寄语.mp4',
 	    type: 'video/mp4'
 	  }],
 	  //视频封面地址
-	  poster:'喜迎中铁三局广东公司第二次党员代表大会 祝福寄语.png',
+	  poster:'喜迎中铁三局广东公司第二次会员代表大会 祝福寄语.png',
 	  //右侧视频播放列表的图片
 	  thumbnail: [
 	  	{//默认图片
-          srcset: '喜迎中铁三局广东公司第二次党员代表大会 祝福寄语.jpg',
+          srcset: '喜迎中铁三局广东公司第二次会员代表大会 祝福寄语.jpg',
           type: 'image/jpeg',
           media: '(min-width: 400px;)'
         },
 	  	{//实际视频缩略图图片
-	  		src:'喜迎中铁三局广东公司第二次党员代表大会 祝福寄语.png'
+	  		src:'喜迎中铁三局广东公司第二次会员代表大会 祝福寄语.png'
 	  	}
   	  ]
 	},{
@@ -166,7 +166,7 @@
 	  	}
   	  ]
 	},]);
-	 
+
 	player.playlistUi();
 	player.playlist.autoadvance(0);
 </script>

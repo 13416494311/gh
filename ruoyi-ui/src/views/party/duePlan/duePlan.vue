@@ -97,13 +97,13 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改党费计划对话框 -->
+    <!-- 添加或修改会费计划对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="80%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="150px">
         <el-card shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
-            <span style="font-weight: bold;font-size: 16px">党费管理</span>
+            <span style="font-weight: bold;font-size: 16px">会费管理</span>
           </div>
           <el-row>
             <el-col :span="12">
@@ -189,7 +189,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 党费计划表格数据
+        // 会费计划表格数据
         duePlanList: [],
         // 弹出层标题
         title: "",
@@ -220,7 +220,7 @@
             {required: true, message: "季度不能为空", trigger: "blur"}
           ],
           title: [
-            {required: true, message: "党费标题不能为空", trigger: "blur"}
+            {required: true, message: "会费标题不能为空", trigger: "blur"}
           ],
         },
         bodyStyle: {
@@ -250,7 +250,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党费计划列表 */
+      /** 查询会费计划列表 */
       getList() {
         this.loading = true;
         listDuePlan(this.queryParams).then(response => {
@@ -317,7 +317,7 @@
         this.disabled = false;
         this.form.duePlanUuid = this.uuid();
         this.duePlanUuid = this.form.duePlanUuid;
-        this.title = "添加党费管理";
+        this.title = "添加会费管理";
       },
       /** 修改按钮操作 */
       handleUpdate(row) {
@@ -329,7 +329,7 @@
           this.duePlanUuid= this.form.duePlanUuid
           this.form.quarter = this.form.quarter +'';
           this.open = true;
-          this.title = "修改党费管理";
+          this.title = "修改会费管理";
         });
       },
       handleSee(row) {
@@ -341,7 +341,7 @@
           this.duePlanUuid= this.form.duePlanUuid
           this.form.quarter = this.form.quarter +'';
           this.open = true;
-          this.title = "查看党费管理";
+          this.title = "查看会费管理";
         });
       },
       /** 提交按钮 */
@@ -391,7 +391,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有党费计划数据项?', "警告", {
+        this.$confirm('是否确认导出所有会费计划数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

@@ -9,7 +9,7 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党组织换届对象 dj_party_change
+ * 工会换届对象 dj_party_change
  *
  * @author ruoyi
  * @date 2021-02-18
@@ -26,8 +26,8 @@ public class DjPartyChange extends BaseEntity
     @Excel(name = "${comment}", readConverterExp = "$column.readConverterExp()")
     private String changeUuid;
 
-    /** 党组织名称 */
-    @Excel(name = "党组织名称")
+    /** 工会名称 */
+    @Excel(name = "工会名称")
     private Long partyOrgId;
 
     private DjPartyOrg partyOrg;

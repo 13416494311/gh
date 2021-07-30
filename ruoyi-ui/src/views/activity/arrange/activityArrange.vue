@@ -10,12 +10,12 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="活动党组织" prop="partyOrgId">
+      <el-form-item label="活动工会" prop="partyOrgId">
         <select-tree :value="queryParams.partyOrgId"
                      :options="partyOrgOptions"
                      vModel="partyOrgId"
                      @selected="setVModelValue"
-                     placeholder="请选择党组织"
+                     placeholder="请选择工会"
         />
       </el-form-item>
 
@@ -70,7 +70,7 @@
         </template>
       </el-table-column>
       <el-table-column label="负责人" align="center" prop="djPartyMember.memberName"/>
-      <el-table-column label="活动党组织" align="center" prop="djPartyOrg.partyOrgFullName"/>
+      <el-table-column label="活动工会" align="center" prop="djPartyOrg.partyOrgFullName"/>
       <el-table-column label="活动状态" align="center" prop="status"
                        :formatter="arrangeStatusFormat"/>
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
@@ -214,7 +214,7 @@
                 </div>
                 <el-table v-loading="loading" :data="memberList" @selection-change="handleSelectionChange">
                   <el-table-column label="姓名" align="center" prop="djPartyMember.memberName" />
-                  <el-table-column label="所属党组织" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName" />
+                  <el-table-column label="所属工会" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName" />
                   <el-table-column label="联系方式" align="center" prop="djPartyMember.mobile" />
                   <el-table-column  v-if="!disabled" label="操作" align="center" class-name="small-padding fixed-width">
                     <template slot-scope="scope">
@@ -355,7 +355,7 @@
         },
         //活动安排状态
         arrangeStatusOptions: [],
-        // 党员活动类型字典
+        // 会员活动类型字典
         activityTypeOptions: [],
         // 活动来源字典
         activitySourcesOptions: [],
@@ -436,7 +436,7 @@
       arrangeStatusFormat(row, column) {
         return this.selectDictLabel(this.arrangeStatusOptions, row.status);
       },
-      // 党员活动类型字典翻译
+      // 会员活动类型字典翻译
       activityTypeFormat(row, column) {
         return this.selectDictLabel(this.activityTypeOptions, row.djActivityPlan.activityType);
       },

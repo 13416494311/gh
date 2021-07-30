@@ -9,7 +9,7 @@
       <div class="message-content">
         {{"请您"+parseTime(form.activityPlanStartTime, '{y}-{m}-{d}  {h}:{i}:{s}')+"至"
         +parseTime(form.activityPlanEndTime, '{y}-{m}-{d}  {h}:{i}:{s}')
-        +"准时前往"+form.venue+"参加“"+djActivityPlan.activityTheme+"”党员活动！"}}
+        +"准时前往"+form.venue+"参加“"+djActivityPlan.activityTheme+"”会员活动！"}}
       </div>
     </el-card>
 
@@ -34,7 +34,7 @@
               <el-select :disabled="true"
                          v-model="djActivityPlan.activityType"
                          style="width: 100%"
-                         placeholder="请选择党员活动类型">
+                         placeholder="请选择会员活动类型">
                 <el-option
                   v-for="dict in activityTypeOptions"
                   :key="dict.dictValue"
@@ -83,8 +83,8 @@
 
         <el-row>
           <el-col :span="12">
-            <el-form-item label="活动党组织">
-              <el-input :disabled="true" v-model="djPartyOrg.partyOrgFullName" placeholder="请输入活动党组织"/>
+            <el-form-item label="活动工会">
+              <el-input :disabled="true" v-model="djPartyOrg.partyOrgFullName" placeholder="请输入活动工会"/>
             </el-form-item>
           </el-col>
           <el-col :span="12">

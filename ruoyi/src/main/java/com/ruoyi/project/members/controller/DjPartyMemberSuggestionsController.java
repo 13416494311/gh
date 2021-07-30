@@ -27,7 +27,7 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党员建议Controller
+ * 会员建议Controller
  *
  * @author ruoyi
  * @date 2021-02-27
@@ -40,7 +40,7 @@ public class DjPartyMemberSuggestionsController extends BaseController
     private IDjPartyMemberSuggestionsService djPartyMemberSuggestionsService;
 
     /**
-     * 查询党员建议列表
+     * 查询会员建议列表
      */
     @PreAuthorize("@ss.hasPermi('members:suggestions:list')")
     @GetMapping("/list")
@@ -60,10 +60,10 @@ public class DjPartyMemberSuggestionsController extends BaseController
     }
 
     /**
-     * 导出党员建议列表
+     * 导出会员建议列表
      */
     @PreAuthorize("@ss.hasPermi('members:suggestions:export')")
-    @Log(title = "党员建议", businessType = BusinessType.EXPORT)
+    @Log(title = "会员建议", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjPartyMemberSuggestions djPartyMemberSuggestions)
     {
@@ -73,7 +73,7 @@ public class DjPartyMemberSuggestionsController extends BaseController
     }
 
     /**
-     * 获取党员建议详细信息
+     * 获取会员建议详细信息
      */
     @PreAuthorize("@ss.hasPermi('members:suggestions:query')")
     @GetMapping(value = "/{suggestionsId}")
@@ -83,10 +83,10 @@ public class DjPartyMemberSuggestionsController extends BaseController
     }
 
     /**
-     * 新增党员建议
+     * 新增会员建议
      */
     @PreAuthorize("@ss.hasPermi('members:suggestions:add')")
-    @Log(title = "党员建议", businessType = BusinessType.INSERT)
+    @Log(title = "会员建议", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjPartyMemberSuggestions djPartyMemberSuggestions)
     {
@@ -94,10 +94,10 @@ public class DjPartyMemberSuggestionsController extends BaseController
     }
 
     /**
-     * 修改党员建议
+     * 修改会员建议
      */
     @PreAuthorize("@ss.hasPermi('members:suggestions:edit')")
-    @Log(title = "党员建议", businessType = BusinessType.UPDATE)
+    @Log(title = "会员建议", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjPartyMemberSuggestions djPartyMemberSuggestions)
     {
@@ -105,10 +105,10 @@ public class DjPartyMemberSuggestionsController extends BaseController
     }
 
     /**
-     * 删除党员建议
+     * 删除会员建议
      */
     @PreAuthorize("@ss.hasPermi('members:suggestions:remove')")
-    @Log(title = "党员建议", businessType = BusinessType.DELETE)
+    @Log(title = "会员建议", businessType = BusinessType.DELETE)
     @DeleteMapping("/{suggestionsIds}")
     public AjaxResult remove(@PathVariable Long[] suggestionsIds)
     {

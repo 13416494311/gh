@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-// 查询党费计划列表
+// 查询会费计划列表
 export function listDuePlan(query) {
   return request({
     url: '/party/duePlan/list',
@@ -9,7 +9,7 @@ export function listDuePlan(query) {
   })
 }
 
-// 查询党费计划详细
+// 查询会费计划详细
 export function getDuePlan(duePlanId) {
   return request({
     url: '/party/duePlan/' + duePlanId,
@@ -17,7 +17,7 @@ export function getDuePlan(duePlanId) {
   })
 }
 
-// 新增党费计划
+// 新增会费计划
 export function addDuePlan(data) {
   return request({
     url: '/party/duePlan',
@@ -26,7 +26,7 @@ export function addDuePlan(data) {
   })
 }
 
-// 修改党费计划
+// 修改会费计划
 export function updateDuePlan(data) {
   return request({
     url: '/party/duePlan',
@@ -35,7 +35,7 @@ export function updateDuePlan(data) {
   })
 }
 
-// 删除党费计划
+// 删除会费计划
 export function delDuePlan(duePlanId) {
   return request({
     url: '/party/duePlan/' + duePlanId,
@@ -43,7 +43,7 @@ export function delDuePlan(duePlanId) {
   })
 }
 
-// 导出党费计划
+// 导出会费计划
 export function exportDuePlan(query) {
   return request({
     url: '/party/duePlan/export',

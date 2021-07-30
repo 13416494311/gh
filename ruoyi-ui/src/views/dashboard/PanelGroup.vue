@@ -7,7 +7,7 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            党组织数
+            工会组织数
           </div>
           <count-to :start-val="0" :end-val="orgCount" :duration="2600" class="card-panel-num" />
         </div>
@@ -20,7 +20,7 @@
         </div>
         <div class="card-panel-description">
           <div class="card-panel-text">
-            党员人数
+            工会成员数
           </div>
           <count-to :start-val="0" :end-val="memberCount" :duration="3000" class="card-panel-num" />
         </div>

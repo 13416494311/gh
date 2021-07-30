@@ -63,7 +63,7 @@
         partyOrgId:undefined,
         type:undefined,
         // 弹出层标题
-        title: "选择党组织",
+        title: "选择工会",
         titles: ["未选成员", "已选成员"],
         // 是否显示弹出层
         open: false,
@@ -75,7 +75,7 @@
         },
         data: [],
         value: [],
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         defaultProps: {
           value: 'id',          // 唯一标识
@@ -128,7 +128,7 @@
       handleNodeClick(data) {
         this.getPartyMemberSelect(data.id);
       },
-      /** 查询党组织下拉树结构 */
+      /** 查询工会下拉树结构 */
       getPartyOrgTreeSelect() {
         partyOrgTreeselect().then(response => {
           this.partyOrgOptions = this.treeInitData(response.data);
@@ -137,7 +137,7 @@
       filterMethod(query, item) {
         return item.label.indexOf(query) > -1;
       },
-      /** 查询党组织成员 */
+      /** 查询工会成员 */
       getPartyMemberSelect(partyOrgId) {
         if(partyOrgId ==undefined){
           return;

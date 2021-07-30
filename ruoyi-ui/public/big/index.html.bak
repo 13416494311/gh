@@ -10,10 +10,10 @@
 </head>
 
 	<script>
-	$(window).load(function(){  
+	$(window).load(function(){
              $(".loading").fadeOut()
-            })  
-			
+            })
+
 /****/
 $(document).ready(function(){
 	var whei=$(window).width()
@@ -24,8 +24,8 @@ $(document).ready(function(){
 });
 	});
 	</script>
-	<script type="text/javascript" src="js/echarts.min.js"></script> 
-	<script language="JavaScript" src="js/js.js"></script> 
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script language="JavaScript" src="js/js.js"></script>
 <body>
 <div class="canvas" style="opacity: .2">
 	<iframe frameborder="0" src="js/index.html" style="width: 100%; height: 100%"></iframe>
@@ -38,7 +38,7 @@ $(document).ready(function(){
 <div class="head">
   <h1>智慧党建综合大数据</h1>
   <div class="weather"><!--<img src="picture/weather.png"><span>多云转小雨</span>--><span id="showTime"></span></div>
-	
+
 	<script>
 var t = null;
     t = setTimeout(time,1000);//開始运行
@@ -53,14 +53,14 @@ var t = null;
        var m=dt.getMinutes();//获取分
        var s=dt.getSeconds();//获取秒
        document.getElementById("showTime").innerHTML = y+"年"+mt+"月"+day+"-"+h+"时"+m+"分"+s+"秒";
-       t = setTimeout(time,1000); //设定定时器，循环运行     
-    } 
+       t = setTimeout(time,1000); //设定定时器，循环运行
+    }
 
 </script>
-<script type="text/javascript" src="js/china.js"></script> 
-<script type="text/javascript" src="js/area_echarts.js"></script> 
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/area_echarts.js"></script>
 
-	
+
 
 <div class="mainbox">
   <ul class="clearfix">
@@ -71,7 +71,7 @@ var t = null;
         <div class="boxfoot"></div>
       </div>
       <div class="boxall" style="height: 5.2rem">
-        <div class="alltitle">各支部党员人数</div>
+        <div class="alltitle">各支部会员人数</div>
         <div class="allnav" id="echart2"></div>
         <div class="boxfoot"></div>
       </div>
@@ -82,7 +82,7 @@ var t = null;
 				<div class="sy" id="fb3"></div>
 		  </div>
         <div class="boxfoot">
-			
+
 		</video>
 		  </div>
       </div>
@@ -104,15 +104,15 @@ var t = null;
         </div>
       </div>
 	  <div class="boxall" style="height:4rem"><iframe frameborder ="0" src="videojs-playlist-master/index.html" width="100%" height="100%"></iframe></div>
-	 
-	 
+
+
       <div class="map">
         <div class="map1" style="top:-40px"><img src="picture/lbx.png"></div>
         <div class="map2" style="top:0"><img src="picture/jt.png"></div>
         <div class="map3" style="top:0"><img src="picture/map.png"></div>
         <div class="map4" style="top:-50px" id="map_1"></div>
       </div>
-	   
+
     </li>
     <li>
           <div class="boxall" style="height:4rem">
@@ -122,8 +122,8 @@ var t = null;
       </div>
       <div class="boxall" style="height: 4rem">
         <div class="alltitle">年度党建工作计划</div>
-		<div style="min-height:250px;overflow-y:auto;max-height:150px;" class="alltitle1">一、一季度计划召开中共中铁三局集团广东建设工程有限公司第二次代表大会、2020年度党员领导班子民主生活会，并完成对各党支部的党建工作责任制考核。
-		<br />二、七一对先进党支部、党员先锋模范、优秀党务工作者和优秀共产党员进行表彰。
+		<div style="min-height:250px;overflow-y:auto;max-height:150px;" class="alltitle1">一、一季度计划召开中共中铁三局集团广东建设工程有限公司第二次代表大会、2020年度会员领导班子民主生活会，并完成对各党支部的党建工作责任制考核。
+		<br />二、七一对先进党支部、会员先锋模范、优秀党务工作者和优秀共产会员进行表彰。
 		<br />三、三季度计划举办党支部书记。
 		<br />四、结合2021年重点工作任务部署，开展党委书记专题党课。
 		<br />五、2021年，公司党委计划开展不少于6次的党委理论学习中心组学习，并督促各单位跟进学习。
@@ -135,9 +135,9 @@ var t = null;
       </div>
       <div class="boxall" style="height: 3.5rem">
         <div class="alltitle">月度党建工作计划</div>
-		<div class="alltitle1">一、1月15日召开2020年度党员领导班子民主生活会。</div>
+		<div class="alltitle1">一、1月15日召开2020年度会员领导班子民主生活会。</div>
 		<div class="alltitle1">二、1月15日至16日召开中共中铁三局集团广东建设工程有限公司第二次代表大会。</div>
-		<div class="alltitle1">三、1月17日召开党务分口工作会，基层党组织书记进行抓基层党建工作述职报告。</div>
+		<div class="alltitle1">三、1月17日召开党务分口工作会，基层工会书记进行抓基层党建工作述职报告。</div>
 		<div class="alltitle1">四、1月完成对各党支部的党建工作责任制考核。</div>
         <div class="allnav" id="echart6"></div>
         <div class="boxfoot"></div>

@@ -21,8 +21,8 @@ import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.framework.web.page.TableDataInfo;
 
 /**
- * 党组织加减分审核Controller
- * 
+ * 工会加减分审核Controller
+ *
  * @author admin
  * @date 2021-03-15
  */
@@ -34,7 +34,7 @@ public class DjOrgAssessmentAddsubtractController extends BaseController
     private IDjOrgAssessmentAddsubtractService djOrgAssessmentAddsubtractService;
 
     /**
-     * 查询党组织加减分审核列表
+     * 查询工会加减分审核列表
      */
     @PreAuthorize("@ss.hasPermi('party:addsubtract:list')")
     @GetMapping("/list")
@@ -46,10 +46,10 @@ public class DjOrgAssessmentAddsubtractController extends BaseController
     }
 
     /**
-     * 导出党组织加减分审核列表
+     * 导出工会加减分审核列表
      */
     @PreAuthorize("@ss.hasPermi('party:addsubtract:export')")
-    @Log(title = "党组织加减分审核", businessType = BusinessType.EXPORT)
+    @Log(title = "工会加减分审核", businessType = BusinessType.EXPORT)
     @GetMapping("/export")
     public AjaxResult export(DjOrgAssessmentAddsubtract djOrgAssessmentAddsubtract)
     {
@@ -59,7 +59,7 @@ public class DjOrgAssessmentAddsubtractController extends BaseController
     }
 
     /**
-     * 获取党组织加减分审核详细信息
+     * 获取工会加减分审核详细信息
      */
     @PreAuthorize("@ss.hasPermi('party:addsubtract:query')")
     @GetMapping(value = "/{addsubtractId}")
@@ -69,10 +69,10 @@ public class DjOrgAssessmentAddsubtractController extends BaseController
     }
 
     /**
-     * 新增党组织加减分审核
+     * 新增工会加减分审核
      */
     @PreAuthorize("@ss.hasPermi('party:addsubtract:add')")
-    @Log(title = "党组织加减分审核", businessType = BusinessType.INSERT)
+    @Log(title = "工会加减分审核", businessType = BusinessType.INSERT)
     @PostMapping
     public AjaxResult add(@RequestBody DjOrgAssessmentAddsubtract djOrgAssessmentAddsubtract)
     {
@@ -80,10 +80,10 @@ public class DjOrgAssessmentAddsubtractController extends BaseController
     }
 
     /**
-     * 修改党组织加减分审核
+     * 修改工会加减分审核
      */
     @PreAuthorize("@ss.hasPermi('party:addsubtract:edit')")
-    @Log(title = "党组织加减分审核", businessType = BusinessType.UPDATE)
+    @Log(title = "工会加减分审核", businessType = BusinessType.UPDATE)
     @PutMapping
     public AjaxResult edit(@RequestBody DjOrgAssessmentAddsubtract djOrgAssessmentAddsubtract)
     {
@@ -91,10 +91,10 @@ public class DjOrgAssessmentAddsubtractController extends BaseController
     }
 
     /**
-     * 删除党组织加减分审核
+     * 删除工会加减分审核
      */
     @PreAuthorize("@ss.hasPermi('party:addsubtract:remove')")
-    @Log(title = "党组织加减分审核", businessType = BusinessType.DELETE)
+    @Log(title = "工会加减分审核", businessType = BusinessType.DELETE)
 	@DeleteMapping("/{addsubtractIds}")
     public AjaxResult remove(@PathVariable Long[] addsubtractIds)
     {

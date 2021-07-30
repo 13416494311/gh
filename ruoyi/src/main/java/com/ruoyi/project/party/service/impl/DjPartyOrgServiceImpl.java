@@ -29,7 +29,7 @@ import com.ruoyi.project.party.service.IDjPartyOrgService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 /**
- * 党组织架构Service业务层处理
+ * 工会架构Service业务层处理
  *
  * @author ruoyi
  * @date 2020-08-03
@@ -67,10 +67,10 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
         return djPartyOrgMapper.getOrgCount();
     }
     /**
-     * 查询党组织架构
+     * 查询工会架构
      *
-     * @param partyOrgId 党组织架构ID
-     * @return 党组织架构
+     * @param partyOrgId 工会架构ID
+     * @return 工会架构
      */
     @Override
     public DjPartyOrg selectDjPartyOrgById(Long partyOrgId)
@@ -161,10 +161,10 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 查询党组织架构列表
+     * 查询工会架构列表
      *
-     * @param djPartyOrg 党组织架构
-     * @return 党组织架构
+     * @param djPartyOrg 工会架构
+     * @return 工会架构
      */
     @Override
     public List<DjPartyOrg> selectDjPartyOrgList(DjPartyOrg djPartyOrg)
@@ -233,10 +233,10 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 查询党组织架构下属列表
+     * 查询工会架构下属列表
      *
-     * @param partyOrgId 党组织架构Id
-     * @return 党组织架构集合
+     * @param partyOrgId 工会架构Id
+     * @return 工会架构集合
      */
     @Override
     public List<DjPartyOrg> selectChildrenPartyOrgById(Long partyOrgId)
@@ -245,9 +245,9 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 新增党组织架构
+     * 新增工会架构
      *
-     * @param djPartyOrg 党组织架构
+     * @param djPartyOrg 工会架构
      * @return 结果
      */
     @Override
@@ -257,16 +257,16 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
         // 如果父节点不为正常状态,则不允许新增子节点
         if (!UserConstants.DEPT_NORMAL.equals(info.getStatus()))
         {
-            throw new CustomException("上级党组织架构停用，不允许新增");
+            throw new CustomException("上级工会架构停用，不允许新增");
         }
         djPartyOrg.setAncestors(info.getAncestors() + "," + djPartyOrg.getParentId());
         return djPartyOrgMapper.insertDjPartyOrg(djPartyOrg);
     }
 
     /**
-     * 修改党组织架构
+     * 修改工会架构
      *
-     * @param djPartyOrg 党组织架构
+     * @param djPartyOrg 工会架构
      * @return 结果
      */
     @Override
@@ -284,16 +284,16 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
         int result = djPartyOrgMapper.updateDjPartyOrg(djPartyOrg);
         if (UserConstants.DEPT_NORMAL.equals(djPartyOrg.getStatus()))
         {
-            // 如果该党组织架构是启用状态，则启用该党组织架构的所有上级部门
+            // 如果该工会架构是启用状态，则启用该工会架构的所有上级部门
             updateParentPartyOrgStatus(djPartyOrg);
         }
         return result;
     }
 
     /**
-     * 修改该党组织架构的上级党组织架构状态
+     * 修改该工会架构的上级工会架构状态
      *
-     * @param djPartyOrg 当前党组织架构
+     * @param djPartyOrg 当前工会架构
      */
     private void updateParentPartyOrgStatus(DjPartyOrg djPartyOrg)
     {
@@ -322,9 +322,9 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
         }
     }
     /**
-     * 批量删除党组织架构
+     * 批量删除工会架构
      *
-     * @param partyOrgIds 需要删除的党组织架构ID
+     * @param partyOrgIds 需要删除的工会架构ID
      * @return 结果
      */
     @Override
@@ -334,9 +334,9 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 删除党组织架构信息
+     * 删除工会架构信息
      *
-     * @param partyOrgId 党组织架构ID
+     * @param partyOrgId 工会架构ID
      * @return 结果
      */
     @Override
@@ -346,9 +346,9 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 校验党组织架构名称是否唯一
+     * 校验工会架构名称是否唯一
      *
-     * @param djPartyOrg 党组织架构信息
+     * @param djPartyOrg 工会架构信息
      * @return 结果
      */
     @Override
@@ -364,10 +364,10 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 根据ID查询所有子党组织架构（正常状态）
+     * 根据ID查询所有子工会架构（正常状态）
      *
-     * @param partyOrgId 党组织架构ID
-     * @return 子党组织架构数
+     * @param partyOrgId 工会架构ID
+     * @return 子工会架构数
      */
     @Override
     public int selectNormalChildrenPartyOrgById(Long partyOrgId){
@@ -375,9 +375,9 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 是否存在党组织架构子节点
+     * 是否存在工会架构子节点
      *
-     * @param partyOrgId 党组织架构ID
+     * @param partyOrgId 工会架构ID
      * @return 结果
      */
     @Override
@@ -387,9 +387,9 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 党组织架构是否存在党员
+     * 工会架构是否存在会员
      *
-     * @param partyOrgId 党组织架构ID
+     * @param partyOrgId 工会架构ID
      * @return 结果
      */
     public boolean checkOrgExistMember(Long partyOrgId){
@@ -420,7 +420,7 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
     }
 
     /**
-     * 获取党组织架构树数据
+     * 获取工会架构树数据
      *
      * @return
      */

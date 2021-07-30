@@ -4,7 +4,7 @@ import java.util.List;
 import com.ruoyi.project.party.domain.DjPartyMemberDuePlan;
 
 /**
- * 党费计划Mapper接口
+ * 会费计划Mapper接口
  *
  * @author wandengfeng
  * @date 2021-06-15
@@ -12,55 +12,55 @@ import com.ruoyi.project.party.domain.DjPartyMemberDuePlan;
 public interface DjPartyMemberDuePlanMapper
 {
     /**
-     * 查询党费计划
+     * 查询会费计划
      *
-     * @param duePlanId 党费计划ID
-     * @return 党费计划
+     * @param duePlanId 会费计划ID
+     * @return 会费计划
      */
     public DjPartyMemberDuePlan selectDjPartyMemberDuePlanById(Long duePlanId);
 
     /**
-     * 查询党费计划
+     * 查询会费计划
      *
-     * @param duePlanUuid 党费计划ID
-     * @return 党费计划
+     * @param duePlanUuid 会费计划ID
+     * @return 会费计划
      */
     public DjPartyMemberDuePlan selectDjPartyMemberDuePlanByUuid(String duePlanUuid);
 
     /**
-     * 查询党费计划列表
+     * 查询会费计划列表
      *
-     * @param djPartyMemberDuePlan 党费计划
-     * @return 党费计划集合
+     * @param djPartyMemberDuePlan 会费计划
+     * @return 会费计划集合
      */
     public List<DjPartyMemberDuePlan> selectDjPartyMemberDuePlanList(DjPartyMemberDuePlan djPartyMemberDuePlan);
 
     /**
-     * 新增党费计划
+     * 新增会费计划
      *
-     * @param djPartyMemberDuePlan 党费计划
+     * @param djPartyMemberDuePlan 会费计划
      * @return 结果
      */
     public int insertDjPartyMemberDuePlan(DjPartyMemberDuePlan djPartyMemberDuePlan);
 
     /**
-     * 修改党费计划
+     * 修改会费计划
      *
-     * @param djPartyMemberDuePlan 党费计划
+     * @param djPartyMemberDuePlan 会费计划
      * @return 结果
      */
     public int updateDjPartyMemberDuePlan(DjPartyMemberDuePlan djPartyMemberDuePlan);
 
     /**
-     * 删除党费计划
+     * 删除会费计划
      *
-     * @param duePlanId 党费计划ID
+     * @param duePlanId 会费计划ID
      * @return 结果
      */
     public int deleteDjPartyMemberDuePlanById(Long duePlanId);
 
     /**
-     * 批量删除党费计划
+     * 批量删除会费计划
      *
      * @param duePlanIds 需要删除的数据ID
      * @return 结果

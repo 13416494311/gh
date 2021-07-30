@@ -17,8 +17,8 @@
       <el-table v-loading="loading" :data="trainMemberList" @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55" align="center"/>
         <el-table-column label="序号" width="55" align="center" type="index" />
-        <el-table-column label="党组织名称" align="center" prop="partyOrg.partyOrgFullName" />
-        <el-table-column label="党员姓名" align="center" prop="partyMember.memberName" />
+        <el-table-column label="工会名称" align="center" prop="partyOrg.partyOrgFullName" />
+        <el-table-column label="会员姓名" align="center" prop="partyMember.memberName" />
         <el-table-column label="状态" align="center" prop="status" :formatter="memberStatusFormat"/>
         <el-table-column v-if="!disabled" label="操作" align="center" class-name="small-padding fixed-width">
           <template slot-scope="scope">
@@ -96,7 +96,7 @@
         multiple: true,
         // 总条数
         total: 0,
-        // 参与培训党员表格数据
+        // 参与培训会员表格数据
         trainMemberList: [],
         // 弹出层标题
         title: "",
@@ -190,7 +190,7 @@
       getHeight(){
         this.bodyStyle.height=window.innerHeight-281+'px';
       },
-      /** 查询参与培训党员列表 */
+      /** 查询参与培训会员列表 */
       getList() {
         this.loading = true;
         this.queryParams.trainUuid = this.trainUuid
@@ -240,7 +240,7 @@
       /** 新增按钮操作 */
       handleAdd() {
         if(!this.partyOrgId){
-          this.msgInfo("请先选择党组织!");
+          this.msgInfo("请先选择工会!");
           return ;
         }
         this.$refs.memberChoose.open = true;
@@ -255,7 +255,7 @@
         getTrainMember(trainMemberId).then(response => {
           this.form = response.data;
           this.open = true;
-          this.title = "修改参与培训党员";
+          this.title = "修改参与培训会员";
         });
       },
       /** 提交按钮 */
@@ -289,7 +289,7 @@
       /** 删除按钮操作 */
       handleDelete(row) {
         const trainMemberIds = row.trainMemberId || this.ids;
-        this.$confirm('是否确认删除参与培训党员编号为"' + trainMemberIds + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除参与培训会员编号为"' + trainMemberIds + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"
@@ -303,7 +303,7 @@
       /** 导出按钮操作 */
       handleExport() {
         const queryParams = this.queryParams;
-        this.$confirm('是否确认导出所有参与培训党员数据项?', "警告", {
+        this.$confirm('是否确认导出所有参与培训会员数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

@@ -77,7 +77,7 @@ public class BigDataController extends BaseController {
 
 
     /**
-     * 各支部党员人数
+     * 各支部会员人数
      *
      * @return
      */
@@ -97,7 +97,7 @@ public class BigDataController extends BaseController {
     }
 
     /**
-     * 党员年龄比例
+     * 会员年龄比例
      *
      * @return
      */
@@ -117,7 +117,7 @@ public class BigDataController extends BaseController {
     }
 
     /**
-     * 党员学历情况
+     * 会员学历情况
      *
      * @return
      */

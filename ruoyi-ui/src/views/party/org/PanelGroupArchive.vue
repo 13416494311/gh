@@ -6,7 +6,7 @@
           <div class="archives_icon icon_org_name">
           </div>
           <div class="archives_label" >
-            <span>党组织名称</span>
+            <span>工会名称</span>
           </div>
           <div class="archives_content">
             <span>{{ partyOrg.partyOrgFullName}}</span>
@@ -30,7 +30,7 @@
           <div class="archives_icon icon_category">
           </div>
           <div class="archives_label" >
-            <span>党组织类别</span>
+            <span>工会类别</span>
           </div>
           <div class="archives_content">
             <span>{{ partyOrgTypeFormat(partyOrg.partyOrgType)}}</span>
@@ -108,7 +108,7 @@
           <div class="archives_icon icon_tree">
           </div>
           <div class="archives_label" >
-            <span class="word-wrap">党员数量</span>
+            <span class="word-wrap">会员数量</span>
           </div>
           <div class="archives_content">
             <span>{{Number(partyOrg.params.formalCount)+Number(partyOrg.params.prepareCount)}}</span>
@@ -148,7 +148,7 @@
           <div class="archives_icon icon_location">
           </div>
           <div class="archives_label" >
-            <span>党组织位置</span>
+            <span>工会位置</span>
           </div>
           <div class="archives_content">
             <span>{{partyOrg.region}}{{partyOrg.address}}</span>
@@ -182,7 +182,7 @@
         },
         // 组织类型字典
         orgTypeOptions: [],
-        // 党组织类别字典
+        // 工会类别字典
         partyOrgTypeOptions: [],
       }
     },
@@ -216,7 +216,7 @@
       orgTypeFormat(orgType) {
         return this.selectDictLabel(this.orgTypeOptions, orgType);
       },
-      // 党组织类别字典翻译
+      // 工会类别字典翻译
       partyOrgTypeFormat(partyOrgType) {
         return this.selectDictLabel(this.partyOrgTypeOptions, partyOrgType);
       },

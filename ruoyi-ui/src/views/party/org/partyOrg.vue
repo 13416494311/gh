@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
-      <el-form-item label="党组织名称" prop="partyOrgName">
+      <el-form-item label="工会名称" prop="partyOrgName">
         <el-input
           v-model="queryParams.partyOrgName"
-          placeholder="请输入党组织名称"
+          placeholder="请输入工会名称"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -61,10 +61,10 @@
       :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
     >
       <el-table-column label="序号" align="center" type="index"/>
-      <el-table-column label="党组织名称" align="left" prop="partyOrgName" width="300"/>
+      <el-table-column label="工会名称" align="left" prop="partyOrgName" width="300"/>
       <el-table-column label="组织类型" align="center" prop="orgType" :formatter="orgTypeFormat"/>
-      <!--<el-table-column label="党组织类别" align="center" prop="partyOrgType" :formatter="partyOrgTypeFormat"/>-->
-      <el-table-column label="党组织负责人" align="center" prop="partyOrgPost" :formatter="partyPositionFormat"/>
+      <!--<el-table-column label="工会类别" align="center" prop="partyOrgType" :formatter="partyOrgTypeFormat"/>-->
+      <el-table-column label="工会负责人" align="center" prop="partyOrgPost" :formatter="partyPositionFormat"/>
       <el-table-column label="建立时间" align="center" prop="buildTime" width="180">
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.buildTime, '{y}-{m}-{d}') }}</span>
@@ -131,7 +131,7 @@
       </el-table-column>
     </el-table>
 
-    <!-- 添加或修改党组织架构对话框 -->
+    <!-- 添加或修改工会架构对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
                @open="getHeight" :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="150px">
@@ -141,24 +141,24 @@
           </div>
           <el-row>
             <el-col :span="12">
-              <el-form-item label="上级党组织" prop="parentId">
+              <el-form-item label="上级工会" prop="parentId">
                 <select-tree :value="form.parentId"
                              :disabled="disabled"
                              :options="partyOrgOptions"
                              vModel="parentId"
                              @selected="setVModelValue"
-                             placeholder="请选择上级党组织"
+                             placeholder="请选择上级工会"
                 />
 
                 <!--<treeselect :disabled="disabled" v-model="form.parentId" :options="partyOrgOptions"
-                            :normalizer="normalizer" placeholder="请选择父党组织id" />-->
+                            :normalizer="normalizer" placeholder="请选择父工会id" />-->
 
 
               </el-form-item>
             </el-col>
             <el-col :span="12">
-              <el-form-item label="党组织名称" prop="partyOrgName">
-                <el-input :disabled="disabled" v-model="form.partyOrgName" placeholder="请输入党组织名称"/>
+              <el-form-item label="工会名称" prop="partyOrgName">
+                <el-input :disabled="disabled" v-model="form.partyOrgName" placeholder="请输入工会名称"/>
               </el-form-item>
             </el-col>
           </el-row>
@@ -176,8 +176,8 @@
               </el-form-item>
             </el-col>
             <el-col :span="12">
-              <el-form-item label="党组织类别" prop="partyOrgType">
-                <el-select :disabled="disabled" v-model="form.partyOrgType" placeholder="请选择党组织类别" style="width: 100%">
+              <el-form-item label="工会类别" prop="partyOrgType">
+                <el-select :disabled="disabled" v-model="form.partyOrgType" placeholder="请选择工会类别" style="width: 100%">
                   <el-option
                     v-for="dict in partyOrgTypeOptions"
                     :key="dict.dictValue"
@@ -334,9 +334,9 @@
         disabled: false,
         // 遮罩层
         loading: true,
-        // 党组织架构表格数据
+        // 工会架构表格数据
         partyOrgList: [],
-        // 党组织架构树选项
+        // 工会架构树选项
         partyOrgOptions: [],
         // 弹出层标题
         title: "",
@@ -344,9 +344,9 @@
         open: false,
         // 组织类型字典
         orgTypeOptions: [],
-        // 党组织类别字典
+        // 工会类别字典
         partyOrgTypeOptions: [],
-        // 党组织状态字典
+        // 工会状态字典
         statusOptions: [],
         // 是否字典
         performanceAppraisalOptions:[],
@@ -369,16 +369,16 @@
         // 表单校验
         rules: {
           parentId: [
-            {required: true, message: "上级党组织", trigger: "blur"}
+            {required: true, message: "上级工会", trigger: "blur"}
           ],
           partyOrgName: [
-            {required: true, message: "党组织名称不能为空", trigger: "blur"}
+            {required: true, message: "工会名称不能为空", trigger: "blur"}
           ],
           orgType: [
             {required: true, message: "组织类型不能为空", trigger: "blur"}
           ],
           partyOrgType: [
-            {required: true, message: "党组织类别不能为空", trigger: "blur"}
+            {required: true, message: "工会类别不能为空", trigger: "blur"}
           ],
           buildTime: [
             {required: true, message: "建立时间不能为空", trigger: "blur"}
@@ -398,7 +398,7 @@
             }
           ],
           status: [
-            {required: true, message: "党组织状态不能为空", trigger: "blur"}
+            {required: true, message: "工会状态不能为空", trigger: "blur"}
           ],
           performanceAppraisal: [
             {required: true, message: "是否项目绩效考核不能为空", trigger: "blur"}
@@ -480,7 +480,7 @@
       getHeight() {
         this.bodyStyle.height = window.innerHeight - 281 + 'px';
       },
-      /** 查询党组织架构列表 */
+      /** 查询工会架构列表 */
       getList() {
         this.loading = true;
         listPartyOrg(this.queryParams).then(response => {
@@ -488,7 +488,7 @@
           this.loading = false;
         });
       },
-      /** 转换党组织架构数据结构 */
+      /** 转换工会架构数据结构 */
       normalizer(node) {
         if (node.children && !node.children.length) {
           delete node.children;
@@ -533,11 +533,11 @@
         }
         return result;
       },
-      // 党组织类别字典翻译
+      // 工会类别字典翻译
       partyOrgTypeFormat(row, column) {
         return this.selectDictLabel(this.partyOrgTypeOptions, row.partyOrgType);
       },
-      // 党组织状态字典翻译
+      // 工会状态字典翻译
       statusFormat(row, column) {
         return this.selectDictLabel(this.statusOptions, row.status);
       },
@@ -597,7 +597,7 @@
         this.disabled = false;
         this.getTreeselect();
         this.open = true;
-        this.title = "添加党组织架构";
+        this.title = "添加工会架构";
       },
       /** 档案按钮操作 */
       handleArchives(row){
@@ -605,7 +605,7 @@
       },
       /** 分享按钮操作 */
       handleShare(row){
-        this.$refs.qrcode.init("党组织信息",this.getBasePath()+"/orgInfo/"+row.partyOrgId);
+        this.$refs.qrcode.init("工会信息",this.getBasePath()+"/orgInfo/"+row.partyOrgId);
       },
       /** 查看按钮操作 */
       handleSee(row) {
@@ -625,7 +625,7 @@
             this.form.regionCode = response.data.regionCode.split("-");
           }
           this.open = true;
-          this.title = "查看党组织架构";
+          this.title = "查看工会架构";
         });
       },
       /** 修改按钮操作 */
@@ -646,7 +646,7 @@
             this.form.regionCode = response.data.regionCode.split("-");
           }
           this.open = true;
-          this.title = "修改党组织架构";
+          this.title = "修改工会架构";
         });
       },
       /** 提交按钮 */
@@ -688,7 +688,7 @@
       },
       /** 删除按钮操作 */
       handleDelete(row) {
-        this.$confirm('是否确认删除党组织架构编号为"' + row.partyOrgId + '"的数据项?', "警告", {
+        this.$confirm('是否确认删除工会架构编号为"' + row.partyOrgId + '"的数据项?', "警告", {
           confirmButtonText: "确定",
           cancelButtonText: "取消",
           type: "warning"

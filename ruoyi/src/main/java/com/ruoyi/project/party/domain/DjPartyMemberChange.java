@@ -10,7 +10,7 @@ import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.web.domain.BaseEntity;
 
 /**
- * 党员变更表对象 dj_party_member_change
+ * 会员变更表对象 dj_party_member_change
  *
  * @author ruoyi
  * @date 2020-09-16
@@ -27,12 +27,12 @@ public class DjPartyMemberChange extends BaseEntity
     @Excel(name = "用户唯一uuid")
     private String memberUuid;
 
-    /** 党员变更类型（add：新增 ；edit：修改；del：删除） */
-    @Excel(name = "党员变更类型", readConverterExp = "add：新增；edit：修改；del：删除")
+    /** 会员变更类型（add：新增 ；edit：修改；del：删除） */
+    @Excel(name = "会员变更类型", readConverterExp = "add：新增；edit：修改；del：删除")
     private String changeType;
 
-    /** 关联党组织成员id */
-    @Excel(name = "关联党组织成员id")
+    /** 关联工会成员id */
+    @Excel(name = "关联工会成员id")
     private Long partyMemberId;
 
     private String partyMemberUuid;
@@ -41,8 +41,8 @@ public class DjPartyMemberChange extends BaseEntity
     @Excel(name = "审批状态")
     private String auditState;
 
-    /** 党组织ID */
-    @Excel(name = "党组织ID")
+    /** 工会ID */
+    @Excel(name = "工会ID")
     private Long partyOrgId;
 
     private DjPartyOrg djPartyOrg;
@@ -51,12 +51,12 @@ public class DjPartyMemberChange extends BaseEntity
     @Excel(name = "工号")
     private String workNo;
 
-    /** 党员照片 */
-    @Excel(name = "党员照片")
+    /** 会员照片 */
+    @Excel(name = "会员照片")
     private String avatar;
 
-    /** 党员姓名 */
-    @Excel(name = "党员姓名")
+    /** 会员姓名 */
+    @Excel(name = "会员姓名")
     private String memberName;
 
     /** 用户性别（0男 1女 2未知） */
@@ -90,7 +90,7 @@ public class DjPartyMemberChange extends BaseEntity
     @Excel(name = "职务")
     private String administrativePosition;
 
-    /** 党内职务 */
+    /** 会内职务 */
     private String partyPositionType;
 
     /** 职称 */
@@ -150,42 +150,42 @@ public class DjPartyMemberChange extends BaseEntity
     @Excel(name = "微信号码")
     private String wechat;
 
-    /** 党员类型 */
-    @Excel(name = "党员类型")
+    /** 会员类型 */
+    @Excel(name = "会员类型")
     private String memberType;
 
     /** 在岗状态 */
     @Excel(name = "在岗状态")
     private String memberStatus;
 
-    /** 加入党支部日期 */
+    /** 加入会支部日期 */
     @JsonFormat(pattern = "yyyy-MM-dd")
-    @Excel(name = "加入党支部日期", width = 30, dateFormat = "yyyy-MM-dd")
+    @Excel(name = "加入会支部日期", width = 30, dateFormat = "yyyy-MM-dd")
     private Date joinBranchData;
 
-    /** 加入党日期 */
+    /** 加入会日期 */
     @JsonFormat(pattern = "yyyy-MM-dd")
-    @Excel(name = "加入党日期", width = 30, dateFormat = "yyyy-MM-dd")
+    @Excel(name = "加入会日期", width = 30, dateFormat = "yyyy-MM-dd")
     private Date joinData;
 
-    /** 成为入党积极分子日期 */
+    /** 成为入会积极分子日期 */
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date preMemberData;
 
-    /** 转为正式党员日期 */
+    /** 转为正式会员日期 */
     @JsonFormat(pattern = "yyyy-MM-dd")
-    @Excel(name = "转为正式党员日期", width = 30, dateFormat = "yyyy-MM-dd")
+    @Excel(name = "转为正式会员日期", width = 30, dateFormat = "yyyy-MM-dd")
     private Date formalData;
 
-    /** 流动党员（1：是  0：否） */
-    @Excel(name = "流动党员", readConverterExp = "1=：是,0=：否")
+    /** 流动会员（1：是  0：否） */
+    @Excel(name = "流动会员", readConverterExp = "1=：是,0=：否")
     private String floatingType;
 
-    /** 党员分组 */
-    @Excel(name = "党员分组")
+    /** 会员分组 */
+    @Excel(name = "会员分组")
     private String memberGroup;
 
-    /** 上一个党组织ID */
+    /** 上一个工会ID */
     private Long prePartyOrgId;
 
     /** 生活困难（1：是  0：否） */

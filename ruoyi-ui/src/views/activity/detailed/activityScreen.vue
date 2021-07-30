@@ -4,7 +4,7 @@
       <el-col :span="24">
         <div class="activity_title">
           <span>
-               中铁三局广东公司智慧党建系统
+               中铁三局广东公司智慧工会系统
           </span>
         </div>
       </el-col>
@@ -26,7 +26,7 @@
           <el-col :span="24">
             <div class="activity_detail">
               <div class="activity_detail_label">
-                活动党组织：
+                活动工会：
               </div>
               <div class="activity_detail_content">
                 {{activityDetailed.djPartyOrg.partyOrgFullName}}
@@ -236,11 +236,11 @@
           djPartyOrg:{}
         },
         activityMemberList: [],
-        // 党员活动类型字典
+        // 会员活动类型字典
         activityTypeOptions: [],
         // 职务字典
         partyPositionTypeOptions: [],
-        // 党员类型字典
+        // 会员类型字典
         memberTypeOptions: [],
         planCount:undefined,
         arriveCount:undefined,
@@ -284,7 +284,7 @@
           this.noArriveCount = response.data.noArriveCount;
         });
       },
-      // 党员活动类型字典翻译
+      // 会员活动类型字典翻译
       activityTypeFormat(activityType) {
         return this.selectDictLabel(this.activityTypeOptions, activityType);
       },

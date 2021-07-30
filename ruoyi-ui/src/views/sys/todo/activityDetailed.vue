@@ -49,7 +49,7 @@
               <el-select :disabled="true"
                          v-model="djActivityPlan.activityType"
                          style="width: 100%"
-                         placeholder="请选择党员活动类型">
+                         placeholder="请选择会员活动类型">
                 <el-option
                   v-for="dict in activityTypeOptions"
                   :key="dict.dictValue"
@@ -100,8 +100,8 @@
 
         <el-row>
           <el-col :span="12">
-            <el-form-item label="活动党组织">
-              <el-input :disabled="true" v-model="djPartyOrg.partyOrgFullName" placeholder="请输入活动党组织"/>
+            <el-form-item label="活动工会">
+              <el-input :disabled="true" v-model="djPartyOrg.partyOrgFullName" placeholder="请输入活动工会"/>
             </el-form-item>
           </el-col>
           <el-col :span="12">
@@ -280,7 +280,7 @@
             <el-table v-loading="memberLoading" :data="memberList">
 
               <el-table-column label="姓名" align="center" prop="djPartyMember.memberName"/>
-              <el-table-column label="所属党组织" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName"/>
+              <el-table-column label="所属工会" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName"/>
               <el-table-column label="联系方式" align="center" prop="djPartyMember.mobile"/>
               <el-table-column v-if="!disabled" label="操作" align="center" class-name="small-padding fixed-width">
                 <template slot-scope="scope">
@@ -300,7 +300,7 @@
             <el-table v-loading="memberLoading" :data="memberList" @selection-change="handleSelectionChange">
               <el-table-column type="selection" width="55" align="center"/>
               <el-table-column label="姓名" align="center" prop="djPartyMember.memberName"/>
-              <el-table-column label="所属党组织" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName"/>
+              <el-table-column label="所属工会" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName"/>
               <el-table-column label="联系方式" align="center" prop="djPartyMember.mobile"/>
               <el-table-column label="状态" align="center" prop="djPartyMember.status"
                                :formatter="memberStatusFormat"/>
@@ -349,7 +349,7 @@
           <el-tab-pane label="请假记录" name="5">
             <el-table v-loading="memberLoading" :data="leaveMemberList">
               <el-table-column label="姓名" align="center" prop="djPartyMember.memberName"/>
-              <el-table-column label="所属党组织" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName"/>
+              <el-table-column label="所属工会" align="center" prop="djPartyMember.djPartyOrg.partyOrgFullName"/>
               <el-table-column label="联系方式" align="center" prop="djPartyMember.mobile"/>
               <el-table-column label="状态" align="center" prop="djPartyMember.status"
                                :formatter="memberStatusFormat"/>
@@ -646,7 +646,7 @@
           marginLeft: '2%',
           paddingRight: '2%',
         },
-        // 党员活动类型字典
+        // 会员活动类型字典
         activityTypeOptions: [],
         //活动详情状态
         arrangeStatusOptions: [],
@@ -1054,7 +1054,7 @@
       detailedStatusFormat(row, column) {
         return this.selectDictLabel(this.detailedStatusOptions, row.status);
       },
-      // 党员活动类型字典翻译
+      // 会员活动类型字典翻译
       activityTypeFormat(row, column) {
         return this.selectDictLabel(this.activityTypeOptions, row.djActivityPlan.activityType);
       },

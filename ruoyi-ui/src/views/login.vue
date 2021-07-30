@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
       <div style="width: 100%;height: 64px;text-align: center;margin-bottom: 20px;">
         <img :src="logo" style="width: 64px;height: 64px;float: left"/>
-        <div class="h3">中铁三局广东公司智慧党建系统</div>
+        <div class="h3">中铁三局广东公司智慧工会系统</div>
       </div>
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
