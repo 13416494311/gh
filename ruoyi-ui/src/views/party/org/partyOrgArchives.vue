@@ -139,7 +139,7 @@
   @import '../../../assets/styles/member-avatar.css';
 
   .archives>.el-dialog__body{
-    background: url("../../../assets/image/archives/archives-bg.jpg") no-repeat !important;
+    background: url("../../../assets/image/login_bg.jpg") no-repeat !important;
     background-size: 100% 100% !important;
     background-color: #FFFACD !important;
   }

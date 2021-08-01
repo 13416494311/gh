@@ -122,7 +122,7 @@
 
 <script>
   import djPng from '@/assets/image/dj.png'
-  import defaultAvatar from '@/assets/image/dj-avatar.png'
+  import defaultAvatar from '@/assets/image/dj-avatar.jpg'
   import TreeChart from "vue-tree-chart";
   import { getPartyOrgInfo } from "@/api/party/org";
 
@@ -196,7 +196,7 @@
     height: 100%;
     overflow-y: auto;
     width: 100%;
-    background: url("../../../assets/image/orgInfo-bg.jpg") no-repeat;
+    background: url("../../../assets/image/orgInfo-bg.jpeg") no-repeat;
     background-size: 100% 100%;
   }
 
@@ -264,8 +264,7 @@
   .org-info-avatar {
     width: 100%;
     height: 4.9rem;
-    background: url("../../../assets/image/dj-avatar.png") no-repeat ;
-    background-color: rgb(165, 27, 27);
+    background: url("../../../assets/image/dj-avatar.jpg") no-repeat ;
     background-size: 100% 100%;
   }
 
@@ -274,7 +273,7 @@
     width: 100%;
     height: 1rem;
     text-align: center;
-    background-color: #cf001c;
+    background-color: #1890ff;
     color: white;
     font-size: 0.5rem;
     font-weight: 600;

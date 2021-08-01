@@ -9,8 +9,7 @@
 .member-avatar {
   width: 98px;
   height: 138px;
-  background: url("../image/dj-avatar.png") no-repeat ;
-  background-color: rgb(165, 27, 27);
+  background: url("../image/dj-avatar.jpg") no-repeat ;
   background-size: 100% 100%;
 }
 
@@ -19,7 +18,7 @@
   width: 98px;
   height: 25px;
   text-align: center;
-  background-color: #cf001c;
+  background-color: #1890ff;
   color: white;
   font-weight: 600;
   letter-spacing: 3px;

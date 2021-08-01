@@ -148,13 +148,13 @@
   }
 
   .bg-red {
-    background-color: #f10006 !important;
+    background-color: #1617e6 !important;
     color: white !important;
     writing-mode:rl-tb !important;
   }
   .bg-white {
     color: white !important;
-    background-color: #FF4500;
+    background-color: #186BD4;
   }
 
   .text-center {
@@ -169,7 +169,7 @@
   }
 
   .org-pic>.el-dialog__body{
-    background: url("../../../assets/image/org_bg1.png") no-repeat !important;
+    background: url("../../../assets/image/login_bg.jpg") no-repeat !important;
     background-size: 100% 100% !important;
   }
 

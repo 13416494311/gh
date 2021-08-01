@@ -724,9 +724,8 @@
     div {
       width:100%;
       height:100%;
-      background: url("../../../assets/image/dj-avatar.png") no-repeat ;
+      background: url("../../../assets/image/dj-avatar.jpg") no-repeat ;
       background-size: 100% 100%;
-      background-color: rgb(165, 27, 27);
     }
   }
 

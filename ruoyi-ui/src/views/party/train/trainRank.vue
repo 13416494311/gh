@@ -125,13 +125,13 @@
 
 <style>
   .train-rank>.el-dialog__header{
-    background-color: rgb(252 103 63);
+    background-color: #0066ff;
   }
   .train-rank>.el-dialog__body{
-    background-color: rgb(252 103 63);
+    background-color: #0066ff;
   }
   .train-rank>.el-dialog__footer{
-    background-color: rgb(252 103 63);
+    background-color: #0066ff;
   }
 
   .total-score-label{
@@ -143,7 +143,7 @@
   .total-score{
     font-size: 32px;
     font-weight: bold;
-    color: red ;
+    color: #0066ff ;
     line-height: 32px;
   }
 
@@ -164,7 +164,7 @@
 
   .total-info{
     font-size: 20px;
-    color: red ;
+    color: #0066ff ;
     font-style: oblique;
   }
 

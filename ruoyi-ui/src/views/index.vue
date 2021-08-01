@@ -61,7 +61,7 @@
       <el-col :span="12" :xs="24">
         <el-card shadow="always" style="margin-bottom: 20px;height: 280px;overflow-y:hidden">
           <div slot="header" style="height: 25px">
-            <span style="font-weight: bold;font-size: 16px">党建风采</span>
+            <span style="font-weight: bold;font-size: 16px">工会风采</span>
             <router-link to="/office/notice/3">
               <el-button
                 type="text"
