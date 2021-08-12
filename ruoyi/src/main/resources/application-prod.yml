@@ -46,6 +46,8 @@ logging:
 
 # Spring配置
 spring:
+  application:
+    name: zhgh
   # 资源信息
   messages:
     # 国际化资源文件路径
@@ -187,3 +189,8 @@ gen:
   autoRemovePre: false
   # 表前缀（生成类名不会包含表前缀，多个用逗号分隔）
   tablePrefix: sys_
+
+tduck:
+  loginUrl: http://192.168.220.7:8888/login/platform?platform=${spring.application.name}&account=%s
+  publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCMwSwaReHYXR/63yd18tTHhrEAb8qS5Pc3tsTZBBP10MWZ4eeH4il8xhC4+GpYXuXpLuxKlJlYN69JJoUybaaQoVyWX+sD2Kic3Eoz8ovLuHAg33E0jU53HZ+4p8uknHlhnlJs0drdnVoG/CjpD90tEDnu2aPoFP4LtPgbawuOrwIDAQAB
+
