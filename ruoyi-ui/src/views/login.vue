@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
       <div style="width: 100%;height: 64px;text-align: center;margin-bottom: 20px;">
         <img :src="logo" style="width: 64px;height: 64px;float: left"/>
-        <div class="h3">中铁三局广东公司智慧工会系统</div>
+        <div class="h3">{{systemTitle}}</div>
       </div>
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
@@ -48,6 +48,13 @@
           <span v-else>登 录 中...</span>
         </el-button>
       </el-form-item>
+      <el-form-item style="width:100%;" >
+        <el-link :underline="false"
+                 type="primary"
+                 style="float: right;margin-right: 10px;"
+                 @click="toRegister()"> 账号注册</el-link>
+      </el-form-item>
+
     </el-form>
     <!--  底部  -->
     <div class="el-login-footer">
@@ -97,6 +104,11 @@ export default {
       immediate: true
     }
   },
+  computed:{
+    systemTitle() {
+      return this.$store.state.settings.systemTitle
+    },
+  },
   created() {
     this.getCode();
     this.getCookie();
@@ -142,7 +154,10 @@ export default {
             });
         }
       });
-    }
+    },
+    toRegister(){
+      this.$router.push({path: "/register", query: {}})
+    },
   }
 };
 </script>

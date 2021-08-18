@@ -4,7 +4,7 @@
       <el-col :span="24">
         <div class="activity_title">
           <span>
-               中铁三局广东公司智慧工会系统
+               {{systemTitle}}
           </span>
         </div>
       </el-col>
@@ -246,6 +246,11 @@
         arriveCount:undefined,
         noArriveCount:undefined,
       }
+    },
+    computed:{
+      systemTitle() {
+        return this.$store.state.settings.systemTitle
+      },
     },
     created() {
       this.getActivityDetailed();
