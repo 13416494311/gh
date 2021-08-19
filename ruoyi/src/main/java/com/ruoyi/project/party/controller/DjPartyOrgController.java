@@ -100,7 +100,9 @@ public class DjPartyOrgController extends BaseController
         List<PartyOrgTreeData> list =  new ArrayList<PartyOrgTreeData>();
 
         SysUser sysUser = SecurityUtils.getLoginUser().getUser();
-        if(sysUser.getDjPartyMember()!=null&&sysUser.getDjPartyMember().getPartyOrgId().longValue()==(long)52){
+        if(sysUser.getDjPartyMember()!=null
+                &&sysUser.getDjPartyMember().getPartyOrgId()!=null
+                &&sysUser.getDjPartyMember().getPartyOrgId().longValue()==(long)52){
             PartyOrgTreeData partyOrgTreeData = new PartyOrgTreeData();
             DjPartyOrg partyOrg = partyOrgService.selectDjPartyOrgById((long)52);
             partyOrgTreeData.setId(partyOrg.getPartyOrgId());
@@ -216,7 +218,7 @@ public class DjPartyOrgController extends BaseController
      * 删除工会架构
      */
     @Log(title = "工会架构", businessType = BusinessType.DELETE)
-	@DeleteMapping("/{partyOrgId}")
+    @DeleteMapping("/{partyOrgId}")
     public AjaxResult remove(@PathVariable Long partyOrgId)
     {
         if (djPartyOrgService.hasChildByPartyOrgId(partyOrgId))

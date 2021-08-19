@@ -404,8 +404,12 @@ public class DjPartyOrgServiceImpl implements IDjPartyOrgService
         List<DjPartyOrg> partyOrgs =new ArrayList<DjPartyOrg>();
         if(!SecurityUtils.isAdmin(sysUser.getUserId())&&!SecurityUtils.isPartyOrgAll()){
             if(StringUtils.isNotNull(sysUser.getDjPartyMember())){
-                partyOrgs = selectPartyOrgLineByOrgId(sysUser.getDjPartyMember().getPartyOrgId());
-                list = getfatherNode(djPartyOrgMapper.getPartyOrgTreeData(partyOrgs));
+                if(sysUser.getDjPartyMember().getPartyOrgId()!=null){
+                    partyOrgs = selectPartyOrgLineByOrgId(sysUser.getDjPartyMember().getPartyOrgId());
+                    list = getfatherNode(djPartyOrgMapper.getPartyOrgTreeData(partyOrgs));
+                }else{
+                    list = getfatherNode(djPartyOrgMapper.getPartyOrgTreeData(null));
+                }
             }
         }else{
             list = getfatherNode(djPartyOrgMapper.getPartyOrgTreeData(null));

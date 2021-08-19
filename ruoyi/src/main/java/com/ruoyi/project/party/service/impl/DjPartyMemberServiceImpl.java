@@ -391,8 +391,10 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
     @Override
     public int insertDjPartyMemberForApp(DjPartyMember djPartyMember,String password)
     {
-        djPartyMember.setPartyOrgId((long) 52);
         djPartyMember.setCreateTime(DateUtils.getNowDate());
+        if(StringUtils.isBlank(djPartyMember.getPartyMemberUuid())){
+            djPartyMember.setPartyMemberUuid(UUID.randomUUID().toString());
+        }
         djPartyMemberMapper.insertDjPartyMember(djPartyMember);
 
         SysUser sysUser = new SysUser();
@@ -405,9 +407,13 @@ public class DjPartyMemberServiceImpl implements IDjPartyMemberService
         sysUser.setPhonenumber(djPartyMember.getMobile());
         sysUser.setEmail(djPartyMember.getEmail());
         sysUser.setPassword(SecurityUtils.encryptPassword(password));
-        sysUser.setRoleIds(new Long[]{Long.valueOf(3)});  //设置普通角色
-        sysUser.setPostIds(new Long[]{Long.valueOf(4)});  //设置普通员工
+        //设置普通角色
+        sysUser.setRoleIds(new Long[]{Long.valueOf(3)});
+        //设置普通员工
+        sysUser.setPostIds(new Long[]{Long.valueOf(4)});
         sysUser.setCreateTime(DateUtils.getNowDate());
+        //完善信息
+        sysUser.setState("10");
         return userService.insertUserForApp(sysUser);
     }
 
