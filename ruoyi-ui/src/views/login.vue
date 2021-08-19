@@ -64,10 +64,11 @@
 </template>
 
 <script>
-import { getCodeImg } from "@/api/login";
+import { getCodeImg,getInfo } from "@/api/login";
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from '@/utils/jsencrypt'
 import logo from '@/assets/logo/logo1.png'
+import { getToken } from '@/utils/auth'
 
 export default {
   name: "Login",
@@ -146,7 +147,8 @@ export default {
           this.$store
             .dispatch("Login", this.loginForm)
             .then(() => {
-              this.$router.push({ path: this.redirect || "/" });
+              this. loginTo();
+
             })
             .catch(() => {
               this.loading = false;
@@ -154,6 +156,21 @@ export default {
             });
         }
       });
+    },
+    loginTo(){
+      getInfo(getToken()).then(res => {
+        const user = res.user
+        if(user.state =='30'){
+          //审核通过的进入首页
+          this.$router.push({ path: this.redirect || "/" });
+        }else{
+          //其他进入完善页
+          this.$router.push({path: "/complete"})
+        }
+      }).catch(error => {
+        this.loading = false;
+        this.getCode();
+      })
     },
     toRegister(){
       this.$router.push({path: "/register", query: {}})

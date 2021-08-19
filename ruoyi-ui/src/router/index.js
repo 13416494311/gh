@@ -48,6 +48,11 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/complete',
+    component: (resolve) => require(['@/views/complete'], resolve),
+    hidden: true
+  },
+  {
     path: '/orgInfo/*',
     component: (resolve) => require(['@/views/party/org/partyOrgInfo'], resolve),
     hidden: true

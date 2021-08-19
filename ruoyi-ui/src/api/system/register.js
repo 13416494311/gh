@@ -9,9 +9,9 @@ export function checkPartyMemberUnique(data) {
   })
 }
 
-export function registerPartyMember(data) {
+export function registerMember(data) {
   return request({
-    url: '/system/register/registerPartyMember',
+    url: '/system/register/registerMember',
     method: 'post',
     data: data
   })

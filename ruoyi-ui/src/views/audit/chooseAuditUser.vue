@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div>
     <!-- 添加或修改审批记录对话框 -->
     <el-dialog :title="title"
                :visible.sync="open"

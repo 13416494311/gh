@@ -1,8 +1,8 @@
 <template>
   <div class="register">
-    <div class="register-title" @click="toLogin()">
-      <div class="h3">{{systemTitle}}</div>
-      <el-button style="float: right;margin: 16px 50px" plain icon="el-icon-arrow-left">返 回</el-button>
+    <div class="register-title" >
+      <div class="h3" @click="toLogin()">{{systemTitle}}</div>
+      <el-button  @click="toLogin()" style="float: right;margin: 16px 50px" plain icon="el-icon-arrow-left">返 回</el-button>
     </div>
     <div class="register-div">
       <el-form ref="registerForm" :model="registerForm" :rules="registerRules" class="register-form">
@@ -65,7 +65,7 @@
 <script>
 
   import { encrypt, decrypt } from '@/utils/jsencrypt'
-  import { checkPartyMemberUnique,registerPartyMember } from "@/api/system/register";
+  import { checkPartyMemberUnique,registerMember } from "@/api/system/register";
 
 
   export default {
@@ -163,10 +163,19 @@
             let params = that.registerForm
             params.password =  encrypt(that.registerForm.password)
             params.confirmPassword = encrypt(that.registerForm.confirmPassword);
-
-            registerPartyMember(params).then(response => {
-
+            registerMember(params).then(response => {
               that.loading = false;
+              if(response.code === 200){
+                this.$confirm('注册成功，请登录完善个人信息！', '提示', {
+                  confirmButtonText: '确定',
+                  cancelButtonText: '取消',
+                  type: 'success'
+                }).then(() => {
+                  this.toLogin();
+                })
+              }else {
+                this.msgError(response.msg);
+              }
             })
 
           }
@@ -241,20 +250,7 @@
     }
   }
 
-  .login-tip {
-    font-size: 13px;
-    text-align: center;
-    color: #bfbfbf;
-  }
-  .login-code {
-    width: 33%;
-    height: 38px;
-    float: right;
-    img {
-      cursor: pointer;
-      vertical-align: middle;
-    }
-  }
+
 
 
 
