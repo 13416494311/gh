@@ -208,7 +208,7 @@
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="身份">
+              <el-form-item label="身份" prop="workIdentity" >
                 <el-select :disabled="disabled"
                            v-model="form.workIdentity"
                            style="width: 100%" placeholder="请选择身份">
@@ -236,7 +236,7 @@
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="学位">
+              <el-form-item label="学位" prop="academicDegree" >
                 <el-select :disabled="disabled"
                            v-model="form.academicDegree"
                            style="width: 100%" placeholder="请选择学位">
