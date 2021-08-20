@@ -108,6 +108,14 @@ export function enablePartyMember(data) {
   })
 }
 
+export function registerPartyMember(data) {
+  return request({
+    url: '/party/member/register',
+    method: 'post',
+    data: data
+  })
+}
+
 // 导出会员信息
 export function exportPartyMember(query) {
   return request({

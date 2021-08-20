@@ -57,6 +57,12 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
         <result property="orderNum" column="order_num"/>
+
+        <result property="urgentPerson" column="urgent_person"/>
+        <result property="urgentPersonMobile" column="urgent_person_mobile"/>
+        <result property="maritalStatus" column="marital_status"/>
+        <result property="householdAddress" column="household_address"/>
+        <result property="householdStatus" column="household_status"/>
     </resultMap>
 
     <sql id="selectDjPartyMemberVo">
@@ -67,7 +73,8 @@
          house_phone, email, qq, wechat, remark, member_type, member_status, join_branch_data,
          join_data,pre_member_data, formal_data, floating_type, member_group, pre_party_org_id, life_difficulty, cognizance,
          economic_situation, physical_health, life_difficulty_type, enjoy_help, help_info, detail,
-         del_flag, create_by, create_time, update_by, update_time, order_num
+         del_flag, create_by, create_time, update_by, update_time, order_num,
+         urgent_person, urgent_person_mobile, marital_status, household_address, household_status
          from dj_party_member
     </sql>
 
@@ -80,7 +87,8 @@
         pm.member_type, pm.member_status,pm.join_branch_data,pm.join_data,pm.pre_member_data, pm.formal_data, pm.floating_type,
         pm.member_group,pm.pre_party_org_id, pm.life_difficulty, pm.cognizance, pm.economic_situation, pm.physical_health,
         pm.life_difficulty_type, pm.enjoy_help, pm.help_info, pm.detail,pm.del_flag, pm.create_by,
-        pm.create_time, pm.update_by, pm.update_time, pm.order_num
+        pm.create_time, pm.update_by, pm.update_time, pm.order_num,
+         pm.urgent_person, pm.urgent_person_mobile, pm.marital_status, pm.household_address, pm.household_status
         from dj_party_member pm
     </sql>
 
@@ -156,6 +164,12 @@
             <if test="createTime != null ">and create_time = #{createTime}</if>
             <if test="updateBy != null  and updateBy != ''">and update_by = #{updateBy}</if>
             <if test="updateTime != null ">and update_time = #{updateTime}</if>
+
+            <if test="urgentPerson != null ">and urgent_person = #{urgentPerson}</if>
+            <if test="urgentPersonMobile != null ">and urgent_person_mobile = #{urgentPersonMobile}</if>
+            <if test="maritalStatus != null ">and marital_status = #{maritalStatus}</if>
+            <if test="householdAddress != null ">and household_address = #{householdAddress}</if>
+            <if test="householdStatus != null ">and household_status = #{householdStatus}</if>
         </where>
         order by
         pm.order_num is null || pm.order_num='' asc,
@@ -243,6 +257,11 @@
             <if test="createTime != null ">and pm.create_time = #{createTime}</if>
             <if test="updateBy != null  and updateBy != ''">and pm.update_by = #{updateBy}</if>
             <if test="updateTime != null ">and pm.update_time = #{updateTime}</if>
+            <if test="urgentPerson != null ">and pm.urgent_person = #{urgentPerson}</if>
+            <if test="urgentPersonMobile != null ">and pm.urgent_person_mobile = #{urgentPersonMobile}</if>
+            <if test="maritalStatus != null ">and pm.marital_status = #{maritalStatus}</if>
+            <if test="householdAddress != null ">and pm.household_address = #{householdAddress}</if>
+            <if test="householdStatus != null ">and pm.household_status = #{householdStatus}</if>
             ${dataScope}
         </where>
         order by
@@ -317,6 +336,11 @@
             <if test="createTime != null ">create_time,</if>
             <if test="updateBy != null  and updateBy != ''">update_by,</if>
             <if test="updateTime != null ">update_time,</if>
+            <if test="urgentPerson != null ">urgent_person,</if>
+            <if test="urgentPersonMobile != null ">urgent_person_mobile,</if>
+            <if test="maritalStatus != null ">marital_status,</if>
+            <if test="householdAddress != null ">household_address,</if>
+            <if test="householdStatus != null ">household_status,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="partyMemberUuid != null ">#{partyMemberUuid},</if>
@@ -369,6 +393,11 @@
             <if test="createTime != null ">#{createTime},</if>
             <if test="updateBy != null  and updateBy != ''">#{updateBy},</if>
             <if test="updateTime != null ">#{updateTime},</if>
+            <if test="urgentPerson != null ">#{urgentPerson},</if>
+            <if test="urgentPersonMobile != null ">#{urgentPersonMobile},</if>
+            <if test="maritalStatus != null ">#{maritalStatus},</if>
+            <if test="householdAddress != null ">#{householdAddress},</if>
+            <if test="householdStatus != null ">#{householdStatus},</if>
         </trim>
     </insert>
 
@@ -434,6 +463,11 @@
             <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
             <if test="updateTime != null ">update_time = #{updateTime},</if>
             <if test="orderNum != null ">order_num = #{orderNum},</if>
+            <if test="urgentPerson != null "> urgent_person = #{urgentPerson},</if>
+            <if test="urgentPersonMobile != null "> urgent_person_mobile = #{urgentPersonMobile},</if>
+            <if test="maritalStatus != null "> marital_status = #{maritalStatus},</if>
+            <if test="householdAddress != null "> household_address = #{householdAddress},</if>
+            <if test="householdStatus != null "> household_status = #{householdStatus},</if>
         </trim>
         where member_id = #{memberId}
     </update>

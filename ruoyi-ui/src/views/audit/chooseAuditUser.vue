@@ -115,6 +115,8 @@
             }else if(this.type=="enable"){
               this.form.memberId = this.memberId;
               this.$emit("enable",this.form);
+            }else if(this.type=="register"){
+              this.$emit("register",this.form);
             }else{
               this.$emit("ok",this.form);
             }

@@ -8,6 +8,26 @@
       <el-form ref="form"  :model="form" :rules="rules"  label-width="150px">
         <el-card shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
+            <span style="font-weight: bold;font-size: 16px">注册进度</span>
+          </div>
+          <el-steps v-if="pass":active="registerStep" finish-status="success">
+            <el-step title="注册账号"></el-step>
+            <el-step title="完善信息"></el-step>
+            <el-step title="信息审核"></el-step>
+            <el-step title="审核通过"></el-step>
+          </el-steps>
+          <el-steps v-if="!pass" :active="registerStep" finish-status="success">
+            <el-step title="注册账号"></el-step>
+            <el-step title="完善信息"></el-step>
+            <el-step title="信息审核"></el-step>
+            <el-step title="信息不审核/完善信息"></el-step>
+            <el-step title="审核通过"></el-step>
+          </el-steps>
+
+        </el-card>
+
+        <el-card shadow="always" style="margin-bottom: 30px;">
+          <div slot="header" style="height: 25px">
             <span style="font-weight: bold;font-size: 16px">基本信息</span>
           </div>
           <el-row>
@@ -15,7 +35,7 @@
               <el-row>
                 <el-col :span="12">
                   <el-form-item label="会员姓名" prop="memberName">
-                    <el-input :disabled="disabled"v-model="form.memberName" placeholder="请输入会员姓名"/>
+                    <el-input :disabled="true"v-model="form.memberName" placeholder="请输入会员姓名"/>
                   </el-form-item>
                 </el-col>
                 <!--<el-col :span="12">
@@ -37,8 +57,6 @@
                     </el-select>
                   </el-form-item>
                 </el-col>
-              </el-row>
-              <el-row>
                 <el-col :span="12">
                   <el-form-item label="出生日期" prop="birthday">
                     <el-date-picker :disabled="disabled"
@@ -56,7 +74,34 @@
                     <el-input :disabled="disabled"v-model="form.workNo" placeholder="请输入工号"/>
                   </el-form-item>
                 </el-col>
-              </el-row>
+                <el-col :span="12">
+                  <el-form-item label="民族" prop="nation">
+                    <el-select :disabled="disabled"
+                               v-model="form.nation"
+                               style="width: 100%" placeholder="请选择民族">
+                      <el-option
+                        v-for="dict in nationOptions"
+                        :key="dict.dictValue"
+                        :label="dict.dictLabel"
+                        :value="dict.dictValue"
+                      ></el-option>
+                    </el-select>
+                  </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                  <el-form-item label="婚姻状况" prop="maritalStatus">
+                    <el-select :disabled="disabled"
+                               v-model="form.maritalStatus"
+                               style="width: 100%" placeholder="请选择婚姻状况">
+                      <el-option
+                        v-for="dict in maritalStatusOptions"
+                        :key="dict.dictValue"
+                        :label="dict.dictLabel"
+                        :value="dict.dictValue"
+                      ></el-option>
+                    </el-select>
+                  </el-form-item>
+                </el-col>
               <!--<el-row>
                 <el-col :span="12">
                   <el-form-item label="身份证号" prop="identityCard">
@@ -65,7 +110,6 @@
                 </el-col>
 
               </el-row>-->
-              <el-row>
                 <el-col :span="12">
                   <el-form-item label="所在单位" prop="companyName">
                     <el-input :disabled="disabled" v-model="form.companyName" placeholder="请输入所在单位"/>
@@ -144,25 +188,9 @@
                 </el-date-picker>
               </el-form-item>
             </el-col>
-          </el-row>
-          <el-row>
             <el-col :span="8">
               <el-form-item label="职称" prop="title">
                 <el-input :disabled="disabled" v-model="form.title" placeholder="请输入职称"/>
-              </el-form-item>
-            </el-col>
-            <el-col :span="8">
-              <el-form-item label="民族" prop="nation">
-                <el-select :disabled="disabled"
-                           v-model="form.nation"
-                           style="width: 100%" placeholder="请选择民族">
-                  <el-option
-                    v-for="dict in nationOptions"
-                    :key="dict.dictValue"
-                    :label="dict.dictLabel"
-                    :value="dict.dictValue"
-                  ></el-option>
-                </el-select>
               </el-form-item>
             </el-col>
             <el-col :span="8">
@@ -179,8 +207,6 @@
                 </el-select>
               </el-form-item>
             </el-col>
-          </el-row>
-          <el-row>
             <el-col :span="8">
               <el-form-item label="身份">
                 <el-select :disabled="disabled"
@@ -223,16 +249,48 @@
                 </el-select>
               </el-form-item>
             </el-col>
-          </el-row>
-          <el-row>
             <el-col :span="8">
               <el-form-item label="籍贯" prop="nativePlace">
                 <el-input :disabled="disabled"v-model="form.nativePlace" placeholder="请输入籍贯"/>
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="家庭住址" prop="homeAddress">
-                <el-input :disabled="disabled"v-model="form.homeAddress" placeholder="请输入家庭住址"/>
+              <el-form-item label="户口所在地" prop="householdAddress">
+                <el-input :disabled="disabled"v-model="form.householdAddress" placeholder="请输入户口所在地"/>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="现居住住址" prop="homeAddress">
+                <el-input :disabled="disabled"v-model="form.homeAddress" placeholder="请输入现居住住址"/>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="户口性质" prop="householdStatus">
+                <el-select :disabled="disabled"
+                           v-model="form.householdStatus"
+                           style="width: 100%" placeholder="请选择户口性质">
+                  <el-option
+                    v-for="dict in householdStatusOptions"
+                    :key="dict.dictValue"
+                    :label="dict.dictLabel"
+                    :value="dict.dictValue"
+                  ></el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="联系电话" prop="mobile">
+                <el-input :disabled="disabled"v-model="form.mobile" placeholder="请输入联系电话"/>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="紧急联系人" prop="urgentPerson">
+                <el-input :disabled="disabled"v-model="form.urgentPerson" placeholder="请输入紧急联系人"/>
+              </el-form-item>
+            </el-col>
+            <el-col :span="8">
+              <el-form-item label="紧急联系电话" prop="urgentPersonMobile">
+                <el-input :disabled="disabled"v-model="form.urgentPersonMobile" placeholder="请输入紧急联系电话"/>
               </el-form-item>
             </el-col>
             <el-col :span="8">
@@ -240,14 +298,12 @@
                 <el-input :disabled="disabled"v-model="form.housePhone" placeholder="请输入固定电话"/>
               </el-form-item>
             </el-col>
-          </el-row>
-          <el-row>
             <el-col :span="8">
               <el-form-item label="电子邮箱" prop="email">
                 <el-input :disabled="disabled" v-model="form.email" placeholder="请输入电子邮箱"/>
               </el-form-item>
             </el-col>
-            <el-col :span="8">
+            <!--<el-col :span="8">
               <el-form-item label="QQ" prop="qq">
                 <el-input :disabled="disabled"v-model="form.qq" placeholder="请输入QQ"/>
               </el-form-item>
@@ -256,11 +312,9 @@
               <el-form-item label="微信号码" prop="wechat">
                 <el-input :disabled="disabled" v-model="form.wechat" placeholder="请输入微信号码"/>
               </el-form-item>
-            </el-col>
+            </el-col>-->
           </el-row>
         </el-card>
-
-        <member-education  ref="memberEducation"  :disabled ="disabled"/>
 
         <el-card shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
@@ -314,18 +368,18 @@
           </el-row>
           <el-row>
             <el-col :span="8">
-              <el-form-item label="加入会日期" prop="joinData">
+              <el-form-item label="加入工会日期" prop="joinData">
                 <el-date-picker :disabled="disabled"
                                 clearable size="small" style="width: 100%"
                                 v-model="form.joinData"
                                 type="date"
                                 value-format="yyyy-MM-dd"
                                 :picker-options="afterTimeOption"
-                                placeholder="选择加入会日期">
+                                placeholder="选择加入工会日期">
                 </el-date-picker>
               </el-form-item>
             </el-col>
-            <el-col :span="8">
+            <!--<el-col :span="8">
               <el-form-item label="转为正式会员日期" prop="formalData"
                             :rules="[{required: formalDataRequire,message: `转为正式会员日期不能为空`,trigger: 'blur'}]">
                 <el-date-picker :disabled="disabled"
@@ -349,9 +403,9 @@
                                 placeholder="选择加入会支部日期">
                 </el-date-picker>
               </el-form-item>
-            </el-col>
+            </el-col>-->
           </el-row>
-          <el-row>
+          <!--<el-row>
             <el-col :span="8">
               <el-form-item label="会内职务" prop="partyPositionType">
                 <el-select :disabled="disabled"
@@ -408,8 +462,10 @@
                 </el-select>
               </el-form-item>
             </el-col>
-          </el-row>
+          </el-row>-->
         </el-card>
+
+        <member-education  ref="memberEducation"  :disabled ="disabled"/>
 
         <el-card v-show="false" shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
@@ -532,11 +588,29 @@
           </el-row>
         </el-card>
 
+        <el-card v-show="logList.length>0" shadow="always" style="margin-bottom: 30px;">
+          <div slot="header" style="height: 25px">
+            <span style="font-weight: bold;font-size: 16px">审批记录</span>
+          </div>
+          <el-table v-loading="loading" :data="logList">
+            <el-table-column label="操作名称" align="center" prop="stepName"/>
+            <el-table-column label="操作人" align="center" prop="sysUser.nickName"/>
+            <el-table-column label="操作" align="center" prop="operResult"/>
+            <el-table-column label="操作时间" align="center" prop="operTime" width="180">
+              <template slot-scope="scope">
+                <span>{{ parseTime(scope.row.operTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</span>
+              </template>
+            </el-table-column>
+            <el-table-column label="备注" align="center" prop="operReason"/>
+          </el-table>
+
+        </el-card>
+
       </el-form>
     </div>
     <div class="register-footer">
       <el-button v-show="!disabled" type="primary"  @click="chooseAuditUser">提 交</el-button>
-      <choose-audit-user ref="chooseAuditUser"  @ok="submitForm" @del="handleDelete" @enable="handleEnable"/>
+      <choose-audit-user ref="chooseAuditUser"  @register="handleRegister" @ok="submitForm" @del="handleDelete" @enable="handleEnable"/>
     </div>
   </div>
 
@@ -615,8 +689,8 @@
   }
 
   .avatar {
-    width: 120px;
-    height: 160px;
+    width: 165px;
+    height: 220px;
     align-items: center;
     border: 1px solid #e6ebf5;
     img{
@@ -638,6 +712,7 @@
     checkPartyMemberUnique,
     delPartyMember,
     enablePartyMember,
+    registerPartyMember,
     exportPartyMember,
     getPartyMember,
     listPartyMember,
@@ -786,6 +861,8 @@
         postOptions: [],
         // 民族字典
         nationOptions: [],
+        // 婚姻状况
+        maritalStatusOptions: [],
         // 政治面貌字典
         polityOptions: [],
         // 身份字典
@@ -794,6 +871,8 @@
         educationOptions: [],
         // 学位字典
         academicDegreeOptions: [],
+        // 户口性质字典
+        householdStatusOptions: [],
         // 会员类型字典
         memberTypeOptions: [],
         // 在岗状态字典
@@ -845,7 +924,14 @@
             {required: true, message: "性别不能为空", trigger: "blur"},
           ],
           mobile: [
-            {required: false, message: "手机号不能为空", trigger: "blur"},
+            {required: true, message: "联系电话不能为空", trigger: "blur"},
+            { validator: checkMobile, trigger: "blur" }
+          ],
+          urgentPerson: [
+            {required: true, message: "紧急联系人不能为空", trigger: "blur"},
+          ],
+          urgentPersonMobile: [
+            {required: true, message: "紧急联系电话不能为空", trigger: "blur"},
             { validator: checkMobile, trigger: "blur" }
           ],
           identityCard: [
@@ -871,7 +957,16 @@
             { required: true, message: "参加工作日期不能为空", trigger: "blur" },
           ],
           nativePlace: [
-            /* { required: true, message: "籍贯不能为空", trigger: "blur" },*/
+            { required: true, message: "籍贯不能为空", trigger: "blur" },
+          ],
+          householdAddress: [
+            { required: true, message: "户口所在地不能为空", trigger: "blur" },
+          ],
+          homeAddress: [
+            { required: true, message: "现居住住址不能为空", trigger: "blur" },
+          ],
+          householdStatus: [
+            { required: true, message: "户口性质不能为空", trigger: "blur" },
           ],
           polity: [
             { required: true, message: "政治面貌不能为空", trigger: "blur" },
@@ -881,6 +976,9 @@
           ],
           nation: [
             { required: true, message: "民族不能为空", trigger: "blur" },
+          ],
+          maritalStatus: [
+            { required: true, message: "婚姻状况不能为空", trigger: "blur" },
           ],
           joinData: [
             { required: true, message: "入会日期不能为空", trigger: "blur" },
@@ -929,6 +1027,9 @@
         },
         user: {},
         formalDataRequire:false,
+        registerStep: undefined,
+        pass:true,
+        logList: [],
       };
     },
     computed:{
@@ -966,6 +1067,9 @@
       });
       this.getDicts("nation_type").then(response => {
         this.nationOptions = response.data;
+      });
+      this.getDicts("marital_status_type").then(response => {
+        this.maritalStatusOptions = response.data;
       });
       this.getDicts("polity_type").then(response => {
         this.polityOptions = response.data;
@@ -1009,6 +1113,10 @@
       this.getDicts("sys_yes_no").then(response => {
         this.enjoyHelpOptions = response.data;
       });
+      this.getDicts("household_status_type").then(response => {
+        this.householdStatusOptions = response.data;
+      });
+
 
     },
     methods: {
@@ -1226,6 +1334,8 @@
           memberName: undefined,
           sex: undefined,
           mobile: undefined,
+          urgentPerson: undefined,
+          urgentPersonMobile: undefined,
           identityCard: undefined,
           birthday: undefined,
           companyName: undefined,
@@ -1235,11 +1345,14 @@
           postId: undefined,
           workingDate: undefined,
           nation: undefined,
+          maritalStatus: undefined,
           polity: undefined,
           workIdentity: undefined,
           education: undefined,
           academicDegree: undefined,
           nativePlace: undefined,
+          householdAddress: undefined,
+          householdStatus: undefined,
           homeAddress: undefined,
           housePhone: undefined,
           email: undefined,
@@ -1304,26 +1417,31 @@
         this.title = "添加会员信息";
       },
       /** 查看按钮操作 */
-      handleSee(row){
+      handleSee(disabled){
         this.reset();
-        this.disabled = true;
-        const memberId = row.memberId || this.ids
+        this.disabled = disabled;
+        const memberId =  this.user.partyMemberId
         this.orgOptions= this.partyOrgOptionsByEdait;
-        getPartyMember(memberId).then(response => {
-          this.form = response.data;
-          this.form.partyMemberUuid = this.form.partyMemberUuid==undefined?this.uuid():this.form.partyMemberUuid;
-          this.form.cognizance = this.form.memberHelp!=null?this.form.memberHelp.cognizance:undefined;
-          this.form.economicSituation = this.form.memberHelp!=null?this.form.memberHelp.economicSituation:undefined;
-          this.avatarUrl=process.env.VUE_APP_BASE_API + this.form.avatar;
-          this.open = true;
-          this.title = "查看会员信息";
-        }).then(()=>{
-          this.changeMemberType();
-          this.lifeDifficultyChange();
-          this.$refs.specialty.init(this.form.memberId);
-          this.$refs.exemplary.init(this.form.memberId);
-          this.$refs.memberEducation.init(this.form.partyMemberUuid);
+        listPartyMemberChange({"partyMemberId":memberId}).then(response => {
+          if(response.rows&&response.rows.length >0){
+            this.form = response.rows[0];
+            this.form .memberId = this.form .partyMemberId
+            this.form.partyMemberUuid = this.form.partyMemberUuid==undefined?this.uuid():this.form.partyMemberUuid;
+            this.form.cognizance = this.form.memberHelp!=null?this.form.memberHelp.cognizance:undefined;
+            this.form.economicSituation = this.form.memberHelp!=null?this.form.memberHelp.economicSituation:undefined;
+            this.avatarUrl=process.env.VUE_APP_BASE_API + this.form.avatar;
+            this.open = true;
+            this.title = "查看会员信息";
+
+            this.getLogList();
+            this.changeMemberType();
+            this.lifeDifficultyChange();
+            this.$refs.specialty.init(this.form.memberId);
+            this.$refs.exemplary.init(this.form.memberId);
+            this.$refs.memberEducation.init(this.form.partyMemberUuid);
+          }
         });
+
       },
       handlePortrait(row){
         this.$refs.memberPortrait.init(row.memberId)
@@ -1346,7 +1464,6 @@
       handleUpdate() {
         this.reset();
         this.disabled = false;
-        console.log(this.user.partyMemberId);
         const memberId =  this.user.partyMemberId
         this.orgOptions= this.partyOrgOptions;
         getPartyMember(memberId).then(response => {
@@ -1364,7 +1481,33 @@
           this.$refs.exemplary.init(this.form.memberId);
           this.$refs.memberEducation.init(this.form.partyMemberUuid);
         });
+
+
+
       },
+
+      getPartyMember(memberId){
+        listPartyMemberChange({"partyMemberId":memberId, "auditState":"2"}).then(response => {
+          if(response.rows&&response.rows.length >0){
+            this.form = response.rows[0];
+            this.form.partyMemberUuid = this.form.partyMemberUuid==undefined?this.uuid():this.form.partyMemberUuid;
+            this.form.cognizance = this.form.memberHelp!=null?this.form.memberHelp.cognizance:undefined;
+            this.form.economicSituation = this.form.memberHelp!=null?this.form.memberHelp.economicSituation:undefined;
+            this.avatarUrl=process.env.VUE_APP_BASE_API + this.form.avatar;
+            this.open = true;
+            this.title = "修改会员信息";
+
+            this.changeMemberType();
+            this.lifeDifficultyChange();
+            this.$refs.specialty.init(this.form.memberId);
+            this.$refs.exemplary.init(this.form.memberId);
+            this.$refs.memberEducation.init(this.form.partyMemberUuid);
+          }else{
+            this.getPartyMember(this.form.memberId)
+          }
+        });
+      },
+
       chooseAuditUser(){
         this.$refs["form"].validate(valid => {
           if (valid) {
@@ -1373,7 +1516,7 @@
                 if(response.rows&&response.rows.length >0){
                   this.msgSuccess("该会员变更正在审批中！")
                 }else{
-                  this.$refs.chooseAuditUser.init(6,"edit",this.form.memberId)
+                  this.$refs.chooseAuditUser.init(6,"register",this.form.memberId)
                 }
               });
             }else{
@@ -1449,6 +1592,30 @@
           }
         });
       },
+      handleRegister(form) {
+        this.$refs["form"].validate(valid => {
+          if (valid) {
+            this.form.auditUserId = form.auditUserId;
+            this.form.operReason = form.reason;
+            if (this.form.memberId != undefined) {
+              registerPartyMember(this.form).then(response => {
+                if (response.code === 200) {
+                  this.msgSuccess("提交审批成功");
+                  this.init()
+                } else {
+                  this.msgError(response.msg);
+                }
+              });
+            }
+          }else{
+            setTimeout(() => {
+              var isError = document.getElementsByClassName("is-error");
+              isError[0].querySelector('input').focus();
+            }, 100);
+            return false;
+          }
+        });
+      },
       /** 导出按钮操作 */
       handleExport() {
         let that = this;
@@ -1468,7 +1635,28 @@
             this.queryParams.partyOrgId = this.user.djPartyMember.partyOrgId;
           }
         }).then(()=>{
-          this.handleUpdate();
+          this.init()
+        });
+      },
+      init(){
+        const memberId =  this.user.partyMemberId
+        listPartyMemberChange({"partyMemberId":memberId}).then(response => {
+          if(response.rows&&response.rows.length >0){
+            let partyMember = response.rows[0];
+            if(partyMember.auditState =='2'){
+              this.registerStep = 2
+              this.pass =true;
+              this.handleSee(true);
+            }else if(partyMember.auditState =='4'){
+              this.registerStep = 3
+              this.pass = false;
+              this.handleSee(false);
+            }
+          }else{
+            this.registerStep = 1
+            this.pass =true;
+            this.handleUpdate();
+          }
         });
       },
       showHandleUpdate(row){
@@ -1489,11 +1677,12 @@
         return showFlag ;
       },
       changeMemberType(){
-        if(this.form.memberType == '1'){
+        /*if(this.form.memberType == '1'){
           this.formalDataRequire = true
         }else{
           this.formalDataRequire = false
-        }
+        }*/
+        this.formalDataRequire = false
       },
       lifeDifficultyChange(){
         if(this.form.lifeDifficulty == 'Y'){
@@ -1506,6 +1695,13 @@
         this.$store.dispatch('LogOut').then(() => {
           location.reload()
         })
+      },
+      getLogList() {
+        this.loading = true;
+        listLog({"uuid": this.form.memberUuid}).then(response => {
+          this.logList = response.rows;
+          this.loading = false;
+        });
       },
     }
   };

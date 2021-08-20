@@ -60,6 +60,11 @@
         <result property="createTime" column="create_time"/>
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
+        <result property="urgentPerson" column="urgent_person"/>
+        <result property="urgentPersonMobile" column="urgent_person_mobile"/>
+        <result property="maritalStatus" column="marital_status"/>
+        <result property="householdAddress" column="household_address"/>
+        <result property="householdStatus" column="household_status"/>
     </resultMap>
 
     <sql id="selectDjPartyMemberChangeVo">
@@ -70,7 +75,9 @@
         email, qq, wechat, remark, member_type, member_status, join_branch_data, join_data,pre_member_data,
         formal_data, floating_type, member_group, pre_party_org_id, life_difficulty, cognizance, economic_situation,
         physical_health, life_difficulty_type, enjoy_help, help_info, detail, del_flag, create_by,
-        create_time, update_by, update_time from dj_party_member_change
+        create_time, update_by, update_time,
+        urgent_person, urgent_person_mobile, marital_status, household_address, household_status
+        from dj_party_member_change
     </sql>
 
     <select id="selectDjPartyMemberChangeList" parameterType="DjPartyMemberChange"
@@ -136,6 +143,11 @@
             <if test="enjoyHelp != null  and enjoyHelp != ''">and enjoy_help = #{enjoyHelp}</if>
             <if test="helpInfo != null  and helpInfo != ''">and help_info = #{helpInfo}</if>
             <if test="detail != null  and detail != ''">and detail = #{detail}</if>
+            <if test="urgentPerson != null ">and urgent_person = #{urgentPerson}</if>
+            <if test="urgentPersonMobile != null ">and urgent_person_mobile = #{urgentPersonMobile}</if>
+            <if test="maritalStatus != null ">and marital_status = #{maritalStatus}</if>
+            <if test="householdAddress != null ">and household_address = #{householdAddress}</if>
+            <if test="householdStatus != null ">and household_status = #{householdStatus}</if>
         </where>
         order by create_time desc
     </select>
@@ -208,6 +220,11 @@
             <if test="createTime != null ">create_time,</if>
             <if test="updateBy != null  and updateBy != ''">update_by,</if>
             <if test="updateTime != null ">update_time,</if>
+            <if test="urgentPerson != null ">urgent_person,</if>
+            <if test="urgentPersonMobile != null ">urgent_person_mobile,</if>
+            <if test="maritalStatus != null ">marital_status,</if>
+            <if test="householdAddress != null ">household_address,</if>
+            <if test="householdStatus != null ">household_status,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="memberUuid != null  and memberUuid != ''">#{memberUuid},</if>
@@ -264,6 +281,11 @@
             <if test="createTime != null ">#{createTime},</if>
             <if test="updateBy != null  and updateBy != ''">#{updateBy},</if>
             <if test="updateTime != null ">#{updateTime},</if>
+            <if test="urgentPerson != null ">#{urgentPerson},</if>
+            <if test="urgentPersonMobile != null ">#{urgentPersonMobile},</if>
+            <if test="maritalStatus != null ">#{maritalStatus},</if>
+            <if test="householdAddress != null ">#{householdAddress},</if>
+            <if test="householdStatus != null ">#{householdStatus},</if>
         </trim>
     </insert>
 
@@ -332,6 +354,11 @@
             <if test="createTime != null ">create_time = #{createTime},</if>
             <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
             <if test="updateTime != null ">update_time = #{updateTime},</if>
+            <if test="urgentPerson != null "> urgent_person = #{urgentPerson},</if>
+            <if test="urgentPersonMobile != null "> urgent_person_mobile = #{urgentPersonMobile},</if>
+            <if test="maritalStatus != null "> marital_status = #{maritalStatus},</if>
+            <if test="householdAddress != null "> household_address = #{householdAddress},</if>
+            <if test="householdStatus != null "> household_status = #{householdStatus},</if>
         </trim>
         where member_id = #{memberId}
     </update>
