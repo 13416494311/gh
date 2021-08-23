@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div>
     <el-form v-if="!see" :model="queryParams" ref="queryForm" :inline="true" label-width="100px">
       <el-form-item label="会员姓名" prop="memberName">
         <el-input

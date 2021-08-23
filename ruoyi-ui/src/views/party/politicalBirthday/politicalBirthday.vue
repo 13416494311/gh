@@ -141,7 +141,7 @@
         <el-row>
           <el-col :span="12">
             <el-form-item label="会员名称" prop="memberId">
-              <el-input :disabled="true" v-model="form.memberName" placeholder="请选择换会员名称">
+              <el-input :disabled="true" v-model="form.memberName" placeholder="请选择会员名称">
                 <el-button :disabled="disabled" slot="append" icon="el-icon-search"
                            @click="openMemberChoose"></el-button>
               </el-input>

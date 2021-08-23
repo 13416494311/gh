@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.gh.mapper.GhMemberFamilyMapper">
+    
+    <resultMap type="GhMemberFamily" id="GhMemberFamilyResult">
+        <result property="familyId"    column="family_id"    />
+        <result property="memberUuid"    column="member_uuid"    />
+        <result property="name"    column="name"    />
+        <result property="relationWithMe"    column="relation_with_me"    />
+        <result property="companyName"    column="company_name"    />
+        <result property="post"    column="post"    />
+        <result property="mobile"    column="mobile"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectGhMemberFamilyVo">
+        select family_id, member_uuid, name, relation_with_me, company_name, post, mobile, create_by, create_time, update_by, update_time from gh_member_family
+    </sql>
+
+    <select id="selectGhMemberFamilyList" parameterType="GhMemberFamily" resultMap="GhMemberFamilyResult">
+        <include refid="selectGhMemberFamilyVo"/>
+        <where>  
+            <if test="memberUuid != null  and memberUuid != ''"> and member_uuid = #{memberUuid}</if>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="relationWithMe != null  and relationWithMe != ''"> and relation_with_me = #{relationWithMe}</if>
+            <if test="companyName != null  and companyName != ''"> and company_name like concat('%', #{companyName}, '%')</if>
+            <if test="post != null  and post != ''"> and post like concat('%', #{post}, '%')</if>
+            <if test="mobile != null  and mobile != ''"> and mobile = #{mobile}</if>
+        </where>
+    </select>
+    
+    <select id="selectGhMemberFamilyById" parameterType="Long" resultMap="GhMemberFamilyResult">
+        <include refid="selectGhMemberFamilyVo"/>
+        where family_id = #{familyId}
+    </select>
+        
+    <insert id="insertGhMemberFamily" parameterType="GhMemberFamily" useGeneratedKeys="true" keyProperty="familyId">
+        insert into gh_member_family
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="memberUuid != null  and memberUuid != ''">member_uuid,</if>
+            <if test="name != null  and name != ''">name,</if>
+            <if test="relationWithMe != null  and relationWithMe != ''">relation_with_me,</if>
+            <if test="companyName != null  and companyName != ''">company_name,</if>
+            <if test="post != null  and post != ''">post,</if>
+            <if test="mobile != null  and mobile != ''">mobile,</if>
+            <if test="createBy != null  and createBy != ''">create_by,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateBy != null  and updateBy != ''">update_by,</if>
+            <if test="updateTime != null ">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="memberUuid != null  and memberUuid != ''">#{memberUuid},</if>
+            <if test="name != null  and name != ''">#{name},</if>
+            <if test="relationWithMe != null  and relationWithMe != ''">#{relationWithMe},</if>
+            <if test="companyName != null  and companyName != ''">#{companyName},</if>
+            <if test="post != null  and post != ''">#{post},</if>
+            <if test="mobile != null  and mobile != ''">#{mobile},</if>
+            <if test="createBy != null  and createBy != ''">#{createBy},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">#{updateBy},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateGhMemberFamily" parameterType="GhMemberFamily">
+        update gh_member_family
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="memberUuid != null  and memberUuid != ''">member_uuid = #{memberUuid},</if>
+            <if test="name != null  and name != ''">name = #{name},</if>
+            <if test="relationWithMe != null  and relationWithMe != ''">relation_with_me = #{relationWithMe},</if>
+            <if test="companyName != null  and companyName != ''">company_name = #{companyName},</if>
+            <if test="post != null  and post != ''">post = #{post},</if>
+            <if test="mobile != null  and mobile != ''">mobile = #{mobile},</if>
+            <if test="createBy != null  and createBy != ''">create_by = #{createBy},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+        </trim>
+        where family_id = #{familyId}
+    </update>
+
+    <delete id="deleteGhMemberFamilyById" parameterType="Long">
+        delete from gh_member_family where family_id = #{familyId}
+    </delete>
+
+    <delete id="deleteGhMemberFamilyByIds" parameterType="String">
+        delete from gh_member_family where family_id in 
+        <foreach item="familyId" collection="array" open="(" separator="," close=")">
+            #{familyId}
+        </foreach>
+    </delete>
+    
+</mapper>

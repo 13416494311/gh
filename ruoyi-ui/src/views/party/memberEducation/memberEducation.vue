@@ -67,6 +67,7 @@
 
     <!-- 添加或修改教育经历对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="80%" append-to-body
+               @open="getHeight"
                :close-on-click-modal="false">
       <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="150px">
         <el-row>
@@ -230,7 +231,7 @@
       };
     },
     mounted() {
-      //window.addEventListener('resize', this.getHeight);
+      window.addEventListener('resize', this.getHeight);
     },
     created() {
       this.getDicts("education_type1").then(response => {

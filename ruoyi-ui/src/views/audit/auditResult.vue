@@ -35,7 +35,7 @@
 <script>
 
   export default {
-    name: "AuditLog",
+    name: "AuditResult",
     data() {
       return {
         //是否必填

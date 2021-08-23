@@ -297,8 +297,6 @@
         </el-row>
       </el-card>
 
-      <member-education  ref="memberEducation"  :disabled ="true"/>
-
       <el-card shadow="always" style="margin-bottom: 30px;">
         <div slot="header" style="height: 25px">
           <span style="font-weight: bold;font-size: 16px">会员信息</span>
@@ -369,6 +367,21 @@
                               :picker-options="afterTimeOption"
                               placeholder="选择加入会日期">
               </el-date-picker>
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item label="会内职务" prop="partyPositionType">
+              <el-select :disabled="disabled"
+                         clearable
+                         v-model="form.partyPositionType"
+                         style="width: 100%" placeholder="请选择会内职务">
+                <el-option
+                  v-for="dict in partyPositionTypeOptions"
+                  :key="dict.dictValue"
+                  :label="dict.dictLabel"
+                  :value="dict.dictValue"
+                ></el-option>
+              </el-select>
             </el-form-item>
           </el-col>
           <!--<el-col :span="8">
@@ -451,7 +464,14 @@
           </el-col>-->
         </el-row>
       </el-card>
-      <el-card v-show="form.memberType != 3" shadow="always" style="margin-bottom: 30px;">
+
+      <member-education  ref="memberEducation"  :disabled ="true"/>
+
+      <member-work ref="memberWork" :disabled ="true"/>
+
+      <member-family ref="memberFamily" :disabled ="true"/>
+
+      <el-card v-show="false" shadow="always" style="margin-bottom: 30px;">
         <div slot="header" style="height: 25px">
           <span style="font-weight: bold;font-size: 16px">生活困难情况</span>
         </div>
@@ -556,6 +576,7 @@
           </el-col>
         </el-row>
       </el-card>
+
       <el-card shadow="always" style="margin-bottom: 30px;">
         <div slot="header" style="height: 25px">
           <span style="font-weight: bold;font-size: 16px">审批记录</span>
@@ -631,11 +652,13 @@
   import {listTodo, getTodo, delTodo, addTodo, updateTodo, exportTodo} from "@/api/sys/todo";
   import auditResult from "../../audit/auditResult";
   import MemberEducation from "../../party/memberEducation/memberEducation";
+  import MemberWork from "../../member/work/memberWork";
+  import MemberFamily from "../../member/family/memberFamily";
 
 
   export default {
     name: "PartyMemberChange",
-    components: {MemberEducation, Treeselect, selectTree, auditResult},
+    components: {MemberFamily, MemberWork, MemberEducation, Treeselect, selectTree, auditResult},
     data() {
       let checkPartyMember = (rule, value, callback) => {
         let field = rule.field;
@@ -1380,6 +1403,8 @@
             this.getLogList();
           }).then(() => {
             this.$refs.memberEducation.init(this.form.partyMemberUuid);
+            this.$refs.memberWork.init(this.form.partyMemberUuid);
+            this.$refs.memberFamily.init(this.form.partyMemberUuid);
             if (this.form.changeType == "register") {
               getPartyMember(this.form.partyMemberId).then(response => {
                 this.partyMember = response.data;

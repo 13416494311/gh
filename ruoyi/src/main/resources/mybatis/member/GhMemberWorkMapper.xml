@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.project.gh.mapper.GhMemberWorkMapper">
+    
+    <resultMap type="GhMemberWork" id="GhMemberWorkResult">
+        <result property="workId"    column="work_id"    />
+        <result property="memberUuid"    column="member_uuid"    />
+        <result property="startDate"    column="start_date"    />
+        <result property="endDate"    column="end_date"    />
+        <result property="workCompanyName"    column="work_company_name"    />
+        <result property="workPost"    column="work_post"    />
+        <result property="witness"    column="witness"    />
+        <result property="witnessMobile"    column="witness_mobile"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectGhMemberWorkVo">
+        select work_id, member_uuid, start_date, end_date, work_company_name, work_post, witness, witness_mobile, create_by, create_time, update_by, update_time from gh_member_work
+    </sql>
+
+    <select id="selectGhMemberWorkList" parameterType="GhMemberWork" resultMap="GhMemberWorkResult">
+        <include refid="selectGhMemberWorkVo"/>
+        <where>  
+            <if test="memberUuid != null  and memberUuid != ''"> and member_uuid = #{memberUuid}</if>
+            <if test="startDate != null "> and start_date = #{startDate}</if>
+            <if test="endDate != null "> and end_date = #{endDate}</if>
+            <if test="workCompanyName != null  and workCompanyName != ''"> and work_company_name like concat('%', #{workCompanyName}, '%')</if>
+            <if test="workPost != null  and workPost != ''"> and work_post = #{workPost}</if>
+            <if test="witness != null  and witness != ''"> and witness = #{witness}</if>
+            <if test="witnessMobile != null  and witnessMobile != ''"> and witness_mobile = #{witnessMobile}</if>
+        </where>
+    </select>
+    
+    <select id="selectGhMemberWorkById" parameterType="Long" resultMap="GhMemberWorkResult">
+        <include refid="selectGhMemberWorkVo"/>
+        where work_id = #{workId}
+    </select>
+        
+    <insert id="insertGhMemberWork" parameterType="GhMemberWork" useGeneratedKeys="true" keyProperty="workId">
+        insert into gh_member_work
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="memberUuid != null  and memberUuid != ''">member_uuid,</if>
+            <if test="startDate != null ">start_date,</if>
+            <if test="endDate != null ">end_date,</if>
+            <if test="workCompanyName != null  and workCompanyName != ''">work_company_name,</if>
+            <if test="workPost != null  and workPost != ''">work_post,</if>
+            <if test="witness != null  and witness != ''">witness,</if>
+            <if test="witnessMobile != null  and witnessMobile != ''">witness_mobile,</if>
+            <if test="createBy != null  and createBy != ''">create_by,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateBy != null  and updateBy != ''">update_by,</if>
+            <if test="updateTime != null ">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="memberUuid != null  and memberUuid != ''">#{memberUuid},</if>
+            <if test="startDate != null ">#{startDate},</if>
+            <if test="endDate != null ">#{endDate},</if>
+            <if test="workCompanyName != null  and workCompanyName != ''">#{workCompanyName},</if>
+            <if test="workPost != null  and workPost != ''">#{workPost},</if>
+            <if test="witness != null  and witness != ''">#{witness},</if>
+            <if test="witnessMobile != null  and witnessMobile != ''">#{witnessMobile},</if>
+            <if test="createBy != null  and createBy != ''">#{createBy},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">#{updateBy},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateGhMemberWork" parameterType="GhMemberWork">
+        update gh_member_work
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="memberUuid != null  and memberUuid != ''">member_uuid = #{memberUuid},</if>
+            <if test="startDate != null ">start_date = #{startDate},</if>
+            <if test="endDate != null ">end_date = #{endDate},</if>
+            <if test="workCompanyName != null  and workCompanyName != ''">work_company_name = #{workCompanyName},</if>
+            <if test="workPost != null  and workPost != ''">work_post = #{workPost},</if>
+            <if test="witness != null  and witness != ''">witness = #{witness},</if>
+            <if test="witnessMobile != null  and witnessMobile != ''">witness_mobile = #{witnessMobile},</if>
+            <if test="createBy != null  and createBy != ''">create_by = #{createBy},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="updateBy != null  and updateBy != ''">update_by = #{updateBy},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+        </trim>
+        where work_id = #{workId}
+    </update>
+
+    <delete id="deleteGhMemberWorkById" parameterType="Long">
+        delete from gh_member_work where work_id = #{workId}
+    </delete>
+
+    <delete id="deleteGhMemberWorkByIds" parameterType="String">
+        delete from gh_member_work where work_id in 
+        <foreach item="workId" collection="array" open="(" separator="," close=")">
+            #{workId}
+        </foreach>
+    </delete>
+    
+</mapper>

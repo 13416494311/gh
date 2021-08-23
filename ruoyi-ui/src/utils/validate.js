@@ -60,6 +60,24 @@ export function validEmail(email) {
   return reg.test(email)
 }
 
+
+/**
+ * @param {string} mobile
+ * @returns {Boolean}
+ */
+export function validMobile(rule, value, callback) {
+  if (!value) {
+    callback();
+  } else {
+    const telReg = /^1(3[0-9]|4[5,7]|5[0,1,2,3,5,6,7,8,9]|6[2,5,6,7]|7[0,1,7,8]|8[0-9]|9[1,8,9])\d{8}$/;
+    const isTelPhone = telReg.test(value);
+    if (!isTelPhone ) {
+      callback(new Error("请输入正确手机号"));
+    } else {
+      callback();
+    }
+  }
+}
 /**
  * @param {string} str
  * @returns {Boolean}

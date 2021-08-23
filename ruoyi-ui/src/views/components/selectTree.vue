@@ -24,7 +24,7 @@
 
 <script>
   export default {
-    name: "el-tree-select",
+    name: "SelectTree",
     props:{
       vModel:String,
       disabled: Boolean,

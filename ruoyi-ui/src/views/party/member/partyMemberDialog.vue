@@ -1,31 +1,8 @@
 <template>
-  <div class="register">
-    <div class="register-title" >
-      <div class="h3"  @click="toLogin()">{{systemTitle}}</div>
-      <el-button  @click="toLogin()" style="float: right;margin: 16px 50px" plain icon="el-icon-arrow-left">返 回</el-button>
-    </div>
-    <div class="register-div">
-      <el-form ref="form"  :model="form" :rules="rules"  label-width="150px">
-        <el-card shadow="always" style="margin-bottom: 30px;">
-          <div slot="header" style="height: 25px">
-            <span style="font-weight: bold;font-size: 16px">注册进度</span>
-          </div>
-          <el-steps v-if="pass":active="registerStep" finish-status="success">
-            <el-step title="注册账号"></el-step>
-            <el-step title="完善信息"></el-step>
-            <el-step title="信息审核"></el-step>
-            <el-step title="审核通过"></el-step>
-          </el-steps>
-          <el-steps v-if="!pass" :active="registerStep" finish-status="success">
-            <el-step title="注册账号"></el-step>
-            <el-step title="完善信息"></el-step>
-            <el-step title="信息审核"></el-step>
-            <el-step title="审核不通过/完善信息"></el-step>
-            <el-step title="审核通过"></el-step>
-          </el-steps>
-
-        </el-card>
-
+  <div>
+    <el-dialog :title="title" :visible.sync="open" width="90%" append-to-body
+               @open="getHeight" :close-on-click-modal="false">
+      <el-form ref="form" :model="form" :rules="rules" :style="bodyStyle" label-width="150px">
         <el-card shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
             <span style="font-weight: bold;font-size: 16px">基本信息</span>
@@ -35,7 +12,7 @@
               <el-row>
                 <el-col :span="12">
                   <el-form-item label="会员姓名" prop="memberName">
-                    <el-input :disabled="true"v-model="form.memberName" placeholder="请输入会员姓名"/>
+                    <el-input :disabled="disabled"v-model="form.memberName" placeholder="请输入会员姓名"/>
                   </el-form-item>
                 </el-col>
                 <!--<el-col :span="12">
@@ -57,6 +34,8 @@
                     </el-select>
                   </el-form-item>
                 </el-col>
+              </el-row>
+              <el-row>
                 <el-col :span="12">
                   <el-form-item label="出生日期" prop="birthday">
                     <el-date-picker :disabled="disabled"
@@ -74,6 +53,8 @@
                     <el-input :disabled="disabled"v-model="form.workNo" placeholder="请输入工号"/>
                   </el-form-item>
                 </el-col>
+              </el-row>
+              <el-row>
                 <el-col :span="12">
                   <el-form-item label="民族" prop="nation">
                     <el-select :disabled="disabled"
@@ -102,14 +83,16 @@
                     </el-select>
                   </el-form-item>
                 </el-col>
-              <!--<el-row>
-                <el-col :span="12">
-                  <el-form-item label="身份证号" prop="identityCard">
-                    <el-input :disabled="disabled" v-model="form.identityCard" placeholder="请输入身份证号"/>
-                  </el-form-item>
-                </el-col>
+              </el-row>
+              <el-row>
+                <!--<el-row>
+                  <el-col :span="12">
+                    <el-form-item label="身份证号" prop="identityCard">
+                      <el-input :disabled="disabled" v-model="form.identityCard" placeholder="请输入身份证号"/>
+                    </el-form-item>
+                  </el-col>
 
-              </el-row>-->
+                </el-row>-->
                 <el-col :span="12">
                   <el-form-item label="所在单位" prop="companyName">
                     <el-input :disabled="disabled" v-model="form.companyName" placeholder="请输入所在单位"/>
@@ -208,7 +191,7 @@
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="身份" prop="workIdentity" >
+              <el-form-item label="身份" prop="workIdentity">
                 <el-select :disabled="disabled"
                            v-model="form.workIdentity"
                            style="width: 100%" placeholder="请选择身份">
@@ -236,7 +219,7 @@
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item label="学位" prop="academicDegree" >
+              <el-form-item label="学位" prop="academicDegree">
                 <el-select :disabled="disabled"
                            v-model="form.academicDegree"
                            style="width: 100%" placeholder="请选择学位">
@@ -487,7 +470,7 @@
         <member-family ref="memberFamily" :disabled ="disabled"/>
 
 
-        <el-card v-show="false" shadow="always" style="margin-bottom: 30px;">
+        <el-card shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
             <span style="font-weight: bold;font-size: 16px">会员特长</span>
           </div>
@@ -495,7 +478,7 @@
           <specialty  ref="specialty" :see="true"/>
         </el-card>
 
-        <el-card v-show="false" shadow="always" style="margin-bottom: 30px;">
+        <el-card shadow="always" style="margin-bottom: 30px;">
           <div slot="header" style="height: 25px">
             <span style="font-weight: bold;font-size: 16px">先锋模范（荣誉）</span>
           </div>
@@ -608,98 +591,17 @@
           </el-row>
         </el-card>
 
-        <el-card v-show="logList.length>0" shadow="always" style="margin-bottom: 30px;">
-          <div slot="header" style="height: 25px">
-            <span style="font-weight: bold;font-size: 16px">审批记录</span>
-          </div>
-          <el-table v-loading="loading" :data="logList">
-            <el-table-column label="操作名称" align="center" prop="stepName"/>
-            <el-table-column label="操作人" align="center" prop="sysUser.nickName"/>
-            <el-table-column label="操作" align="center" prop="operResult"/>
-            <el-table-column label="操作时间" align="center" prop="operTime" width="180">
-              <template slot-scope="scope">
-                <span>{{ parseTime(scope.row.operTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</span>
-              </template>
-            </el-table-column>
-            <el-table-column label="备注" align="center" prop="operReason"/>
-          </el-table>
-
-        </el-card>
-
       </el-form>
-    </div>
-    <div class="register-footer">
-      <el-button v-show="!disabled" type="primary"  @click="chooseAuditUser">提 交</el-button>
-      <choose-audit-user ref="chooseAuditUser"  @register="handleRegister" @ok="submitForm" @del="handleDelete" @enable="handleEnable"/>
-    </div>
+      <div slot="footer" class="dialog-footer" :style="{textAlign:'center'}">
+        <el-button v-show="!disabled" type="primary" @click="chooseAuditUser">提 交</el-button>
+        <el-button @click="cancel">取 消</el-button>
+      </div>
+    </el-dialog>
   </div>
-
 </template>
 
+
 <style lang="scss" scoped>
-
-
-  .register{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .register-title{
-    width: 100%;
-    height: 64px;
-    text-align: left;
-    background-color: #1890ff;
-    .h3{
-      display: inline;
-      font-size: 20px;
-      font-weight: bold;
-      color: #fff;
-      line-height:64px;
-      letter-spacing: 3px;
-      padding-left: 30px;
-    }
-  }
-
-  .register-div {
-    width: 100%;
-    height: calc(100% - 128px);
-    overflow: auto;
-    top:64px;
-    position: absolute;
-    padding: 30px 60px;
-    /deep/ .el-form-item__label{
-      font-weight: 400;
-      line-height: 40px !important;
-      font-size: 16px;
-    }
-
-    /deep/ .el-input {
-      height: 45px;
-      font-size: 14px;
-      input {
-        height: 45px;
-      }
-    }
-    /deep/ .input-icon {
-      height: 46px;
-      width: 15px;
-      margin-left: 3px;
-    }
-  }
-
-
-  .register-footer{
-    width: 100%;
-    bottom:0px;
-    height: 64px;
-    padding: 18px;
-    position: absolute;
-    text-align: center;
-  }
-
-
-
   .head-container {
     overflow-x: hidden;
   }
@@ -709,8 +611,8 @@
   }
 
   .avatar {
-    width: 165px;
-    height: 220px;
+    width: 120px;
+    height: 160px;
     align-items: center;
     border: 1px solid #e6ebf5;
     img{
@@ -719,49 +621,50 @@
     div {
       width:100%;
       height:100%;
-      background: url("../assets/image/dj-avatar.jpg") no-repeat ;
+      background: url("../../../assets/image/dj-avatar.jpg") no-repeat ;
       background-size: 100% 100%;
     }
   }
 
 </style>
 
+
 <script>
   import {
-    addPartyMember,
-    checkPartyMemberUnique,
+    listPartyMember,
+    getPartyMember,
     delPartyMember,
     enablePartyMember,
-    registerPartyMember,
-    exportPartyMember,
-    getPartyMember,
-    listPartyMember,
-    orderPartyMember,
+    addPartyMember,
     updatePartyMember,
     updatePartyMemberAvatar,
+    orderPartyMember,
+    exportPartyMember,
     uploadAvatar,
+    checkPartyMemberUnique,
   } from "@/api/party/member";
-  import {listPartyMemberChange} from "@/api/party/memberChange";
-  import {postOptionSelect} from "@/api/system/post";
-  import {getPartyOrg, partyOrgTreeselect, partyOrgTreeselectByEdit} from "@/api/party/org";
-  import {getDept, treeselect} from "@/api/system/dept";
+  import { listPartyMemberChange } from "@/api/party/memberChange";
+  import { postOptionSelect } from "@/api/system/post";
+  import { partyOrgTreeselect,partyOrgTreeselectByEdit, getPartyOrg } from "@/api/party/org";
+  import { getDept } from "@/api/system/dept";
+  import { treeselect } from "@/api/system/dept";
   import Treeselect from "@riophae/vue-treeselect";
   import "@riophae/vue-treeselect/dist/vue-treeselect.css";
-  import selectTree from './components/selectTree';
-  import {getUserProfile} from "@/api/system/user";
-  import ChooseAuditUser from "./audit/chooseAuditUser";
-  import {addLog, delLog, exportLog, getLog, listLog, updateLog} from "@/api/sys/log";
-  import Specialty from "./members/specialty/specialty";
-  import Exemplary from "./members/exemplary/exemplary";
-  import MemberPortrait from "./party/member/memberPortrait";
-  import MemberEducation from "./party/memberEducation/memberEducation";
+  import selectTree from '../../components/selectTree';
+  import { getUserProfile } from "@/api/system/user";
+  import ChooseAuditUser from "../../audit/chooseAuditUser";
+  import { listLog, getLog, delLog, addLog, updateLog, exportLog } from "@/api/sys/log";
+  import Specialty from "../../members/specialty/specialty";
+  import Exemplary from "../../members/exemplary/exemplary";
+  import MemberPortrait from "./memberPortrait";
+  import MemberEducation from "../memberEducation/memberEducation";
   import {downLoadZip} from "@/utils/zipdownload";
-  import {checkPermi, checkRole} from "@/utils/permission";
-  import MemberWork from "./member/work/memberWork";
-  import MemberFamily from "./member/family/memberFamily";
+  import { checkPermi, checkRole } from "@/utils/permission";
+  import MemberWork from "../../member/work/memberWork";
+  import MemberFamily from "../../member/family/memberFamily";
 
   export default {
-    name: "Complete",
+    name: "PartyMemberDialog",
     components: {
       MemberFamily,
       MemberWork,
@@ -957,7 +860,7 @@
           ],
           urgentPersonMobile: [
             {required: true, message: "紧急联系电话不能为空", trigger: "blur"},
-            {validator: this.$validate.validMobile, trigger: "blur" }
+            { validator: checkMobile, trigger: "blur" }
           ],
           identityCard: [
             { required: false, message: "身份证号不能为空", trigger: "blur" },
@@ -1052,15 +955,7 @@
         },
         user: {},
         formalDataRequire:false,
-        registerStep: undefined,
-        pass:true,
-        logList: [],
       };
-    },
-    computed:{
-      systemTitle() {
-        return this.$store.state.settings.systemTitle
-      },
     },
     mounted() {
       window.addEventListener('resize', this.getHeight);
@@ -1141,7 +1036,6 @@
       this.getDicts("household_status_type").then(response => {
         this.householdStatusOptions = response.data;
       });
-
 
     },
     methods: {
@@ -1444,33 +1338,28 @@
         this.title = "添加会员信息";
       },
       /** 查看按钮操作 */
-      handleSee(disabled){
+      handleSee(row){
         this.reset();
-        this.disabled = disabled;
-        const memberId =  this.user.partyMemberId
+        this.disabled = true;
+        const memberId = row.memberId || this.ids
         this.orgOptions= this.partyOrgOptionsByEdait;
-        listPartyMemberChange({"partyMemberId":memberId}).then(response => {
-          if(response.rows&&response.rows.length >0){
-            this.form = response.rows[0];
-            this.form .memberId = this.form .partyMemberId
-            this.form.partyMemberUuid = this.form.partyMemberUuid==undefined?this.uuid():this.form.partyMemberUuid;
-            this.form.cognizance = this.form.memberHelp!=null?this.form.memberHelp.cognizance:undefined;
-            this.form.economicSituation = this.form.memberHelp!=null?this.form.memberHelp.economicSituation:undefined;
-            this.avatarUrl=process.env.VUE_APP_BASE_API + this.form.avatar;
-            this.open = true;
-            this.title = "查看会员信息";
-
-            this.getLogList();
-            this.changeMemberType();
-            this.lifeDifficultyChange();
-            this.$refs.specialty.init(this.form.memberId);
-            this.$refs.exemplary.init(this.form.memberId);
-            this.$refs.memberEducation.init(this.form.partyMemberUuid);
-            this.$refs.memberWork.init(this.form.partyMemberUuid);
-            this.$refs.memberFamily.init(this.form.partyMemberUuid);
-          }
+        getPartyMember(memberId).then(response => {
+          this.form = response.data;
+          this.form.partyMemberUuid = this.form.partyMemberUuid==undefined?this.uuid():this.form.partyMemberUuid;
+          this.form.cognizance = this.form.memberHelp!=null?this.form.memberHelp.cognizance:undefined;
+          this.form.economicSituation = this.form.memberHelp!=null?this.form.memberHelp.economicSituation:undefined;
+          this.avatarUrl=process.env.VUE_APP_BASE_API + this.form.avatar;
+          this.open = true;
+          this.title = "查看会员信息";
+        }).then(()=>{
+          this.changeMemberType();
+          this.lifeDifficultyChange();
+          this.$refs.specialty.init(this.form.memberId);
+          this.$refs.exemplary.init(this.form.memberId);
+          this.$refs.memberEducation.init(this.form.partyMemberUuid);
+          this.$refs.memberWork.init(this.form.partyMemberUuid);
+          this.$refs.memberFamily.init(this.form.partyMemberUuid);
         });
-
       },
       handlePortrait(row){
         this.$refs.memberPortrait.init(row.memberId)
@@ -1490,11 +1379,11 @@
 
       },
       /** 修改按钮操作 */
-      handleUpdate() {
+      handleUpdate(row) {
         this.reset();
         this.disabled = false;
-        const memberId =  this.user.partyMemberId
-        this.orgOptions= this.partyOrgOptions;
+        const memberId = row.memberId || this.ids
+        this.orgOptions= this.partyOrgOptionsByEdait;
         getPartyMember(memberId).then(response => {
           this.form = response.data;
           this.form.partyMemberUuid = this.form.partyMemberUuid==undefined?this.uuid():this.form.partyMemberUuid;
@@ -1512,35 +1401,7 @@
           this.$refs.memberWork.init(this.form.partyMemberUuid);
           this.$refs.memberFamily.init(this.form.partyMemberUuid);
         });
-
-
-
       },
-
-      getPartyMember(memberId){
-        listPartyMemberChange({"partyMemberId":memberId, "auditState":"2"}).then(response => {
-          if(response.rows&&response.rows.length >0){
-            this.form = response.rows[0];
-            this.form.partyMemberUuid = this.form.partyMemberUuid==undefined?this.uuid():this.form.partyMemberUuid;
-            this.form.cognizance = this.form.memberHelp!=null?this.form.memberHelp.cognizance:undefined;
-            this.form.economicSituation = this.form.memberHelp!=null?this.form.memberHelp.economicSituation:undefined;
-            this.avatarUrl=process.env.VUE_APP_BASE_API + this.form.avatar;
-            this.open = true;
-            this.title = "修改会员信息";
-
-            this.changeMemberType();
-            this.lifeDifficultyChange();
-            this.$refs.specialty.init(this.form.memberId);
-            this.$refs.exemplary.init(this.form.memberId);
-            this.$refs.memberEducation.init(this.form.partyMemberUuid);
-            this.$refs.memberWork.init(this.form.partyMemberUuid);
-            this.$refs.memberFamily.init(this.form.partyMemberUuid);
-          }else{
-            this.getPartyMember(this.form.memberId)
-          }
-        });
-      },
-
       chooseAuditUser(){
         this.$refs["form"].validate(valid => {
           if (valid) {
@@ -1549,7 +1410,7 @@
                 if(response.rows&&response.rows.length >0){
                   this.msgSuccess("该会员变更正在审批中！")
                 }else{
-                  this.$refs.chooseAuditUser.init(6,"register",this.form.memberId)
+                  this.$refs.chooseAuditUser.init(6,"edit",this.form.memberId)
                 }
               });
             }else{
@@ -1557,6 +1418,9 @@
             }
           }
         });
+
+
+
       },
       /** 提交按钮 */
       submitForm: function (form) {
@@ -1622,30 +1486,6 @@
           }
         });
       },
-      handleRegister(form) {
-        this.$refs["form"].validate(valid => {
-          if (valid) {
-            this.form.auditUserId = form.auditUserId;
-            this.form.operReason = form.reason;
-            if (this.form.memberId != undefined) {
-              registerPartyMember(this.form).then(response => {
-                if (response.code === 200) {
-                  this.msgSuccess("提交审批成功");
-                  this.init()
-                } else {
-                  this.msgError(response.msg);
-                }
-              });
-            }
-          }else{
-            setTimeout(() => {
-              var isError = document.getElementsByClassName("is-error");
-              isError[0].querySelector('input').focus();
-            }, 100);
-            return false;
-          }
-        });
-      },
       /** 导出按钮操作 */
       handleExport() {
         let that = this;
@@ -1665,28 +1505,7 @@
             this.queryParams.partyOrgId = this.user.djPartyMember.partyOrgId;
           }
         }).then(()=>{
-          this.init()
-        });
-      },
-      init(){
-        const memberId =  this.user.partyMemberId
-        listPartyMemberChange({"partyMemberId":memberId}).then(response => {
-          if(response.rows&&response.rows.length >0){
-            let partyMember = response.rows[0];
-            if(partyMember.auditState =='2'){
-              this.registerStep = 2
-              this.pass =true;
-              this.handleSee(true);
-            }else if(partyMember.auditState =='4'){
-              this.registerStep = 3
-              this.pass = false;
-              this.handleSee(false);
-            }
-          }else{
-            this.registerStep = 1
-            this.pass =true;
-            this.handleUpdate();
-          }
+          this.getList();
         });
       },
       showHandleUpdate(row){
@@ -1708,10 +1527,10 @@
       },
       changeMemberType(){
         /*if(this.form.memberType == '1'){
-          this.formalDataRequire = true
-        }else{
-          this.formalDataRequire = false
-        }*/
+         this.formalDataRequire = true
+       }else{
+         this.formalDataRequire = false
+       }*/
         this.formalDataRequire = false
       },
       lifeDifficultyChange(){
@@ -1720,18 +1539,6 @@
         }else{
           this.lifeDifficulty = false
         }
-      },
-      toLogin(){
-        this.$store.dispatch('LogOut').then(() => {
-          location.reload()
-        })
-      },
-      getLogList() {
-        this.loading = true;
-        listLog({"uuid": this.form.memberUuid}).then(response => {
-          this.logList = response.rows;
-          this.loading = false;
-        });
       },
     }
   };
